@@ -74,7 +74,7 @@ export function ContentPage({
     ].filter(Boolean),
   );
   return (
-    <main className="page-main">
+    <div className="page-main">
       <JsonLd data={graphData} />
       <PageHead page={page} kicker={kicker} />
       {intro && (
@@ -87,7 +87,7 @@ export function ContentPage({
       {isMedical && <ReviewerBox meta={meta} />}
       <EmergencyStrip />
       <CtaBand />
-    </main>
+    </div>
   );
 }
 export function DoctorPage({ page }: { page: PageContent }) {
@@ -102,7 +102,7 @@ export function DoctorPage({ page }: { page: PageContent }) {
     ? (metaLine(hero.body, "Kicker") ?? "Consultant physiatrist")
     : "Consultant physiatrist";
   return (
-    <main className="page-main">
+    <div className="page-main">
       <JsonLd
         data={graph(meta, [
           doc,
@@ -141,14 +141,14 @@ export function DoctorPage({ page }: { page: PageContent }) {
       <SectionBlocks page={page} exclude={/^hero/i} />
       <EmergencyStrip />
       <CtaBand title="Book with your physiatrist." />
-    </main>
+    </div>
   );
 }
 export function PostPage({ page }: { page: PageContent }) {
   const meta = page.meta;
   const faqs = faqOf(page);
   return (
-    <main className="page-main">
+    <div className="page-main">
       <JsonLd
         data={graph(meta, [
           blogPosting(meta),
@@ -174,7 +174,7 @@ export function PostPage({ page }: { page: PageContent }) {
       />
       <EmergencyStrip />
       <CtaBand />
-    </main>
+    </div>
   );
 }
 export function ConditionsPage({ page }: { page: PageContent }) {
@@ -183,7 +183,7 @@ export function ConditionsPage({ page }: { page: PageContent }) {
     ...new Set(conditions.map((c) => c.name[0].toUpperCase())),
   ].sort();
   return (
-    <main className="page-main">
+    <div className="page-main">
       <JsonLd data={graph(meta)} />
       <PageHead page={page} kicker="Conditions" />
       <nav className="az-jump" aria-label="Jump to letter">
@@ -212,13 +212,13 @@ export function ConditionsPage({ page }: { page: PageContent }) {
       <SectionBlocks page={page} exclude={/^(intro|conditions)/i} />
       <EmergencyStrip />
       <CtaBand />
-    </main>
+    </div>
   );
 }
 export function CareIndexPage({ page }: { page: PageContent }) {
   const meta = page.meta;
   return (
-    <main className="page-main">
+    <div className="page-main">
       <JsonLd data={graph(meta)} />
       <PageHead page={page} kicker="All care" />
       <div className="care-grid">
@@ -245,6 +245,6 @@ export function CareIndexPage({ page }: { page: PageContent }) {
       </div>
       <EmergencyStrip />
       <CtaBand />
-    </main>
+    </div>
   );
 }
