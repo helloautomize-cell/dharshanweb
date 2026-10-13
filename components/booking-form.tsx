@@ -183,8 +183,9 @@ export function BookingForm({
                 name="doctor"
                 value={d}
                 defaultChecked={
-                  (pick("doctor", initialDoctor ?? "No preference") === d) ||
-                  (!pick("doctor", initialDoctor ?? "") && d === "No preference")
+                  pick("doctor", initialDoctor ?? "No preference") === d ||
+                  (!pick("doctor", initialDoctor ?? "") &&
+                    d === "No preference")
                 }
               />
               <span>{d}</span>
@@ -201,7 +202,7 @@ export function BookingForm({
                   type="radio"
                   name="format"
                   value={f}
-                      defaultChecked={pick("format", initialFormat ?? "") === f}
+                  defaultChecked={pick("format", initialFormat ?? "") === f}
                   required
                 />
                 <span>{f === "clinic" ? "Clinic visit" : "Video consult"}</span>

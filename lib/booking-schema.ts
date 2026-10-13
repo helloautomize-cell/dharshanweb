@@ -2,7 +2,13 @@ import { z } from "zod";
 import { bookingReasons } from "@/lib/styleguide-copy";
 import { DOCTORS, FORMATS, TIMES, normaliseMobile } from "@/lib/booking-shared";
 
-export { DOCTORS, FORMATS, TIMES, normaliseMobile, dateBoundsIST } from "@/lib/booking-shared";
+export {
+  DOCTORS,
+  FORMATS,
+  TIMES,
+  normaliseMobile,
+  dateBoundsIST,
+} from "@/lib/booking-shared";
 
 const mobile = z
   .string()
@@ -33,9 +39,15 @@ export const bookingSchema = z
       .refine((v) => /^\d{1,3}$/.test(v.trim()), "Enter the age")
       .transform((v) => Number(v.trim())),
     ageUnit: z.enum(["years", "months"]).default("years"),
-    date: z.string().refine((v) => /^\d{4}-\d{2}-\d{2}$/.test(v), "Pick a date"),
+    date: z
+      .string()
+      .refine((v) => /^\d{4}-\d{2}-\d{2}$/.test(v), "Pick a date"),
     time: z.enum(TIMES, { error: "Choose a time of day" }),
-    city: z.string().trim().max(60, "Keep the city under 60 characters").optional(),
+    city: z
+      .string()
+      .trim()
+      .max(60, "Keep the city under 60 characters")
+      .optional(),
     under18: z.string().optional(),
     guardianName: z.string().trim().optional(),
     guardianConsent: z.string().optional(),

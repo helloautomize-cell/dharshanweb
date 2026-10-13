@@ -7,13 +7,17 @@ const validDate = () => {
 };
 
 async function fillValid(page: import("@playwright/test").Page) {
-  await page.locator('input[name="format"][value="clinic"]').check({ force: true });
+  await page
+    .locator('input[name="format"][value="clinic"]')
+    .check({ force: true });
   await page.selectOption("#f-reason", "Back pain");
   await page.fill("#f-name", "Test Patient");
   await page.fill("#f-mobile", "9876543210");
   await page.fill("#f-age", "45");
   await page.fill("#f-date", validDate());
-  await page.locator('input[name="time"][value="morning"]').check({ force: true });
+  await page
+    .locator('input[name="time"][value="morning"]')
+    .check({ force: true });
   await page.check("#f-consent", { force: true });
 }
 

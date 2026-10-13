@@ -1,6 +1,7 @@
 import { expect, test } from "@playwright/test";
 
-const THIRD_PARTY = /googletagmanager|google-analytics|analytics\.google|google\.com\/maps|youtube|youtube-nocookie|ytimg/;
+const THIRD_PARTY =
+  /googletagmanager|google-analytics|analytics\.google|google\.com\/maps|youtube|youtube-nocookie|ytimg/;
 
 test.describe("consent gating", () => {
   test("zero third-party requests before and after reject", async ({
