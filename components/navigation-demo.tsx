@@ -91,8 +91,8 @@ export function NavigationDemo() {
                 </span>
               </NavigationMenu.Link>
               <p className="mega-emergency">
-                Medical emergency? Call <a href="tel:108">108</a> or{" "}
-                <a href="tel:112">112</a>.
+                Medical emergency? Call <Link href="tel:108">108</Link> or{" "}
+                <Link href="tel:112">112</Link>.
               </p>
             </NavigationMenu.Content>
           </NavigationMenu.Item>
@@ -115,9 +115,9 @@ export function NavigationDemo() {
             </NavigationMenu.Item>
           ))}
         </NavigationMenu.List>
-        <a className="nav-book" href="/contact/#book">
+        <Link className="nav-book" href="/contact/#book">
           Book a consultation
-        </a>
+        </Link>
       </NavigationMenu.Root>
     </div>
   );

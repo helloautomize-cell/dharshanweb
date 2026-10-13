@@ -1,0 +1,71 @@
+// Conditions A to Z registry. Every entry links to the page that covers it.
+export type Condition = { name: string; href: string };
+export const conditions: Condition[] = [
+  { name: "Ankle sprains", href: "/joints-and-sports/sports-injuries/" },
+  {
+    name: "After fracture or surgery",
+    href: "/joints-and-sports/after-fracture-or-surgery/",
+  },
+  { name: "Arthritis of the hand", href: "/joints-and-sports/" },
+  {
+    name: "Autism support",
+    href: "/childrens-rehabilitation/developmental-delay/",
+  },
+  { name: "Back pain", href: "/pain-and-spine/back-pain/" },
+  { name: "Balance problems", href: "/older-adults/falls-and-balance/" },
+  { name: "Cerebral palsy", href: "/childrens-rehabilitation/cerebral-palsy/" },
+  {
+    name: "Developmental delay",
+    href: "/childrens-rehabilitation/developmental-delay/",
+  },
+  { name: "Disc problems", href: "/pain-and-spine/back-pain/" },
+  { name: "Facet joint pain", href: "/pain-and-spine/back-pain/" },
+  { name: "Falls and balance", href: "/older-adults/falls-and-balance/" },
+  { name: "Flat feet", href: "/joints-and-sports/" },
+  { name: "Frozen shoulder", href: "/joints-and-sports/shoulder-pain/" },
+  { name: "Gait problems", href: "/older-adults/falls-and-balance/" },
+  { name: "Hand weakness", href: "/neuro-rehabilitation/" },
+  { name: "Head injury", href: "/neuro-rehabilitation/head-injury/" },
+  { name: "Heel pain", href: "/joints-and-sports/" },
+  { name: "Hip pain", href: "/joints-and-sports/knee-pain/" },
+  {
+    name: "Image-guided injections",
+    href: "/pain-and-spine/image-guided-injections/",
+  },
+  { name: "Knee osteoarthritis", href: "/joints-and-sports/knee-pain/" },
+  { name: "Ligament injuries", href: "/joints-and-sports/sports-injuries/" },
+  {
+    name: "Muscular dystrophy",
+    href: "/childrens-rehabilitation/muscular-dystrophy/",
+  },
+  { name: "Myofascial pain", href: "/pain-and-spine/" },
+  { name: "Neck pain", href: "/pain-and-spine/neck-pain/" },
+  { name: "Nerve compression", href: "/neuro-rehabilitation/" },
+  { name: "Nerve injuries", href: "/neuro-rehabilitation/" },
+  { name: "Osteoporosis", href: "/older-adults/osteoporosis/" },
+  { name: "Parkinson's disease", href: "/neuro-rehabilitation/parkinsons/" },
+  { name: "Posture problems", href: "/pain-and-spine/neck-pain/" },
+  {
+    name: "Prosthetic training",
+    href: "/joints-and-sports/prosthetic-rehab/",
+  },
+  {
+    name: "PRP and prolotherapy",
+    href: "/joints-and-sports/prp-and-prolotherapy/",
+  },
+  { name: "Sciatica", href: "/pain-and-spine/sciatica/" },
+  { name: "Shoulder pain", href: "/joints-and-sports/shoulder-pain/" },
+  {
+    name: "Spasticity",
+    href: "/neuro-rehabilitation/spasticity/",
+  },
+  {
+    name: "Spinal cord injury",
+    href: "/neuro-rehabilitation/spinal-cord-injury/",
+  },
+  { name: "Sports injuries", href: "/joints-and-sports/sports-injuries/" },
+  { name: "Stroke", href: "/neuro-rehabilitation/stroke/" },
+  { name: "Tennis elbow", href: "/joints-and-sports/" },
+  { name: "Walking aids", href: "/joints-and-sports/prosthetic-rehab/" },
+  { name: "Wrist pain", href: "/joints-and-sports/" },
+];

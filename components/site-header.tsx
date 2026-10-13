@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/lib/icons";
@@ -44,15 +45,15 @@ export function SiteHeader() {
 
   return (
     <>
-      <a className="skip-link" href="#main">
+      <Link className="skip-link" href="#main">
         Skip to content
-      </a>
+      </Link>
       <header
         className="site-nav"
         data-scrolled={scrolled || undefined}
         ref={navRef}
       >
-        <a className="nav-brand" href="/" aria-label="Rehabify home">
+        <Link className="nav-brand" href="/" aria-label="Rehabify home">
           <Image
             src="/images/brand/mark-blue@3x.png"
             alt=""
@@ -63,7 +64,7 @@ export function SiteHeader() {
             priority
           />
           <b>Rehabify</b>
-        </a>
+        </Link>
         <nav className="links" aria-label="Main">
           <span className="nav-indicator" aria-hidden="true" />
           <ul>
@@ -72,7 +73,7 @@ export function SiteHeader() {
               onPointerLeave={() => setMegaOpen(false)}
               onBlur={closeMega}
             >
-              <a
+              <Link
                 href="/care/"
                 aria-expanded={megaOpen}
                 aria-haspopup="true"
@@ -80,23 +81,23 @@ export function SiteHeader() {
               >
                 Care
                 <Icon name="chevronDown" size={14} />
-              </a>
+              </Link>
               <div className="mega" data-open={megaOpen || undefined}>
                 <div className="mega-groups">
                   {megaGroups.map((group) => (
                     <div key={group.title}>
                       <h3>
-                        <a href={group.href}>{group.title}</a>
+                        <Link href={group.href}>{group.title}</Link>
                       </h3>
                       {group.links.map((link) => (
-                        <a key={link.href} href={link.href}>
+                        <Link key={link.href} href={link.href}>
                           {link.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   ))}
                 </div>
-                <a className="mega-preview" href="/doctors/">
+                <Link className="mega-preview" href="/doctors/">
                   <Image
                     src="/images/doctors/dr-dharshan-avatar.jpg"
                     alt=""
@@ -107,29 +108,33 @@ export function SiteHeader() {
                     <b>Meet your doctors</b>
                     <Icon name="arrow" size={16} />
                   </span>
-                </a>
+                </Link>
                 <p className="mega-emergency">
-                  Medical emergency? Call <a href="tel:108">108</a> or{" "}
-                  <a href="tel:112">112</a>.
+                  Medical emergency? Call <Link href="tel:108">108</Link> or{" "}
+                  <Link href="tel:112">112</Link>.
                 </p>
               </div>
             </li>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href}>{link.label}</a>
+                <Link href={link.href}>{link.label}</Link>
               </li>
             ))}
             <li>
-              <a href="/video-consultation/">Video consult</a>
+              <Link href="/video-consultation/">Video consult</Link>
             </li>
           </ul>
         </nav>
-        <a className="btn btn-glow nav-book" href="/contact/#book">
+        <Link
+          className="btn btn-glow nav-book"
+          href="/contact/#book"
+          aria-label="Book a consultation"
+        >
           <span className="button-icon">
             <Icon name="calendar" size={20} />
           </span>
           <span className="button-label">Book a consultation</span>
-        </a>
+        </Link>
         <button
           type="button"
           className="menu-button"
@@ -143,21 +148,21 @@ export function SiteHeader() {
       </header>
       <div className="mobile-menu" data-open={menuOpen || undefined}>
         <nav aria-label="Mobile">
-          <a href="/care/">All care</a>
+          <Link href="/care/">All care</Link>
           {megaGroups.map((group) => (
-            <a key={group.title} href={group.href} className="sub">
+            <Link key={group.title} href={group.href} className="sub">
               {group.title}
-            </a>
+            </Link>
           ))}
-          <a href="/conditions/">Where it hurts</a>
-          <a href="/doctors/">Doctors</a>
-          <a href="/video-consultation/">Video consultation</a>
-          <a href="/health-library/">Health library</a>
-          <a href="/plan-your-visit/">Plan your visit</a>
-          <a href="/contact/">Contact</a>
+          <Link href="/conditions/">Where it hurts</Link>
+          <Link href="/doctors/">Doctors</Link>
+          <Link href="/video-consultation/">Video consultation</Link>
+          <Link href="/health-library/">Health library</Link>
+          <Link href="/plan-your-visit/">Plan your visit</Link>
+          <Link href="/contact/">Contact</Link>
         </nav>
         <div className="mobile-menu-actions">
-          <a
+          <Link
             className="btn btn-glow light"
             href="/contact/#book"
             onClick={() => setMenuOpen(false)}
@@ -166,15 +171,15 @@ export function SiteHeader() {
               <Icon name="calendar" size={20} />
             </span>
             <span className="button-label">Book a consultation</span>
-          </a>
-          <a className="btn btn-wa" href={siteConfig.whatsapp}>
+          </Link>
+          <Link className="btn btn-wa" href={siteConfig.whatsapp}>
             <Icon name="whatsapp" size={20} />
             WhatsApp
-          </a>
+          </Link>
         </div>
         <p className="menu-emergency">
-          Medical emergency? Call <a href="tel:108">108</a> or{" "}
-          <a href="tel:112">112</a>.
+          Medical emergency? Call <Link href="tel:108">108</Link> or{" "}
+          <Link href="tel:112">112</Link>.
         </p>
       </div>
     </>

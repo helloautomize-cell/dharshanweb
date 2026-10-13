@@ -90,20 +90,24 @@ export function DoctorPortrait({
   priority = false,
   approved,
   className = "",
+  sizes: sizesProp,
 }: {
   id: string;
   alt: string;
   priority?: boolean;
   approved?: boolean;
   className?: string;
+  sizes?: string;
 }) {
   const allowed =
     approved ?? imageApprovals[id.replace("-portrait", "-hero")] === true;
-  const sizes = className.includes("back-arch")
-    ? "(max-width: 767px) 34vw, 217px"
-    : className.includes("front-arch")
-      ? "(max-width: 767px) 55vw, 350px"
-      : "(max-width: 767px) 90px, 120px";
+  const sizes =
+    sizesProp ??
+    (className.includes("back-arch")
+      ? "(max-width: 767px) 34vw, 217px"
+      : className.includes("front-arch")
+        ? "(max-width: 767px) 55vw, 350px"
+        : "(max-width: 767px) 90px, 120px");
   const srcSet = (format: string) =>
     [160, 320, 480, 800]
       .map((width) => `/images/doctors/${id}-${width}.${format} ${width}w`)
