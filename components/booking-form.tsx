@@ -274,7 +274,7 @@ export function BookingForm({
 
         <div className="field-grid">
           <div className="field age-field">
-            <label htmlFor={fieldIds.age}>Age</label>
+            <label htmlFor={fieldIds.ageValue}>Age</label>
             <div className="age-wrap">
               <input
                 id={fieldIds.ageValue}

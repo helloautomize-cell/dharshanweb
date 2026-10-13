@@ -13,6 +13,8 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const menuButton = useRef<HTMLButtonElement>(null);
+  const careLink = useRef<HTMLAnchorElement>(null);
+  const suppressFocusOpen = useRef(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -27,7 +29,10 @@ export function SiteHeader() {
       if (event.key === "Escape") {
         setMenuOpen(false);
         setMegaOpen(false);
-        menuButton.current?.focus();
+        if (megaOpen) {
+          suppressFocusOpen.current = true;
+          careLink.current?.focus();
+        } else menuButton.current?.focus();
       }
     };
     document.addEventListener("keydown", onKey);
@@ -74,10 +79,17 @@ export function SiteHeader() {
               onBlur={closeMega}
             >
               <Link
+                ref={careLink}
                 href="/care/"
                 aria-expanded={megaOpen}
                 aria-haspopup="true"
-                onFocus={() => setMegaOpen(true)}
+                onFocus={() => {
+                  if (suppressFocusOpen.current) {
+                    suppressFocusOpen.current = false;
+                    return;
+                  }
+                  setMegaOpen(true);
+                }}
               >
                 Care
                 <Icon name="chevronDown" size={14} />

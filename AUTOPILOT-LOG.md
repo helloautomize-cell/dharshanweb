@@ -165,3 +165,39 @@ than silently dropping features.
 BOOKING_TO_EMAIL, GA4 id, PREVIEW_USER/PASS for preview Basic Auth (no
 preview host exists yet), Vercel Deployment Protection toggle, real
 end-to-end email to AGENCY_TEST_EMAIL, preview Lighthouse.
+
+## Phase 7 — Design polish (branch: phase-7)
+
+No agency findings were supplied; the standing checklist drove the work.
+`scripts/qa-capture.mjs` captured 100 before-shots (25 pages x 4 widths) and
+100 after-shots into qa/phase-7/{before,after}/, plus compare.html and
+changes.md.
+
+**Fixes (one line each, all recorded in qa/phase-7/changes.md):**
+- visit-band gained a real night background (aqua kicker was on paper).
+- Marquee gained a visible 48px pause/play control + hover/focus pause.
+- Mega panel: Esc returns focus to the Care link (suppress flag prevents the
+  focus handler reopening it).
+- Home mobile height 16,840 -> 10,263px via swipe-strip rules for >3-item
+  sections (bento, ways, recovery steps, principles), scrollable A-to-Z
+  region, body figure hidden at 390 (chips carry interaction), tighter
+  mobile section rhythm. All non-hero sections under 1,097px.
+- Booking form age label association fixed (Lighthouse a11y 95 -> 100).
+
+**tests/polish.spec.ts** covers: em/en dashes, NAP digits, dock visibility +
+thank-you exception + Book reachability, clipped text incl. glow labels,
+aqua/apricot only on night, marquee pause, home height range + section caps +
+doctor visibility, adjacent duplicate badges, axe colour-contrast on key
+pages, mega panel bounds + Esc.
+
+**Results:** 38/38 Playwright green. Lint, typecheck, format, build all pass.
+Local Lighthouse medians of 3 (mobile):
+- /         : perf 91, a11y 100, BP 96, LCP 3.50s, CLS 0, TBT 58ms
+- /pain-and-spine/back-pain/ : perf 92, a11y 100, BP 100, LCP 3.27s
+- /dr-dharshan-n-a/ : perf 92, a11y 100, BP 100, LCP 3.31s
+- /contact/ : perf 93, a11y 100, BP 100, LCP 3.17s
+
+**Open:** Vercel preview still blocked (no signed-in CLI / Git integration not
+connected to this repo); LCP medians above the <2.0s real-page target are
+local next start numbers on this machine - preview measurement pending.
+JS budgets deviate: home 158KB gz, contact 163KB gz (see P6 note).
