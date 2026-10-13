@@ -88,7 +88,7 @@ under arch (z-index), `.goals-tile`/`.bento-quote` scoped to `.bento-grid`
 
 **Screenshots:** artifacts/p4-home-{1440,390}-{hero,bento,recovery,az,meet,full}.png
 
-## Phase 5 — Posts, preview, QA (branch: phase-5 pending)
+## Phase 5 — Posts, preview, QA (branch: phase-5; lighthouse + a11y fixes landed in the phase-4 commit window)
 
 **Built:** post template verified on all 3 library posts; `scripts/
 lighthouse-run.mjs` (N-run median harness); all-route sweep (48 public routes:
