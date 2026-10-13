@@ -1163,6 +1163,49 @@ button:disabled {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
 }
+.icon-specimens {
+  display: grid;
+  gap: 24px;
+}
+.icon-strip {
+  border: 1px solid var(--line);
+  border-radius: var(--r-l);
+  background: var(--card);
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+}
+.icon-strip.on-night {
+  background: var(--night);
+  border-color: var(--night-3);
+  color: var(--ice);
+}
+.icon-strip .specimen-label {
+  color: var(--ink-2);
+}
+.icon-strip.on-night .specimen-label {
+  color: var(--ice-2);
+}
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+}
+.icon-row .icon-cell {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  min-width: 64px;
+}
+.icon-cell small {
+  font-size: 11px;
+  color: var(--ink-2);
+  font-family: var(--font-code);
+}
+.icon-strip.on-night .icon-cell small {
+  color: var(--ice-2);
+}
 .badge-specimens {
   display: grid;
   gap: 24px;
@@ -1895,14 +1938,19 @@ button:disabled {
     scroll-snap-type: x mandatory;
     padding-bottom: 16px;
   }
-  .badge-row-items {
+  .badge-row-items,
+  .icon-row {
     flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
     padding-bottom: 8px;
   }
-  .badge-row-items::-webkit-scrollbar {
+  .badge-row-items::-webkit-scrollbar,
+  .icon-row::-webkit-scrollbar {
     display: none;
+  }
+  .icon-row .icon-cell {
+    flex: none;
   }
   .badge-card {
     scroll-snap-align: start;
