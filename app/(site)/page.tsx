@@ -416,7 +416,7 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="track-badge"
-                src={`/images/icons/services/${badge}-256.webp`}
+                src={`/images/icons/services/${badge}@256.webp`}
                 alt=""
                 width={72}
                 height={72}

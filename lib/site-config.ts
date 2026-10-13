@@ -17,6 +17,7 @@ export const siteConfig = {
   email: confirm("single contact email"),
   address: confirm("clinic address and landmark"),
   mapsUrl: confirm("Google Maps link"),
+  videos: [] as { id: string; title: string; channel: string; thumb: string }[],
   geo: confirm("clinic coordinates"),
   clinicType: confirm("own clinic or consulting inside a hospital or clinic"),
   hours: confirm("consultation days, hours, Sundays and holidays"),

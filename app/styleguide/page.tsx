@@ -18,6 +18,7 @@ import {
 import { Brand, Button, SectionHeading } from "@/components/primitives";
 import { Icon } from "@/lib/icons";
 import { MedicalIcon, medicalIconNames } from "@/components/medical-icons";
+import { VideoFacade } from "@/components/video-facade";
 import { contrast, tokens } from "@/lib/design-tokens";
 import { faqs } from "@/lib/styleguide-copy";
 import { siteConfig } from "@/lib/site-config";
@@ -339,6 +340,19 @@ export default function Styleguide() {
             In clinic, by video or at <span className="serif">home.</span>
           </SectionHeading>
           <VideoCard />
+          <details className="spec-block spec-details">
+            <summary className="spec-label">
+              YouTube facade (click to load)
+            </summary>
+            <VideoFacade
+              video={{
+                id: "dQw4w9WgXcQ",
+                title: "Sample rehab video",
+                channel: "Rehabify",
+                thumb: "/images/icons/services/walking.webp",
+              }}
+            />
+          </details>
         </section>
         <DoctorCards />
         <section className="section wrap" id="faqs">

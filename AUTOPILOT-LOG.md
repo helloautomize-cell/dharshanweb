@@ -105,3 +105,63 @@ SEO is low by design (deliberate noindex). LCP ~3.0-3.3s local; the 2.0s
 budget is measured on the deployed preview (still blocked - no Vercel deploy).
 
 **Blocked:** Vercel preview (unchanged); Lighthouse numbers are local.
+
+## Phase 6 — Forms, analytics, integrations, headers (branch: phase-6)
+
+**Built:**
+- `lib/booking-shared.ts` + `lib/booking-schema.ts`: shared constants/phone
+  normalisation (client-safe) + Zod schema (server). Reason list from
+  site-plan order, 10-digit Indian mobile normalisation (+91/91/0 prefixes),
+  age years/months, date bounds computed in Asia/Kolkata, under-18 and
+  guardian-consent rules, consent required.
+- `app/(site)/contact/page.tsx` + `actions.ts` + `components/booking-form.tsx`:
+  dedicated contact page renders generated copy plus the real form. Server
+  action validates server-side, honeypot + HMAC-signed 3-second minimum fill
+  (silent redirect for bots), Turnstile when keys exist (skipped with one
+  server warning otherwise), Resend send with RESEND_MODE=mock|fail test
+  switch (mock writes artifacts/mock-email.html), 303 redirect to
+  /thank-you/?type=. Failure state keeps all typed values and shows the
+  Call/WhatsApp copy.
+- Progressive enhancement verified: form posts and validates with JavaScript
+  disabled (React resets uncontrolled fields after actions; the reason select
+  is keyed by the echoed value so it remounts with the right default).
+- Consent: `lib/consent.ts` versioned (v1, 12-month expiry); `lib/analytics.ts`
+  typed track() allowlist; `components/analytics.tsx` Consent Mode v2 defaults
+  + gtag injection only after Accept; manual page_view on route change keeps
+  utm_* only; Reject updates consent to denied and deletes _ga cookies.
+- `components/map-facade.tsx` click-to-load Google Maps embed + directions
+  link (hidden in production while address is CONFIRM); renders on
+  /plan-your-visit/ and /contact/.
+- `components/video-facade.tsx` youtube-nocookie click-to-load facade;
+  styleguide specimen only (siteConfig.videos empty).
+- Speed Insights via `components/speed-insights.tsx` (renders only on Vercel;
+  locally it 404s).
+- Security headers on all routes: HSTS, nosniff, Referrer-Policy,
+  Permissions-Policy, X-Frame-Options DENY, CSP (self + gtag/ga connect,
+  cloudflare challenges script+frame, youtube-nocookie + google maps frame).
+  CSP uses 'unsafe-inline' for script-src and style-src so pages stay static;
+  nonces would force dynamic rendering (deferred; noted as deviation).
+- `.env.example` and `docs/dns-resend.md` (current DNS snapshot + records to
+  add; rules: never touch existing MX, no second apex SPF).
+- Mobile dock hidden on /thank-you/ and while the booking form is focused.
+- Tests: tests/forms.spec.ts (6), tests/consent-headers.spec.ts (4).
+
+**Acceptance:** 28/28 Playwright PASS (forms: required-summary focus+links,
+mobile normalisation, under-18 gate, consent gate, honeypot silent redirect,
+<3s silent redirect; consent: zero third-party requests pre/post reject;
+headers: all present on /, /contact/, care page + noindex). Lint/typecheck/
+format/build PASS. Mock email verified to contain IST time, exact consent
+text, tel: and wa.me links. no-JS submission verified end-to-end (303 to
+/thank-you/?type=clinic). RESEND_MODE=fail verified (fail copy + kept values).
+
+**Deviation:** first-load JS measured gzipped in-browser: / = 158 KB,
+/contact/ = 163 KB (targets 120/150). Breakdown: ~110 KB is the React/Next
+runtime + shared layout chunks (header nav, consent banner, dock, spine nav)
+that every page needs; the rest is page widgets. Getting under the target
+means removing core interactive components; flagged for the P8 report rather
+than silently dropping features.
+
+**Blocked:** Turnstile real keys, Resend API key + verified domain,
+BOOKING_TO_EMAIL, GA4 id, PREVIEW_USER/PASS for preview Basic Auth (no
+preview host exists yet), Vercel Deployment Protection toggle, real
+end-to-end email to AGENCY_TEST_EMAIL, preview Lighthouse.
