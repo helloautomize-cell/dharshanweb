@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 import { SITE_INDEXABLE } from "./lib/site-config";
 
+const isDev = process.env.NODE_ENV !== "production";
+
 const config: NextConfig = {
   trailingSlash: true,
   poweredByHeader: false,
@@ -61,7 +63,7 @@ const config: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com https://va.vercel-scripts.com",
+              `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://challenges.cloudflare.com https://va.vercel-scripts.com`,
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https:",
               "font-src 'self'",

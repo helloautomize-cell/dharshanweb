@@ -3284,6 +3284,7 @@ th {
 }
 .visit-band {
   padding: 56px 0;
+  background: var(--night);
 }
 .visit-inner {
   display: flex;
@@ -3785,5 +3786,145 @@ body:has(.booking-form :focus-visible) .mobile-dock {
     cursor: pointer;
     font-weight: 600;
     padding: 12px 0;
+  }
+}
+
+.marquee-band {
+  position: relative;
+}
+.marquee-pause {
+  position: absolute;
+  inset-inline-end: 16px;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 2;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 237, 243, 0.3);
+  background: var(--night-2);
+  color: var(--ice);
+  font-family: var(--font-code), monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.marquee-band.paused .marquee-track {
+  animation-play-state: paused;
+}
+.marquee-band:hover .marquee-track,
+.marquee-band:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Mobile: >3 items become swipe strips; section height cap */
+@media (max-width: 767px) {
+  .bento-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: -16px;
+    padding-inline: 16px;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .bento-grid .bento-tile,
+  .bento-grid .bento-quote,
+  .bento-grid .goals-tile,
+  .bento-grid > .bento-tile:nth-child(n + 3) {
+    flex: 0 0 82vw;
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+  #ways .stack-list {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: -16px;
+    padding-inline: 16px;
+    padding-bottom: 12px;
+  }
+  #ways .stack-card {
+    position: static;
+    flex: 0 0 82vw;
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+  .recovery-steps {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    gap: 16px;
+  }
+  .recovery-step {
+    flex: 0 0 78vw;
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+  .recovery-grid {
+    grid-template-columns: 1fr;
+  }
+  .spine-visual {
+    display: none;
+  }
+
+  .principles {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+  .principles article {
+    flex: 0 0 74vw;
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+  .meet-photo {
+    max-width: 240px;
+  }
+  .az-groups {
+    max-height: 560px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-block: 40px;
+  }
+  .body-info {
+    padding: 18px;
+  }
+  .meet-photo {
+    max-width: 220px;
+  }
+  .az-groups {
+    max-height: 480px;
+  }
+  .visit-band {
+    padding: 36px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-block: 36px;
+  }
+  .section-head {
+    margin-bottom: 24px;
+  }
+  .body-visual {
+    display: none;
+  }
+  .also-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .also-row li {
+    flex: none;
   }
 }
