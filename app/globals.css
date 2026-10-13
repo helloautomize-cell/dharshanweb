@@ -3437,3 +3437,7 @@ th {
 .float-gonio {
   z-index: 3;
 }
+
+.visit-band .h3, .visit-band p { color: var(--ice); }
+.visit-band .kicker { color: var(--aqua); }
+#main { min-height: 40vh; }
