@@ -16,6 +16,8 @@ import {
   VideoCard,
 } from "@/components/medical-widgets";
 import { Brand, Button, SectionHeading } from "@/components/primitives";
+import { Icon } from "@/lib/icons";
+import { MedicalIcon, medicalIconNames } from "@/components/medical-icons";
 import { contrast, tokens } from "@/lib/design-tokens";
 import { faqs } from "@/lib/styleguide-copy";
 import { siteConfig } from "@/lib/site-config";
@@ -258,9 +260,79 @@ export default function Styleguide() {
           </SectionHeading>
           <BadgeCards />
           <details className="placeholder-disclosure">
-            <summary>All 28 badges at 256, 112 and 64 on night and paper</summary>
+            <summary>
+              All 28 badges at 256, 112 and 64 on night and paper
+            </summary>
             <BadgeGallery />
           </details>
+        </section>
+        <section className="section wrap" id="icons">
+          <SectionHeading>Icons</SectionHeading>
+          <div className="icon-specimens">
+            {(["paper", "night"] as const).map((surface) => (
+              <div
+                key={surface}
+                className={`icon-strip ${surface === "night" ? "on-night" : ""}`}
+              >
+                <span className="specimen-label">
+                  {surface === "night" ? "On night" : "On paper"} · Lucide,
+                  stroke 1.75
+                </span>
+                <div
+                  className="icon-row"
+                  role="region"
+                  aria-label="Lucide icon set"
+                  tabIndex={0}
+                >
+                  {(
+                    [
+                      "calendar",
+                      "phone",
+                      "whatsapp",
+                      "arrow",
+                      "chevronDown",
+                      "search",
+                      "video",
+                      "clock",
+                      "pin",
+                      "menu",
+                      "close",
+                      "check",
+                      "play",
+                      "pause",
+                      "mic",
+                      "sound",
+                      "alert",
+                      "info",
+                      "file",
+                    ] as const
+                  ).map((name) => (
+                    <span className="icon-cell" key={name}>
+                      <Icon name={name} size={24} />
+                      <small>{name}</small>
+                    </span>
+                  ))}
+                </div>
+                <span className="specimen-label">
+                  Code-drawn medical, 24 and 16
+                </span>
+                <div
+                  className="icon-row"
+                  role="region"
+                  aria-label="Code-drawn medical icons"
+                  tabIndex={0}
+                >
+                  {medicalIconNames.map((name) => (
+                    <span className="icon-cell" key={name}>
+                      <MedicalIcon name={name} size={24} />
+                      <MedicalIcon name={name} size={16} />
+                      <small>{name}</small>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
         <section className="section wrap" id="video">
           <SectionHeading>
