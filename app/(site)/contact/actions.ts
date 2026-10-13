@@ -34,9 +34,7 @@ function ist(date = new Date()) {
 
 function signTime(ts: string) {
   const secret = process.env.FORM_SECRET ?? "";
-  return secret
-    ? createHmac("sha256", secret).update(ts).digest("hex")
-    : null;
+  return secret ? createHmac("sha256", secret).update(ts).digest("hex") : null;
 }
 
 function validSignature(ts: string, sig: string) {
@@ -111,9 +109,10 @@ async function sendEmail(data: BookingData) {
     ["Submitted at", ist()],
     ["Consent", `${consentText} Ticked at ${ist()}`],
     ...(minor && data.guardianConsent === "on"
-      ? ([
-          ["Guardian consent", `${guardianText} Ticked at ${ist()}`],
-        ] as [string, string][])
+      ? ([["Guardian consent", `${guardianText} Ticked at ${ist()}`]] as [
+          string,
+          string,
+        ][])
       : []),
   ];
   const subject = `Booking request: ${data.reason} · ${data.format === "clinic" ? "Clinic visit" : "Video consult"} · ${data.doctor}`;
@@ -123,7 +122,9 @@ async function sendEmail(data: BookingData) {
         `<tr><th align="left" style="border-bottom:1px solid #dfe8ee">${k}</th><td style="border-bottom:1px solid #dfe8ee">${v}</td></tr>`,
     )
     .join("")}</table>`;
-  const text = rows.map(([k, v]) => `${k}: ${v.replace(/<[^>]+>/g, "")}`).join("\n");
+  const text = rows
+    .map(([k, v]) => `${k}: ${v.replace(/<[^>]+>/g, "")}`)
+    .join("\n");
 
   if (mode === "mock" || mode === "fail") {
     await mkdir("artifacts", { recursive: true });
@@ -145,7 +146,13 @@ async function sendEmail(data: BookingData) {
   const { Resend } = await import("resend");
   const resend = new Resend(key);
   try {
-    const { error } = await resend.emails.send({ from, to, subject, html, text });
+    const { error } = await resend.emails.send({
+      from,
+      to,
+      subject,
+      html,
+      text,
+    });
     if (error) {
       console.warn("booking: resend error");
       return false;

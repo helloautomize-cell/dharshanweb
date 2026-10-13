@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, MessageCircle, MapPin, Mail, AlertTriangle } from "lucide-react";
+import {
+  Phone,
+  MessageCircle,
+  MapPin,
+  Mail,
+  AlertTriangle,
+} from "lucide-react";
 import { getPage } from "@/lib/content";
 import { siteConfig, SITE_INDEXABLE } from "@/lib/site-config";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -59,7 +65,13 @@ export default async function ContactPage({
                 ? "Dr. Dharshan N A"
                 : undefined
           }
-          initialFormat={params.format === "video" ? "video" : params.format === "clinic" ? "clinic" : undefined}
+          initialFormat={
+            params.format === "video"
+              ? "video"
+              : params.format === "clinic"
+                ? "clinic"
+                : undefined
+          }
           initialReason={params.reason}
         />
       </section>

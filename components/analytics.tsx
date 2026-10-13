@@ -55,7 +55,10 @@ export function Analytics() {
     const flush = () => {
       if (hasAnalyticsConsent() && !consent.current) {
         consent.current = true;
-        sendView(window.location.pathname, new URLSearchParams(window.location.search));
+        sendView(
+          window.location.pathname,
+          new URLSearchParams(window.location.search),
+        );
       }
     };
     flush();
