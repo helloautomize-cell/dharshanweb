@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
   CalendarDays,
@@ -153,9 +154,9 @@ export function BadgeCards() {
             </div>
             <div className="badge-body">
               <h3 className="h3">
-                <a className="stretched-link" href={group.href}>
+                <Link className="stretched-link" href={group.href}>
                   {group.title}
-                </a>
+                </Link>
               </h3>
               <p>{group.line}</p>
               <span className="badge-arrow" aria-hidden="true">
@@ -235,10 +236,10 @@ export function VideoCard() {
           with a first plan.
         </p>
         <p className="example-label">Example video consultation</p>
-        <a className="text-link" href="/video-consultation/">
+        <Link className="text-link" href="/video-consultation/">
           Video consult
           <ArrowRight size={20} strokeWidth={1.75} aria-hidden="true" />
-        </a>
+        </Link>
       </div>
       <div className="video-example">
         <Image
@@ -286,7 +287,7 @@ export function SpineNavigator() {
         ["L1", "#badges", "Care for pain, nerves and movement"],
         ["S1", "#doctors", "Meet your doctors"],
       ].map(([vertebra, href, label], index) => (
-        <a
+        <Link
           key={vertebra}
           href={href}
           className={index === 0 ? "current" : ""}
@@ -294,7 +295,7 @@ export function SpineNavigator() {
         >
           <span className="vertebra" />
           <span className="vertebra-label">{label}</span>
-        </a>
+        </Link>
       ))}
     </nav>
   );
@@ -304,18 +305,18 @@ export function MobileDock() {
     <div className="phone-frame">
       <p className="h3">A rehab doctor, in clinic or by video.</p>
       <nav className="dock-demo" aria-label="Mobile booking dock">
-        <a href={siteConfig.phoneHref}>
+        <Link href={siteConfig.phoneHref}>
           <Phone size={20} strokeWidth={1.75} aria-hidden="true" />
           Call
-        </a>
-        <a className="dock-book" href="/contact/#book">
+        </Link>
+        <Link className="dock-book" href="/contact/#book">
           <CalendarDays size={20} strokeWidth={1.75} aria-hidden="true" />
           Book
-        </a>
-        <a href={siteConfig.whatsapp}>
+        </Link>
+        <Link href={siteConfig.whatsapp}>
           <MessageCircle size={20} strokeWidth={1.75} aria-hidden="true" />
           WhatsApp
-        </a>
+        </Link>
       </nav>
     </div>
   );
