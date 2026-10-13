@@ -19,34 +19,7 @@
 
 ## Service badges (Phase 1b)
 
-- pain-spine: code-drawn badge pending; Lucide placeholder only.
-- back-pain: code-drawn badge pending; Lucide placeholder only.
-- neck-pain: code-drawn badge pending; Lucide placeholder only.
-- sciatica: code-drawn badge pending; Lucide placeholder only.
-- injection: code-drawn badge pending; Lucide placeholder only.
-- neuro: code-drawn badge pending; Lucide placeholder only.
-- stroke: code-drawn badge pending; Lucide placeholder only.
-- spinal-cord: code-drawn badge pending; Lucide placeholder only.
-- head-injury: code-drawn badge pending; Lucide placeholder only.
-- parkinsons: code-drawn badge pending; Lucide placeholder only.
-- spasticity: code-drawn badge pending; Lucide placeholder only.
-- joints: code-drawn badge pending; Lucide placeholder only.
-- knee: code-drawn badge pending; Lucide placeholder only.
-- shoulder: code-drawn badge pending; Lucide placeholder only.
-- sports: code-drawn badge pending; Lucide placeholder only.
-- fracture: code-drawn badge pending; Lucide placeholder only.
-- prp: code-drawn badge pending; Lucide placeholder only.
-- prosthesis: code-drawn badge pending; Lucide placeholder only.
-- children: code-drawn badge pending; Lucide placeholder only.
-- cerebral-palsy: code-drawn badge pending; Lucide placeholder only.
-- muscular-dystrophy: code-drawn badge pending; Lucide placeholder only.
-- development: code-drawn badge pending; Lucide placeholder only.
-- older-adults: code-drawn badge pending; Lucide placeholder only.
-- balance: code-drawn badge pending; Lucide placeholder only.
-- bones: code-drawn badge pending; Lucide placeholder only.
-- video: code-drawn badge pending; Lucide placeholder only.
-- doctor-male: code-drawn badge pending; Lucide placeholder only.
-- doctor-female: code-drawn badge pending; Lucide placeholder only.
+All 28 badges drawn in code and exported to icons/services/ (PNG + WebP at 512 and 256).
 
 ## Doctor approvals
 

@@ -1,0 +1,15 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="badge-disc" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#173251"/>
+      <stop offset="100%" stop-color="#0A1626"/>
+    </radialGradient>
+    <linearGradient id="badge-line" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6FD0E6"/>
+      <stop offset="100%" stop-color="#D9EDF3"/>
+    </linearGradient>
+  </defs>
+  <circle cx="512" cy="512" r="470" fill="url(#badge-disc)"/>
+  <circle cx="512" cy="512" r="410" fill="none" stroke="#D9EDF3" stroke-opacity="0.18" stroke-width="6"/>
+  <!-- @drawing -->
+</svg>

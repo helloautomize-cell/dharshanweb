@@ -9,6 +9,7 @@ import { GoalsBento } from "@/components/goals-bento";
 import { NavigationDemo } from "@/components/navigation-demo";
 import {
   BadgeCards,
+  BadgeGallery,
   Goniometer,
   MobileDock,
   SpineNavigator,
@@ -256,6 +257,10 @@ export default function Styleguide() {
             Care for pain, nerves and <span className="serif">movement.</span>
           </SectionHeading>
           <BadgeCards />
+          <details className="placeholder-disclosure">
+            <summary>All 28 badges at 256, 112 and 64 on night and paper</summary>
+            <BadgeGallery />
+          </details>
         </section>
         <section className="section wrap" id="video">
           <SectionHeading>

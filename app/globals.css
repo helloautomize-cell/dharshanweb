@@ -1163,6 +1163,42 @@ button:disabled {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
 }
+.badge-specimens {
+  display: grid;
+  gap: 24px;
+  margin-top: 40px;
+}
+.badge-strip {
+  border: 1px solid var(--line);
+  border-radius: var(--r-l);
+  background: var(--card);
+  padding: 24px;
+  display: grid;
+  gap: 20px;
+}
+.badge-strip.on-night {
+  background: var(--night);
+  border-color: var(--night-3);
+}
+.badge-strip.on-night .specimen-label {
+  color: var(--ice-2);
+}
+.badge-row {
+  display: grid;
+  gap: 10px;
+}
+.badge-row-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+}
+.badge-row-items img {
+  border-radius: 50%;
+}
+.badge-strip:not(.on-night) .badge-row-items img {
+  box-shadow: 0 2px 10px -4px rgba(10, 22, 38, 0.4);
+}
 .badge-card {
   position: relative;
   border-radius: var(--r-l);
@@ -1858,6 +1894,15 @@ button:disabled {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 16px;
+  }
+  .badge-row-items {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+  }
+  .badge-row-items::-webkit-scrollbar {
+    display: none;
   }
   .badge-card {
     scroll-snap-align: start;

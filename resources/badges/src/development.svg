@@ -1,0 +1,11 @@
+<g fill="none" stroke="url(#badge-line)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="382" y="560" width="95" height="95" rx="14"/>
+  <rect x="477" y="560" width="95" height="95" rx="14"/>
+  <rect x="429" y="465" width="95" height="95" rx="14"/>
+  <path d="M580 650C632 616 658 556 694 498C718 458 748 430 772 398" stroke-dasharray="2 30"/>
+</g>
+<circle cx="477" cy="512" r="15" fill="#F2B48A"/>
+<g stroke="#D9EDF3" stroke-opacity="0.4" stroke-width="10" stroke-linecap="round" fill="none">
+  <path d="M340 420v-32m-16 16h32"/>
+  <path d="M660 700v-32m-16 16h32"/>
+</g>
