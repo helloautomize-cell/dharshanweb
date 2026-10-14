@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@/lib/icons";
 import { Confirm } from "@/components/primitives";
 import { CookieSettingsButton } from "@/components/cookie-banner";
@@ -10,7 +11,7 @@ export function SiteFooter() {
     <footer className="site-footer on-night" data-dark>
       <div className="footer-cols wrap">
         <div className="footer-brand">
-          <a className="nav-brand" href="/" aria-label="Rehabify home">
+          <Link className="nav-brand" href="/" aria-label="Rehabify home">
             <Image
               src="/images/brand/mark-ice@3x.png"
               alt=""
@@ -20,15 +21,15 @@ export function SiteFooter() {
               unoptimized
             />
             <b>Rehabify</b>
-          </a>
+          </Link>
           <p>
             Physical medicine and rehabilitation in Bengaluru, with video
             consultations across India.
           </p>
           <p>
-            <a href={siteConfig.phoneHref}>{siteConfig.phone}</a>
+            <Link href={siteConfig.phoneHref}>{siteConfig.phone}</Link>
             {" · "}
-            <a href={siteConfig.whatsapp}>WhatsApp</a>
+            <Link href={siteConfig.whatsapp}>WhatsApp</Link>
           </p>
           <p className="muted">
             <Confirm>CONFIRM: clinic address and hours</Confirm>
@@ -43,7 +44,7 @@ export function SiteFooter() {
                   {link.href === "#cookie-settings" ? (
                     <CookieSettingsButton />
                   ) : (
-                    <a href={link.href}>{link.label}</a>
+                    <Link href={link.href}>{link.label}</Link>
                   )}
                 </li>
               ))}
@@ -56,8 +57,8 @@ export function SiteFooter() {
           © 2026 Rehabify. For education; it does not replace a consultation.
         </span>
         <span className="footer-emergency">
-          Medical emergency? Call <a href="tel:108">108</a> or{" "}
-          <a href="tel:112">112</a>
+          Medical emergency? Call <Link href="tel:108">108</Link> or{" "}
+          <Link href="tel:112">112</Link>
         </span>
       </div>
       <div className="footer-giant wrap" aria-hidden="true">
@@ -69,21 +70,21 @@ export function SiteFooter() {
 export function MobileDock() {
   return (
     <nav className="mobile-dock" aria-label="Quick actions">
-      <a className="dock-book" href="/contact/#book">
+      <Link className="dock-book" href="/contact/#book">
         <Icon name="calendar" size={20} />
         Book
-      </a>
-      <a href={siteConfig.phoneHref}>
+      </Link>
+      <Link href={siteConfig.phoneHref}>
         <Icon name="phone" size={20} />
         Call
-      </a>
-      <a
+      </Link>
+      <Link
         className="dock-wa"
         href={siteConfig.whatsapp}
         aria-label="WhatsApp Rehabify"
       >
         <Icon name="whatsapp" size={20} />
-      </a>
+      </Link>
     </nav>
   );
 }

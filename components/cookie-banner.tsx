@@ -1,7 +1,7 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Icon } from "@/lib/icons";
 import { openCookieSettings, readConsent, writeConsent } from "@/lib/consent";
 
 export function CookieSettingsButton() {
@@ -23,13 +23,17 @@ export function CookieBanner() {
   const panel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (readConsent() === null) setVisible(true);
+    const show = readConsent() === null;
     const open = () => {
       setSettings(true);
       setVisible(true);
     };
     addEventListener("rehabify:cookie-settings", open);
-    return () => removeEventListener("rehabify:cookie-settings", open);
+    const frame = show ? requestAnimationFrame(() => setVisible(true)) : 0;
+    return () => {
+      cancelAnimationFrame(frame);
+      removeEventListener("rehabify:cookie-settings", open);
+    };
   }, []);
 
   useEffect(() => {
@@ -118,7 +122,7 @@ export function CookieBanner() {
         )}
       </div>
       <p className="cookie-fine">
-        Details in the <a href="/privacy-policy/">privacy policy</a>.
+        Details in the <Link href="/privacy-policy/">privacy policy</Link>.
       </p>
     </div>
   );
