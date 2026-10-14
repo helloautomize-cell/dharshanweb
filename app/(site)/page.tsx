@@ -1,23 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
+import { Fragment, type CSSProperties } from "react";
 import type { Metadata } from "next";
-import { ArrowRight, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
-import { Button, DoctorPortrait, Confirm } from "@/components/primitives";
+import { Confirm } from "@/components/primitives";
 import { FinderBar } from "@/components/finder-bar";
 import { BodyMap } from "@/components/body-map";
-import { Goniometer } from "@/components/medical-widgets";
-import {
-  QuoteTile,
-  GoalsTile,
-  ClinicVideoTile,
-  ConditionsAZ,
-  MarqueePause,
-} from "@/components/home-widgets";
-import {
-  ReviewerBox,
-  CtaBand,
-  EmergencyStrip,
-} from "@/components/pages/shared";
+import { CareIndex } from "@/components/care-index";
+import { HomeEffects } from "@/components/home-effects";
+import { GoalsTile, ConditionsAZ } from "@/components/home-widgets";
+import { QuickAnswers } from "@/components/quick-answers";
 import {
   faqPage,
   medicalWebPage,
@@ -34,141 +26,93 @@ export const metadata: Metadata = {
   description: page.meta.description,
 };
 
-const marquee = [
-  "Stroke",
-  "Back pain",
-  "Knee osteoarthritis",
-  "Spinal cord injury",
-  "Sciatica",
-  "Frozen shoulder",
-  "Neck pain",
-  "Parkinson's disease",
-  "Sports injuries",
-  "Cerebral palsy",
-  "Head injury",
-  "Osteoporosis",
+const arrow = (
+  <svg
+    className="arr"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    aria-hidden="true"
+  >
+    <path d="M5 12h14M13 6l6 6-6 6" />
+  </svg>
+);
+
+const calIcon = (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    aria-hidden="true"
+  >
+    <rect x="3" y="5" width="18" height="16" rx="3" />
+    <path d="M8 3v4M16 3v4M3 10h18" />
+  </svg>
+);
+
+/* Vertebra positions along the journey curve at (i+.5)/6 of path length,
+   matching v3's getPointAtLength output. */
+const journeyVerts: [number, number][] = [
+  [52, 68],
+  [41, 154],
+  [63, 228],
+  [60, 318],
+  [40, 406],
+  [49, 512],
 ];
 
-const careCards = [
-  [
-    "Pain and spine",
-    "Back pain",
-    "Discs, joints and muscles. Exercise first, procedures when suitable.",
-    "/pain-and-spine/back-pain/",
-    "back-pain",
-  ],
-  [
-    "Pain and spine",
-    "Neck pain",
-    "Including pain that travels down the arm.",
-    "/pain-and-spine/neck-pain/",
-    "neck-pain",
-  ],
-  [
-    "Pain and spine",
-    "Sciatica",
-    "Pain that runs from the back down the leg.",
-    "/pain-and-spine/sciatica/",
-    "sciatica",
-  ],
-  [
-    "Pain and spine",
-    "Image-guided injections",
-    "Nerve blocks and joint injections, guided by imaging.",
-    "/pain-and-spine/image-guided-injections/",
-    "injections",
-  ],
-  [
-    "Neuro rehab",
-    "Stroke rehab",
-    "Movement, balance, speech and daily tasks.",
-    "/neuro-rehabilitation/stroke/",
-    "stroke",
-  ],
-  [
-    "Neuro rehab",
-    "Spinal cord injury",
-    "Mobility, independence and preventing complications.",
-    "/neuro-rehabilitation/spinal-cord-injury/",
-    "spine-injury",
-  ],
-  [
-    "Neuro rehab",
-    "Parkinson's disease",
-    "Keep moving safely, reduce falls.",
-    "/neuro-rehabilitation/parkinsons/",
-    "parkinsons",
-  ],
-  [
-    "Joints and sport",
-    "Knee pain",
-    "Including osteoarthritis and after surgery.",
-    "/joints-and-sports/knee-pain/",
-    "knee",
-  ],
-  [
-    "Joints and sport",
-    "Sports injuries",
-    "A guided return to training and play.",
-    "/joints-and-sports/sports-injuries/",
-    "sports",
-  ],
-  [
-    "Children",
-    "Children's rehab",
-    "Cerebral palsy, muscular dystrophy and development.",
-    "/childrens-rehabilitation/",
-    "children",
-  ],
-  [
-    "Older adults",
-    "Falls and balance",
-    "Balance, strength and safety at home.",
-    "/older-adults/falls-and-balance/",
-    "older",
-  ],
-  [
-    "Joints and sport",
-    "Prosthetic training",
-    "Learning to walk with a new limb.",
-    "/joints-and-sports/prosthetic-rehab/",
-    "prosthetics",
-  ],
-] as const;
+const condStrip: [string, string][] = [
+  ["Back pain", "/pain-and-spine/back-pain/"],
+  ["Neck pain", "/pain-and-spine/neck-pain/"],
+  ["Sciatica", "/pain-and-spine/sciatica/"],
+  ["Stroke", "/neuro-rehabilitation/stroke/"],
+  ["Knee pain", "/joints-and-sports/knee-pain/"],
+];
+
+import { missingBadges } from "@/lib/service-badges";
+
+const { existsSync } = await import("node:fs");
+// Phase 7b: fail the build if a service badge file is missing.
+for (const badge of missingBadges) {
+  const file = `public/images/icons/services/${badge}@256.webp`;
+  if (!existsSync(file)) throw new Error(`Missing service badge: ${file}`);
+}
 
 const recoverySteps = [
   [
-    "01",
     "Book",
     "Book online, call or WhatsApp. Choose a clinic visit or a video consult.",
     ["Clinic or video", "Confirmed by phone"],
   ],
   [
-    "02",
     "First consultation",
     "The doctor asks about your problem, checks how you move, your strength, balance and pain, and reads your scans.",
     ["Movement", "Strength", "Balance"],
   ],
   [
-    "03",
     "Your goals",
     "Together you agree on what matters: walking without support, sleeping without pain, getting back to work or sport.",
     ["Your words", "Measurable"],
   ],
   [
-    "04",
     "Your plan",
     "Exercise, therapy, medicines and, only when suitable, image-guided procedures. Every part explained in plain words.",
     ["Written plan", "Plain words"],
   ],
   [
-    "05",
     "Practice at home",
     "A home programme with clear steps, sets and repetitions, so progress continues between visits.",
     ["Home programme", "WhatsApp questions"],
   ],
   [
-    "06",
     "Review and adjust",
     "At each review the doctor measures your progress and changes the plan as you improve.",
     ["Range of motion", "Next goal"],
@@ -192,10 +136,16 @@ const quickAnswers = [
     "Is every pain treated with an injection?",
     "No. Most plans start with exercise, posture advice and medicines. Image-guided injections or nerve blocks are used only when the doctor finds them suitable after examining you, and every option is explained before you decide.",
   ],
+  ["How do I book?", "Online, by phone or on WhatsApp at +91 79048 42576."],
+  [
+    "What should I bring?",
+    "Scans, reports, discharge summary, medicines and any walking aids.",
+  ],
 ] as const;
 
 export default function Home() {
   const doctor = siteConfig.doctors[0];
+  const second = siteConfig.doctors[1];
   return (
     <>
       <script
@@ -218,431 +168,572 @@ export default function Home() {
           }),
         }}
       />
-      {/* 1. Hero (night stage) */}
-      <section className="stage home-hero on-night" data-spine="Home" id="top">
-        <div className="hero-copy">
-          <p className="hero-pill">
-            Physical medicine and rehabilitation · Bengaluru and online
-          </p>
-          <h1 className="display" id="hero-title">
-            Rehab that moves <span className="serif">with you.</span>
-          </h1>
-          <p className="lede">
-            A rehabilitation doctor assesses how you move, sets goals with you
-            and plans each step back to the things you want to do. For pain,
-            stroke, spine and sports injuries.
-          </p>
-          <div className="button-row">
-            <Button kind="glow" />
-            <Button kind="ghost" href="#concern">
-              Where does it hurt?
-              <ArrowRight size={18} strokeWidth={1.75} aria-hidden="true" />
-            </Button>
-          </div>
-          <p className="hero-facts">
-            MD Physical Medicine and Rehabilitation · Fellowship Interventional
-            pain · Clinic + video
-          </p>
-        </div>
-        <div className="hero-visual">
-          <div className="doctor-fan">
-            <DoctorPortrait
-              id="dr-selina-hero"
-              alt="Dr. Selina Kh in a white coat with a stethoscope"
-              className="back-arch"
-            />
-            <DoctorPortrait
-              id="dr-dharshan-hero"
-              alt="Dr. Dharshan N A in a white coat, arms crossed, in a rehabilitation corridor"
-              priority
-              className="front-arch"
-            />
-          </div>
-          <div className="float-chip float-a">
-            <span className="chip-dot" />
-            Video consults available
-          </div>
-          <div className="float-gonio">
-            <Goniometer />
-            <p className="gonio-caption mono">
-              Knee flexion · example · measured at each review
+      <HomeEffects />
+
+      {/* 1 · HERO */}
+      <section
+        className="stage on-night"
+        id="top"
+        data-dark
+        style={{ marginTop: 12 }}
+      >
+        <div className="hero">
+          <div className="hero-text">
+            <span className="pill">
+              <span className="dot" />
+              Physical medicine and rehabilitation · Bengaluru and online
+            </span>
+            <h1>
+              Rehab that
+              <br />
+              moves <span className="serif">with you.</span>
+            </h1>
+            <p className="lede">
+              A rehabilitation doctor assesses how you move, sets goals with you
+              and plans each step back to the things you want to do. For pain,
+              stroke, spine and sports injuries.
             </p>
+            <div className="btns">
+              <Link className="btn btn-invert" href="/contact/#book">
+                <span className="ic">{calIcon}</span>
+                Book a consultation
+              </Link>
+              <Link className="btn btn-ghost" href="#where">
+                Where does it hurt? {arrow}
+              </Link>
+            </div>
           </div>
-          <p className="arch-caption">
-            Dr. Dharshan N A · Consultant physiatrist
-          </p>
+          <div className="visual">
+            <div className="arch">
+              <Image
+                src="/images/doctors/dr-dharshan-hero.jpg"
+                alt="Dr. Dharshan N A in a white coat, arms crossed"
+                fill
+                priority
+                sizes="(max-width: 1023px) 90vw, 430px"
+              />
+              <div className="who">
+                <b>Dr. Dharshan N A</b>
+                <span>Consultant physiatrist</span>
+              </div>
+            </div>
+            <div className="arch arch2">
+              <Image
+                src="/images/doctors/dr-selina-hero.jpg"
+                alt=""
+                fill
+                sizes="250px"
+                className="ph"
+              />
+              <div className="who">
+                <b>Dr. Selina Kh</b>
+                <span>Consultant physiatrist</span>
+              </div>
+            </div>
+          </div>
+          <div className="facts">
+            <span className="fact">
+              <b>MD</b>
+              <span>Physical medicine and rehabilitation</span>
+            </span>
+            <span className="fact">
+              <b>Fellowship</b>
+              <span>Interventional pain</span>
+            </span>
+            <span className="fact">
+              <b>Two</b>
+              <span>Rehabilitation doctors</span>
+            </span>
+            <span className="fact">
+              <b>Clinic + video</b>
+              <span>Bengaluru and online</span>
+            </span>
+          </div>
         </div>
-        <p className="hero-short">A rehab doctor, in clinic or by video.</p>
       </section>
 
-      {/* 2. Finder bar */}
-      <section className="section finder-band" aria-label="Find care">
-        <FinderBar />
-      </section>
+      {/* 2 · FINDER */}
+      <FinderBar />
 
-      {/* 3. Marquee */}
-      <section className="marquee-band" aria-label="Conditions we see">
-        <MarqueePause />
-        <div className="marquee-track">
-          {[0, 1].map((copy) => (
-            <ul key={copy} aria-hidden={copy === 1 || undefined}>
-              {marquee.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          ))}
-        </div>
-      </section>
+      {/* 3 · CONDITIONS STRIP */}
+      <nav className="cond-strip" aria-label="Common concerns">
+        {condStrip.map(([label, href], i) => (
+          <Fragment key={href}>
+            {i > 0 && <i className="dot" aria-hidden="true" />}
+            <Link href={href}>{label}</Link>
+          </Fragment>
+        ))}
+      </nav>
 
-      {/* 4. Why Rehabify (bento) */}
-      <section className="section wrap" id="why" data-spine="Why Rehabify">
-        <div className="section-head">
-          <p className="kicker">Why Rehabify</p>
-          <h2 className="h2">
-            Rehab planned by a <em>doctor</em>, around your goals.
-          </h2>
+      {/* 4 · WHY (bento) */}
+      <section className="sec wrap" id="why">
+        <div className="head split">
+          <div style={{ display: "grid", gap: 18 }}>
+            <span className="kicker">Why Rehabify</span>
+            <h2 className="h2">
+              Rehab planned by a <span className="serif">doctor</span>, around
+              your goals.
+            </h2>
+          </div>
           <p className="lede">
             Physiatrists are doctors who specialise in movement, pain and
             function. That changes where your rehab starts and how it is
             measured.
           </p>
         </div>
-        <div className="bento-grid">
-          <QuoteTile />
-          <GoalsTile />
-          <article className="bento-tile">
-            <p className="kicker">Pain care</p>
-            <h3 className="h3">Image-guided injections, only when suitable.</h3>
-            <p className="muted">
+        <div className="bento">
+          <article className="tile t-a">
+            <span className="mono">How it starts</span>
+            <blockquote>
+              Your plan is written by a <b>rehabilitation doctor</b> after
+              examining you, and it changes as you do.
+            </blockquote>
+            <div className="byline">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/doctors/dr-dharshan-avatar-160.jpg"
+                width={46}
+                height={46}
+                alt=""
+              />
+              <div>
+                <b>Dr. Dharshan N A</b>
+                <span>MBBS, MD (Physical Medicine and Rehabilitation)</span>
+              </div>
+            </div>
+          </article>
+          <article className="tile t-b">
+            <span className="mono">Goals you choose · try it</span>
+            <h3>Progress is measured in the things you can do again.</h3>
+            <GoalsTile />
+          </article>
+          <article className="tile t-c">
+            <span className="mono">Pain care</span>
+            <h3>Image-guided injections, only when suitable.</h3>
+            <p>
               Most plans start with exercise and medicines. Nerve blocks and
               joint injections are guided by imaging.
             </p>
-            <Link
-              href="/pain-and-spine/image-guided-injections/"
-              className="text-link"
-            >
-              Pain and spine care
-              <ArrowRight size={18} strokeWidth={1.75} aria-hidden="true" />
-            </Link>
           </article>
-          <article className="bento-tile">
-            <p className="kicker">Neuro rehab</p>
-            <h3 className="h3">Brain, spine and nerve recovery.</h3>
-            <p className="muted">
+          <article className="tile t-d">
+            <span className="mono">Neuro rehab</span>
+            <h3>Brain, spine and nerve recovery.</h3>
+            <p>
               Stroke, head injury, spinal cord injury, Parkinson&rsquo;s
               disease.
             </p>
-            <Link href="/neuro-rehabilitation/" className="text-link">
-              Neuro rehabilitation
-              <ArrowRight size={18} strokeWidth={1.75} aria-hidden="true" />
-            </Link>
           </article>
-          <article className="bento-tile">
-            <p className="kicker">For</p>
-            <h3 className="h3">Every age.</h3>
-            <ul className="age-list">
-              <li>
-                <Link href="/childrens-rehabilitation/">Children</Link>
-              </li>
-              <li>
-                <Link href="/joints-and-sports/">Adults</Link>
-              </li>
-              <li>
-                <Link href="/older-adults/">Older adults</Link>
-              </li>
-            </ul>
+          <article className="tile t-e">
+            <span className="mono">For</span>
+            <h3>Every age.</h3>
+            <div className="ages">
+              <Link href="/childrens-rehabilitation/">Children</Link>
+              <Link href="/joints-and-sports/">Adults</Link>
+              <Link href="/older-adults/">Older adults</Link>
+            </div>
           </article>
-          <ClinicVideoTile />
         </div>
       </section>
 
-      {/* 5. Body map */}
-      <section
-        className="section wrap"
-        id="concern"
-        data-spine="Where it hurts"
-      >
-        <div className="section-head">
-          <p className="kicker">Find care by concern</p>
-          <h2 className="h2">
-            Where does it <em>hurt?</em>
-          </h2>
+      {/* 5 · BODY MAP */}
+      <section className="sec wrap" id="where" style={{ paddingTop: 0 }}>
+        <div className="head split">
+          <div style={{ display: "grid", gap: 18 }}>
+            <span className="kicker">Find care by concern</span>
+            <h2 className="h2">
+              Where does it <span className="serif">hurt?</span>
+            </h2>
+          </div>
           <p className="lede">
             Tap the body or choose an area. You will see what the doctor looks
             after there and where to go next.
           </p>
         </div>
         <BodyMap />
-        <ul className="also-row">
-          <li>
-            <Link href="/childrens-rehabilitation/">
-              Children&rsquo;s rehab
-            </Link>
-          </li>
-          <li>
-            <Link href="/older-adults/">Older adults</Link>
-          </li>
-          <li>
-            <Link href="/joints-and-sports/after-fracture-or-surgery/">
-              After a fracture or surgery
-            </Link>
-          </li>
-          <li>
-            <Link href="/joints-and-sports/prosthetic-rehab/">
-              Amputation and prosthesis
-            </Link>
-          </li>
-        </ul>
       </section>
 
-      {/* 6. Care track */}
-      <section className="section wrap" id="care" data-spine="How we can help">
-        <div className="section-head">
-          <p className="kicker">How we can help</p>
-          <h2 className="h2">
-            Care for pain, nerves and <em>movement.</em>
-          </h2>
+      {/* 6 · CARE INDEX */}
+      <section className="sec wrap" id="care">
+        <div className="head split">
+          <div style={{ display: "grid", gap: 18 }}>
+            <span className="kicker">How we can help</span>
+            <h2 className="h2">
+              Care for pain, nerves and <span className="serif">movement.</span>
+            </h2>
+          </div>
           <p className="lede">
-            Each card opens a full page on the condition, what happens at your
+            Each one opens a full page on the condition, what happens at your
             visit and what to expect.
           </p>
         </div>
-        <div
-          className="care-track"
-          role="region"
-          aria-label="Care pages"
-          tabIndex={0}
-        >
-          {careCards.map(([group, title, line, href, badge]) => (
-            <article className="track-card" key={title}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="track-badge"
-                src={`/images/icons/services/${badge}@256.webp`}
-                alt=""
-                width={72}
-                height={72}
-                loading="lazy"
-              />
-              <p className="kicker">{group}</p>
-              <h3 className="h3">{title}</h3>
-              <p className="muted">{line}</p>
-              <Link className="stretched-link" href={href} aria-label={title} />
-            </article>
-          ))}
-        </div>
-        <Link href="/care/" className="text-link">
-          See all care
-          <ArrowRight size={20} strokeWidth={1.75} aria-hidden="true" />
-        </Link>
+        <CareIndex />
       </section>
 
-      {/* 7. Recovery spine */}
-      <section
-        className="section wrap on-night recovery"
-        id="recovery"
-        data-spine="Your recovery"
-      >
-        <div className="section-head">
-          <p className="kicker">Your recovery</p>
+      {/* 7 · JOURNEY */}
+      <section className="sec wrap" id="journey">
+        <div className="head" style={{ maxWidth: 820 }}>
+          <span className="kicker">Your recovery</span>
           <h2 className="h2">
-            Six steps, one <em>spine.</em>
+            Six steps, one <span className="serif">spine.</span>
           </h2>
+          <p className="lede">
+            As you scroll, the spine draws itself and each step lights up a
+            vertebra.
+          </p>
         </div>
-        <div className="recovery-grid">
-          <div className="spine-visual" aria-hidden="true">
-            {recoverySteps.map(([n]) => (
-              <span key={n} className="vertebra" />
+        <div className="jr">
+          <div className="jr-pin stage on-night" data-dark>
+            <div className="aur" aria-hidden="true">
+              <i />
+              <i />
+            </div>
+            <svg
+              viewBox="0 0 120 600"
+              preserveAspectRatio="xMidYMid meet"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="jg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stopColor="#6FD0E6" />
+                  <stop offset="1" stopColor="#F2B48A" />
+                </linearGradient>
+              </defs>
+              <path
+                className="track"
+                d="M60 20 C 30 120, 90 200, 60 300 S 30 480, 60 580"
+              />
+              <path
+                className="drawn"
+                id="jpath"
+                d="M60 20 C 30 120, 90 200, 60 300 S 30 480, 60 580"
+                pathLength="1000"
+                strokeDasharray="1000"
+                strokeDashoffset="1000"
+              />
+              <g id="jverts">
+                {recoverySteps.map((_, i) => {
+                  // positions along the curve, matching getPointAtLength
+                  const pts = journeyVerts[i];
+                  return (
+                    <rect
+                      key={i}
+                      className="v"
+                      x={pts[0] - 16}
+                      y={pts[1] - 8}
+                      width="32"
+                      height="16"
+                      rx="8"
+                    />
+                  );
+                })}
+              </g>
+            </svg>
+            <div>
+              <div className="jr-n" id="jn">
+                01
+              </div>
+              <div className="jr-t" id="jt">
+                {recoverySteps[0][0]}
+              </div>
+              <p className="jr-s mono" id="js">
+                Step 1 of {recoverySteps.length}
+              </p>
+            </div>
+          </div>
+          <div className="steps">
+            {recoverySteps.map(([title, text, tags], i) => (
+              <div className="step" key={title} data-title={title} data-i={i}>
+                <span className="mono">
+                  Step {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+                <div className="tagrow">
+                  {tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
-          <ol className="recovery-steps">
-            {recoverySteps.map(([n, title, text, tags]) => (
-              <li key={n} className="recovery-step">
-                <p className="step-n mono">{n}</p>
-                <h3 className="h3">{title}</h3>
-                <p>{text}</p>
-                <ul className="tag-list">
-                  {tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
 
-      {/* 8. Ways to see us (stacking cards) */}
-      <section className="section wrap" id="ways" data-spine="Ways to see us">
-        <div className="section-head">
-          <p className="kicker">Ways to see us</p>
-          <h2 className="h2">
-            In clinic, by video or at <em>home.</em>
-          </h2>
-        </div>
-        <div className="stack-list">
-          <article
-            className="stack-card"
-            style={{ top: "calc(var(--nav-h, 90px) + 0px)" }}
-          >
-            <p className="kicker">01 · Clinic visit</p>
-            <h3 className="h3">See the doctor in person.</h3>
-            <p>
-              A full examination of how you move, with procedures done on site
-              when needed.
-            </p>
-            <ul className="content-list">
-              <li>Bring scans, reports and medicines</li>
-              <li>Wear loose clothes</li>
-              <li>By appointment</li>
-            </ul>
-            <Button href="/contact/#book">Book a clinic visit</Button>
-          </article>
-          <article
-            className="stack-card"
-            style={{ top: "calc(var(--nav-h, 90px) + 16px)" }}
-          >
-            <p className="kicker">02 · Video consult</p>
-            <h3 className="h3">Start from home.</h3>
-            <p>
-              Share your reports, show the doctor how you move on camera and
-              leave with a first plan.
-            </p>
-            <ul className="content-list">
-              <li>Good for first advice and follow-ups</li>
-              <li>Reports shared before the call</li>
-              <li>The doctor says if you need to come in</li>
-            </ul>
-            <Button href="/video-consultation/">Book a video consult</Button>
-          </article>
-          <article
-            className="stack-card"
-            style={{ top: "calc(var(--nav-h, 90px) + 32px)" }}
-          >
-            <p className="kicker">03 · Home programme</p>
-            <h3 className="h3">Keep going between visits.</h3>
-            <p>
-              Every plan comes with exercises for home, checked and changed at
-              each review.
-            </p>
-            <ul className="content-list">
-              <li>Clear steps, sets and repetitions</li>
-              <li>Updated as you improve</li>
-              <li>Questions on WhatsApp</li>
-            </ul>
-          </article>
-        </div>
-        <Confirm>formats offered; home visits?</Confirm>
-      </section>
-
-      {/* 9. Meet your doctor */}
-      <section className="section wrap" id="meet" data-spine="Meet your doctor">
-        <div className="meet-grid">
-          <div>
-            <p className="kicker">Meet your doctor</p>
+      {/* 8 · WAYS (stacking cards) */}
+      <section className="sec wrap" id="ways" style={{ paddingTop: 0 }}>
+        <div className="head split">
+          <div style={{ display: "grid", gap: 18 }}>
+            <span className="kicker">Ways to see us</span>
             <h2 className="h2">
-              Dr. Dharshan <em>N A</em>
+              In clinic, by video or at <span className="serif">home.</span>
             </h2>
-            <p className="lede">
+          </div>
+          <p className="lede">
+            <Confirm>formats offered and clinic location</Confirm>
+          </p>
+        </div>
+        <div className="stack">
+          <article className="sc" style={{ "--i": 0 } as CSSProperties}>
+            <div className="tx">
+              <span className="mono">01 · Clinic visit</span>
+              <h3>See the doctor in person.</h3>
+              <p>
+                A full examination of how you move, with procedures done on site
+                when needed.
+              </p>
+              <ul>
+                <li>Bring scans, reports and medicines</li>
+                <li>Wear loose clothes</li>
+                <li>By appointment</li>
+              </ul>
+              <Link className="btn btn-primary" href="/contact/#book">
+                <span className="ic">{arrow}</span>
+                Book a clinic visit
+              </Link>
+            </div>
+            <div className="ui photo">
+              <Image
+                src="/images/doctors/dr-dharshan-banner.jpg"
+                alt="Dr. Dharshan N A in a hospital lobby"
+                fill
+                sizes="(max-width: 1023px) 100vw, 50vw"
+              />
+            </div>
+          </article>
+          <article className="sc" style={{ "--i": 1 } as CSSProperties}>
+            <div className="tx">
+              <span className="mono">02 · Video consult</span>
+              <h3>Start from home.</h3>
+              <p>
+                Share your reports, show the doctor how you move on camera and
+                leave with a first plan.
+              </p>
+              <ul>
+                <li>Good for first advice and follow-ups</li>
+                <li>Reports shared before the call</li>
+                <li>The doctor says if you need to come in</li>
+              </ul>
+              <Link className="btn btn-primary" href="/video-consultation/">
+                <span className="ic">{arrow}</span>
+                Book a video consult
+              </Link>
+            </div>
+            <div className="ui photo">
+              <Image
+                src="/images/doctors/dr-dharshan-video.jpg"
+                alt="Dr. Dharshan N A on a video consult"
+                fill
+                sizes="(max-width: 1023px) 100vw, 50vw"
+              />
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* 9 · DOCTOR */}
+      <section className="sec wrap" id="doctor" style={{ paddingTop: 0 }}>
+        <div className="doc">
+          <div className="doc-ph" id="docph">
+            <Image
+              src="/images/doctors/dr-dharshan-desk.jpg"
+              alt="Dr. Dharshan N A at his desk with a stethoscope"
+              fill
+              sizes="(max-width: 1023px) 100vw, 45vw"
+            />
+            <div className="float">
+              <div>
+                <b>Dr. Dharshan N A</b>
+                <br />
+                <span>
+                  KMC Reg. No. <Confirm>CONFIRM</Confirm>
+                </span>
+              </div>
+              <span className="mono" style={{ color: "var(--aqua)" }}>
+                Lead physiatrist
+              </span>
+            </div>
+          </div>
+          <div>
+            <span className="kicker">Meet your doctor</span>
+            <h2>
+              Dr. Dharshan{" "}
+              <span className="serif" style={{ color: "var(--blue-ink)" }}>
+                N A
+              </span>
+            </h2>
+            <p className="role">
               Consultant in Physical Medicine and Rehabilitation
             </p>
-            <p>
+            <p className="bio">
               He looks after people recovering from stroke, brain and spinal
               cord injury, and people living with back, neck and joint pain. His
               work covers children, adults and older adults, with image-guided
               pain procedures when they are suitable.
             </p>
-            <div className="principles">
-              <article>
-                <h3 className="h4">Goals first</h3>
+            <div className="ways">
+              <div>
+                <b>Goals first</b>
                 <p>Every plan starts from what you want to be able to do.</p>
-              </article>
-              <article>
-                <h3 className="h4">Explained plainly</h3>
+              </div>
+              <div>
+                <b>Explained plainly</b>
                 <p>Scans, options and next steps in simple words.</p>
-              </article>
-              <article>
-                <h3 className="h4">One team</h3>
+              </div>
+              <div>
+                <b>One team</b>
                 <p>
                   Works with physiotherapists and other therapists on one plan.
                 </p>
-              </article>
+              </div>
             </div>
-            <ul className="timeline">
-              <li>
-                <span className="mono">2013 to 2019</span> MBBS, Annapoorana
-                Medical College, Salem
-              </li>
-              <li>
-                <span className="mono">2020 to 2023</span> MD, Physical Medicine
-                and Rehabilitation, RIMS Imphal
-              </li>
-              <li>
-                <span className="mono">Fellowship</span> Interventional Pain
-                Management, Delhi Pain Management Centre
-              </li>
-            </ul>
-            <div className="button-row">
-              <Button href="/contact/?doctor=dr-dharshan#book">
+            <div className="tl">
+              <div>
+                <span className="mono">2013 to 2019</span>
+                <p>MBBS, Annapoorana Medical College, Salem</p>
+              </div>
+              <div>
+                <span className="mono">2020 to 2023</span>
+                <p>MD, Physical Medicine and Rehabilitation, RIMS Imphal</p>
+              </div>
+              <div>
+                <span className="mono">Fellowship</span>
+                <p>
+                  Interventional Pain Management, Delhi Pain Management Centre
+                </p>
+              </div>
+            </div>
+            <div className="btns">
+              <Link
+                className="btn btn-primary"
+                href="/contact/?doctor=dr-dharshan#book"
+              >
+                <span className="ic">{calIcon}</span>
                 Book with Dr. Dharshan
-              </Button>
-              <Button kind="ghost" href={doctor.slug}>
-                Full profile
-                <ArrowRight size={18} strokeWidth={1.75} aria-hidden="true" />
-              </Button>
+              </Link>
+              <Link className="btn btn-ghost" href={doctor.slug}>
+                Full profile {arrow}
+              </Link>
             </div>
           </div>
-          <figure className="meet-photo">
-            <DoctorPortrait
-              id="dr-dharshan-portrait"
-              alt="Portrait of Dr. Dharshan N A"
-              sizes="(max-width: 767px) 80vw, 380px"
-            />
-            <figcaption>
-              Dr. Dharshan N A · <Confirm>KMC Reg. No.</Confirm>
-              <span className="mono"> Lead physiatrist</span>
-            </figcaption>
-          </figure>
+        </div>
+        <div className="doc2">
+          <article className="dcard">
+            <div className="dph">
+              <Image
+                src="/images/doctors/dr-dharshan-avatar.jpg"
+                alt="Dr. Dharshan N A"
+                fill
+                sizes="120px"
+              />
+            </div>
+            <div>
+              <span className="mono">Lead physiatrist</span>
+              <h3>Dr. Dharshan N A</h3>
+              <p>
+                MD Physical Medicine and Rehabilitation · Fellowship in
+                Interventional Pain Management
+              </p>
+              <p className="fine">
+                KMC Reg. No. <Confirm>CONFIRM</Confirm>
+              </p>
+            </div>
+            <Link className="btn btn-ghost" href={doctor.slug}>
+              Profile {arrow}
+            </Link>
+          </article>
+          <article className="dcard">
+            <div className="dph">
+              <Image
+                src="/images/doctors/dr-selina-avatar.jpg"
+                alt="Dr. Selina Kh"
+                fill
+                sizes="120px"
+              />
+            </div>
+            <div>
+              <span className="mono">Consultant physiatrist</span>
+              <h3>Dr. Selina Kh</h3>
+              <p>
+                Physical Medicine and Rehabilitation. Stroke, spinal cord
+                injury, rheumatology and pain management.{" "}
+                <Confirm>qualifications</Confirm>
+              </p>
+              <p className="fine">
+                Reg. No. <Confirm>CONFIRM</Confirm>
+              </p>
+            </div>
+            <Link className="btn btn-ghost" href={second.slug}>
+              Profile {arrow}
+            </Link>
+          </article>
         </div>
       </section>
 
-      {/* 10. Visit band */}
-      <section className="visit-band on-night" data-spine="Plan your visit">
-        <div className="wrap visit-inner">
-          <div>
-            <p className="kicker">Plan your visit</p>
-            <h2 className="h3">See the doctor in Bengaluru.</h2>
+      {/* 10 · VISIT */}
+      <section className="wrap" id="visit">
+        <div className="visit on-night" id="visitband">
+          <Image
+            src="/images/doctors/dr-dharshan-banner.jpg"
+            alt="Dr. Dharshan N A standing on the right in a hospital lobby"
+            fill
+            sizes="(max-width: 1240px) 100vw, 1176px"
+          />
+          <div className="float">
+            <span className="kicker">Plan your visit</span>
+            <h3>See the doctor in Bengaluru.</h3>
             <p>
-              <Confirm>address, landmark and hours</Confirm>
+              <Confirm>clinic address, landmark and hours</Confirm>
             </p>
-            <ul className="chip-row">
-              <li>By appointment</li>
-              <li>
+            <div className="row">
+              <span>By appointment</span>
+              <span>
                 Lift access <Confirm>CONFIRM</Confirm>
-              </li>
-              <li>
+              </span>
+              <span>
                 Parking <Confirm>CONFIRM</Confirm>
-              </li>
-            </ul>
+              </span>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                gap: 10,
+                flexWrap: "wrap",
+                marginTop: 6,
+              }}
+            >
+              <Link className="btn btn-invert" href="/plan-your-visit/">
+                <span className="ic">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z" />
+                    <circle cx="12" cy="9" r="2.5" />
+                  </svg>
+                </span>
+                Get directions
+              </Link>
+            </div>
           </div>
-          <Button kind="ghost" href="/plan-your-visit/">
-            <MapPin size={18} strokeWidth={1.75} aria-hidden="true" />
-            Get directions
-          </Button>
         </div>
       </section>
 
-      {/* 11. Conditions A to Z */}
-      <section
-        className="section wrap"
-        id="conditions"
-        data-spine="Conditions A to Z"
-      >
-        <div className="section-head">
-          <p className="kicker">Conditions A to Z</p>
-          <h2 className="h2">
-            Look up a <em>condition.</em>
-          </h2>
+      {/* 11 · A TO Z */}
+      <section className="sec wrap" id="az">
+        <div className="head split">
+          <div style={{ display: "grid", gap: 18 }}>
+            <span className="kicker">Conditions A to Z</span>
+            <h2 className="h2">
+              Look up a <span className="serif">condition.</span>
+            </h2>
+          </div>
           <p className="lede">
             Type a word. The list filters as you type, and each name opens its
             own page.
@@ -651,46 +742,105 @@ export default function Home() {
         <ConditionsAZ />
       </section>
 
-      {/* 12. Quick answers */}
-      <section className="section wrap" id="answers" data-spine="Quick answers">
-        <div className="section-head">
-          <p className="kicker">Quick answers</p>
-          <h2 className="h2">
-            Before you <em>book.</em>
-          </h2>
-        </div>
-        <div className="answers-grid">
-          <div className="faq-list">
-            {quickAnswers.map(([question, answer]) => (
-              <details className="faq-item" key={question}>
-                <summary>{question}</summary>
-                <div className="answer">{answer}</div>
-              </details>
-            ))}
-          </div>
-          <aside className="help-card">
-            <h3 className="h3">Still not sure?</h3>
-            <p>
-              Send a message and the team will help you choose the right
-              appointment.
+      {/* 12 · QUICK ANSWERS */}
+      <section className="sec wrap" id="faq">
+        <div className="faq-grid">
+          <div className="faq-side">
+            <span className="kicker">Quick answers</span>
+            <h2 className="h2" style={{ marginTop: 18 }}>
+              Before you <span className="serif">book.</span>
+            </h2>
+            <p className="lede">
+              Answers about physiatrists, booking, video consults, procedures,
+              children&apos;s rehab and privacy at Rehabify.
             </p>
-            <Button kind="wa" href={siteConfig.whatsapp}>
-              WhatsApp {siteConfig.phone}
-            </Button>
-          </aside>
+          </div>
+          <div>
+            <QuickAnswers items={quickAnswers} />
+            <p className="faq-review">
+              <Image
+                src="/images/doctors/dr-dharshan-avatar-160.jpg"
+                alt=""
+                width={32}
+                height={32}
+                className="faq-av"
+              />
+              <span>
+                Medically reviewed by{" "}
+                <Link href="/dr-dharshan-n-a/">Dr. Dharshan N A</Link>,
+                consultant in physical medicine and rehabilitation
+                {page.meta.lastReviewed?.includes("[CONFIRM") ? (
+                  <Confirm>
+                    {` · Last reviewed: ${page.meta.lastReviewed}`}
+                  </Confirm>
+                ) : page.meta.lastReviewed ? (
+                  <> · Last reviewed: {page.meta.lastReviewed}</>
+                ) : null}
+              </span>
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* 13. Notices */}
-      <section className="section wrap notices" aria-label="Notices">
-        <EmergencyStrip />
-        <ReviewerBox meta={page.meta} />
-        <p className="tip">
-          <strong>Tip:</strong> Wear loose clothes to your visit so the doctor
-          can check how your back, hips and knees move.
-        </p>
+      {/* 13 · BOOK */}
+      <section className="stage on-night cta-book" id="book" data-dark>
+        <div className="cta-grid">
+          <div className="cta-tx">
+            <span className="kicker">Book a consultation</span>
+            <h2>
+              Your next step can be a <span className="serif">small one.</span>
+            </h2>
+            <p className="lede">
+              Clinic visit or video consult. The team confirms your time by
+              phone or WhatsApp.
+            </p>
+            <div className="btns">
+              <Link className="btn btn-invert" href="/contact/#book">
+                <span className="ic">{calIcon}</span>
+                Book a consultation
+              </Link>
+              <Link className="btn btn-ghost" href={siteConfig.whatsapp}>
+                Message on WhatsApp
+              </Link>
+            </div>
+            <p className="cta-call">
+              Prefer to call?{" "}
+              <Link href={siteConfig.phoneHref}>{siteConfig.phone}</Link>
+            </p>
+            <div className="cta-facts">
+              <span>Clinic and video</span>
+              <span>Two rehabilitation doctors</span>
+              <span>Confirmed by phone</span>
+            </div>
+          </div>
+          <div className="cta-steps">
+            <div className="cta-step">
+              <span className="mono">01</span>
+              <div>
+                <b>Book</b>
+                <p>
+                  Book online, call or WhatsApp. Choose a clinic visit or a
+                  video consult.
+                </p>
+              </div>
+            </div>
+            <div className="cta-step">
+              <span className="mono">02</span>
+              <div>
+                <b>Confirmed</b>
+                <p>The team confirms your time by phone or WhatsApp.</p>
+              </div>
+            </div>
+            <div className="cta-step">
+              <span className="mono">03</span>
+              <div>
+                <b>See the doctor</b>
+                <p>In Bengaluru, or by video across India.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-      <CtaBand />
     </>
   );
 }

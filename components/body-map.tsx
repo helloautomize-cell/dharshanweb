@@ -1,164 +1,240 @@
 "use client";
 
 import { useId, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { regions } from "@/lib/styleguide-copy";
 
-const hotspots = [
-  { label: "Head", region: 0, x: 50, y: 10 },
-  { label: "Neck", region: 1, x: 50, y: 20 },
-  { label: "Shoulder", region: 1, x: 65, y: 25 },
-  { label: "Back", region: 2, x: 50, y: 37 },
-  { label: "Hand", region: 3, x: 76, y: 62 },
-  { label: "Hip", region: 4, x: 43, y: 53 },
-  { label: "Knee", region: 4, x: 58, y: 74 },
-  { label: "Ankle", region: 5, x: 41, y: 92 },
+/* v3 body map: AI body illustrations on the night panel, front and back views
+   crossfaded, with an SVG hotspot overlay (viewBox 1600 x 2400) laid exactly
+   over the 2:3 figure so the dots scale with the image. Buttons carry the
+   tap targets and labels; the SVG carries the dots, rings and region glow. */
+type Spot = {
+  region: number;
+  x: number;
+  y: number;
+  label: string;
+  glow?: [number, number];
+};
+
+const spotsFront: Spot[] = [
+  { region: 0, x: 800, y: 240, label: "Head", glow: [210, 190] },
+  { region: 1, x: 800, y: 385, label: "Neck", glow: [160, 110] },
+  { region: 1, x: 575, y: 460, label: "Left shoulder", glow: [230, 180] },
+  { region: 1, x: 1025, y: 460, label: "Right shoulder", glow: [230, 180] },
+  { region: 2, x: 800, y: 720, label: "Mid back" },
+  { region: 2, x: 800, y: 845, label: "Lower back" },
+  { region: 3, x: 525, y: 805, label: "Left elbow" },
+  { region: 3, x: 1075, y: 805, label: "Right elbow" },
+  { region: 3, x: 360, y: 1092, label: "Left wrist", glow: [170, 140] },
+  { region: 3, x: 1155, y: 1100, label: "Right wrist", glow: [170, 140] },
+  { region: 4, x: 681, y: 1070, label: "Left hip", glow: [220, 170] },
+  { region: 4, x: 919, y: 1070, label: "Right hip", glow: [220, 170] },
+  { region: 4, x: 680, y: 1500, label: "Left knee" },
+  { region: 4, x: 920, y: 1500, label: "Right knee" },
+  { region: 5, x: 685, y: 2065, label: "Left ankle" },
+  { region: 5, x: 915, y: 2065, label: "Right ankle" },
 ];
+const spotsBack: Spot[] = [
+  { region: 0, x: 800, y: 240, label: "Head", glow: [210, 190] },
+  { region: 1, x: 800, y: 385, label: "Neck", glow: [160, 110] },
+  { region: 1, x: 580, y: 460, label: "Left shoulder", glow: [230, 180] },
+  { region: 1, x: 1020, y: 460, label: "Right shoulder", glow: [230, 180] },
+  { region: 2, x: 800, y: 550, label: "Upper back" },
+  { region: 2, x: 800, y: 720, label: "Mid back" },
+  { region: 2, x: 800, y: 865, label: "Lower back" },
+  { region: 2, x: 800, y: 995, label: "Sacrum" },
+  { region: 3, x: 530, y: 805, label: "Left elbow" },
+  { region: 3, x: 1070, y: 805, label: "Right elbow" },
+  { region: 3, x: 370, y: 1095, label: "Left wrist", glow: [170, 140] },
+  { region: 3, x: 1150, y: 1095, label: "Right wrist", glow: [170, 140] },
+  { region: 4, x: 681, y: 1070, label: "Left hip", glow: [220, 170] },
+  { region: 4, x: 919, y: 1070, label: "Right hip", glow: [220, 170] },
+  { region: 4, x: 680, y: 1500, label: "Left knee" },
+  { region: 4, x: 920, y: 1500, label: "Right knee" },
+  { region: 5, x: 685, y: 2065, label: "Left ankle" },
+  { region: 5, x: 915, y: 2065, label: "Right ankle" },
+];
+const spotSets = { front: spotsFront, back: spotsBack } as const;
+
+const srcSet = (side: "front" | "back", format: "avif" | "webp") =>
+  [600, 900, 1200, 1600]
+    .map(
+      (width) =>
+        `/images/illustrations/body-${side}-${width}.${format} ${width}w`,
+    )
+    .join(", ");
+const sizes = "(max-width: 640px) 280px, 360px";
+
 export function BodyMap() {
   const [selected, setSelected] = useState(2);
-  const [back, setBack] = useState(false);
-  const gradient = useId();
+  const [view, setView] = useState<"front" | "back">("front");
+  const blur = `bm-glow-${useId().replace(/:/g, "")}`;
   const region = regions[selected];
-  const marker = hotspots.find((spot) => spot.region === selected)!;
+  const pick = (i: number) => setSelected(i);
   return (
-    <div className="body-map">
-      <div className="body-visual on-night">
-        <div
-          className="body-view segmented"
-          role="group"
-          aria-label="Body view"
-        >
-          <button
-            type="button"
-            aria-pressed={!back}
-            onClick={() => setBack(false)}
-          >
-            Front
-          </button>
-          <button
-            type="button"
-            aria-pressed={back}
-            onClick={() => setBack(true)}
-          >
-            Back
-          </button>
-        </div>
-        <div
-          className="body-figure"
-          role="group"
-          aria-label={`${back ? "Back" : "Front"} body areas`}
-        >
-          <svg viewBox="0 0 200 400" aria-hidden="true">
-            <defs>
-              <linearGradient id={gradient} x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor="#315C7A" />
-                <stop offset="1" stopColor="#1D405C" />
-              </linearGradient>
-            </defs>
-            <g
-              fill="none"
-              stroke={`url(#${gradient})`}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M72 98 L54 182 L46 252" strokeWidth="20" />
-              <path d="M128 98 L146 182 L154 252" strokeWidth="20" />
-              <path d="M88 214 L84 300 L82 378" strokeWidth="28" />
-              <path d="M112 214 L116 300 L118 378" strokeWidth="28" />
-            </g>
-            <g fill={`url(#${gradient})`}>
-              <rect x="66" y="86" width="68" height="138" rx="30" />
-              <rect x="92" y="62" width="16" height="30" rx="8" />
-              <circle cx="100" cy="40" r="25" />
-            </g>
-            {back ? (
-              <g fill="#D9EDF3" opacity=".7">
-                {Array.from({ length: 10 }, (_, i) => (
-                  <rect
-                    key={i}
-                    x="95"
-                    y={96 + i * 10}
-                    width="10"
-                    height="5"
-                    rx="2.5"
-                  />
-                ))}
-              </g>
-            ) : (
-              <path
-                d="M86 102 Q100 112 114 102 M100 112 V185"
-                fill="none"
-                stroke="#6D92AA"
-                strokeWidth="2"
-              />
-            )}
-            <circle
-              className="mobile-marker"
-              cx={(back ? 100 - marker.x : marker.x) * 2}
-              cy={marker.y * 4}
-              r="7"
-              fill="#F2B48A"
-            />
-          </svg>
-          {hotspots.map((spot) => (
+    <div className="bm">
+      <div className="bm-l" data-dark>
+        <span className="lbl mono">
+          Selected<b>{region.name}</b>
+        </span>
+        <div className="seg body-view" role="group" aria-label="Body view">
+          {(["front", "back"] as const).map((side) => (
             <button
-              key={spot.label}
+              key={side}
               type="button"
-              className="hotspot"
-              style={{
-                left: `${back ? 100 - spot.x : spot.x}%`,
-                top: `${spot.y}%`,
-              }}
-              aria-label={spot.label}
-              aria-pressed={selected === spot.region}
-              aria-controls="body-panel"
-              onClick={() => setSelected(spot.region)}
+              aria-pressed={view === side}
+              onClick={() => setView(side)}
             >
-              <span />
-              <span className="hotspot-label">{spot.label}</span>
+              {side === "front" ? "Front" : "Back"}
             </button>
           ))}
         </div>
-        <p className="body-selection">{region.name}</p>
-      </div>
-      <div className="body-info">
         <div
-          className="region-chips"
+          className="fig body-figure"
+          aria-label={`${view === "front" ? "Front" : "Back"} body areas`}
           role="group"
-          aria-label="Choose a body area"
         >
+          <div className="fig-inner">
+            {(["front", "back"] as const).map((side) => (
+              <div
+                key={side}
+                className={`fig-pic${view === side ? " on" : ""}`}
+                aria-hidden={view !== side}
+              >
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcSet={srcSet(side, "avif")}
+                    sizes={sizes}
+                  />
+                  <source
+                    type="image/webp"
+                    srcSet={srcSet(side, "webp")}
+                    sizes={sizes}
+                  />
+                  <Image
+                    src={`/images/illustrations/body-${side}-1200.webp`}
+                    alt={
+                      side === "front"
+                        ? "Illustration: front view of the human body"
+                        : "Illustration: back view of the human body"
+                    }
+                    fill
+                    unoptimized
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+            ))}
+            <svg
+              className="fig-overlay"
+              viewBox="0 0 1600 2400"
+              preserveAspectRatio="xMidYMid meet"
+              aria-hidden="true"
+            >
+              <defs>
+                <filter id={blur} x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur stdDeviation="48" />
+                </filter>
+              </defs>
+              {(["front", "back"] as const).map((side) => (
+                <g key={side} className={`spots${view === side ? " on" : ""}`}>
+                  {spotSets[side].map((spot) => (
+                    <g
+                      key={spot.label}
+                      className="spot"
+                      data-on={spot.region === selected || undefined}
+                    >
+                      {spot.region === selected && (
+                        <ellipse
+                          className="spot-glow"
+                          cx={spot.x}
+                          cy={spot.y}
+                          rx={spot.glow?.[0] ?? 170}
+                          ry={spot.glow?.[1] ?? 140}
+                          filter={`url(#${blur})`}
+                        />
+                      )}
+                      <circle
+                        className="spot-ring"
+                        cx={spot.x}
+                        cy={spot.y}
+                        r="44"
+                      />
+                      <circle
+                        className="spot-dot"
+                        cx={spot.x}
+                        cy={spot.y}
+                        r="30"
+                      />
+                    </g>
+                  ))}
+                </g>
+              ))}
+            </svg>
+            {spotSets[view].map((spot) => (
+              <button
+                key={spot.label}
+                type="button"
+                className="hot"
+                data-pos={
+                  spot.x === 800 ? "top" : spot.x < 800 ? "left" : "right"
+                }
+                style={{ left: `${spot.x / 16}%`, top: `${spot.y / 24}%` }}
+                aria-label={spot.label}
+                aria-pressed={spot.region === selected}
+                aria-controls="body-panel"
+                onClick={() => pick(spot.region)}
+              >
+                <span className="hot-label" aria-hidden="true">
+                  {spot.label}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="bm-r">
+        <div className="regs" role="group" aria-label="Choose a body area">
           {regions.map((item, index) => (
             <button
               type="button"
+              className="reg"
               key={item.name}
               aria-pressed={selected === index}
               aria-controls="body-panel"
-              onClick={() => setSelected(index)}
+              onClick={() => pick(index)}
             >
               {item.name}
             </button>
           ))}
         </div>
         <div
-          className="body-panel"
+          className="bm-panel"
           id="body-panel"
+          key={`${selected}-${view}`}
           aria-live="polite"
-          aria-atomic="true"
         >
-          <h3 className="h3">{region.name}</h3>
-          <p className="muted">{region.description}</p>
-          <div className="condition-links">
+          <span className="kicker">{region.name}</span>
+          <h3>{region.name}</h3>
+          <p>{region.description}</p>
+          <ul>
             {region.conditions.map((condition) => (
-              <a key={condition} href={region.href}>
-                {condition}
-                <ArrowRight size={18} strokeWidth={1.75} aria-hidden="true" />
-              </a>
+              <li key={condition}>
+                <Link href={region.href}>
+                  {condition}
+                  <ArrowRight size={20} strokeWidth={1.75} aria-hidden="true" />
+                </Link>
+              </li>
             ))}
-          </div>
-          <a className="text-link" href={region.href}>
-            See all care
+          </ul>
+          <Link className="more" href={region.href}>
+            See care for {region.name.toLowerCase()}
             <ArrowRight size={20} strokeWidth={1.75} aria-hidden="true" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

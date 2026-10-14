@@ -1,8 +1,14 @@
 export const navLinks = [
   { href: "/conditions/", label: "Where it hurts" },
+  { href: "/video-consultation/", label: "Video consults" },
   { href: "/doctors/", label: "Doctors" },
-  { href: "/health-library/", label: "Health library" },
   { href: "/plan-your-visit/", label: "Visit" },
+] as const;
+
+export const megaExtras = [
+  { href: "/health-library/", label: "Health library" },
+  { href: "/conditions/", label: "Conditions A to Z" },
+  { href: "/faqs/", label: "FAQs" },
 ] as const;
 
 export const megaGroups = [
@@ -77,55 +83,24 @@ export const megaGroups = [
   },
 ] as const;
 
-export const footerColumns = [
+export const footerLinks = [
+  { href: "/care/", label: "Care" },
+  { href: "/doctors/", label: "Doctors" },
+  { href: "/plan-your-visit/", label: "Plan your visit" },
+  { href: "/faqs/", label: "FAQs" },
+  { href: "/health-library/", label: "Health library" },
+] as const;
+
+export const legalLinks = [
+  { href: "/privacy-policy/", label: "Privacy policy" },
+  { href: "/terms-of-use/", label: "Terms of use" },
+  { href: "/medical-disclaimer/", label: "Medical disclaimer" },
+  { href: "/editorial-policy/", label: "Editorial policy" },
+  { href: "/patient-rights/", label: "Patient rights" },
   {
-    title: "Care",
-    links: [
-      { href: "/care/", label: "All care" },
-      { href: "/pain-and-spine/", label: "Pain and spine" },
-      { href: "/neuro-rehabilitation/", label: "Neuro rehabilitation" },
-      { href: "/joints-and-sports/", label: "Joints and sports" },
-      {
-        href: "/childrens-rehabilitation/",
-        label: "Children's rehabilitation",
-      },
-      { href: "/older-adults/", label: "Older adults" },
-    ],
+    href: "/appointments-cancellation-refund/",
+    label: "Cancellation and refund",
   },
-  {
-    title: "Patients",
-    links: [
-      { href: "/contact/#book", label: "Book" },
-      { href: "/video-consultation/", label: "Video consultations" },
-      { href: "/plan-your-visit/", label: "Plan your visit" },
-      { href: "/conditions/", label: "Conditions A to Z" },
-      { href: "/faqs/", label: "FAQs" },
-      { href: "/health-library/", label: "Health library" },
-    ],
-  },
-  {
-    title: "Doctors",
-    links: [
-      { href: "/doctors/", label: "Our doctors" },
-      { href: "/dr-dharshan-n-a/", label: "Dr. Dharshan N A" },
-      { href: "/dr-selina-kh/", label: "Dr. Selina Kh" },
-      { href: "/about/", label: "About Rehabify" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { href: "/privacy-policy/", label: "Privacy policy" },
-      { href: "/terms-of-use/", label: "Terms of use" },
-      { href: "/medical-disclaimer/", label: "Medical disclaimer" },
-      { href: "/editorial-policy/", label: "Editorial policy" },
-      { href: "/patient-rights/", label: "Patient rights" },
-      {
-        href: "/appointments-cancellation-refund/",
-        label: "Cancellation and refund",
-      },
-      { href: "/accessibility/", label: "Accessibility" },
-      { href: "#cookie-settings", label: "Cookie settings" },
-    ],
-  },
+  { href: "/accessibility/", label: "Accessibility" },
+  { href: "#cookie-settings", label: "Cookie settings" },
 ] as const;

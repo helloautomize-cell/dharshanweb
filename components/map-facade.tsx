@@ -30,7 +30,7 @@ export function MapFacade() {
         <>
           <button
             type="button"
-            className="btn btn-glow"
+            className="btn btn-primary"
             onClick={() => {
               track("map_load");
               setLoaded(true);
