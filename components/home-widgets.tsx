@@ -1,64 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
 import { goals } from "@/lib/styleguide-copy";
 import { conditions } from "@/lib/conditions";
 
-export function QuoteTile() {
-  const tile = useRef<HTMLElement>(null);
-  return (
-    <article
-      ref={tile}
-      className="spotlight-tile bento-tile bento-quote"
-      onPointerMove={(event) => {
-        if (event.pointerType !== "mouse") return;
-        const bounds = event.currentTarget.getBoundingClientRect();
-        tile.current?.style.setProperty(
-          "--mx",
-          `${event.clientX - bounds.left}px`,
-        );
-        tile.current?.style.setProperty(
-          "--my",
-          `${event.clientY - bounds.top}px`,
-        );
-      }}
-    >
-      <p className="kicker">How it starts</p>
-      <p className="doctor-statement">
-        Your plan is written by a <strong>rehabilitation doctor</strong> after
-        examining you, and it changes as you do.
-      </p>
-      <div className="byline">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/doctors/dr-dharshan-avatar-160.jpg"
-          width={56}
-          height={56}
-          alt=""
-        />
-        <div>
-          <b>Dr. Dharshan N A</b>
-          <p>MBBS, MD (Physical Medicine and Rehabilitation)</p>
-        </div>
-      </div>
-    </article>
-  );
-}
-
 export function GoalsTile() {
-  const [selected, setSelected] = useState([true, false, true, false]);
+  const [selected, setSelected] = useState([true, true, false, false]);
   const count = selected.filter(Boolean).length;
   return (
-    <article className="goals-tile bento-tile">
-      <p className="kicker">
-        Goals you choose <span className="try-chip">Try it</span>
-      </p>
-      <h3 className="h3">
-        Progress is measured in the things you can do again.
-      </h3>
-      <p className="example-label">Example goals</p>
+    <>
       <div className="goals">
         {goals.map((goal, index) => (
           <button
@@ -72,145 +23,126 @@ export function GoalsTile() {
               )
             }
           >
-            <span className="check-box">
-              {selected[index] && (
-                <Check size={16} strokeWidth={1.75} aria-hidden="true" />
-              )}
-            </span>
+            <i />
             {goal}
+            <small>example</small>
           </button>
         ))}
       </div>
-      <div
-        className="goals-ring"
-        role="status"
-        aria-label="Example goal progress"
-      >
-        <svg viewBox="0 0 60 60" aria-hidden="true">
-          <circle cx="30" cy="30" r="24" className="ring-track" />
+      <div className="ring" role="status" aria-label="Example goal progress">
+        <svg viewBox="0 0 54 54" aria-hidden="true">
+          <circle className="bg" cx="27" cy="27" r="22" />
           <circle
-            cx="30"
-            cy="30"
-            r="24"
-            className="ring-progress"
-            strokeDasharray={150.8}
-            strokeDashoffset={150.8 * (1 - count / 4)}
+            className="fg"
+            cx="27"
+            cy="27"
+            r="22"
+            strokeDasharray="138.2"
+            strokeDashoffset={138.2 * (1 - count / goals.length)}
           />
         </svg>
-        <p>
-          <strong>{count} of 4</strong> goals reached<span>Example</span>
-        </p>
+        <span>
+          <b>
+            {count} of {goals.length}
+          </b>{" "}
+          goals reached
+        </span>
       </div>
-    </article>
+    </>
   );
 }
 
-const switchContent = {
-  clinic:
-    "A full examination of movement, strength and pain. Procedures are done on site when needed.",
-  video:
-    "Start from home with a video consult. Share reports, move on camera, leave with a first plan.",
-};
-
-export function ClinicVideoTile() {
-  const [format, setFormat] = useState<"clinic" | "video">("clinic");
-  return (
-    <article className="bento-tile switch-tile">
-      <p className="kicker">In clinic / by video</p>
-      <div className="segmented" role="group" aria-label="Consultation format">
-        {(["clinic", "video"] as const).map((value) => (
-          <button
-            type="button"
-            key={value}
-            aria-pressed={format === value}
-            onClick={() => setFormat(value)}
-          >
-            {value === "clinic" ? "In clinic" : "By video"}
-          </button>
-        ))}
-      </div>
-      <p className="switch-copy" aria-live="polite">
-        {switchContent[format]}
-      </p>
-    </article>
-  );
-}
+const azGroups = [
+  {
+    title: "Pain and spine",
+    match: ["/pain-and-spine/"],
+  },
+  {
+    title: "Brain and nerves",
+    match: ["/neuro-rehabilitation/"],
+  },
+  {
+    title: "Joints and sport",
+    match: ["/joints-and-sports/"],
+  },
+  {
+    title: "Children and older adults",
+    match: ["/childrens-rehabilitation/", "/older-adults/"],
+  },
+];
 
 export function ConditionsAZ() {
   const [query, setQuery] = useState("");
-  const letters = [...new Set(conditions.map((c) => c.name[0].toUpperCase()))];
-  const filtered = conditions.filter((c) =>
-    c.name.toLowerCase().includes(query.trim().toLowerCase()),
-  );
+  const q = query.trim().toLowerCase();
+  let shown = 0;
+  const groups = azGroups.map((group) => {
+    const items = conditions.filter(
+      (c) =>
+        group.match.some((m) => c.href.startsWith(m)) &&
+        c.name.toLowerCase().includes(q),
+    );
+    shown += items.length;
+    return { ...group, items };
+  });
+  const mark = (name: string) => {
+    if (!q) return name;
+    const i = name.toLowerCase().indexOf(q);
+    return (
+      <>
+        {name.slice(0, i)}
+        <mark>{name.slice(i, i + q.length)}</mark>
+        {name.slice(i + q.length)}
+      </>
+    );
+  };
   return (
-    <div className="az-search">
-      <div className="field az-field">
-        <label htmlFor="condition-search">Search conditions</label>
-        <input
-          id="condition-search"
-          type="search"
-          placeholder="Try knee, stroke or sciatica"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-        />
+    <>
+      <div className="az-top">
+        <label className="search">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <path d="M20 20l-4-4" />
+          </svg>
+          <input
+            type="search"
+            placeholder="Try knee, stroke or sciatica"
+            aria-label="Search conditions"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+          />
+        </label>
+        <span className="count">{shown} conditions</span>
       </div>
-      <div className="az-jump" role="group" aria-label="Jump to letter">
-        {letters.map((letter) => (
-          <Link key={letter} href={`#az-${letter}`}>
-            {letter}
-          </Link>
+      <div className="az">
+        {groups.map((group) => (
+          <div key={group.title}>
+            <h3>{group.title}</h3>
+            <ul>
+              {group.items.length ? (
+                group.items.map((c) => (
+                  <li key={c.name}>
+                    <Link href={c.href}>
+                      {mark(c.name)}
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                  </li>
+                ))
+              ) : (
+                <li className="empty">No match here</li>
+              )}
+            </ul>
+          </div>
         ))}
       </div>
-      <div className="az-groups" tabIndex={0}>
-        {letters.map((letter) => {
-          const items = filtered.filter(
-            (c) => c.name[0].toUpperCase() === letter,
-          );
-          if (!items.length) return null;
-          return (
-            <div className="az-group" key={letter}>
-              <h3 className="az-letter" id={`az-${letter}`}>
-                {letter}
-              </h3>
-              <ul>
-                {items.map((c) => (
-                  <li key={c.name}>
-                    <Link href={c.href}>{c.name}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
-      </div>
-      {filtered.length === 0 && (
-        <p className="muted">
-          No condition matches that word. See{" "}
-          <Link href="/conditions/" className="text-link">
-            all care
-            <ArrowRight size={18} strokeWidth={1.75} aria-hidden="true" />
-          </Link>
-        </p>
-      )}
-    </div>
-  );
-}
-
-export function MarqueePause() {
-  const [paused, setPaused] = useState(false);
-  useEffect(() => {
-    const el = document.querySelector(".marquee-band");
-    if (el) el.classList.toggle("paused", paused);
-  }, [paused]);
-  return (
-    <button
-      type="button"
-      className="marquee-pause"
-      aria-pressed={paused}
-      aria-label={paused ? "Play conditions list" : "Pause conditions list"}
-      onClick={() => setPaused((p) => !p)}
-    >
-      {paused ? "Play" : "Pause"}
-    </button>
+    </>
   );
 }

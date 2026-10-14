@@ -15,7 +15,8 @@
     "test:images": "node scripts/verify-images.mjs",
     "launch-check": "node scripts/launch-check.mjs",
     "qa:reference": "node scripts/capture-reference.mjs",
-    "qa:lighthouse": "node scripts/lighthouse.mjs"
+    "qa:lighthouse": "node scripts/lighthouse.mjs",
+    "design-diff": "node scripts/design-diff.mjs"
   },
   "engines": {
     "node": ">=22.0.0 <27"
@@ -40,8 +41,10 @@
     "eslint": "9.39.5",
     "eslint-config-next": "16.3.8",
     "lighthouse": "13.5.0",
+    "pixelmatch": "8.0.0",
     "playwright": "1.63.0",
     "playwright-core": "1.63.0",
+    "pngjs": "7.0.0",
     "prettier": "3.9.9",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3"

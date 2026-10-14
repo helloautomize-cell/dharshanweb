@@ -4,6 +4,8 @@ For the coding agent. Version 1 · 12 October 2026 · Based on `rehabify-design-
 
 Read this whole file before writing code. **Section 0 overrides everything else**, including any rule in the master prompt or the Medcare/Niramay reference files.
 
+> Phase 7g update (supersedes the spine-based direction below): the decorative spine motif is retired site-wide — no spine navigator, hero/CTA spine graphics, logo watermarks, goniometer, marquee, aurora blobs or glow buttons. The sole exception is the Journey section, which keeps its original spine-drawn scrollytelling by explicit client decision. "Spine" remains in copy only where it means the body part.
+
 Files this plan relies on (in `resources/`):
 - `docs/site-plan.md` (pages, URLs, nav, schema, redirects)
 - `docs/new-website-content.md` (all copy and frontmatter)

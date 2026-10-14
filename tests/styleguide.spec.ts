@@ -36,9 +36,7 @@ for (const width of [390, 768, 1024, 1440])
         )
         .count(),
     ).toBe(0);
-    expect(await page.locator("body").innerText()).not.toMatch(
-      /[\u2013\u2014]/,
-    );
+    expect(await page.locator("body").innerText()).not.toMatch(/[–—]/);
     for (const label of await page.locator(".button-label").all()) {
       const sizes = await label.evaluate((element) => ({
         height: element.getBoundingClientRect().height,
@@ -59,7 +57,7 @@ for (const width of [390, 768, 1024, 1440])
     ).toEqual([]);
     if (width === 390) {
       const tall = await page
-        .locator("main > section:not(.hero-demo)")
+        .locator("main > section")
         .evaluateAll((sections) =>
           sections
             .filter(
@@ -80,11 +78,9 @@ for (const width of [390, 768, 1024, 1440])
 test("mobile regions and section heights at 390 by 844", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/styleguide/");
-  await page.getByRole("button", { name: "Hip and knee", exact: true }).click();
-  await expect(page.locator("#body-panel h3")).toHaveText("Hip and knee");
   expect(
     await page
-      .locator("main > section:not(.hero-demo)")
+      .locator("main > section")
       .evaluateAll((sections) =>
         sections
           .filter(
@@ -103,32 +99,21 @@ test("mobile regions and section heights at 390 by 844", async ({ page }) => {
   ).toEqual([]);
 });
 
-test("keyboard body map, goals, finder and native FAQ", async ({ page }) => {
+test("keyboard access to disclosures and controls", async ({ page }) => {
   await page.goto("/styleguide/");
-  const head = page.getByRole("button", { name: "Head", exact: true });
-  await head.focus();
+  const summary = page.locator(".placeholder-disclosure summary").first();
+  await summary.focus();
   await page.keyboard.press("Enter");
-  await expect(page.locator("#body-panel h3")).toHaveText("Brain and nerves");
-  await page.getByRole("button", { name: "Back", exact: true }).first().click();
-  await expect(page.locator(".body-figure")).toHaveAttribute(
-    "aria-label",
-    "Back body areas",
-  );
-  await page.getByRole("button", { name: "Hip and knee", exact: true }).click();
-  await expect(page.locator("#body-panel h3")).toHaveText("Hip and knee");
-  await page.getByRole("button", { name: "Climb two floors" }).click();
+  await expect(page.locator(".placeholder-disclosure[open]")).toHaveCount(1);
   await expect(
-    page.getByRole("status", { name: "Example goal progress" }),
-  ).toContainText("3 of 4");
-  await page.getByRole("button", { name: "By video", exact: true }).click();
-  await expect(page.locator('input[name="format"]')).toHaveValue("video");
-  await page.getByText("Do I need a referral?", { exact: true }).click();
-  await expect(page.locator(".faq-item[open]")).toContainText(
-    "No. You can book directly.",
-  );
+    page.locator(".placeholder-disclosure[open] .swatch").first(),
+  ).toContainText("night");
+  const button = page.locator(".button-samples .btn").first();
+  await button.focus();
+  await expect(button).toBeFocused();
 });
 
-test("reduced motion, glow labels and review screenshots", async ({ page }) => {
+test("reduced motion and review screenshots", async ({ page }) => {
   await mkdir("artifacts/styleguide", { recursive: true });
   await page.emulateMedia({ reducedMotion: "reduce" });
   for (const width of [390, 1440]) {
@@ -144,64 +129,41 @@ test("reduced motion, glow labels and review screenshots", async ({ page }) => {
     });
     expect(
       await page
-        .locator(".btn-glow")
-        .first()
-        .evaluate(
-          (element) => getComputedStyle(element, "::before").animationName,
-        ),
+        .locator(".card-specimens .tile")
+        .evaluate((element) => getComputedStyle(element).animationName),
     ).toBe("none");
-    await page.locator(".goniometer").scrollIntoViewIfNeeded();
-    await expect(page.locator(".degrees")).toHaveText("95°");
     await page.screenshot({
       path: `artifacts/styleguide/full-${width}.png`,
       fullPage: true,
     });
     for (const [name, selector] of [
-      ["hero", ".hero-demo"],
-      ["body-map", ".body-map"],
-      ["bento", ".bento-demo"],
-      ["doctors", ".doctor-cards"],
-      ["badges", ".badge-gallery"],
-      ["glow", ".hero-demo .btn-glow"],
+      ["tokens", "#system .sw"],
+      ["buttons", ".button-samples"],
+      ["cards", "#cards .card-specimens"],
+      ["icons", "#icons .icon-specimens"],
+      ["brand", ".logo-surfaces"],
     ])
       await page
         .locator(selector)
         .screenshot({ path: `artifacts/styleguide/${name}-${width}.png` });
-    const properties = await page
-      .locator(".btn-glow")
-      .first()
-      .evaluate((element) => ({
-        isolation: getComputedStyle(element).isolation,
-        transform: getComputedStyle(element).transform,
-      }));
-    expect(properties).toEqual({ isolation: "auto", transform: "none" });
   }
 });
 
-test("manual motion toggle stops animation and goniometer", async ({
-  page,
-}) => {
+test("manual motion toggle marks the reduced-motion root", async ({ page }) => {
   await page.goto("/styleguide/");
+  const root = page.locator(".review-root");
+  await expect(root).not.toHaveAttribute("data-reduce-motion", "true");
   await page.getByRole("checkbox", { name: "Reduced motion" }).check();
-  await page.locator(".goniometer").scrollIntoViewIfNeeded();
-  await expect(page.locator(".degrees")).toHaveText("95°");
-  expect(
-    await page
-      .locator(".btn-glow")
-      .first()
-      .evaluate(
-        (element) => getComputedStyle(element, "::before").animationName,
-      ),
-  ).toBe("none");
+  await expect(root).toHaveAttribute("data-reduce-motion", "true");
 });
 
-test("navigation keyboard entry and glow label pixels", async ({ page }) => {
+test("navigation keyboard entry and button label pixels", async ({ page }) => {
   await page.goto("/styleguide/");
   const trigger = page.getByRole("button", { name: "Care", exact: true });
   await trigger.focus();
   await page.keyboard.press("ArrowDown");
   await expect(page.locator(".mega-panel a").first()).toBeFocused();
-  const label = page.locator(".hero-demo .button-label").first();
+  const label = page.locator(".button-samples .button-label").first();
   const image = await label.screenshot();
   const { data, info } = await sharp(image)
     .removeAlpha()
@@ -214,16 +176,16 @@ test("navigation keyboard entry and glow label pixels", async ({ page }) => {
   expect(light / (info.width * info.height)).toBeLessThan(0.6);
 });
 
-test("content and native FAQ work without JavaScript", async ({ browser }) => {
+test("content and disclosures work without JavaScript", async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto("/styleguide/");
-  await expect(page.locator("#body-panel")).toContainText("Back and spine");
-  await page.locator(".faq-item summary").first().click();
-  await expect(page.locator(".faq-item[open]")).toContainText(
-    "A physiatrist is a doctor",
-  );
-  await expect(page.locator(".front-arch img")).toBeVisible();
+  await expect(page.locator("#system")).toContainText("Design");
+  await page.locator(".placeholder-disclosure summary").first().click();
+  await expect(
+    page.locator(".placeholder-disclosure[open] .swatch").first(),
+  ).toBeVisible();
+  await expect(page.locator(".logo-surfaces")).toBeVisible();
   await context.close();
 });
 
@@ -234,7 +196,7 @@ test("approved theme remains consistent with system dark preference", async ({
   await page.goto("/styleguide/");
   expect(
     await page
-      .locator(".hero-demo")
+      .locator(".glow-specimens .on-night")
       .evaluate((element) => getComputedStyle(element).color),
   ).toBe("rgb(217, 237, 243)");
   expect(

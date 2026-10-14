@@ -211,7 +211,9 @@ Format choice on the form: Clinic visit · Video consult
 
 ## 8. Home page section map (design v2 order)
 
-Hero (night stage, arch portrait, goniometer) · Finder bar · Conditions marquee · Why Rehabify (bento) · Where does it hurt? (body map) · How we can help (pinned care track) · Your recovery (spine scrollytelling, 6 steps) · Ways to see us (stacking cards: clinic, video, home programme) · Meet your doctor · Visit band · Conditions A to Z · Quick answers + WhatsApp help card · Notices · CTA band + footer.
+Hero (flat night stage, two doctor arches) · Finder bar · Static conditions strip · Why Rehabify (bento, 5 tiles) · Where does it hurt? (body map) · How we can help (care index) · Your recovery (6 steps; keeps the original spine scrollytelling panel by client decision) · Ways to see us (clinic, video) · Meet your doctor · Visit band · Conditions A to Z · Before you book (accordion) · Closing CTA + compact footer.
+
+> Phase 7g note: the decorative spine motif is retired site-wide (spine navigator, hero/CTA spine graphics, watermark), along with the glow button, marquee, aurora blobs and the goniometer. The one exception is the Journey section, which keeps its original spine-drawn scrollytelling panel by explicit client decision. "Spine" stays in copy only where it means the body part.
 
 Not used: testimonials, review quotes, counters, before/after, offers, pop-ups.
 

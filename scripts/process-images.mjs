@@ -16,6 +16,7 @@ for (const folder of [
   "doctors",
   "clinic",
   "icons/services",
+  "illustrations",
   "provenance",
 ])
   await mkdir(path.join(output, folder), { recursive: true });
@@ -238,6 +239,38 @@ for (const [input, name, ratio, text] of items) {
           .toFile(path.join(output, filename));
         alt[filename] = text;
       }
+}
+
+for (const [input, name, text] of [
+  [
+    "skeleton_front_1600x2400",
+    "body-front",
+    "Illustration: front view of the human body",
+  ],
+  [
+    "skeleton_back_1600x2400",
+    "body-back",
+    "Illustration: back view of the human body",
+  ],
+]) {
+  const file = path.join(source, "illustrations", `${input}.png`);
+  const meta = await sharp(file).metadata();
+  const widths = [...new Set([600, 900, 1200, meta.width])]
+    .filter((width) => width <= meta.width)
+    .sort((a, b) => a - b);
+  for (const width of widths)
+    for (const format of ["avif", "webp"]) {
+      const filename = `illustrations/${name}-${width}.${format}`;
+      await sharp(file)
+        .resize({ width, withoutEnlargement: true })
+        .toColourspace("srgb")
+        .toFormat(
+          format,
+          format === "avif" ? { quality: 50, effort: 4 } : { quality: 80 },
+        )
+        .toFile(path.join(output, filename));
+      alt[filename] = text;
+    }
 }
 
 const fontFile = path.resolve(".cache/image-fonts/bricolage.ttf");

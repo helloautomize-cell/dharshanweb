@@ -10,7 +10,7 @@ import "./globals.css";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  axes: ["opsz"],
   variable: "--font-heading",
   display: "swap",
 });
