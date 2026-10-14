@@ -11,6 +11,7 @@ import {
   GoalsTile,
   ClinicVideoTile,
   ConditionsAZ,
+  MarqueePause,
 } from "@/components/home-widgets";
 import {
   ReviewerBox,
@@ -281,6 +282,7 @@ export default function Home() {
 
       {/* 3. Marquee */}
       <section className="marquee-band" aria-label="Conditions we see">
+        <MarqueePause />
         <div className="marquee-track">
           {[0, 1].map((copy) => (
             <ul key={copy} aria-hidden={copy === 1 || undefined}>
