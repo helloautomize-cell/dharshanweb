@@ -45,13 +45,13 @@ export function Button({
 }: {
   children?: ReactNode;
   href?: string;
-  kind?: "primary" | "ghost" | "glow" | "wa" | "link";
+  kind?: "primary" | "ghost" | "invert" | "wa" | "link";
   disabled?: boolean;
   state?: string;
 }) {
   const label = (
     <>
-      {kind === "glow" && (
+      {kind === "invert" && (
         <span className="button-icon">
           <CalendarDays size={22} strokeWidth={1.75} aria-hidden="true" />
         </span>
@@ -60,7 +60,7 @@ export function Button({
         <MessageCircle size={20} strokeWidth={1.75} aria-hidden="true" />
       )}
       <span className="button-label">{children}</span>
-      {kind !== "glow" && kind !== "wa" && (
+      {kind !== "invert" && kind !== "wa" && (
         <ArrowRight
           className="arrow"
           size={20}

@@ -17,7 +17,7 @@ export default function NotFound() {
         The link may be old or the page renamed. Try one of these instead.
       </p>
       <div className="not-found-links">
-        <Link className="btn btn-glow light" href="/contact/#book">
+        <Link className="btn btn-invert" href="/contact/#book">
           <span className="button-label">Book a consultation</span>
         </Link>
         <Link className="btn btn-ghost" href="/conditions/">

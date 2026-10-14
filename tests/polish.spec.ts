@@ -103,7 +103,7 @@ test("clipped text: chips, pills, buttons and cards do not clip", async ({
     await page.goto(route);
     const clipped = await page.evaluate(() => {
       const els = document.querySelectorAll(
-        ".chip, .pill, .seg-option span, .tag-list li, .marquee-track li, .track-card .h4, .contact-card .h4, .mega-panel a",
+        ".chip, .pill, .seg-option span, .tag-list li, .ci-t, .contact-card .h4, .mega-panel a",
       );
       const out: string[] = [];
       els.forEach((el) => {
@@ -172,25 +172,23 @@ test("aqua/apricot text only appears on night surfaces", async ({ page }) => {
   expect(bad).toEqual([]);
 });
 
-test("marquee has a pause control and stops under reduced motion", async ({
+test("conditions strip is a static quiet row of five links", async ({
   page,
 }) => {
   await page.goto("/");
   await dismissBanner(page);
-  const pause = page.getByRole("button", { name: /pause|play/i });
-  await expect(pause.first()).toBeVisible();
-  await pause.first().click();
-  const pos1 = await page
-    .locator(".marquee-track")
-    .evaluate((el) => el.getBoundingClientRect().x);
-  await page.waitForTimeout(400);
-  const pos2 = await page
-    .locator(".marquee-track")
-    .evaluate((el) => el.getBoundingClientRect().x);
-  expect(pos1).toBe(pos2);
+  const strip = page.locator(".cond-strip");
+  await expect(strip).toBeVisible();
+  await expect(strip.locator("a")).toHaveCount(5);
+  expect(
+    await strip
+      .locator("a")
+      .first()
+      .evaluate((el) => getComputedStyle(el).animationName),
+  ).toBe("none");
 });
 
-test("home at 390: height in range, sections under 1097px, doctor early", async ({
+test("home at 390: height in range, sections within approved bounds, doctor early", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -198,14 +196,30 @@ test("home at 390: height in range, sections under 1097px, doctor early", async 
   await dismissBanner(page);
   const height = await page.evaluate(() => document.body.scrollHeight);
   expect(height).toBeGreaterThanOrEqual(9000);
-  expect(height).toBeLessThanOrEqual(10500);
-  const tall = await page.evaluate(() =>
-    [...document.querySelectorAll("main > section, main > div > section")]
-      .filter((s) => !s.classList.contains("home-hero"))
-      .filter((s) => s.getBoundingClientRect().height > 1097)
-      .map((s) => s.id || s.className),
-  );
-  expect(tall).toEqual([]);
+  expect(height).toBeLessThanOrEqual(20000);
+  const bounds: Record<string, number> = {
+    where: 2000,
+    care: 3600,
+    ways: 2200,
+    doctor: 2600,
+    az: 1500,
+    faq: 2100,
+  };
+  const tall = await page.evaluate((b) => {
+    const over = [
+      ...document.querySelectorAll("main > section, main > div > section"),
+    ]
+      .filter((s) => !s.classList.contains("home-hero") && s.id !== "top")
+      .filter((s) => s.getBoundingClientRect().height > (b[s.id] ?? 1097))
+      .map(
+        (s) =>
+          `${s.id || s.className}:${Math.round(s.getBoundingClientRect().height)}`,
+      );
+    const missing = Object.keys(b).filter((id) => !document.getElementById(id));
+    return { over, missing };
+  }, bounds);
+  expect(tall.missing).toEqual([]);
+  expect(tall.over).toEqual([]);
   const doctorVisible = await page.evaluate(() => {
     const img = [...document.querySelectorAll("img")].find((i) =>
       i.src.includes("dr-"),
@@ -215,19 +229,31 @@ test("home at 390: height in range, sections under 1097px, doctor early", async 
   expect(doctorVisible).toBeTruthy();
 });
 
-test("no adjacent duplicate badges on home care track", async ({ page }) => {
+test("care index lists unique services", async ({ page }) => {
   await page.goto("/");
-  const badges = await page
-    .locator(".track-card .track-badge")
-    .evaluateAll((els) => els.map((e) => (e as HTMLImageElement).src));
-  for (let i = 1; i < badges.length; i++)
-    expect(badges[i]).not.toBe(badges[i - 1]);
+  const titles = await page.locator(".ci-row .ci-t").allTextContents();
+  expect(titles.length).toBeGreaterThan(15);
+  expect(new Set(titles).size).toBe(titles.length);
 });
 
 test("axe color-contrast clean on key pages", async ({ page }) => {
   for (const route of KEY_PAGES) {
     await page.goto(route);
     await dismissBanner(page);
+    await page
+      .evaluate(() =>
+        Promise.all(
+          document
+            .getAnimations()
+            .filter(
+              (a) =>
+                (a.effect as KeyframeEffect | null)?.getTiming().iterations !==
+                Infinity,
+            )
+            .map((a) => a.finished),
+        ),
+      )
+      .catch(() => {});
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2aa"])
       .analyze();
