@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { goals } from "@/lib/styleguide-copy";
@@ -161,26 +161,28 @@ export function ConditionsAZ() {
           </Link>
         ))}
       </div>
-      {letters.map((letter) => {
-        const items = filtered.filter(
-          (c) => c.name[0].toUpperCase() === letter,
-        );
-        if (!items.length) return null;
-        return (
-          <div className="az-group" key={letter}>
-            <h3 className="az-letter" id={`az-${letter}`}>
-              {letter}
-            </h3>
-            <ul>
-              {items.map((c) => (
-                <li key={c.name}>
-                  <Link href={c.href}>{c.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
-      })}
+      <div className="az-groups" tabIndex={0}>
+        {letters.map((letter) => {
+          const items = filtered.filter(
+            (c) => c.name[0].toUpperCase() === letter,
+          );
+          if (!items.length) return null;
+          return (
+            <div className="az-group" key={letter}>
+              <h3 className="az-letter" id={`az-${letter}`}>
+                {letter}
+              </h3>
+              <ul>
+                {items.map((c) => (
+                  <li key={c.name}>
+                    <Link href={c.href}>{c.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
       {filtered.length === 0 && (
         <p className="muted">
           No condition matches that word. See{" "}
@@ -191,5 +193,24 @@ export function ConditionsAZ() {
         </p>
       )}
     </div>
+  );
+}
+
+export function MarqueePause() {
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    const el = document.querySelector(".marquee-band");
+    if (el) el.classList.toggle("paused", paused);
+  }, [paused]);
+  return (
+    <button
+      type="button"
+      className="marquee-pause"
+      aria-pressed={paused}
+      aria-label={paused ? "Play conditions list" : "Pause conditions list"}
+      onClick={() => setPaused((p) => !p)}
+    >
+      {paused ? "Play" : "Pause"}
+    </button>
   );
 }
