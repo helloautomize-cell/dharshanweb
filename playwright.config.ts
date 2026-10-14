@@ -11,6 +11,10 @@ export default defineConfig({
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
     command: "npm run start",
+    env: {
+      RESEND_MODE: "mock",
+      FORM_SECRET: "e2e-form-secret",
+    },
     url: "http://127.0.0.1:3000/styleguide/",
     reuseExistingServer: true,
     timeout: 120000,

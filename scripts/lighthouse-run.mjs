@@ -7,7 +7,8 @@ import { mkdir, writeFile } from "node:fs/promises";
 const arg = process.argv[2] ?? "index";
 const route = arg === "index" ? "/" : arg.startsWith("/") ? arg : `/${arg}/`;
 const runs = Number(process.argv[3] ?? 3);
-const slug = route === "/" ? "home" : route.replaceAll("/", "-").replace(/^-|-$/g, "");
+const slug =
+  route === "/" ? "home" : route.replaceAll("/", "-").replace(/^-|-$/g, "");
 await mkdir("artifacts/lighthouse", { recursive: true });
 
 const browser = await chromium.launch({
@@ -22,10 +23,7 @@ try {
       onlyCategories: ["performance", "accessibility", "best-practices", "seo"],
       logLevel: "error",
     });
-    await writeFile(
-      `artifacts/lighthouse/${slug}-${i}.html`,
-      result.report[1],
-    );
+    await writeFile(`artifacts/lighthouse/${slug}-${i}.html`, result.report[1]);
     const { audits, categories } = result.lhr;
     rows.push({
       run: i,

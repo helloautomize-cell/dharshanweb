@@ -4,6 +4,13 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { openCookieSettings, readConsent, writeConsent } from "@/lib/consent";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
+}
+
 export function CookieSettingsButton() {
   return (
     <button
@@ -49,6 +56,14 @@ export function CookieBanner() {
   if (!visible) return null;
   const save = (value: boolean) => {
     writeConsent(value);
+    if (!value) {
+      window.gtag?.("consent", "update", { analytics_storage: "denied" });
+      document.cookie.split(";").forEach((cookie) => {
+        const name = cookie.trim().split("=")[0];
+        if (name === "_ga" || name.startsWith("_ga_"))
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.${location.hostname.split(".").slice(-2).join(".")}`;
+      });
+    }
     setVisible(false);
     setSettings(false);
   };

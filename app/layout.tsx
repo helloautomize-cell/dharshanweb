@@ -5,6 +5,7 @@ import {
   Geist_Mono,
   Instrument_Serif,
 } from "next/font/google";
+import { VercelSpeedInsights } from "@/components/speed-insights";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
@@ -49,7 +50,10 @@ export default function RootLayout({
       lang="en-IN"
       className={`${display.variable} ${body.variable} ${mono.variable} ${serif.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <VercelSpeedInsights />
+      </body>
     </html>
   );
 }
