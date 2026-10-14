@@ -1,0 +1,55 @@
+# Entity facts · Rehabify
+
+This is the one source for every listing: the website footer and schema, Google Business Profile, Practo, Justdial and social bios. Copy these lines exactly, character for character. If a fact changes, change it here first, then everywhere else on the same day.
+
+Status: ✅ confirmed · [CONFIRM] still needed before launch
+
+## Practice
+
+| Field | Value | Status |
+|---|---|---|
+| Name | Rehabify | ✅ |
+| What it is | Physical medicine and rehabilitation practice | ✅ |
+| Website | https://www.rehabify.in/ | ✅ |
+| Phone and WhatsApp (display) | +91 79048 42576 | ✅ |
+| Phone link | tel:+917904842576 | ✅ |
+| WhatsApp link | https://wa.me/917904842576 | ✅ |
+| Email | [CONFIRM: one email for everything] | ★ |
+| Address with landmark | [CONFIRM] | ★ |
+| Google Maps link | [CONFIRM] | ★ |
+| Consultation days and hours | [CONFIRM] | ★ |
+| Video consult hours | [CONFIRM] | ★ |
+| Phone and WhatsApp answering hours | [CONFIRM] | |
+| Founded | [CONFIRM: year] | |
+| Legal entity | [CONFIRM] | ★ |
+| Service area | Bengaluru (clinic) and across India (video consults) | ✅ |
+| Google Business Profile primary category | Physiatrist (or "Rehabilitation center" if the profile is for the practice) [CONFIRM] | |
+| Short description (150 characters) | Doctor-led physical medicine and rehabilitation in Bengaluru and online: pain, spine, stroke, joint, sports and children's rehab. | ✅ |
+| Long description (750 characters) | Rehabify is a physical medicine and rehabilitation practice in Bengaluru, with video consultations across India. Its doctors, Dr. Dharshan N A and Dr. Selina Kh, assess how you move, set goals with you and plan each step back to daily life. Rehabify looks after back and neck pain, sciatica, joint and sports injuries, stroke, spinal cord and head injury, Parkinson's disease, cerebral palsy and the needs of older adults. Care is exercise-based first, with medicines and image-guided pain procedures when they are suitable. | ✅ |
+
+## Doctors
+
+### Dr. Dharshan N A
+| Field | Value | Status |
+|---|---|---|
+| Name as shown | Dr. Dharshan N A | ✅ |
+| Title line | Consultant in Physical Medicine and Rehabilitation (Physiatrist) | ✅ |
+| Qualifications | MBBS (Annapoorana Medical College and Hospitals, Salem) · MD Physical Medicine and Rehabilitation (Regional Institute of Medical Sciences, Imphal) · Fellowship in Interventional Pain Management | ✅ (years [CONFIRM]) |
+| Registration | Karnataka Medical Council Reg. No. [CONFIRM] | ★ |
+| Languages | Tamil, Telugu, Kannada, English, Manipuri, Hindi | ✅ |
+| Memberships | Life Member, IAPMR · Life Member, KARM · Life Member, Global Regenerative Orthopedic Sciences Foundation | ✅ |
+| Current hospital role | Specialist, PM&R, Manipal Hospital, Sarjapur Road (shown on the site only if decision D2 allows) | [CONFIRM] |
+
+### Dr. Selina Kh
+| Field | Value | Status |
+|---|---|---|
+| Name as shown | Dr. Selina Kh [CONFIRM: full name as she wants it] | |
+| Title line | Consultant in Physical Medicine and Rehabilitation | ✅ |
+| Focus | Stroke, spinal cord injury, rheumatology, pain management | ✅ |
+| Qualifications, registration, languages | [CONFIRM] | ★ |
+
+## Rules for every listing
+- No "best", "No. 1", "leading", "cure" or "guaranteed", and no ratings in names or descriptions. The name is "Rehabify" only, with no keywords added.
+- The same hours on every platform as on the site.
+- Website links from Google Business Profile carry UTM tags: `?utm_source=google&utm_medium=organic&utm_campaign=gbp`.
+- Photos on listings: only approved images from `IMAGE-MAP.md`.

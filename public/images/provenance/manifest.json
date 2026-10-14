@@ -1,0 +1,92 @@
+[
+  {
+    "source": "brand/mark-blue.png",
+    "sha256": "12d09a24ef2fc3ca3c53d91ca9b99c25b67df09fc28a485edf3cfa6fdfe184d4",
+    "preservedOriginal": "provenance/mark-blue.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "brand/mark-navy.png",
+    "sha256": "7d3171420952d4d420da0286a8608d5f5f166ddceefa33dc715faae54bb7f161",
+    "preservedOriginal": "provenance/mark-navy.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "brand/mark-original.png",
+    "sha256": "7aeb493873d3ec1511e4b9e888481a600b52476ca092d6a48059f3bc0ffbfb70",
+    "preservedOriginal": "provenance/mark-original.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "brand/mark-white.png",
+    "sha256": "97e3d48a974e958c027a86820615a347071f73d967fe925115341c68395c09b0",
+    "preservedOriginal": "provenance/mark-white.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-dharshan-avatar.png",
+    "sha256": "32ab7a4ee123d5d0e3bfef64dbc455b65a542b2d06c864a729d4674c293727ad",
+    "preservedOriginal": "provenance/dr-dharshan-avatar.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-dharshan-banner.png",
+    "sha256": "d7968d92e8d2d56726eed35d131a20ac7f99dc77748b14d114334d44c2e1d7da",
+    "preservedOriginal": "provenance/dr-dharshan-banner.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-dharshan-desk.png",
+    "sha256": "bbbff1b8f3f7a1ba3a87e969207610c9821f20aca65008cc826d67d6baaf2f75",
+    "preservedOriginal": "provenance/dr-dharshan-desk.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-dharshan-exam.png",
+    "sha256": "110d5bd14b7735a56b917aa70e0ab10c6614b96822f3063195a83e1bd51c6696",
+    "preservedOriginal": "provenance/dr-dharshan-exam.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-dharshan-hero.png",
+    "sha256": "bf53449a8708e443dc3c3c77572e0b67643751f289d4f42baf18821a79f351ba",
+    "preservedOriginal": "provenance/dr-dharshan-hero.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-dharshan-video.png",
+    "sha256": "effa219d04b349c8ce708e631c85004ac87743efb9d5cdaa777e1b5345b7101f",
+    "preservedOriginal": "provenance/dr-dharshan-video.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-selina-avatar.png",
+    "sha256": "0a859e360c8b20f419f8464c2f8347acc29d0d0c4b7fb3f93aa7996b65436896",
+    "preservedOriginal": "provenance/dr-selina-avatar.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-selina-desk.png",
+    "sha256": "30d84e466c53ddd7e5d37902ce846b10a93f717c930b0fe2fb6c6b47eea722b0",
+    "preservedOriginal": "provenance/dr-selina-desk.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-selina-exam.png",
+    "sha256": "0a7049045e05d3e8237acb5a2bd8892cee356cf3656cee2fa5fc6051eb55781a",
+    "preservedOriginal": "provenance/dr-selina-exam.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-selina-hero.png",
+    "sha256": "f81a726101b0860f2e587de4b9fb844f4136dc8030adf98d7a836b7b4ce41b52",
+    "preservedOriginal": "provenance/dr-selina-hero.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  },
+  {
+    "source": "doctors/dr-selina-video.png",
+    "sha256": "a7d4ef8480332cb22b84e0a841d97024a588e67acff88e140458c3025e4224f7",
+    "preservedOriginal": "provenance/dr-selina-video.png",
+    "derivativeCredentials": "Not transferred: original signatures do not authenticate resized or recoloured pixels"
+  }
+]

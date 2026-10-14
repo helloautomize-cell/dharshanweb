@@ -1,0 +1,47 @@
+{
+  "name": "rehabify",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write app components lib scripts tests *.json *.mjs *.ts",
+    "format:check": "prettier --check app components lib scripts tests *.json *.mjs *.ts",
+    "images": "node scripts/process-images.mjs",
+    "test": "playwright test",
+    "test:images": "node scripts/verify-images.mjs",
+    "launch-check": "node scripts/launch-check.mjs",
+    "qa:reference": "node scripts/capture-reference.mjs",
+    "qa:lighthouse": "node scripts/lighthouse.mjs"
+  },
+  "engines": {
+    "node": ">=22.0.0 <27"
+  },
+  "dependencies": {
+    "@radix-ui/react-navigation-menu": "1.2.22",
+    "lucide-react": "1.52.0",
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.8",
+    "lighthouse": "13.5.0",
+    "playwright": "1.63.0",
+    "playwright-core": "1.63.0",
+    "prettier": "3.9.9",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3"
+  }
+}
