@@ -1,0 +1,1281 @@
+[
+  {
+    "url": "/",
+    "title": "Rehabify Bengaluru | Physiatrist for Pain, Stroke and Rehab",
+    "description": "Doctor-led physical medicine and rehabilitation in Bengaluru and online. Back and neck pain, stroke, spine, joint and sports injuries. Clinic or video.",
+    "h1": null,
+    "badge": null,
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": [
+      "MedicalWebPage",
+      "FAQPage"
+    ],
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/about/",
+    "title": "About Rehabify | Physical Medicine and Rehabilitation, Bengaluru",
+    "description": "Rehabify is a doctor-led rehab practice in Bengaluru and online, led by physiatrist Dr. Dharshan N A. How we work and what we look after.",
+    "h1": "About *Rehabify*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": [
+      "AboutPage"
+    ],
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/doctors/",
+    "title": "Our Doctors | Rehabify Bengaluru",
+    "description": "Meet the rehabilitation doctors at Rehabify. Qualifications, focus areas and how to book a clinic or video consultation.",
+    "h1": "Meet your *doctors*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/dr-dharshan-n-a/",
+    "title": "Dr. Dharshan N A | Physiatrist, Bengaluru | Rehabify",
+    "description": "Dr. Dharshan N A, MBBS, MD (Physical Medicine and Rehabilitation), fellowship in interventional pain management. Neuro rehab and pain care in Bengaluru.",
+    "h1": "Dr. Dharshan *N A*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": [
+      "ProfilePage"
+    ],
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/dr-selina-kh/",
+    "title": "Dr. Selina Kh | Physiatrist, Bengaluru | Rehabify",
+    "description": "Dr. Selina Kh, consultant in physical medicine and rehabilitation at Rehabify. Stroke, spinal cord injury, rheumatology and pain care. [CONFIRM: qualifications]",
+    "h1": "Dr. Selina *Kh*",
+    "badge": null,
+    "reviewer": "dr-selina-kh",
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": [
+      "ProfilePage"
+    ],
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/care/",
+    "title": "Rehab and Pain Care | Rehabify Bengaluru",
+    "description": "All rehabilitation and pain care at Rehabify: spine, neuro rehab, joints and sports, children and older adults. Clinic and video consults.",
+    "h1": "Care for pain, nerves and *movement*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/conditions/",
+    "title": "Conditions A to Z | Rehabify Bengaluru",
+    "description": "Search the conditions Rehabify's rehabilitation doctors look after, from back pain and sciatica to stroke, cerebral palsy and osteoporosis.",
+    "h1": "Look up a *condition*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/video-consultation/",
+    "title": "Online Rehab Consultation with a Physiatrist | Rehabify",
+    "description": "See a rehabilitation doctor by video from anywhere in India. Share reports, move on camera and get a home plan. Book a video consult with Rehabify.",
+    "h1": "See a rehab doctor from *home*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": [
+      "MedicalWebPage",
+      "Service"
+    ],
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/plan-your-visit/",
+    "title": "Plan Your Visit | Rehabify Bengaluru",
+    "description": "Timings, address, what to bring and what to wear for your rehab consultation at Rehabify in Bengaluru.",
+    "h1": "Plan your *visit*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/contact/",
+    "title": "Book a Consultation | Rehabify Bengaluru",
+    "description": "Book a clinic visit or video consult with Rehabify. Call or WhatsApp +91 79048 42576.",
+    "h1": "Book a *consultation*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": [
+      "ContactPage"
+    ],
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/faqs/",
+    "title": "FAQs | Rehabify Bengaluru",
+    "description": "Answers about physiatrists, booking, video consults, procedures, children's rehab and privacy at Rehabify.",
+    "h1": "Questions people *often* ask",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": [
+      "FAQPage"
+    ],
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/health-library/",
+    "title": "Health Library | Rehabify",
+    "description": "Doctor-reviewed articles on back pain, stroke recovery, joint care and rehab at home from Rehabify's rehabilitation doctors.",
+    "h1": "Health *Library*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/thank-you/",
+    "title": "Thank you | Rehabify",
+    "description": "We have received your request and will confirm your time.",
+    "h1": null,
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/404/",
+    "title": "Page not found | Rehabify",
+    "description": "The page may have moved. Try these links instead.",
+    "h1": null,
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/pain-and-spine/",
+    "title": "Back, Neck and Spine Pain Care in Bengaluru | Rehabify",
+    "description": "Back pain, neck pain and sciatica assessed by a physiatrist trained in interventional pain management. Exercise first, procedures when suitable.",
+    "h1": "Pain and *spine*",
+    "badge": "pain-spine",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": [
+      "/neuro-rehabilitation/spinal-cord-injury/",
+      "/older-adults/osteoporosis/"
+    ],
+    "posts": [
+      "/health-library/low-back-pain-when-to-worry/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/pain-and-spine/back-pain/",
+    "title": "Low Back Pain Treatment in Bengaluru | Rehabify Physiatrist",
+    "description": "Low back pain assessed and treated by a physiatrist in Bengaluru. Exercise-based rehab, medicines and image-guided procedures when suitable.",
+    "h1": "Low back *pain*",
+    "badge": "back-pain",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Low back pain",
+      "alternateName": [
+        "Lumbago",
+        "Kamar dard"
+      ]
+    },
+    "related": [
+      "/pain-and-spine/sciatica/",
+      "/pain-and-spine/image-guided-injections/"
+    ],
+    "posts": [
+      "/health-library/low-back-pain-when-to-worry/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/pain-and-spine/neck-pain/",
+    "title": "Neck Pain Treatment in Bengaluru | Rehabify",
+    "description": "Neck pain and arm pain assessed by a physiatrist in Bengaluru. Posture and exercise rehab, medicines and image-guided procedures when suitable.",
+    "h1": "Neck *pain*",
+    "badge": "neck-pain",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Neck pain",
+      "alternateName": [
+        "Cervical pain",
+        "Cervical spondylosis",
+        "Gardan dard"
+      ]
+    },
+    "related": [
+      "/pain-and-spine/back-pain/",
+      "/pain-and-spine/image-guided-injections/"
+    ],
+    "posts": [
+      "/health-library/low-back-pain-when-to-worry/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/pain-and-spine/sciatica/",
+    "title": "Sciatica Treatment Without Surgery in Bengaluru | Rehabify",
+    "description": "Sciatica and leg pain from the back assessed by a physiatrist in Bengaluru. Exercise rehab, medicines and image-guided nerve root injections when suitable.",
+    "h1": "Sciatica and *leg pain*",
+    "badge": "sciatica",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Sciatica",
+      "alternateName": [
+        "Lumbar radiculopathy",
+        "Leg pain from the back"
+      ]
+    },
+    "related": [
+      "/pain-and-spine/back-pain/",
+      "/pain-and-spine/image-guided-injections/"
+    ],
+    "posts": [
+      "/health-library/low-back-pain-when-to-worry/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/pain-and-spine/image-guided-injections/",
+    "title": "Image-Guided Injections and Nerve Blocks | Rehabify",
+    "description": "Image-guided spine and joint injections and nerve blocks in Bengaluru, used with rehab when a physiatrist finds them suitable after examination.",
+    "h1": "Image-guided injections and *nerve blocks*",
+    "badge": "injection",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalProcedure",
+      "name": "Image-guided pain injections and nerve blocks",
+      "alternateName": [
+        "Nerve block",
+        "Facet joint injection",
+        "Epidural steroid injection"
+      ]
+    },
+    "related": [
+      "/pain-and-spine/back-pain/",
+      "/pain-and-spine/sciatica/"
+    ],
+    "posts": [
+      "/health-library/low-back-pain-when-to-worry/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/neuro-rehabilitation/",
+    "title": "Neuro Rehabilitation in Bengaluru | Rehabify",
+    "description": "Rehab after stroke, spinal cord injury and head injury, and for Parkinson's and spasticity, planned by a physiatrist in Bengaluru with goals set with you.",
+    "h1": "Neuro *rehabilitation*",
+    "badge": "neuro",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": [
+      "/childrens-rehabilitation/cerebral-palsy/",
+      "/older-adults/falls-and-balance/"
+    ],
+    "posts": [
+      "/health-library/first-90-days-after-stroke/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/neuro-rehabilitation/stroke/",
+    "title": "Stroke Rehabilitation in Bengaluru | Rehabify",
+    "description": "Stroke rehab in Bengaluru led by a physiatrist. Goal-based plans for walking, arm use, daily tasks, spasticity and shoulder pain after a stroke.",
+    "h1": "Stroke *rehabilitation*",
+    "badge": "stroke",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Stroke",
+      "alternateName": [
+        "Paralysis",
+        "Hemiplegia",
+        "Brain attack",
+        "Lakwa"
+      ]
+    },
+    "related": [
+      "/neuro-rehabilitation/spasticity/",
+      "/older-adults/falls-and-balance/"
+    ],
+    "posts": [
+      "/health-library/first-90-days-after-stroke/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/neuro-rehabilitation/spinal-cord-injury/",
+    "title": "Spinal Cord Injury Rehabilitation in Bengaluru | Rehabify",
+    "description": "Spinal cord injury rehab in Bengaluru led by a physiatrist. Mobility, bladder, bowel, skin and spasticity care, wheelchair advice and family training.",
+    "h1": "Spinal cord injury *rehabilitation*",
+    "badge": "spinal-cord",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Spinal cord injury",
+      "alternateName": [
+        "Paraplegia",
+        "Quadriplegia",
+        "Tetraplegia",
+        "SCI"
+      ]
+    },
+    "related": [
+      "/neuro-rehabilitation/spasticity/",
+      "/pain-and-spine/"
+    ],
+    "posts": [],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/neuro-rehabilitation/head-injury/",
+    "title": "Head and Brain Injury Rehabilitation in Bengaluru | Rehabify",
+    "description": "Rehab after head injury and traumatic brain injury in Bengaluru. A physiatrist plans care for movement, thinking, daily tasks and return to work.",
+    "h1": "Head injury *rehabilitation*",
+    "badge": "head-injury",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Traumatic brain injury",
+      "alternateName": [
+        "Head injury",
+        "Brain injury",
+        "TBI",
+        "Concussion"
+      ]
+    },
+    "related": [
+      "/neuro-rehabilitation/stroke/",
+      "/neuro-rehabilitation/spasticity/"
+    ],
+    "posts": [],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/neuro-rehabilitation/parkinsons/",
+    "title": "Parkinson's Disease Rehabilitation in Bengaluru | Rehabify",
+    "description": "Rehab for Parkinson's disease in Bengaluru. A physiatrist plans exercise for walking, balance, posture and daily tasks, with fall prevention.",
+    "h1": "Parkinson's disease *rehabilitation*",
+    "badge": "parkinsons",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Parkinson's disease",
+      "alternateName": [
+        "Parkinsonism",
+        "PD"
+      ]
+    },
+    "related": [
+      "/older-adults/falls-and-balance/",
+      "/neuro-rehabilitation/"
+    ],
+    "posts": [],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/neuro-rehabilitation/spasticity/",
+    "title": "Spasticity Treatment in Bengaluru | Rehabify",
+    "description": "Care for muscle stiffness after stroke, brain or spinal cord injury and cerebral palsy. Stretching, splints, medicines and injections when suitable.",
+    "h1": "Spasticity *care*",
+    "badge": "spasticity",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Spasticity",
+      "alternateName": [
+        "Muscle stiffness",
+        "Muscle tightness after stroke",
+        "Increased tone"
+      ]
+    },
+    "related": [
+      "/neuro-rehabilitation/stroke/",
+      "/childrens-rehabilitation/cerebral-palsy/"
+    ],
+    "posts": [
+      "/health-library/first-90-days-after-stroke/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/joints-and-sports/",
+    "title": "Joint Pain and Sports Injury Care in Bengaluru | Rehabify",
+    "description": "Knee, shoulder and sports injuries, rehab after fracture or surgery, and prosthetic rehab, led by a physiatrist in Bengaluru. Exercise first.",
+    "h1": "Joints and *sports*",
+    "badge": "joints",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": [
+      "/pain-and-spine/",
+      "/older-adults/osteoporosis/"
+    ],
+    "posts": [
+      "/health-library/what-is-a-physiatrist/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/joints-and-sports/knee-pain/",
+    "title": "Knee Pain and Osteoarthritis Care in Bengaluru | Rehabify",
+    "description": "Knee pain and knee osteoarthritis treated without surgery where possible. Exercise, weight and activity advice, medicines and injections when suitable.",
+    "h1": "Knee pain and *osteoarthritis*",
+    "badge": "knee",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Knee osteoarthritis",
+      "alternateName": [
+        "Knee arthritis",
+        "Ghutne ka dard"
+      ]
+    },
+    "related": [
+      "/joints-and-sports/prp-and-prolotherapy/",
+      "/joints-and-sports/after-fracture-or-surgery/",
+      "/older-adults/falls-and-balance/"
+    ],
+    "posts": [],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/joints-and-sports/shoulder-pain/",
+    "title": "Frozen Shoulder and Shoulder Pain Care in Bengaluru | Rehabify",
+    "description": "Frozen shoulder, rotator cuff and shoulder pain assessed by a physiatrist in Bengaluru. Exercise-based rehab and image-guided injections when suitable.",
+    "h1": "Shoulder pain and *frozen* shoulder",
+    "badge": "shoulder",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Frozen shoulder",
+      "alternateName": [
+        "Adhesive capsulitis",
+        "Shoulder pain"
+      ]
+    },
+    "related": [
+      "/pain-and-spine/neck-pain/",
+      "/pain-and-spine/image-guided-injections/",
+      "/joints-and-sports/sports-injuries/"
+    ],
+    "posts": [],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/joints-and-sports/sports-injuries/",
+    "title": "Sports Injury Rehab in Bengaluru | Rehabify",
+    "description": "Sports injuries assessed by a physiatrist in Bengaluru. Rehab for sprains, strains, tendon and ligament injuries, with a planned return to sport.",
+    "h1": "Sports *injuries*",
+    "badge": "sports",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Sports injury",
+      "alternateName": [
+        "Sprain",
+        "Muscle strain",
+        "Tendinopathy"
+      ]
+    },
+    "related": [
+      "/joints-and-sports/knee-pain/",
+      "/joints-and-sports/shoulder-pain/",
+      "/joints-and-sports/prp-and-prolotherapy/"
+    ],
+    "posts": [],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/joints-and-sports/after-fracture-or-surgery/",
+    "title": "Rehab After Fracture or Surgery in Bengaluru | Rehabify",
+    "description": "Rehab after a fracture, knee or hip replacement or other surgery, planned by a physiatrist in Bengaluru. Pain control, movement, strength and walking.",
+    "h1": "Rehab after a fracture or *surgery*",
+    "badge": "fracture",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalProcedure",
+      "name": "Rehabilitation after fracture or orthopaedic surgery",
+      "alternateName": [
+        "Post-operative rehab",
+        "Knee replacement rehab"
+      ]
+    },
+    "related": [
+      "/joints-and-sports/knee-pain/",
+      "/older-adults/osteoporosis/",
+      "/older-adults/falls-and-balance/"
+    ],
+    "posts": [],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/joints-and-sports/prp-and-prolotherapy/",
+    "title": "PRP and Prolotherapy Injections in Bengaluru | Rehabify",
+    "description": "What PRP and prolotherapy injections are, what the evidence says, and when a physiatrist may offer them as part of a rehab plan in Bengaluru.",
+    "h1": "PRP and *prolotherapy*",
+    "badge": "prp",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalProcedure",
+      "name": "Platelet-rich plasma injection",
+      "alternateName": [
+        "PRP injection",
+        "Prolotherapy"
+      ]
+    },
+    "related": [
+      "/joints-and-sports/knee-pain/",
+      "/joints-and-sports/sports-injuries/",
+      "/pain-and-spine/image-guided-injections/"
+    ],
+    "posts": [],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/joints-and-sports/prosthetic-rehab/",
+    "title": "Amputation and Prosthetic Rehab in Bengaluru | Rehabify",
+    "description": "Rehab after amputation in Bengaluru: stump care, phantom pain, prosthetic planning and walking training, led by a physiatrist with your prosthetist.",
+    "h1": "Amputation and *prosthetic* rehab",
+    "badge": "prosthesis",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalProcedure",
+      "name": "Prosthetic rehabilitation",
+      "alternateName": [
+        "Amputee rehabilitation",
+        "Artificial limb training"
+      ]
+    },
+    "related": [
+      "/joints-and-sports/after-fracture-or-surgery/",
+      "/older-adults/falls-and-balance/"
+    ],
+    "posts": [],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/childrens-rehabilitation/",
+    "title": "Children's Rehabilitation in Bengaluru | Rehabify",
+    "description": "Rehab for children with cerebral palsy, muscular dystrophy and developmental delay. A physiatrist plans care with parents, therapists and schools.",
+    "h1": "Children's *rehabilitation*",
+    "badge": "children",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": [
+      "/childrens-rehabilitation/cerebral-palsy/",
+      "/neuro-rehabilitation/spasticity/"
+    ],
+    "posts": [
+      "/health-library/cerebral-palsy-what-parents-ask-first/",
+      "/health-library/toe-walking-when-to-check/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/childrens-rehabilitation/cerebral-palsy/",
+    "title": "Cerebral Palsy Rehabilitation in Bengaluru | Rehabify",
+    "description": "Cerebral palsy care led by a physiatrist in Bengaluru. Goal-based therapy, splints, spasticity management and school support, planned with parents.",
+    "h1": "Cerebral *palsy*",
+    "badge": "cerebral-palsy",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Cerebral palsy",
+      "alternateName": [
+        "CP"
+      ]
+    },
+    "related": [
+      "/neuro-rehabilitation/spasticity/",
+      "/childrens-rehabilitation/developmental-delay/"
+    ],
+    "posts": [
+      "/health-library/cerebral-palsy-what-parents-ask-first/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/childrens-rehabilitation/muscular-dystrophy/",
+    "title": "Muscular Dystrophy Rehab in Bengaluru | Rehabify",
+    "description": "Rehab for children with Duchenne and other muscular dystrophies. Stretching, splints, mobility and school advice, planned with your child's team.",
+    "h1": "Muscular *dystrophy*",
+    "badge": "muscular-dystrophy",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Muscular dystrophy",
+      "alternateName": [
+        "Duchenne muscular dystrophy",
+        "DMD"
+      ]
+    },
+    "related": [
+      "/childrens-rehabilitation/cerebral-palsy/",
+      "/childrens-rehabilitation/"
+    ],
+    "posts": [
+      "/health-library/school-and-therapy-for-children-with-dmd/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/childrens-rehabilitation/developmental-delay/",
+    "title": "Developmental Delay Support in Bengaluru | Rehabify",
+    "description": "Support for children with developmental delay or autism. A physiatrist assesses movement and daily skills and links you with therapists and schools.",
+    "h1": "Developmental delay and *autism* support",
+    "badge": "development",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Developmental delay",
+      "alternateName": [
+        "Global developmental delay",
+        "Autism spectrum disorder support"
+      ]
+    },
+    "related": [
+      "/childrens-rehabilitation/cerebral-palsy/",
+      "/childrens-rehabilitation/"
+    ],
+    "posts": [
+      "/health-library/toe-walking-when-to-check/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/older-adults/",
+    "title": "Rehabilitation for Older Adults in Bengaluru | Rehabify",
+    "description": "Rehab for older adults in Bengaluru. Falls and balance, osteoporosis, joint pain and recovery after illness, led by a physiatrist.",
+    "h1": "Older *adults*",
+    "badge": "older-adults",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": null,
+    "related": [
+      "/older-adults/falls-and-balance/",
+      "/older-adults/osteoporosis/"
+    ],
+    "posts": [
+      "/health-library/making-a-home-safer-against-falls/",
+      "/health-library/osteoporosis-after-50/",
+      "/health-library/walking-aids-cane-walker-or-none/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/older-adults/falls-and-balance/",
+    "title": "Falls and Balance Clinic in Bengaluru | Rehabify",
+    "description": "Fall risk and balance assessed by a physiatrist in Bengaluru. Strength and balance exercise, walking aids, medicine review and home safety advice.",
+    "h1": "Falls and *balance*",
+    "badge": "balance",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Falls and balance problems",
+      "alternateName": [
+        "Fall risk",
+        "Imbalance in older adults"
+      ]
+    },
+    "related": [
+      "/older-adults/osteoporosis/",
+      "/neuro-rehabilitation/parkinsons/"
+    ],
+    "posts": [
+      "/health-library/making-a-home-safer-against-falls/",
+      "/health-library/walking-aids-cane-walker-or-none/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/older-adults/osteoporosis/",
+    "title": "Osteoporosis Doctor in Bengaluru | Rehabify",
+    "description": "Osteoporosis assessed and managed by a physiatrist in Bengaluru. Bone health plans, safe exercise, fall prevention and pain care after fractures.",
+    "h1": "Osteo*porosis*",
+    "badge": "bones",
+    "reviewer": "dr-dharshan-n-a",
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": null,
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Osteoporosis",
+      "alternateName": [
+        "Thin bones",
+        "Low bone density"
+      ]
+    },
+    "related": [
+      "/older-adults/falls-and-balance/",
+      "/pain-and-spine/back-pain/"
+    ],
+    "posts": [
+      "/health-library/osteoporosis-after-50/"
+    ],
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/privacy-policy/",
+    "title": "Privacy Policy | Rehabify",
+    "description": "How Rehabify in Bengaluru collects, uses, stores and protects your personal and health data under the Digital Personal Data Protection Act, 2023.",
+    "h1": "Privacy *policy*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": "[CONFIRM: date set at launch]",
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/terms-of-use/",
+    "title": "Terms of Use | Rehabify",
+    "description": "The terms for using the Rehabify website, booking requests and video consultations, including the Telemedicine Practice Guidelines 2020 notice.",
+    "h1": "Terms of *use*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": "[CONFIRM: date set at launch]",
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/medical-disclaimer/",
+    "title": "Medical Disclaimer | Rehabify",
+    "description": "Information on the Rehabify website is for general education and does not replace a consultation with a doctor. Read what that means for you.",
+    "h1": "Medical *disclaimer*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": "[CONFIRM: date set at launch]",
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/editorial-policy/",
+    "title": "Editorial and Medical Review Policy | Rehabify",
+    "description": "How Rehabify writes, reviews, dates and corrects health content, and how we use AI-assisted images and drafting with doctor approval.",
+    "h1": "How we write and *review*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": "[CONFIRM: date set at launch]",
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/patient-rights/",
+    "title": "Patient Rights and Responsibilities | Rehabify",
+    "description": "Your rights as a Rehabify patient, based on India's Charter of Patients' Rights, and how you can help us give you safe, effective care.",
+    "h1": "Your rights and *responsibilities*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": "[CONFIRM: date set at launch]",
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/appointments-cancellation-refund/",
+    "title": "Appointments, Cancellation and Refund | Rehabify",
+    "description": "How to book, reschedule or cancel a clinic visit or video consult at Rehabify, Bengaluru, and when refunds are given.",
+    "h1": "Appointments, cancellation and *refund*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": "[CONFIRM: date set at launch]",
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/accessibility/",
+    "title": "Accessibility Statement | Rehabify",
+    "description": "Rehabify aims for its website to meet WCAG 2.2 level AA. Read what we support, known limits and how to report a barrier.",
+    "h1": "Accessibility *statement*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": null,
+    "lastUpdated": "[CONFIRM: date set at launch]",
+    "schema": null,
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": null,
+    "reviewedBy": null,
+    "datePublished": null,
+    "dateModified": null,
+    "readingTime": null,
+    "links": null
+  },
+  {
+    "url": "/health-library/what-is-a-physiatrist/",
+    "title": "What Is a Physiatrist? When to See One | Rehabify",
+    "description": "A physiatrist is a doctor who treats pain and loss of movement without surgery. Learn what they do and when to see one in Bengaluru.",
+    "h1": "What is a *physiatrist*?",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": "BlogPosting",
+    "about": null,
+    "related": null,
+    "posts": null,
+    "author": "dr-dharshan-n-a",
+    "reviewedBy": "dr-dharshan-n-a",
+    "datePublished": "[CONFIRM: launch date]",
+    "dateModified": "[CONFIRM: launch date]",
+    "readingTime": "5 min",
+    "links": [
+      "/",
+      "/faqs/",
+      "/dr-dharshan-n-a/",
+      "/care/"
+    ]
+  },
+  {
+    "url": "/health-library/first-90-days-after-stroke/",
+    "title": "First 90 Days After a Stroke: Rehab Guide | Rehabify",
+    "description": "What stroke rehab looks like in the first 3 months: early goals, therapy, stiffness, home safety and warning signs, from a Bengaluru physiatrist.",
+    "h1": "The first 90 days after a *stroke*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": "BlogPosting",
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Stroke"
+    },
+    "related": null,
+    "posts": null,
+    "author": "dr-dharshan-n-a",
+    "reviewedBy": "dr-dharshan-n-a",
+    "datePublished": "[CONFIRM: launch date]",
+    "dateModified": "[CONFIRM: launch date]",
+    "readingTime": "6 min",
+    "links": [
+      "/neuro-rehabilitation/stroke/",
+      "/neuro-rehabilitation/spasticity/"
+    ]
+  },
+  {
+    "url": "/health-library/low-back-pain-when-to-worry/",
+    "title": "Low Back Pain: What Helps and When to Worry | Rehabify",
+    "description": "Most low back pain gets better with movement and time. Learn what helps, what to avoid and the warning signs that need urgent care.",
+    "h1": "Low back pain: what helps, and when to *worry*",
+    "badge": null,
+    "reviewer": null,
+    "lastReviewed": "[CONFIRM: sign-off date]",
+    "lastUpdated": null,
+    "schema": "BlogPosting",
+    "about": {
+      "type": "MedicalCondition",
+      "name": "Low back pain"
+    },
+    "related": null,
+    "posts": null,
+    "author": "dr-dharshan-n-a",
+    "reviewedBy": "dr-dharshan-n-a",
+    "datePublished": "[CONFIRM: launch date]",
+    "dateModified": "[CONFIRM: launch date]",
+    "readingTime": "5 min",
+    "links": [
+      "/pain-and-spine/back-pain/",
+      "/pain-and-spine/sciatica/",
+      "/pain-and-spine/image-guided-injections/"
+    ]
+  }
+]

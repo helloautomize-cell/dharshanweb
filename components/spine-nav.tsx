@@ -19,7 +19,7 @@ export function SpineNav() {
       if (!el.id) el.id = `spine-${el.dataset.spine?.split(" ")[0]}`;
       return { id: el.id, label: el.dataset.spine ?? el.id };
     });
-    setSections(found);
+    const frame = requestAnimationFrame(() => setSections(found));
     if (!found.length) return;
     const observer = new IntersectionObserver(
       (entries) => {
@@ -42,6 +42,7 @@ export function SpineNav() {
     onScroll();
     addEventListener("scroll", onScroll, { passive: true });
     return () => {
+      cancelAnimationFrame(frame);
       observer.disconnect();
       removeEventListener("scroll", onScroll);
     };

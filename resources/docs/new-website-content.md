@@ -2193,7 +2193,7 @@ badge: balance
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Falls and balance problems", alternateName: ["Fall risk", "Imbalance in older adults"] }
-related: [/older-adults/osteoporosis/, /neuro-rehabilitation/parkinsons-disease/]
+related: [/older-adults/osteoporosis/, /neuro-rehabilitation/parkinsons/]
 posts: [/health-library/making-a-home-safer-against-falls/, /health-library/walking-aids-cane-walker-or-none/]
 ```
 

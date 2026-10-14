@@ -1,4 +1,5 @@
 import { Icon } from "@/lib/icons";
+import Link from "next/link";
 
 export function Breadcrumbs({
   items,
@@ -9,13 +10,13 @@ export function Breadcrumbs({
     <nav className="breadcrumbs" aria-label="Breadcrumb">
       <ol>
         <li>
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
         </li>
         {items.map((item, index) => (
           <li key={index}>
             <Icon name="chevronRight" size={14} />
             {item.href && index < items.length - 1 ? (
-              <a href={item.href}>{item.label}</a>
+              <Link href={item.href}>{item.label}</Link>
             ) : (
               <span aria-current="page">{item.label}</span>
             )}
