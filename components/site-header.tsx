@@ -4,11 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/lib/icons";
-import { megaGroups, navLinks } from "@/lib/nav";
+import { megaExtras, megaGroups, navLinks } from "@/lib/nav";
 import { siteConfig } from "@/lib/site-config";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [dark, setDark] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -17,10 +18,22 @@ export function SiteHeader() {
   const suppressFocusOpen = useRef(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    addEventListener("scroll", onScroll, { passive: true });
-    return () => removeEventListener("scroll", onScroll);
+    const check = () => {
+      setScrolled(window.scrollY > 40);
+      const r = navRef.current?.getBoundingClientRect();
+      const under = document.elementFromPoint(
+        Math.round(window.innerWidth / 2),
+        Math.round((r?.bottom ?? 78) + 8),
+      );
+      setDark(!!(under instanceof Element && under.closest("[data-dark]")));
+    };
+    check();
+    addEventListener("scroll", check, { passive: true });
+    addEventListener("resize", check);
+    return () => {
+      removeEventListener("scroll", check);
+      removeEventListener("resize", check);
+    };
   }, []);
 
   useEffect(() => {
@@ -56,21 +69,60 @@ export function SiteHeader() {
       <header
         className="site-nav"
         data-scrolled={scrolled || undefined}
+        data-dark={dark || undefined}
         ref={navRef}
       >
         <Link className="nav-brand" href="/" aria-label="Rehabify home">
           <Image
+            className="mark mark-blue"
             src="/images/brand/mark-blue@3x.png"
             alt=""
             width={60}
             height={92}
-            style={{ height: 36, width: "auto" }}
+            style={{ height: 28, width: "auto" }}
             unoptimized
             priority
           />
+          <Image
+            className="mark mark-ice"
+            src="/images/brand/mark-ice@3x.png"
+            alt=""
+            width={60}
+            height={92}
+            style={{ height: 28, width: "auto" }}
+            unoptimized
+            aria-hidden="true"
+          />
           <b>Rehabify</b>
         </Link>
-        <nav className="links" aria-label="Main">
+        <nav
+          className="links"
+          aria-label="Main"
+          onPointerOver={(event) => {
+            const nav = event.currentTarget;
+            const link = (event.target as HTMLElement).closest(
+              ":scope > ul > li > a",
+            );
+            const indicator = nav.querySelector<HTMLElement>(".nav-indicator");
+            if (!indicator) return;
+            if (!link) {
+              nav.style.setProperty("--nav-show", "0");
+              return;
+            }
+            nav.style.setProperty(
+              "--nav-x",
+              `${(link as HTMLElement).offsetLeft}px`,
+            );
+            nav.style.setProperty(
+              "--nav-w",
+              `${(link as HTMLElement).offsetWidth}px`,
+            );
+            nav.style.setProperty("--nav-show", "1");
+          }}
+          onPointerLeave={(event) =>
+            event.currentTarget.style.setProperty("--nav-show", "0")
+          }
+        >
           <span className="nav-indicator" aria-hidden="true" />
           <ul>
             <li
@@ -108,6 +160,14 @@ export function SiteHeader() {
                       ))}
                     </div>
                   ))}
+                  <div>
+                    <h3>Read</h3>
+                    {megaExtras.map((link) => (
+                      <Link key={link.href} href={link.href}>
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
                 <Link className="mega-preview" href="/doctors/">
                   <Image
@@ -132,13 +192,10 @@ export function SiteHeader() {
                 <Link href={link.href}>{link.label}</Link>
               </li>
             ))}
-            <li>
-              <Link href="/video-consultation/">Video consult</Link>
-            </li>
           </ul>
         </nav>
         <Link
-          className="btn btn-glow nav-book"
+          className="btn btn-primary nav-book"
           href="/contact/#book"
           aria-label="Book a consultation"
         >
@@ -158,7 +215,7 @@ export function SiteHeader() {
           <Icon name={menuOpen ? "close" : "menu"} size={24} />
         </button>
       </header>
-      <div className="mobile-menu" data-open={menuOpen || undefined}>
+      <div className="mobile-menu" data-open={menuOpen || undefined} data-dark>
         <nav aria-label="Mobile">
           <Link href="/care/">All care</Link>
           {megaGroups.map((group) => (
@@ -175,7 +232,7 @@ export function SiteHeader() {
         </nav>
         <div className="mobile-menu-actions">
           <Link
-            className="btn btn-glow light"
+            className="btn btn-invert"
             href="/contact/#book"
             onClick={() => setMenuOpen(false)}
           >

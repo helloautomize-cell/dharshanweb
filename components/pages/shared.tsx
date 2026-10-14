@@ -104,7 +104,7 @@ export function CtaBand({
         <h2 className="h3">{title}</h2>
       </div>
       <div className="cta-actions">
-        <Link className="btn btn-glow light" href="/contact/#book">
+        <Link className="btn btn-invert" href="/contact/#book">
           <span className="button-icon">
             <Icon name="calendar" size={20} />
           </span>
@@ -121,11 +121,9 @@ export function CtaBand({
 export function SectionBlocks({
   page,
   exclude,
-  spinePrefix,
 }: {
   page: PageContent;
   exclude?: RegExp;
-  spinePrefix?: string;
 }) {
   return (
     <>
@@ -146,9 +144,6 @@ export function SectionBlocks({
               key={slug}
               className={`content-section${isUrgent ? " is-urgent" : ""}`}
               id={slug}
-              {...(spinePrefix
-                ? { "data-spine": `${spinePrefix} · ${s.heading}` }
-                : {})}
             >
               <h2 className="h3">
                 {s.heading.replace(/\s*\(([^)]+)\)\s*$/, "")}
