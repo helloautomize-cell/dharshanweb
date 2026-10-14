@@ -68,3 +68,40 @@ stale test servers, nav-book accessible name at mobile width.
 
 **Blocked:** future posts referenced by `posts:` fields (6 unwritten articles)
 stay as launch-check blockers; Vercel preview unavailable.
+
+## Phase 4 — Home and templates (branch: phase-4)
+
+**Built:** full Home in `app/(site)/page.tsx`: night hero (doctor fan, floating
+chip + goniometer, fact row, mobile short line), finder bar (prefills
+/contact/#book), conditions marquee, 6-tile WHY bento (quote, goals widget,
+pain, neuro, ages, clinic/video switch), body map + also-row, 12-card care
+track, recovery spine (sticky vertebra column + 6 steps), 3 stacking cards,
+meet-the-doctor (portrait, principles, timeline), visit band, A-to-Z search,
+quick answers + help card, notices, CTA band. Care/doctor/post/conditions
+templates from P3 verified.
+
+**Acceptance:** build PASS, 18/18 Playwright PASS, lint/typecheck/format PASS.
+Fixed: recovery section missing night bg (washed heading), goniometer hidden
+under arch (z-index), `.goals-tile`/`.bento-quote` scoped to `.bento-grid`
+(styleguide specimen regression), nested `<main>` (templates -> div),
+`main` landmark in (site) layout, visit-band contrast, nav-book aria-label.
+
+**Screenshots:** artifacts/p4-home-{1440,390}-{hero,bento,recovery,az,meet,full}.png
+
+## Phase 5 — Posts, preview, QA (branch: phase-5 pending)
+
+**Built:** post template verified on all 3 library posts; `scripts/
+lighthouse-run.mjs` (N-run median harness); all-route sweep (48 public routes:
+200, h1, noindex, zero horizontal overflow at 390).
+
+**Lighthouse mobile medians (3 runs, local prod build):**
+| Page | Perf | A11y | BP | SEO | LCP ms | CLS | TBT ms |
+|---|---|---|---|---|---|---|---|
+| Home | 92 | 97 | 100 | 66 | 3262 | 0 | 47 |
+| Back pain | 95 | 100 | 100 | 69 | 2931 | 0 | 42 |
+| Dr. Dharshan | 92 | 100 | 100 | 69 | 3176 | 0 | 101 |
+
+SEO is low by design (deliberate noindex). LCP ~3.0-3.3s local; the 2.0s
+budget is measured on the deployed preview (still blocked - no Vercel deploy).
+
+**Blocked:** Vercel preview (unchanged); Lighthouse numbers are local.

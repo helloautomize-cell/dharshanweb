@@ -63,19 +63,19 @@ test("doctor page has portrait and Physician schema", async ({ page }) => {
   expect(jsonld.join("")).toContain("Physician");
 });
 
-test("conditions A to Z lists every registered condition", async ({
-  page,
-}) => {
+test("conditions A to Z lists every registered condition", async ({ page }) => {
   await page.goto("/conditions/");
   const count = await page.locator(".az-group li a").count();
   expect(count).toBeGreaterThan(30);
 });
 
-test("old URLs redirect and removed ones return 410", async ({
-  request,
-}) => {
+test("old URLs redirect and removed ones return 410", async ({ request }) => {
   let response = await request.get("/about-us", { maxRedirects: 0 });
-  for (let i = 0; i < 4 && [301, 302, 307, 308].includes(response.status()); i++) {
+  for (
+    let i = 0;
+    i < 4 && [301, 302, 307, 308].includes(response.status());
+    i++
+  ) {
     const location = response.headers()["location"];
     if (!location) break;
     response = await request.get(location, { maxRedirects: 0 });
@@ -85,9 +85,7 @@ test("old URLs redirect and removed ones return 410", async ({
   expect(gone.status()).toBe(410);
 });
 
-test("robots disallows and sitemap, llms.txt respond", async ({
-  request,
-}) => {
+test("robots disallows and sitemap, llms.txt respond", async ({ request }) => {
   const robots = await request.get("/robots.txt");
   expect(await robots.text()).toContain("Disallow: /");
   const sitemap = await request.get("/sitemap.xml");

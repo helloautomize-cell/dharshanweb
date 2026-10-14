@@ -10,7 +10,7 @@ export default function SiteLayout({
     <>
       <SiteHeader />
       <SpineNav />
-      <div id="main">{children}</div>
+      <main id="main">{children}</main>
       <SiteFooter />
       <MobileDock />
       <CookieBanner />

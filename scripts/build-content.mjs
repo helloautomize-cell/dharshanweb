@@ -47,7 +47,8 @@ export function parseFrontmatter(yaml) {
   for (const line of yaml.split("\n")) {
     const open = (lines.at(-1)?.match(/[[{]/g) ?? []).length;
     const close = (lines.at(-1)?.match(/[\]}]/g) ?? []).length;
-    if (lines.length && open > close) lines[lines.length - 1] += " " + line.trim();
+    if (lines.length && open > close)
+      lines[lines.length - 1] += " " + line.trim();
     else lines.push(line);
   }
   for (const line of lines) {
