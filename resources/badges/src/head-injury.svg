@@ -1,0 +1,9 @@
+<g fill="none" stroke="url(#badge-line)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="512" cy="478" r="104"/>
+  <ellipse cx="512" cy="298" rx="122" ry="34"/>
+</g>
+<circle cx="566" cy="478" r="18" fill="#F2B48A"/>
+<g stroke="#D9EDF3" stroke-opacity="0.4" stroke-width="10" stroke-linecap="round" fill="none">
+  <path d="M360 560v-32m-16 16h32"/>
+  <path d="M670 560v-32m-16 16h32"/>
+</g>

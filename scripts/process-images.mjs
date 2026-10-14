@@ -290,6 +290,11 @@ await sharp({
   .png()
   .toFile(path.join(output, "brand/og-base.png"));
 alt["brand/og-base.png"] = "Rehabify";
+// Badge alt text comes from resources/badges (built by build-badges.mjs).
+const badgeAlt = JSON.parse(
+  await readFile("resources/badges/alt-text.json", "utf8").catch(() => "{}"),
+);
+Object.assign(alt, badgeAlt);
 await writeFile(
   path.join(output, "alt-text.json"),
   JSON.stringify(alt, null, 2) + "\n",
@@ -344,10 +349,14 @@ const badges = [
   "doctor-male",
   "doctor-female",
 ];
+const { existsSync } = await import("node:fs");
+const pendingBadges = badges.filter(
+  (x) => !existsSync(path.join(output, "icons/services", `${x}.png`)),
+);
 await writeFile(
   path.join(output, "_todo.md"),
-  `# Missing image slots\n\n## Clinic photos\n\n${clinicFiles.map((x) => `- clinic-${x}.jpg: real clinic photo pending; use IMAGE-MAP interim treatment.`).join("\n")}\n\n## Service badges (Phase 1b)\n\n${badges.map((x) => `- ${x}: code-drawn badge pending; Lucide placeholder only.`).join("\n")}\n\n## Doctor approvals\n\nAll 11 doctor PNGs are approved per the agency relay on 12 October 2026. Written approvals must remain on file. No current approval flag is false. The real portrait JPG is reference-only.\n\n## Content credentials\n\n${provenance.length} credential-bearing originals preserved byte-for-byte under provenance/. Cropped, recompressed and recoloured derivatives are unsigned. Original signatures cannot authenticate changed pixels. Re-signing or a reviewed provenance workflow is required before claiming credentials on derivatives. No stale original credential was copied into a derivative.\n`,
+  `# Missing image slots\n\n## Clinic photos\n\n${clinicFiles.map((x) => `- clinic-${x}.jpg: real clinic photo pending; use IMAGE-MAP interim treatment.`).join("\n")}\n\n## Service badges (Phase 1b)\n\n${pendingBadges.length ? pendingBadges.map((x) => `- ${x}: code-drawn badge pending; Lucide placeholder only.`).join("\n") : "All 28 badges drawn in code and exported to icons/services/ (PNG + WebP at 512 and 256)."}\n\n## Doctor approvals\n\nAll 11 doctor PNGs are approved per the agency relay on 12 October 2026. Written approvals must remain on file. No current approval flag is false. The real portrait JPG is reference-only.\n\n## Content credentials\n\nDecision (Phase 1 close, 13 October 2026): 15 credential-bearing originals keep their C2PA credentials byte-for-byte under provenance/. Resized derivatives in public/images are unsigned; that is accepted. Disclosure is handled by the Editorial policy page and "Illustration:" alt text. Nothing is re-signed. Original signatures cannot authenticate changed pixels, and no stale original credential was copied into a derivative. This item is closed and is no longer a launch blocker.\n`,
 );
 process.stdout.write(
-  `Images generated. ${Object.keys(alt).length} alt-text entries; ${provenance.length} credential-bearing originals preserved. 28 badge slots pending Phase 1b.\n`,
+  `Images generated. ${Object.keys(alt).length} alt-text entries; ${provenance.length} credential-bearing originals preserved. ${pendingBadges.length} badge slots pending Phase 1b.\n`,
 );

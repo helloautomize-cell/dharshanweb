@@ -1,0 +1,11 @@
+<g fill="none" stroke="url(#badge-line)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="505" cy="352" r="92"/>
+  <path d="M445 424C448 484 442 544 424 604M568 424C572 484 584 548 612 608"/>
+  <path d="M424 604C396 626 382 652 378 684M612 608C646 624 664 650 670 684"/>
+  <path d="M648 470a110 110 0 0 1 30 76M700 440a165 165 0 0 1 48 112"/>
+</g>
+<circle cx="572" cy="462" r="16" fill="#F2B48A"/>
+<g stroke="#D9EDF3" stroke-opacity="0.4" stroke-width="10" stroke-linecap="round" fill="none">
+  <path d="M380 320v-32m-16 16h32"/>
+  <path d="M660 690v-32m-16 16h32"/>
+</g>

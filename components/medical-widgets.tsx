@@ -11,14 +11,9 @@ import {
   Play,
   Pause,
   ArrowRight,
-  Accessibility,
-  Brain,
-  PersonStanding,
-  Baby,
-  Activity,
 } from "lucide-react";
 import Image from "next/image";
-import { careGroups } from "@/lib/service-badges";
+import { careGroups, serviceBadges } from "@/lib/service-badges";
 import { layers } from "@/lib/design-tokens";
 import { siteConfig } from "@/lib/site-config";
 
@@ -138,36 +133,37 @@ export function Goniometer() {
     </div>
   );
 }
-const placeholderIcons = [Activity, Brain, PersonStanding, Baby, Accessibility];
 export function BadgeCards() {
   const [paused, setPaused] = useState(false);
   return (
     <div>
       <div className="badge-gallery" data-paused={paused ? "true" : undefined}>
-        {careGroups.map((group, index) => {
-          const Icon = placeholderIcons[index];
-          return (
-            <article className={`badge-card badge-${index}`} key={group.badge}>
-              <div className="badge-window">
-                <span className="badge-blob" aria-hidden="true" />
-                <span className="badge-blob second" aria-hidden="true" />
-                <Icon size={32} strokeWidth={1.75} aria-hidden="true" />
-                <span className="placeholder-label">Badge pending</span>
-              </div>
-              <div className="badge-body">
-                <h3 className="h3">
-                  <a className="stretched-link" href={group.href}>
-                    {group.title}
-                  </a>
-                </h3>
-                <p>{group.line}</p>
-                <span className="badge-arrow" aria-hidden="true">
-                  <ArrowRight size={20} strokeWidth={1.75} />
-                </span>
-              </div>
-            </article>
-          );
-        })}
+        {careGroups.map((group, index) => (
+          <article className={`badge-card badge-${index}`} key={group.badge}>
+            <div className="badge-window">
+              <span className="badge-blob" aria-hidden="true" />
+              <span className="badge-blob second" aria-hidden="true" />
+              <Image
+                src={`/images/icons/services/${group.badge}.webp`}
+                alt=""
+                width={112}
+                height={112}
+                unoptimized
+              />
+            </div>
+            <div className="badge-body">
+              <h3 className="h3">
+                <a className="stretched-link" href={group.href}>
+                  {group.title}
+                </a>
+              </h3>
+              <p>{group.line}</p>
+              <span className="badge-arrow" aria-hidden="true">
+                <ArrowRight size={20} strokeWidth={1.75} />
+              </span>
+            </div>
+          </article>
+        ))}
       </div>
       <button
         className="pause-control"
@@ -182,6 +178,45 @@ export function BadgeCards() {
         )}
         {paused ? "Resume motion" : "Pause motion"}
       </button>
+    </div>
+  );
+}
+export function BadgeGallery() {
+  const slugs = [
+    ...Object.values(serviceBadges),
+    "doctor-male",
+    "doctor-female",
+  ];
+  return (
+    <div className="badge-specimens">
+      {["night", "paper"].map((surface) => (
+        <div
+          key={surface}
+          className={`badge-strip ${surface === "night" ? "on-night" : ""}`}
+        >
+          <span className="specimen-label">
+            {surface === "night" ? "On night" : "On paper"}
+          </span>
+          {([256, 112, 64] as const).map((size) => (
+            <div className="badge-row" key={size}>
+              <span className="specimen-label">{size}px</span>
+              <div className="badge-row-items">
+                {slugs.map((slug) => (
+                  <Image
+                    key={slug}
+                    src={`/images/icons/services/${slug}${size === 256 ? "" : "@256"}.webp`}
+                    alt={`Illustration: ${slug} service badge`}
+                    width={size}
+                    height={size}
+                    unoptimized
+                    title={slug}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
