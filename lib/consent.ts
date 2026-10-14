@@ -1,20 +1,30 @@
 // Consent state lives in localStorage. Nothing third-party loads without it.
 const KEY = "rehabify-consent-v1";
-export type ConsentState = { analytics: boolean; ts: number };
+const VERSION = 1;
+const MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
+export type ConsentState = { analytics: boolean; v: number; ts: number };
 let cached: ConsentState | null | undefined;
 const listeners = new Set<() => void>();
 export function readConsent(): ConsentState | null {
   if (cached !== undefined) return cached;
   try {
     const raw = localStorage.getItem(KEY);
-    cached = raw ? (JSON.parse(raw) as ConsentState) : null;
+    if (!raw) {
+      cached = null;
+      return null;
+    }
+    const parsed = JSON.parse(raw) as ConsentState;
+    cached =
+      parsed.v === VERSION && Date.now() - parsed.ts < MAX_AGE_MS
+        ? parsed
+        : null;
   } catch {
     cached = null;
   }
   return cached;
 }
 export function writeConsent(analytics: boolean) {
-  cached = { analytics, ts: Date.now() };
+  cached = { analytics, v: VERSION, ts: Date.now() };
   try {
     localStorage.setItem(KEY, JSON.stringify(cached));
   } catch {
