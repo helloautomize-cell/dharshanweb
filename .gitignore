@@ -1,0 +1,12 @@
+_handoff/
+node_modules/
+.next/
+.cache/
+out/
+playwright-report/
+test-results/
+artifacts/
+.vercel/
+.env*
+!.env.example
+*.tsbuildinfo
