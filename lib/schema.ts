@@ -146,6 +146,40 @@ export function website() {
     inLanguage: "en-IN",
   };
 }
+export function careItemList(
+  areas: {
+    title: string;
+    href: string;
+    topics: { title: string; href: string }[];
+  }[],
+) {
+  return {
+    "@type": "ItemList",
+    "@id": `${BASE}/care/#areas`,
+    name: "Areas of care",
+    numberOfItems: areas.length,
+    itemListElement: areas.map((area, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "CollectionPage",
+        name: area.title,
+        url: `${BASE}${area.href}`,
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: area.topics.length,
+          itemListElement: area.topics.map((topic, topicIndex) => ({
+            "@type": "ListItem",
+            position: topicIndex + 1,
+            name: topic.title,
+            url: `${BASE}${topic.href}`,
+          })),
+        },
+      },
+    })),
+  };
+}
+
 export function graph(meta: PageMeta, extras: unknown[] = []) {
   return {
     "@context": "https://schema.org",

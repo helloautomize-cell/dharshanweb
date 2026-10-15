@@ -24,7 +24,7 @@ import {
 } from "@/lib/schema";
 import { conditions } from "@/lib/conditions";
 import { MapFacade } from "@/components/map-facade";
-import { megaGroups } from "@/lib/nav";
+export { CareIndexPage } from "@/components/pages/care-index-page";
 
 function JsonLd({ data }: { data: object }) {
   return (
@@ -212,39 +212,6 @@ export function ConditionsPage({ page }: { page: PageContent }) {
         ))}
       </div>
       <SectionBlocks page={page} exclude={/^(intro|conditions)/i} />
-      <EmergencyStrip />
-      <CtaBand />
-    </div>
-  );
-}
-export function CareIndexPage({ page }: { page: PageContent }) {
-  const meta = page.meta;
-  return (
-    <div className="page-main">
-      <JsonLd data={graph(meta)} />
-      <PageHead page={page} kicker="All care" />
-      <div className="care-grid">
-        {megaGroups.map((group) => (
-          <section key={group.href} className="content-section">
-            <h2 className="h3">
-              <Link href={group.href}>{group.title}</Link>
-            </h2>
-            <ul className="content-list">
-              {group.links.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-        <section className="content-section">
-          <h2 className="h3">
-            <Link href="/video-consultation/">Video consultation</Link>
-          </h2>
-          <p>Start from home with a video consult.</p>
-        </section>
-      </div>
       <EmergencyStrip />
       <CtaBand />
     </div>
