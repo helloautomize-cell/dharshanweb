@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_INDEXABLE } from "@/lib/site-config";
 import {
   Bricolage_Grotesque,
   Geist,
@@ -39,7 +40,9 @@ export const metadata: Metadata = {
   title: "Rehabify",
   description:
     "Doctor-led physical medicine and rehabilitation in Bengaluru and online.",
-  robots: { index: false, follow: false },
+  robots: SITE_INDEXABLE
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
   metadataBase: new URL("https://www.rehabify.in/"),
 };
 export default function RootLayout({

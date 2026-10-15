@@ -24,7 +24,10 @@ export type CareRegion = {
 };
 
 export function getCareAreas(): CareArea[] {
-  const pages = allRoutes().map((url) => getPage(url)!.meta);
+  const pages = allRoutes().flatMap((url) => {
+    const page = getPage(url);
+    return page ? [page.meta] : [];
+  });
   return pages
     .filter((meta) => meta.areaId)
     .sort((a, b) => a.careOrder! - b.careOrder!)

@@ -1,4 +1,4 @@
-export const SITE_INDEXABLE = false;
+export const SITE_INDEXABLE = process.env.VERCEL_ENV === "production";
 const confirm = (item: string) => `[CONFIRM: ${item}]` as const;
 
 export const siteConfig = {

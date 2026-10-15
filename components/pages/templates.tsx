@@ -15,7 +15,6 @@ import {
 } from "@/components/pages/shared";
 import {
   breadcrumb,
-  blogPosting,
   faqPage,
   graph,
   medicalWebPage,
@@ -139,39 +138,6 @@ export function DoctorPage({ page }: { page: PageContent }) {
       <SectionBlocks page={page} exclude={/^hero/i} />
       <EmergencyStrip />
       <CtaBand title="Book with your physiatrist." />
-    </div>
-  );
-}
-export function PostPage({ page }: { page: PageContent }) {
-  const meta = page.meta;
-  const faqs = faqOf(page);
-  return (
-    <div className="page-main">
-      <JsonLd
-        data={graph(meta, [
-          blogPosting(meta),
-          faqs ? faqPage(extractFaqs(faqs.body)) : null,
-          breadcrumb([
-            { label: "Home", href: "/" },
-            { label: "Health library", href: "/health-library/" },
-            {
-              label: (meta.h1 ?? meta.title).replace(/\*/g, ""),
-              href: meta.url,
-            },
-          ]),
-        ])}
-      />
-      <PageHead
-        page={page}
-        kicker={`Health library${meta.readingTime ? ` · ${meta.readingTime} read` : ""}`}
-      />
-      <SectionBlocks page={page} />
-      <RelatedLinks links={meta.related ?? meta.links} />
-      <ReviewerBox
-        meta={{ ...meta, reviewer: meta.reviewedBy ?? meta.reviewer }}
-      />
-      <EmergencyStrip />
-      <CtaBand />
     </div>
   );
 }

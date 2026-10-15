@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
-    "build": "next build && node scripts/verify-visit-output.mjs",
+    "build": "next build && node scripts/verify-visit-output.mjs && node scripts/verify-guides-output.mjs",
+    "content:guides": "node scripts/import-guides.mjs",
     "start": "next start --hostname 127.0.0.1",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -29,7 +30,8 @@
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "resend": "^6.32.1",
-    "sharp": "0.35.5"
+    "sharp": "0.35.5",
+    "zod": "4.6.6"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
 import { Icon } from "@/lib/icons";
 import { BlockRenderer } from "@/lib/markdown";
@@ -7,7 +7,7 @@ import { Confirm } from "@/components/primitives";
 import { extractFaqs } from "@/lib/faqs";
 import type { PageContent, PageMeta } from "@/lib/content";
 import { siteConfig } from "@/lib/site-config";
-import { knownLinks } from "@/lib/content";
+import { getPage, knownLinks } from "@/lib/content";
 
 export function H1({
   text,
@@ -32,19 +32,69 @@ export function H1({
     </h1>
   );
 }
-export function DirectoryBreadcrumb({ label }: { label: string }) {
+export function DirectoryBreadcrumb({
+  label,
+  items,
+}: {
+  label: string;
+  items?: { label: string; href?: string }[];
+}) {
+  const crumbs = [{ label: "Home", href: "/" }, ...(items ?? [{ label }])];
   return (
     <nav className="care-breadcrumb" aria-label="Breadcrumb">
       <ol>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li aria-hidden="true">/</li>
-        <li>
-          <span aria-current="page">{label}</span>
-        </li>
+        {crumbs.map((item, index) => (
+          <Fragment key={`${item.label}-${index}`}>
+            {index > 0 && <li aria-hidden="true">/</li>}
+            <li>
+              {index < crumbs.length - 1 && item.href ? (
+                <Link href={item.href}>{item.label}</Link>
+              ) : (
+                <span aria-current="page">{item.label}</span>
+              )}
+            </li>
+          </Fragment>
+        ))}
       </ol>
     </nav>
+  );
+}
+export function DirectoryHero({
+  label,
+  kicker,
+  title,
+  headingId,
+  description,
+  actions,
+  facts,
+  breadcrumbItems,
+}: {
+  label: string;
+  kicker: string;
+  title: string;
+  headingId: string;
+  description: string;
+  actions: ReactNode;
+  facts: { value: number; label: string }[];
+  breadcrumbItems?: { label: string; href?: string }[];
+}) {
+  return (
+    <section className="care-hero care-container" aria-labelledby={headingId}>
+      <DirectoryBreadcrumb label={label} items={breadcrumbItems} />
+      <div className="care-hero-columns doctors-hero-columns">
+        <div>
+          <p className="care-kicker">{kicker}</p>
+          <div id={headingId}>
+            <H1 className="care-title" text={title} />
+          </div>
+        </div>
+        <div className="doctors-hero-intro">
+          <p>{description}</p>
+          <div className="doctors-actions">{actions}</div>
+        </div>
+      </div>
+      <DirectoryFacts facts={facts} />
+    </section>
   );
 }
 export function DirectoryFacts({
@@ -300,6 +350,27 @@ export function DirectoryComparison({
     </div>
   );
 }
+export function DirectoryFaqList({
+  faqs,
+}: {
+  faqs: { question: string; answer: string; answerContent?: ReactNode }[];
+}) {
+  return (
+    <div className="doctors-faq-list">
+      {faqs.map((faq, index) => (
+        <details key={faq.question} open={index === 0}>
+          <summary>
+            <span>{faq.question}</span>
+            <span className="doctors-faq-toggle">
+              <Icon name="plus" size={20} />
+            </span>
+          </summary>
+          <p>{faq.answerContent ?? faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  );
+}
 export function DirectoryFaq({
   heading,
   description,
@@ -331,19 +402,7 @@ export function DirectoryFaq({
           (reviewer ?? <DirectoryReviewer lastReviewed={lastReviewed} />)}
       </div>
       <div>
-        <div className="doctors-faq-list">
-          {faqs.map((faq, index) => (
-            <details key={faq.question} open={index === 0}>
-              <summary>
-                <span>{faq.question}</span>
-                <span className="doctors-faq-toggle">
-                  <Icon name="plus" size={20} />
-                </span>
-              </summary>
-              <p>{faq.answerContent ?? faq.answer}</p>
-            </details>
-          ))}
-        </div>
+        <DirectoryFaqList faqs={faqs} />
         {reviewerPosition === "list" &&
           (reviewer ?? <DirectoryReviewer lastReviewed={lastReviewed} />)}
       </div>
@@ -504,11 +563,10 @@ export function RelatedLinks({ links: raw }: { links?: string[] }) {
     "/older-adults/falls-and-balance/": "Falls and balance",
     "/older-adults/osteoporosis/": "Osteoporosis",
     "/video-consultation/": "Video consultation",
-    "/health-library/what-is-a-physiatrist/":
+    "/guides/what-is-a-physiatrist/":
       "What is a physiatrist, and when should you see one?",
-    "/health-library/first-90-days-after-stroke/":
-      "The first 90 days after a stroke",
-    "/health-library/low-back-pain-when-to-worry/":
+    "/guides/first-90-days-after-stroke/": "The first 90 days after a stroke",
+    "/guides/low-back-pain-when-to-worry/":
       "Low back pain: what helps, and the warning signs",
   };
   return (
@@ -518,7 +576,9 @@ export function RelatedLinks({ links: raw }: { links?: string[] }) {
         {links.map((href) => (
           <li key={href}>
             <Link href={href}>
-              {names[href] ?? href.replaceAll("/", " ").trim()}
+              {names[href] ??
+                getPage(href)?.meta.h1?.replaceAll("*", "") ??
+                href.replaceAll("/", " ").trim()}
               <Icon name="arrow" size={16} />
             </Link>
           </li>
@@ -563,7 +623,7 @@ function humanize(slug: string) {
     "joints-and-sports": "Joints and sports",
     "childrens-rehabilitation": "Children's rehabilitation",
     "older-adults": "Older adults",
-    "health-library": "Health library",
+    guides: "Guides",
   };
   return (
     known[slug] ??

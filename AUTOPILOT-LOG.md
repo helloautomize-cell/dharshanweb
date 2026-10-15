@@ -201,3 +201,7 @@ Local Lighthouse medians of 3 (mobile):
 connected to this repo); LCP medians above the <2.0s real-page target are
 local next start numbers on this machine - preview measurement pending.
 JS budgets deviate: home 158KB gz, contact 163KB gz (see P6 note).
+
+## Phase 7m follow-up
+
+**Open (P8):** /guides/ and guide articles ship ~193KB gzipped first-load JS, over the 170KB guide target. The shared site shell (nav, consent, analytics gating) accounts for nearly all of it - /care/ measures 202KB gz on the same bundle. Accepted in 7m; revisit in P8 against the whole shell rather than guide code.

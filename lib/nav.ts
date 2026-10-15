@@ -5,7 +5,7 @@ export const navLinks = [
 ] as const;
 
 export const megaExtras = [
-  { href: "/health-library/", label: "Health library" },
+  { href: "/guides/", label: "Guides" },
   { href: "/care/#a-z", label: "Conditions A to Z" },
   { href: "/faqs/", label: "FAQs" },
 ] as const;
@@ -87,7 +87,7 @@ export const footerLinks = [
   { href: "/doctors/", label: "Doctors" },
   { href: "/plan-your-visit/", label: "Plan your visit" },
   { href: "/faqs/", label: "FAQs" },
-  { href: "/health-library/", label: "Health library" },
+  { href: "/guides/", label: "Guides" },
 ] as const;
 
 export const legalLinks = [

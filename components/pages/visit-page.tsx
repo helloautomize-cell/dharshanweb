@@ -5,13 +5,11 @@ import { VisitChecklist } from "@/components/visit-checklist";
 import { VisitHours } from "@/components/visit-hours";
 import {
   DirectoryBookingClose,
-  DirectoryBreadcrumb,
+  DirectoryHero,
   DirectoryComparison,
-  DirectoryFacts,
   DirectoryFaq,
   DirectoryPrinciples,
   DirectorySectionHeader,
-  H1,
 } from "@/components/pages/shared";
 import { section, type PageContent } from "@/lib/content";
 import { extractFaqs } from "@/lib/faqs";
@@ -85,45 +83,35 @@ export function VisitPage({ page }: { page: PageContent }) {
           __html: JSON.stringify(data).replace(/</g, "\\u003c"),
         }}
       />
-      <section
-        className="care-hero care-container"
-        aria-labelledby="visit-heading"
-      >
-        <DirectoryBreadcrumb label="Plan your visit" />
-        <div className="care-hero-columns doctors-hero-columns">
-          <div>
-            <p className="care-kicker">Plan your visit</p>
-            <div id="visit-heading">
-              <H1 className="care-title" text={page.meta.h1} />
-            </div>
-          </div>
-          <div className="doctors-hero-intro">
-            <p>{text("Intro")}</p>
-            <div className="doctors-actions">
-              <Link className="btn btn-primary" href="/contact/#book">
-                Book a consultation
-              </Link>
-              <Link className="btn care-guide" href="#checklist">
-                Build my checklist{" "}
-                <span className="visit-down-arrow">
-                  <Icon name="arrow" size={18} />
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <DirectoryFacts
-          facts={[
-            { value: 2, label: "ways to be seen: clinic or video" },
-            { value: 1, label: "number for calls and WhatsApp" },
-            { value: 0, label: "referrals needed to book" },
-            {
-              value: visitChecklist(defaultChecklist).length,
-              label: "things worth bringing",
-            },
-          ]}
-        />
-      </section>
+      <DirectoryHero
+        label="Plan your visit"
+        kicker="Plan your visit"
+        headingId="visit-heading"
+        title={page.meta.h1 ?? ""}
+        description={text("Intro")}
+        actions={
+          <>
+            <Link className="btn btn-primary" href="/contact/#book">
+              Book a consultation
+            </Link>
+            <Link className="btn care-guide" href="#checklist">
+              Build my checklist{" "}
+              <span className="visit-down-arrow">
+                <Icon name="arrow" size={18} />
+              </span>
+            </Link>
+          </>
+        }
+        facts={[
+          { value: 2, label: "ways to be seen: clinic or video" },
+          { value: 1, label: "number for calls and WhatsApp" },
+          { value: 0, label: "referrals needed to book" },
+          {
+            value: visitChecklist(defaultChecklist).length,
+            label: "things worth bringing",
+          },
+        ]}
+      />
 
       <VisitChecklist />
 
