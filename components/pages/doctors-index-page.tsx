@@ -5,7 +5,9 @@ import {
   DirectoryBookingClose,
   DirectoryBreadcrumb,
   DirectoryFacts,
-  DirectoryReviewer,
+  DirectoryComparison,
+  DirectoryFaq,
+  DirectoryPrinciples,
   DirectorySectionHeader,
   H1,
 } from "@/components/pages/shared";
@@ -209,16 +211,13 @@ export function DoctorsIndexPage({ page }: { page: PageContent }) {
           }
           description={text("How our doctors work")}
         />
-        <ul className="doctors-principles">
-          {["Goals first", "Explained plainly", "One team"].map((heading) => (
-            <li key={heading}>
-              <h3>{heading}</h3>
-              <p>{text(heading)}</p>
-            </li>
-          ))}
-        </ul>
-        <div className="doctors-roles">
-          {[
+        <DirectoryPrinciples
+          items={["Goals first", "Explained plainly", "One team"].map(
+            (title) => ({ title, text: text(title) }),
+          )}
+        />
+        <DirectoryComparison
+          items={[
             {
               label: "Your physiatrist",
               heading: (
@@ -231,52 +230,23 @@ export function DoctorsIndexPage({ page }: { page: PageContent }) {
               label: "Your physiotherapist",
               heading: <>A therapist who delivers it</>,
             },
-          ].map((role) => (
-            <div key={role.label}>
-              <p className="care-kicker">{role.label}</p>
-              <h3>{role.heading}</h3>
-              <ul>
-                {text(role.label)
-                  .split("\n")
-                  .filter(Boolean)
-                  .map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+          ].map((role) => ({
+            ...role,
+            points: text(role.label).split("\n").filter(Boolean),
+          }))}
+        />
       </section>
 
-      <section
-        id="faq"
-        className="doctors-faq care-container"
-        aria-labelledby="doctors-faq-heading"
-      >
-        <div>
-          <p className="care-kicker">Questions</p>
-          <h2 id="doctors-faq-heading">
+      <DirectoryFaq
+        heading={
+          <>
             Before you <span className="serif">book.</span>
-          </h2>
-          <p>Short answers to what people ask most about choosing a doctor.</p>
-        </div>
-        <div>
-          <div className="doctors-faq-list">
-            {faqs.map((faq, index) => (
-              <details key={faq.question} open={index === 0}>
-                <summary>
-                  <span>{faq.question}</span>
-                  <span className="doctors-faq-toggle">
-                    <Icon name="plus" size={20} />
-                  </span>
-                </summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-          <DirectoryReviewer lastReviewed={page.meta.lastReviewed} />
-        </div>
-      </section>
+          </>
+        }
+        description="Short answers to what people ask most about choosing a doctor."
+        faqs={faqs}
+        lastReviewed={page.meta.lastReviewed}
+      />
 
       <DirectoryBookingClose
         heading={
