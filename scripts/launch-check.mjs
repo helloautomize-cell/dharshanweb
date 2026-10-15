@@ -23,7 +23,7 @@ for (const directory of ["app", "components", "lib"])
   }
 // --- content checks (P3) ---
 const { parseContentFile } = await import("../lib/content.ts");
-const { conditions } = await import("../lib/conditions.ts");
+const { conditions } = await import("../content/care-conditions.ts");
 const manifest = JSON.parse(await readFile("content/manifest.json", "utf8"));
 const banned =
   /\b(delve|embark|realm|tapestry|seamless|comprehensive|holistic|robust|leverage|empower|elevate|unlock|tailored|cutting-edge|state-of-the-art|world-class|top-notch|game-changer|peace of mind|rest assured|one-stop|guaranteed)\b|(?<!no )(?<!not )(?<!permanent )\bcure\b(?! claims)/i;

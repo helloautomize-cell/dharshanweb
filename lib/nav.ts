@@ -1,5 +1,4 @@
 export const navLinks = [
-  { href: "/conditions/", label: "Where it hurts" },
   { href: "/video-consultation/", label: "Video consults" },
   { href: "/doctors/", label: "Doctors" },
   { href: "/plan-your-visit/", label: "Visit" },
@@ -7,7 +6,7 @@ export const navLinks = [
 
 export const megaExtras = [
   { href: "/health-library/", label: "Health library" },
-  { href: "/conditions/", label: "Conditions A to Z" },
+  { href: "/care/#a-z", label: "Conditions A to Z" },
   { href: "/faqs/", label: "FAQs" },
 ] as const;
 

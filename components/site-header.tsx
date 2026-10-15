@@ -236,7 +236,6 @@ export function SiteHeader() {
               {group.title}
             </Link>
           ))}
-          <Link href="/conditions/">Where it hurts</Link>
           <Link
             href="/doctors/"
             aria-current={pathname === "/doctors/" ? "page" : undefined}
