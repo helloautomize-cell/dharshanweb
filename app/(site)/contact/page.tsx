@@ -59,9 +59,9 @@ export default async function ContactPage({
           renderSig={sig}
           sourcePage={params.from ?? "/contact/"}
           initialDoctor={
-            params.doctor === "dr-selina"
+            ["dr-selina", "dr-selina-kh"].includes(params.doctor ?? "")
               ? "Dr. Selina Kh"
-              : params.doctor === "dr-dharshan"
+              : ["dr-dharshan", "dr-dharshan-n-a"].includes(params.doctor ?? "")
                 ? "Dr. Dharshan N A"
                 : undefined
           }
