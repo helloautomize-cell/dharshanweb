@@ -32,13 +32,13 @@ Non-negotiables (short form):
 Tasks:
 
 1. Gather the facts into report/data.json (one source of truth for the report):
-   - Pages: count of indexable routes in the live sitemap; care pages (hubs + detail pages); legal pages; Health Library posts at launch.
+   - Pages: count of indexable routes in the live sitemap; care pages (hubs + detail pages); legal pages; Guides posts at launch.
    - Doctors: 2 (Dr. Dharshan N A, Dr. Selina Kh), with what is shown for each.
    - Badges: illustrated PNG badges in use out of 26 planned (from lib/service-badges.ts); placeholders still in use.
    - Lighthouse: production, mobile, median of 3, for the six Phase 8 pages (Performance, Accessibility, Best Practices, SEO, LCP, CLS, TBT). Run them now and keep the raw JSON in report/lighthouse/.
    - Mobile Home length at 390px: before and after the Phase 7 polish, and the percentage reduction.
    - Old site facts from resources/docs/current-website-audit.md (sections 0, 3, 5, 9).
-   - Status of every SEO, schema, GEO and integration item: Done (verified live), At launch (switched on at launch and verified), or Clinic (waiting for the clinic: name the item, for example Dr. Selina's registration number, clinic photos, badges, videos, Health Library posts).
+   - Status of every SEO, schema, GEO and integration item: Done (verified live), At launch (switched on at launch and verified), or Clinic (waiting for the clinic: name the item, for example Dr. Selina's registration number, clinic photos, badges, videos, Guides posts).
 
 2. Build report/index.html as print-ready HTML (A4 portrait, @page size A4, margins 14mm, page numbers in the footer from page 2, no content split across pages inside a card or table row). Sections:
    1. Cover (night): logo, headline with one serif accent phrase, a Home screenshot at 1440 in a browser frame, "Prepared for Dr. Dharshan N A, Rehabify" and "Prepared by Automize Media Labs", the date, and the status (Live at www.rehabify.in).
@@ -53,7 +53,7 @@ Tasks:
    10. Schema and area served: a table of schema types per page type; area served shown as two chips: "Bengaluru clinic" and "Video consults across India". No catchment bars (Rehabify has one location and no catchment data). If client-answers.md item 28 has been answered, add the areas as plain chips.
    11. GEO and AEO: llms.txt and llms-full.txt, answer-first intros, FAQs in the initial HTML, entity-facts.md and identical NAP across the site, GBP and Practo, IndexNow. Then "Responsible medical communication": no testimonials or ratings, reviewer box and last-reviewed dates, emergency line, AI-assisted images disclosed with doctor approval, legal pages.
    12. Speed and quality: the Lighthouse medians table (six pages) and QA cards (Playwright suites and what they check: overflow, nested interactives, forms, consent, headers, schema, dashes, initial HTML).
-   13. Content plan and next steps: Health Library live vs target (3 at launch, 24 topics in year one from site-plan.md section 12, shown as topic chips), then numbered next steps with an owner (Agency or Clinic), then a closing night band with the clinic phone and website.
+   13. Content plan and next steps: Guides live vs target (3 at launch, 24 topics in year one from site-plan.md section 12, shown as topic chips), then numbered next steps with an owner (Agency or Clinic), then a closing night band with the clinic phone and website.
 
 3. Every status chip is honest. "Done" only when verified on the live site in this phase. "At launch" only for items that were switched on at launch and verified in Phase 9B. "Clinic" for anything waiting on the clinic. Show a small legend on page 2.
 

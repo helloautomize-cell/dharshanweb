@@ -1,6 +1,15 @@
 import type { ComponentType } from "react";
 import {
   AlertTriangle,
+  Bath,
+  CircleAlert,
+  DoorStairwell,
+  House,
+  Link2,
+  Moon,
+  Printer,
+  RectangleHorizontal,
+  SportShoe,
   Armchair,
   ArrowRight,
   CalendarDays,
@@ -32,6 +41,15 @@ import {
 // Stroke is fixed at 1.75 and icons are decorative by default.
 const icons = {
   alert: AlertTriangle,
+  emergency: CircleAlert,
+  bath: Bath,
+  stairs: DoorStairwell,
+  house: House,
+  link: Link2,
+  moon: Moon,
+  printer: Printer,
+  mat: RectangleHorizontal,
+  shoe: SportShoe,
   seat: Armchair,
   lock: Lock,
   smartphone: Smartphone,

@@ -27,21 +27,21 @@ Non-negotiables (short form):
 
 Tasks:
 1. The 3 launch posts (new-website-content.md Part 7, routes from site-plan.md section 2):
-   - /health-library/what-is-a-physiatrist/
-   - /health-library/first-90-days-after-stroke/
-   - /health-library/low-back-pain-when-to-worry/
-   a. Extend scripts/build-content.mjs to write resources/content/health-library/{slug}.md with the yaml frontmatter as given (author, reviewedBy, datePublished, dateModified, lastReviewed, readingTime, links) and the body word for word. The copy coverage check covers them.
+   - /guides/what-is-a-physiatrist/
+   - /guides/first-90-days-after-stroke/
+   - /guides/low-back-pain-when-to-worry/
+   a. Extend scripts/build-content.mjs to write resources/content/guides/{slug}.md with the yaml frontmatter as given (author, reviewedBy, datePublished, dateModified, lastReviewed, readingTime, links) and the body word for word. The copy coverage check covers them.
    b. Add a post Zod schema: title max 60, description max 160, author and reviewedBy are doctor ids, datePublished and dateModified are dates or [CONFIRM], readingTime as given (do not compute a new one), faqs as visible on the page.
    c. Render with the Phase 4 post template: reviewer box at the top, "Written by Dr. Dharshan N A · [date] · 5 min read" (nowrap, date as a [CONFIRM] chip until set), table of contents, body, callouts (the emergency callout where the post content has one), FAQs on `<details>`, sources, related care cards and the links from frontmatter, CTA band.
    d. Schema from lib/schema.ts: BlogPosting (headline, author and reviewedBy as the Physician @id, datePublished, dateModified, publisher #clinic, inLanguage en-IN, mainEntityOfPage) plus FAQPage only for the visible FAQs and BreadcrumbList. Dates still [CONFIRM] are omitted and logged by launch-check.
-   e. Health Library list: 3 cards with designed covers (night gradient plus the badge of the post's main care page, never a photo or video thumbnail), category chip, title, the byline line. Category chips filter without a reload and the full list shows without JS.
+   e. Guides list: 3 cards with designed covers (night gradient plus the badge of the post's main care page, never a photo or video thumbnail), category chip, title, the byline line. Category chips filter without a reload and the full list shows without JS.
    f. Care detail pages listed in each post's frontmatter show the post in their related posts slot. Sitemap, llms.txt and llms-full.txt include the posts.
 2. Preview deploy on Vercel:
    a. vercel.json with `"regions": ["bom1"]` for functions. Node version pinned in package.json engines.
    b. Env vars on Preview: SITE_INDEXABLE=false. No analytics keys yet.
    c. `poweredByHeader: false` and no production browser source maps. Security headers and the CSP are Phase 6; do not add them now.
    d. If Vercel Deployment Protection is on, create a Protection Bypass for Automation secret for the tests. Do not turn protection off.
-3. Lighthouse on the deployed preview URL (not localhost), mobile and desktop, median of 3 runs each, for: /, /pain-and-spine/, /pain-and-spine/back-pain/, /neuro-rehabilitation/stroke/, /dr-dharshan-n-a/, /dr-selina-kh/, /video-consultation/, /contact/, /care/#a-z, /health-library/what-is-a-physiatrist/. Use the Lighthouse CLI with the default mobile profile. Save each run's JSON to reports/lighthouse/ and a table of medians to reports/lighthouse/summary.md. If a run's LCP looks inflated by simulation, confirm it with a direct measurement (WebPageTest or the Chrome performance panel on a throttled profile) and report both.
+3. Lighthouse on the deployed preview URL (not localhost), mobile and desktop, median of 3 runs each, for: /, /pain-and-spine/, /pain-and-spine/back-pain/, /neuro-rehabilitation/stroke/, /dr-dharshan-n-a/, /dr-selina-kh/, /video-consultation/, /contact/, /care/#a-z, /guides/what-is-a-physiatrist/. Use the Lighthouse CLI with the default mobile profile. Save each run's JSON to reports/lighthouse/ and a table of medians to reports/lighthouse/summary.md. If a run's LCP looks inflated by simulation, confirm it with a direct measurement (WebPageTest or the Chrome performance panel on a throttled profile) and report both.
 4. Site-wide QA (Playwright, all routes: the 46 pages, the 3 posts, a 404 URL and every redirects.json entry), all tests from design-development-plan.md section 9:
    - No horizontal overflow at 390, 768, 1024 and 1440
    - Zero nested interactives (`a a, a button, button a, button button`)

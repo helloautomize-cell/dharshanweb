@@ -1,21 +1,93 @@
 {
   "_note": "Old rehabify.in (Google Sites) URLs to the new site. Next.js redirects() with permanent: true (308 is fine, or set statusCode 301). 410 rules are served by middleware. No chains: every source goes straight to its final URL with trailing slash. The old root / keeps its URL and needs no rule.",
   "redirects": [
-    { "source": "/conditions", "destination": "/care/#a-z", "status": 301 },
-    { "source": "/conditions/", "destination": "/care/#a-z", "status": 301 },
-    { "source": "/home", "destination": "/", "status": 301 },
-    { "source": "/home/monthly", "destination": "/plan-your-visit/", "status": 301 },
-    { "source": "/home/pricing", "destination": "/plan-your-visit/", "status": 301 },
-    { "source": "/home/book-an-appointment-now", "destination": "/contact/", "status": 301 },
-    { "source": "/about-us", "destination": "/about/", "status": 301 },
-    { "source": "/blogs", "destination": "/health-library/", "status": 301 },
-    { "source": "/blogs/:slug*", "destination": "/health-library/", "status": 301 },
-    { "source": "/dr-dharshan-n-a", "destination": "/dr-dharshan-n-a/", "status": 301 },
-    { "source": "/dr-selina-kh", "destination": "/dr-selina-kh/", "status": 301 }
+    {
+      "source": "/health-library/:slug/",
+      "destination": "/guides/:slug/",
+      "status": 301
+    },
+    {
+      "source": "/health-library/:slug",
+      "destination": "/guides/:slug/",
+      "status": 301
+    },
+    {
+      "source": "/health-library/",
+      "destination": "/guides/",
+      "status": 301
+    },
+    {
+      "source": "/health-library",
+      "destination": "/guides/",
+      "status": 301
+    },
+    {
+      "source": "/conditions",
+      "destination": "/care/#a-z",
+      "status": 301
+    },
+    {
+      "source": "/conditions/",
+      "destination": "/care/#a-z",
+      "status": 301
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "status": 301
+    },
+    {
+      "source": "/home/monthly",
+      "destination": "/plan-your-visit/",
+      "status": 301
+    },
+    {
+      "source": "/home/pricing",
+      "destination": "/plan-your-visit/",
+      "status": 301
+    },
+    {
+      "source": "/home/book-an-appointment-now",
+      "destination": "/contact/",
+      "status": 301
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about/",
+      "status": 301
+    },
+    {
+      "source": "/blogs",
+      "destination": "/guides/",
+      "status": 301
+    },
+    {
+      "source": "/blogs/:slug*",
+      "destination": "/guides/",
+      "status": 301
+    },
+    {
+      "source": "/dr-dharshan-n-a",
+      "destination": "/dr-dharshan-n-a/",
+      "status": 301
+    },
+    {
+      "source": "/dr-selina-kh",
+      "destination": "/dr-selina-kh/",
+      "status": 301
+    }
   ],
   "gone": [
-    { "source": "/ai-tools", "status": 410, "reason": "Old AI tools removed (decision D1)" },
-    { "source": "/ai-tools/:path*", "status": 410, "reason": "Old AI tools removed (decision D1)" }
+    {
+      "source": "/ai-tools",
+      "status": 410,
+      "reason": "Old AI tools removed (decision D1)"
+    },
+    {
+      "source": "/ai-tools/:path*",
+      "status": 410,
+      "reason": "Old AI tools removed (decision D1)"
+    }
   ],
   "check_after_launch": "Fetch the old site's sitemap from an unblocked network and add any URL not listed here before launch."
 }

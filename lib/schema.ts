@@ -46,7 +46,11 @@ export function physician(id: string) {
       url: `${BASE}/dr-dharshan-n-a/`,
       image: `${BASE}/images/doctors/dr-dharshan-hero.jpg`,
       jobTitle: "Consultant in Physical Medicine and Rehabilitation",
-      medicalSpecialty: "PhysicalMedicineAndRehabilitation",
+      knowsAbout: [
+        "Physical Medicine and Rehabilitation",
+        "Interventional pain management",
+        "Neurorehabilitation",
+      ],
       worksFor: { "@id": `${BASE}/#practice` },
       alumniOf: [
         "Annapoorana Medical College and Hospitals, Salem",
@@ -60,7 +64,7 @@ export function physician(id: string) {
       url: `${BASE}/dr-selina-kh/`,
       image: `${BASE}/images/doctors/dr-selina-hero.jpg`,
       jobTitle: "Consultant in Physical Medicine and Rehabilitation",
-      medicalSpecialty: "PhysicalMedicineAndRehabilitation",
+      knowsAbout: ["Physical Medicine and Rehabilitation"],
       worksFor: { "@id": `${BASE}/#practice` },
     },
   };
@@ -140,7 +144,7 @@ export function blogPosting(meta: PageMeta) {
     datePublished: meta.datePublished,
     dateModified: meta.dateModified ?? meta.lastReviewed,
     publisher: { "@id": `${BASE}/#practice` },
-    isPartOf: { "@id": `${BASE}/health-library/#webpage` },
+    isPartOf: { "@id": `${BASE}/guides/#webpage` },
   });
 }
 export function breadcrumb(items: { label: string; href: string }[]) {

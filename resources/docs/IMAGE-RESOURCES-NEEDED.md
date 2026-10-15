@@ -141,7 +141,7 @@ Small UI icons (phone, clock, map pin, WhatsApp, menu, mic, camera, checkmarks) 
 | # | Item | Use |
 |---|---|---|
 | V1 | 30 to 60 second clip of Dr. Dharshan explaining "What is a physiatrist?" (landscape, good audio) | Home and FAQs, click-to-load |
-| V2 | Short exercise demos (no patient faces without consent) | Health Library posts |
+| V2 | Short exercise demos (no patient faces without consent) | Guides posts |
 | V3 | Existing YouTube or Instagram videos, as links | Watch section |
 
 ---

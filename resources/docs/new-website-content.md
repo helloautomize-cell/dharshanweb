@@ -5,13 +5,13 @@ Version 1 (all 45 pages and 3 launch posts) for review by Dr. Dharshan N A · 12
 Facts come from `client-answers.md`. Page list, URLs, menus, schema and global copy blocks are in `site-plan.md`. Visuals follow `rehabify-design-v3.html`.
 
 Contents
-- Part 1 · Core pages (Home, About, Our doctors, Dr. Dharshan N A, All care, Conditions A to Z, Video consultation, Plan your visit, Contact, FAQs, Health Library, Thank you, 404) ✅ this version
+- Part 1 · Core pages (Home, About, Our doctors, Dr. Dharshan N A, All care, Conditions A to Z, Video consultation, Plan your visit, Contact, FAQs, Guides, Thank you, 404) ✅ this version
 - Part 2 · Pain and spine (hub + 4 pages) ✅
 - Part 3 · Neuro rehabilitation (hub + 5) ✅
 - Part 4 · Joints and sports (hub + 6) ✅
 - Part 5 · Children and older adults (2 hubs + 5) ✅
 - Part 6 · Legal and trust (7) ✅
-- Part 7 · Health Library launch posts (3) ✅
+- Part 7 · Guides launch posts (3) ✅
 - Part 8 · Review guide for Dr. Dharshan and open confirmations ✅ (end of this file, grows with each part)
 
 Conventions: italic word in an H1 or H2 = the Instrument Serif accent phrase. `[CONFIRM: ...]` = yellow chip in development, hidden in production, blocks `npm run launch-check`. Section kickers (mono labels) are given in CAPS.
@@ -669,13 +669,13 @@ schema: [FAQPage]
 
 ---
 
-## Page 11 · Health Library
+## Page 11 · Guides
 
 ```yaml
-title: "Health Library | Rehabify"
-description: "Doctor-reviewed articles on back pain, stroke recovery, joint care and rehab at home from Rehabify's rehabilitation doctors."
-url: /health-library/
-h1: "Health *Library*"
+title: "Guides on Pain, Movement and Recovery | Rehabify"
+description: "Plain answers about pain, movement and recovery, written and medically reviewed by a rehabilitation doctor in Bengaluru."
+url: /guides/
+h1: "Plain answers about pain, movement and *recovery*."
 ```
 Intro: Plain-language articles on pain, movement and recovery, written or reviewed by our doctors.
 Category chips: All · Pain and spine · Neuro rehab · Joints and sport · Children · Older adults · About rehab
@@ -709,7 +709,7 @@ badge: pain-spine
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/neuro-rehabilitation/spinal-cord-injury/, /older-adults/osteoporosis/]
-posts: [/health-library/low-back-pain-when-to-worry/]
+posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
@@ -754,7 +754,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Low back pain", alternateName: ["Lumbago", "Kamar dard"] }
 related: [/pain-and-spine/sciatica/, /pain-and-spine/image-guided-injections/]
-posts: [/health-library/low-back-pain-when-to-worry/]
+posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
@@ -830,7 +830,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Neck pain", alternateName: ["Cervical pain", "Cervical spondylosis", "Gardan dard"] }
 related: [/pain-and-spine/back-pain/, /pain-and-spine/image-guided-injections/]
-posts: [/health-library/low-back-pain-when-to-worry/]
+posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
@@ -908,7 +908,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Sciatica", alternateName: ["Lumbar radiculopathy", "Leg pain from the back"] }
 related: [/pain-and-spine/back-pain/, /pain-and-spine/image-guided-injections/]
-posts: [/health-library/low-back-pain-when-to-worry/]
+posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
@@ -983,7 +983,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalProcedure, name: "Image-guided pain injections and nerve blocks", alternateName: ["Nerve block", "Facet joint injection", "Epidural steroid injection"] }
 related: [/pain-and-spine/back-pain/, /pain-and-spine/sciatica/]
-posts: [/health-library/low-back-pain-when-to-worry/]
+posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
@@ -1066,7 +1066,7 @@ badge: neuro
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/childrens-rehabilitation/cerebral-palsy/, /older-adults/falls-and-balance/]
-posts: [/health-library/first-90-days-after-stroke/]
+posts: [/guides/first-90-days-after-stroke/]
 ```
 
 ### Intro (answer-first)
@@ -1111,7 +1111,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Stroke", alternateName: ["Paralysis", "Hemiplegia", "Brain attack", "Lakwa"] }
 related: [/neuro-rehabilitation/spasticity/, /older-adults/falls-and-balance/]
-posts: [/health-library/first-90-days-after-stroke/]
+posts: [/guides/first-90-days-after-stroke/]
 ```
 
 ### Intro (answer-first)
@@ -1418,7 +1418,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Spasticity", alternateName: ["Muscle stiffness", "Muscle tightness after stroke", "Increased tone"] }
 related: [/neuro-rehabilitation/stroke/, /childrens-rehabilitation/cerebral-palsy/]
-posts: [/health-library/first-90-days-after-stroke/]
+posts: [/guides/first-90-days-after-stroke/]
 ```
 
 ### Intro (answer-first)
@@ -1506,7 +1506,7 @@ badge: joints
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/pain-and-spine/, /older-adults/osteoporosis/]
-posts: [/health-library/what-is-a-physiatrist/]
+posts: [/guides/what-is-a-physiatrist/]
 ```
 
 ### Intro (answer-first)
@@ -2012,7 +2012,7 @@ badge: children
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/childrens-rehabilitation/cerebral-palsy/, /neuro-rehabilitation/spasticity/]
-posts: [/health-library/cerebral-palsy-what-parents-ask-first/, /health-library/toe-walking-when-to-check/]
+posts: [/guides/cerebral-palsy-what-parents-ask-first/, /guides/toe-walking-when-to-check/]
 ```
 
 ### Intro (answer-first)
@@ -2057,7 +2057,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Cerebral palsy", alternateName: ["CP"] }
 related: [/neuro-rehabilitation/spasticity/, /childrens-rehabilitation/developmental-delay/]
-posts: [/health-library/cerebral-palsy-what-parents-ask-first/]
+posts: [/guides/cerebral-palsy-what-parents-ask-first/]
 ```
 
 ### Intro (answer-first)
@@ -2133,7 +2133,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Muscular dystrophy", alternateName: ["Duchenne muscular dystrophy", "DMD"] }
 related: [/childrens-rehabilitation/cerebral-palsy/, /childrens-rehabilitation/]
-posts: [/health-library/school-and-therapy-for-children-with-dmd/]
+posts: [/guides/school-and-therapy-for-children-with-dmd/]
 ```
 
 ### Intro (answer-first)
@@ -2207,7 +2207,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Developmental delay", alternateName: ["Global developmental delay", "Autism spectrum disorder support"] }
 related: [/childrens-rehabilitation/cerebral-palsy/, /childrens-rehabilitation/]
-posts: [/health-library/toe-walking-when-to-check/]
+posts: [/guides/toe-walking-when-to-check/]
 ```
 
 ### Intro (answer-first)
@@ -2280,7 +2280,7 @@ badge: older-adults
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/older-adults/falls-and-balance/, /older-adults/osteoporosis/]
-posts: [/health-library/making-a-home-safer-against-falls/, /health-library/osteoporosis-after-50/, /health-library/walking-aids-cane-walker-or-none/]
+posts: [/guides/making-a-home-safer-against-falls/, /guides/osteoporosis-after-50/, /guides/walking-aids-cane-walker-or-none/]
 ```
 
 ### Intro (answer-first)
@@ -2325,7 +2325,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Falls and balance problems", alternateName: ["Fall risk", "Imbalance in older adults"] }
 related: [/older-adults/osteoporosis/, /neuro-rehabilitation/parkinsons/]
-posts: [/health-library/making-a-home-safer-against-falls/, /health-library/walking-aids-cane-walker-or-none/]
+posts: [/guides/making-a-home-safer-against-falls/, /guides/walking-aids-cane-walker-or-none/]
 ```
 
 ### Intro (answer-first)
@@ -2401,7 +2401,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Osteoporosis", alternateName: ["Thin bones", "Low bone density"] }
 related: [/older-adults/falls-and-balance/, /pain-and-spine/back-pain/]
-posts: [/health-library/osteoporosis-after-50/]
+posts: [/guides/osteoporosis-after-50/]
 ```
 
 ### Intro (answer-first)
@@ -2846,7 +2846,7 @@ If you cannot use part of the site, write to [CONFIRM: email] or call or WhatsAp
 
 ---
 
-# Part 7 · Health Library launch posts
+# Part 7 · Guides launch posts
 
 Shared for all posts: reviewer box, "Last reviewed" date, emergency callout where relevant, related care cards, CTA band. Schema `BlogPosting` (author #dr-dharshan-n-a or #organization, reviewedBy #dr-dharshan-n-a, datePublished, dateModified) + `FAQPage`.
 
@@ -2857,7 +2857,7 @@ Shared for all posts: reviewer box, "Last reviewed" date, emergency callout wher
 ```yaml
 title: "What Is a Physiatrist? When to See One | Rehabify"
 description: "A physiatrist is a doctor who treats pain and loss of movement without surgery. Learn what they do and when to see one in Bengaluru."
-url: /health-library/what-is-a-physiatrist/
+url: /guides/what-is-a-physiatrist/
 h1: "What is a *physiatrist*?"
 schema: BlogPosting
 author: dr-dharshan-n-a
@@ -2938,7 +2938,7 @@ Callout:
 ```yaml
 title: "First 90 Days After a Stroke: Rehab Guide | Rehabify"
 description: "What stroke rehab looks like in the first 3 months: early goals, therapy, stiffness, home safety and warning signs, from a Bengaluru physiatrist."
-url: /health-library/first-90-days-after-stroke/
+url: /guides/first-90-days-after-stroke/
 h1: "The first 90 days after a *stroke*"
 schema: BlogPosting
 author: dr-dharshan-n-a
@@ -3013,7 +3013,7 @@ Callout:
 ```yaml
 title: "Low Back Pain: What Helps and When to Worry | Rehabify"
 description: "Most low back pain gets better with movement and time. Learn what helps, what to avoid and the warning signs that need urgent care."
-url: /health-library/low-back-pain-when-to-worry/
+url: /guides/low-back-pain-when-to-worry/
 h1: "Low back pain: what helps, and when to *worry*"
 schema: BlogPosting
 author: dr-dharshan-n-a

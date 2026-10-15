@@ -15,7 +15,7 @@ Final URL list for the coding agent. `trailingSlash: true`, lowercase, final hos
 | 8 | Plan your visit | `/plan-your-visit/` | Core | Yes |
 | 9 | Contact and book | `/contact/` | Core | Yes |
 | 10 | FAQs | `/faqs/` | Core | Yes |
-| 11 | Health Library | `/health-library/` | Core | Yes |
+| 11 | Guides | `/guides/` | Core | Yes |
 | 12 | Thank you (noindex) | `/thank-you/` | Core | No (noindex) |
 | 14 | Pain and spine | `/pain-and-spine/` | Care | Yes |
 | 15 | Back pain | `/pain-and-spine/back-pain/` | Care | Yes |
@@ -49,9 +49,9 @@ Final URL list for the coding agent. `trailingSlash: true`, lowercase, final hos
 | 43 | Patient Rights and Responsibilities | `/patient-rights/` | Legal | Yes |
 | 44 | Appointments, Cancellation and Refund (incl. video consults) | `/appointments-cancellation-refund/` | Legal | Yes |
 | 45 | Accessibility Statement | `/accessibility/` | Legal | Yes |
-| post | What is a physiatrist, and when should you see one? | `/health-library/what-is-a-physiatrist/` | Health Library | Yes |
-| post | The first 90 days after a stroke: what rehab looks like | `/health-library/first-90-days-after-stroke/` | Health Library | Yes |
-| post | Low back pain: what helps, and the warning signs to act on | `/health-library/low-back-pain-when-to-worry/` | Health Library | Yes |
+| post | What is a physiatrist, and when should you see one? | `/guides/what-is-a-physiatrist/` | Guides | Yes |
+| post | The first 90 days after a stroke: what rehab looks like | `/guides/first-90-days-after-stroke/` | Guides | Yes |
+| post | Low back pain: what helps, and the warning signs to act on | `/guides/low-back-pain-when-to-worry/` | Guides | Yes |
 
 Not in the sitemap: `/thank-you/` (noindex), `/styleguide/` (noindex, remove or password-protect before launch), 404, any `?` URLs.
 

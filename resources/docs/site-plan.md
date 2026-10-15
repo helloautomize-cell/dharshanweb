@@ -15,7 +15,7 @@ Entity statement (used word for word in About, `llms.txt`, `entity-facts.md` and
 
 ---
 
-## 2. Page list and URLs (44 pages + Health Library posts)
+## 2. Page list and URLs (44 pages + Guides posts)
 
 `trailingSlash: true`. Lowercase, hyphenated, no dates in URLs. Existing URLs that rank are kept or 301-redirected (section 9).
 
@@ -34,7 +34,7 @@ Entity statement (used word for word in About, `llms.txt`, `entity-facts.md` and
 | 8 | Plan your visit | `/plan-your-visit/` | Plan your *visit* | what to bring, timings |
 | 9 | Contact and book | `/contact/` (form anchor `#book`) | Book a *consultation* | Rehabify phone, book |
 | 10 | FAQs | `/faqs/` | Questions people *often* ask | what is a physiatrist |
-| 11 | Health Library | `/health-library/` | Health *Library* | |
+| 11 | Guides | `/guides/` | Health *Library* | |
 | 12 | Thank you (noindex) | `/thank-you/` | Thank you, we have your *request* | |
 | 13 | 404 | | We could not find that *page* | |
 
@@ -83,13 +83,13 @@ Practo also lists cardiopulmonary, oncology, pelvic, women's and post-COVID reha
 | 45 | Accessibility Statement | `/accessibility/` |
 | + | Telemedicine notice (section on Video consultation + Terms) | |
 
-### Health Library at launch (3 posts)
+### Guides at launch (3 posts)
 
 | Slug | Title | Links to |
 |---|---|---|
-| `/health-library/what-is-a-physiatrist/` | What is a physiatrist, and when should you see one? | Home, FAQs, Dr. Dharshan |
-| `/health-library/first-90-days-after-stroke/` | The first 90 days after a stroke: what rehab looks like | Stroke, Spasticity |
-| `/health-library/low-back-pain-when-to-worry/` | Low back pain: what helps, and the warning signs to act on | Back pain, Sciatica, Injections |
+| `/guides/what-is-a-physiatrist/` | What is a physiatrist, and when should you see one? | Home, FAQs, Dr. Dharshan |
+| `/guides/first-90-days-after-stroke/` | The first 90 days after a stroke: what rehab looks like | Stroke, Spasticity |
+| `/guides/low-back-pain-when-to-worry/` | Low back pain: what helps, and the warning signs to act on | Back pain, Sciatica, Injections |
 
 Old rehabify.in blog posts: reviewed one by one in `current-website-audit.md`; keep, rewrite or 410. [CONFIRM: export of old posts]
 
@@ -111,7 +111,7 @@ Utility info moves out of a separate bar: hours, phone and "Medical emergency? C
 - Panel footer row: hours · phone · emergency line
 
 ### Mobile menu (full-screen night sheet, accordions all closed)
-Care groups (5) · Conditions A to Z · Video consultation · Our doctors · About · Plan your visit · Health Library · FAQs · Contact
+Care groups (5) · Conditions A to Z · Video consultation · Our doctors · About · Plan your visit · Guides · FAQs · Contact
 Fixed footer: Book · Call · today's hours line
 
 ### Mobile dock (below 900px, every page)
@@ -123,7 +123,7 @@ WhatsApp pre-fill: "Hello Rehabify, I would like to book a consultation about [p
 Vertebra rail on the left, one vertebra per section, labelled C1 to S1 on hover.
 
 ### Footer (night)
-Logo (ice) + entity line · phone/WhatsApp · email (obfuscated) · address `[CONFIRM]` · Get directions · Columns: Care · Patients (Book, Video consults, Plan your visit, Conditions A to Z, FAQs, Health Library) · Legal (7) + Cookie settings · Social `[CONFIRM]` · emergency line · giant faded "Rehabify" wordmark.
+Logo (ice) + entity line · phone/WhatsApp · email (obfuscated) · address `[CONFIRM]` · Get directions · Columns: Care · Patients (Book, Video consults, Plan your visit, Conditions A to Z, FAQs, Guides) · Legal (7) + Cookie settings · Social `[CONFIRM]` · emergency line · giant faded "Rehabify" wordmark.
 Bottom line: "© [year] Rehabify. This website is run by [CONFIRM: legal entity name], [address]. Information here is for general education and does not replace a consultation. Dr. Dharshan N A, Karnataka Medical Council Reg. No. [CONFIRM]."
 
 ---
@@ -178,7 +178,7 @@ Bottom line: "© [year] Rehabify. This website is run by [CONFIRM: legal entity 
 
 ## 6. Internal linking
 
-- Every detail page links up to its hub, sideways to 2 related pages and to 1 or 2 Health Library posts.
+- Every detail page links up to its hub, sideways to 2 related pages and to 1 or 2 Guides posts.
 - Hubs link down to every child page (care track cards).
 - Body map regions and Conditions A to Z link to the matching care page.
 - Every page ends with the CTA band; the Book button carries the page as the booking reason (`lib/booking-context.ts`).
@@ -227,7 +227,7 @@ Not used: testimonials, review quotes, counters, before/after, offers, pop-ups.
 | `/about-us` | `/about/` |
 | `/dr-dharshan-n-a` | `/dr-dharshan-n-a/` (same) |
 | `/dr-selina-kh` | `/dr-selina-kh/` (same path, new page) |
-| `/blogs`, `/blogs/*` | `/health-library/` or the matching new post |
+| `/blogs`, `/blogs/*` | `/guides/` or the matching new post |
 | `/home/book-an-appointment-now` | `/contact/#book` |
 | `/home/pricing`, `/home/monthly` | `/plan-your-visit/` [CONFIRM: what "Monthly" was] |
 | `/ai-tools` and each AI tool page | 410 Gone [DECISION D1] |
@@ -255,7 +255,7 @@ Full list comes from a crawl of the old site in `current-website-audit.md`.
 
 ---
 
-## 12. Health Library topics (year one, 24)
+## 12. Guides topics (year one, 24)
 
 Pain and spine: Desk work and neck pain · Sciatica: what the leg pain means · Is bed rest good for back pain? · Nerve blocks explained · Slipped disc: what the MRI words mean
 Neuro: Stroke rehab at home · Shoulder pain after a stroke · Spasticity and what helps · Living well with Parkinson's: movement tips · Spinal cord injury: bladder, skin and daily care

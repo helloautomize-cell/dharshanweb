@@ -22,10 +22,10 @@ Information on this site is for general education and does not replace a consult
 - [Older adults](https://www.rehabify.in/older-adults/): falls and balance, osteoporosis
 - [Conditions A to Z](https://www.rehabify.in/care/#a-z)
 
-## Health Library
-- [What is a physiatrist, and when should you see one?](https://www.rehabify.in/health-library/what-is-a-physiatrist/)
-- [The first 90 days after a stroke](https://www.rehabify.in/health-library/first-90-days-after-stroke/)
-- [Low back pain: what helps, and the warning signs](https://www.rehabify.in/health-library/low-back-pain-when-to-worry/)
+## Guides
+- [What is a physiatrist, and when should you see one?](https://www.rehabify.in/guides/what-is-a-physiatrist/)
+- [The first 90 days after a stroke](https://www.rehabify.in/guides/first-90-days-after-stroke/)
+- [Low back pain: what helps, and the warning signs](https://www.rehabify.in/guides/low-back-pain-when-to-worry/)
 
 ## Policies
 - [Editorial and medical review policy](https://www.rehabify.in/editorial-policy/)

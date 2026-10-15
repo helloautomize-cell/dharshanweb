@@ -105,4 +105,4 @@ body-front.png and body-back.png (1024 x 1536, heavier margin) are kept as alter
 
 ## 7. Generated per page
 
-`opengraph-image` per route from og-base: night background, ice mark, page H1 without the accent styling, "rehabify.in" in Geist Mono. Health Library covers are designed gradients with the post's badge, never photos with text.
+`opengraph-image` per route from og-base: night background, ice mark, page H1 without the accent styling, "rehabify.in" in Geist Mono. Guides covers are designed gradients with the post's badge, never photos with text.

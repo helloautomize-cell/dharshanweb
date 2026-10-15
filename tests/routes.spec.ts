@@ -11,7 +11,7 @@ const ROUTES = [
   "/plan-your-visit/",
   "/contact/",
   "/faqs/",
-  "/health-library/",
+  "/guides/",
   "/pain-and-spine/",
   "/pain-and-spine/back-pain/",
   "/neuro-rehabilitation/stroke/",
@@ -20,7 +20,7 @@ const ROUTES = [
   "/older-adults/falls-and-balance/",
   "/privacy-policy/",
   "/accessibility/",
-  "/health-library/what-is-a-physiatrist/",
+  "/guides/what-is-a-physiatrist/",
 ];
 
 test("every route renders h1, noindex and the emergency line", async ({

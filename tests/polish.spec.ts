@@ -21,8 +21,8 @@ const PAGES = [
   "/plan-your-visit/",
   "/contact/",
   "/faqs/",
-  "/health-library/",
-  "/health-library/what-is-a-physiatrist/",
+  "/guides/",
+  "/guides/what-is-a-physiatrist/",
   "/privacy-policy/",
 ];
 const KEY_PAGES = [
