@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { doctorChoices, type DoctorChoiceProfile } from "@/lib/doctors";
 import { Icon } from "@/lib/icons";
+import { DirectoryNightPanel } from "@/components/directory-panel";
 
 export function DoctorChooser({
   doctors,
@@ -16,7 +17,7 @@ export function DoctorChooser({
   const [selected, setSelected] = useState(0);
   const choice = doctorChoices[selected];
   return (
-    <div className="care-body-map doctors-chooser on-night" data-dark>
+    <DirectoryNightPanel>
       <div className="doctors-chooser-intro">
         <p className="care-kicker">Not sure who to see?</p>
         <h2 id="who-heading">
@@ -71,6 +72,6 @@ export function DoctorChooser({
           <Link href="/contact/#book">book</Link> and the team will match you.
         </p>
       </div>
-    </div>
+    </DirectoryNightPanel>
   );
 }

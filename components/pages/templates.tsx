@@ -23,7 +23,6 @@ import {
   physician,
 } from "@/lib/schema";
 import { conditions } from "@/lib/conditions";
-import { MapFacade } from "@/components/map-facade";
 export { CareIndexPage } from "@/components/pages/care-index-page";
 
 function JsonLd({ data }: { data: object }) {
@@ -84,7 +83,6 @@ export function ContentPage({
         </div>
       )}
       <SectionBlocks page={page} exclude={/^intro/i} />
-      {meta.url === "/plan-your-visit/" && <MapFacade />}
       <RelatedLinks links={meta.related} />
       {isMedical && <ReviewerBox meta={meta} />}
       <EmergencyStrip />

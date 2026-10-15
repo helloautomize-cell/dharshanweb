@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { allRoutes, getPage } from "@/lib/content";
 import { SITE_INDEXABLE } from "@/lib/site-config";
 import { DoctorsIndexPage } from "@/components/pages/doctors-index-page";
+import { VisitPage } from "@/components/pages/visit-page";
 import {
   CareIndexPage,
   ConditionsPage,
@@ -72,6 +73,7 @@ export default async function RoutePage({
   if (url === "/conditions/") return <ConditionsPage page={page} />;
   if (url === "/care/") return <CareIndexPage page={page} />;
   if (url === "/doctors/") return <DoctorsIndexPage page={page} />;
+  if (url === "/plan-your-visit/") return <VisitPage page={page} />;
   if (url.startsWith("/dr-")) return <DoctorPage page={page} />;
   if (url.startsWith("/health-library/")) return <PostPage page={page} />;
   return <ContentPage page={page} kicker={hubKicker(url)} />;

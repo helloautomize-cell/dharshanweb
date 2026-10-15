@@ -43,22 +43,21 @@ export function SiteFooter() {
             </Link>
           </div>
         </div>
-        <div
-          className="f-info"
-          hidden={infoMissing && process.env.NODE_ENV === "production"}
-        >
-          {infoMissing ? (
-            <Confirm>{`${siteConfig.address} · ${siteConfig.email}`}</Confirm>
-          ) : (
-            <>
-              {siteConfig.address}
-              <span className="f-dot" aria-hidden="true">
-                ·
-              </span>
-              {siteConfig.email}
-            </>
-          )}
-        </div>
+        {!(infoMissing && process.env.NODE_ENV === "production") && (
+          <div className="f-info">
+            {infoMissing ? (
+              <Confirm>{`${siteConfig.address} · ${siteConfig.email}`}</Confirm>
+            ) : (
+              <>
+                {siteConfig.address}
+                <span className="f-dot" aria-hidden="true">
+                  ·
+                </span>
+                {siteConfig.email}
+              </>
+            )}
+          </div>
+        )}
         <div className="f-legal">
           <nav aria-label="Legal">
             {legalLinks.map((link, i) => (

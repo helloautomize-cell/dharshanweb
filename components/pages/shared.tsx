@@ -136,11 +136,13 @@ export function DirectoryBookingClose({
   heading,
   description,
   firstStep = "Online, on WhatsApp or by phone.",
+  lastStep = "Bring your reports and wear loose clothes.",
   reveal = false,
 }: {
   heading: ReactNode;
   description: string;
   firstStep?: string;
+  lastStep?: string;
   reveal?: boolean;
 }) {
   const steps = [
@@ -151,7 +153,7 @@ export function DirectoryBookingClose({
     },
     {
       title: "You meet your doctor",
-      text: "Bring your reports and wear loose clothes.",
+      text: lastStep,
     },
   ];
   return (
@@ -192,6 +194,97 @@ export function DirectoryBookingClose({
             </li>
           ))}
         </ol>
+      </div>
+    </section>
+  );
+}
+export function DirectoryPrinciples({
+  items,
+}: {
+  items: { title: string; text: string; icon?: ReactNode }[];
+}) {
+  return (
+    <ul className="doctors-principles">
+      {items.map((item) => (
+        <li key={item.title}>
+          {item.icon && (
+            <span className="directory-icon-tile">{item.icon}</span>
+          )}
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+export function DirectoryComparison({
+  items,
+}: {
+  items: {
+    label: string;
+    heading: ReactNode;
+    points: string[];
+    action?: ReactNode;
+  }[];
+}) {
+  return (
+    <div className="doctors-roles">
+      {items.map((item) => (
+        <div key={item.label}>
+          <div className="directory-comparison-label">
+            <p className="care-kicker">{item.label}</p>
+            {item.action}
+          </div>
+          <h3>{item.heading}</h3>
+          <ul>
+            {item.points.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+export function DirectoryFaq({
+  heading,
+  description,
+  faqs,
+  lastReviewed,
+  headingId = "doctors-faq-heading",
+}: {
+  heading: ReactNode;
+  description: string;
+  faqs: { question: string; answer: string }[];
+  lastReviewed?: string;
+  headingId?: string;
+}) {
+  return (
+    <section
+      id="faq"
+      className="doctors-faq care-container"
+      aria-labelledby={headingId}
+    >
+      <div>
+        <p className="care-kicker">Questions</p>
+        <h2 id={headingId}>{heading}</h2>
+        <p>{description}</p>
+      </div>
+      <div>
+        <div className="doctors-faq-list">
+          {faqs.map((faq, index) => (
+            <details key={faq.question} open={index === 0}>
+              <summary>
+                <span>{faq.question}</span>
+                <span className="doctors-faq-toggle">
+                  <Icon name="plus" size={20} />
+                </span>
+              </summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+        <DirectoryReviewer lastReviewed={lastReviewed} />
       </div>
     </section>
   );
