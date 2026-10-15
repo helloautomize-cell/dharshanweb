@@ -192,7 +192,12 @@ export function SiteHeader() {
             </li>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href}>{link.label}</Link>
+                <Link
+                  href={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
+                >
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -232,7 +237,12 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link href="/conditions/">Where it hurts</Link>
-          <Link href="/doctors/">Doctors</Link>
+          <Link
+            href="/doctors/"
+            aria-current={pathname === "/doctors/" ? "page" : undefined}
+          >
+            Doctors
+          </Link>
           <Link href="/video-consultation/">Video consultation</Link>
           <Link href="/health-library/">Health library</Link>
           <Link href="/plan-your-visit/">Plan your visit</Link>

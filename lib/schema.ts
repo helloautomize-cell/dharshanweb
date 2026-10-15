@@ -180,6 +180,27 @@ export function careItemList(
   };
 }
 
+export function doctorsItemList(doctors: PageMeta[]) {
+  return {
+    "@type": "ItemList",
+    "@id": `${BASE}/doctors/#doctors`,
+    numberOfItems: doctors.length,
+    itemListElement: doctors.map((doctor, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        ...physician(doctor.url.split("/")[1]),
+        name: doctor.h1?.replaceAll("*", ""),
+        url: `${BASE}${doctor.url}`,
+        image: `${BASE}/images/doctors/${doctor.doctor!.portrait}.jpg`,
+        knowsLanguage: doctor.doctor?.languages?.filter(
+          (language) => language.trim() && !language.includes("[CONFIRM"),
+        ),
+      },
+    })),
+  };
+}
+
 export function graph(meta: PageMeta, extras: unknown[] = []) {
   return {
     "@context": "https://schema.org",
