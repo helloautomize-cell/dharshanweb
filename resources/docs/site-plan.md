@@ -98,7 +98,7 @@ Old rehabify.in blog posts: reviewed one by one in `current-website-audit.md`; k
 ## 3. Navigation (matches design v2)
 
 ### Floating pill navbar (desktop)
-Logo · Care ▾ (mega panel) · Video consults · Doctors · Visit · **Book a consultation** (glow button)
+Logo · Care ▾ (mega panel) · Video consults · Doctors · Visit · Guides · **Book a consultation** (glow button)
 
 Utility info moves out of a separate bar: hours, phone and "Medical emergency? Call 108 or 112" sit in the mega panel footer, the mobile menu footer and the site footer. The emergency line also appears on every symptom page callout.
 
