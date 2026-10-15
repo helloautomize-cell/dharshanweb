@@ -132,7 +132,7 @@
     "url": "/video-consultation/",
     "title": "Online Rehab Consultation with a Physiatrist | Rehabify",
     "description": "See a rehabilitation doctor by video from anywhere in India. Share reports, move on camera and get a home plan. Book a video consult with Rehabify.",
-    "h1": "See a rehab doctor from *home*",
+    "h1": "See a rehab doctor *from home.*",
     "badge": null,
     "reviewer": null,
     "lastReviewed": null,
@@ -216,26 +216,6 @@
     "links": null
   },
   {
-    "url": "/health-library/",
-    "title": "Health Library | Rehabify",
-    "description": "Doctor-reviewed articles on back pain, stroke recovery, joint care and rehab at home from Rehabify's rehabilitation doctors.",
-    "h1": "Health *Library*",
-    "badge": null,
-    "reviewer": null,
-    "lastReviewed": null,
-    "lastUpdated": null,
-    "schema": null,
-    "about": null,
-    "related": null,
-    "posts": null,
-    "author": null,
-    "reviewedBy": null,
-    "datePublished": null,
-    "dateModified": null,
-    "readingTime": null,
-    "links": null
-  },
-  {
     "url": "/thank-you/",
     "title": "Thank you | Rehabify",
     "description": "We have received your request and will confirm your time.",
@@ -291,7 +271,7 @@
       "/older-adults/osteoporosis/"
     ],
     "posts": [
-      "/health-library/low-back-pain-when-to-worry/"
+      "/guides/low-back-pain-when-to-worry/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -323,7 +303,7 @@
       "/pain-and-spine/image-guided-injections/"
     ],
     "posts": [
-      "/health-library/low-back-pain-when-to-worry/"
+      "/guides/low-back-pain-when-to-worry/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -356,7 +336,7 @@
       "/pain-and-spine/image-guided-injections/"
     ],
     "posts": [
-      "/health-library/low-back-pain-when-to-worry/"
+      "/guides/low-back-pain-when-to-worry/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -388,7 +368,7 @@
       "/pain-and-spine/image-guided-injections/"
     ],
     "posts": [
-      "/health-library/low-back-pain-when-to-worry/"
+      "/guides/low-back-pain-when-to-worry/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -421,7 +401,7 @@
       "/pain-and-spine/sciatica/"
     ],
     "posts": [
-      "/health-library/low-back-pain-when-to-worry/"
+      "/guides/low-back-pain-when-to-worry/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -446,7 +426,7 @@
       "/older-adults/falls-and-balance/"
     ],
     "posts": [
-      "/health-library/first-90-days-after-stroke/"
+      "/guides/first-90-days-after-stroke/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -480,7 +460,7 @@
       "/older-adults/falls-and-balance/"
     ],
     "posts": [
-      "/health-library/first-90-days-after-stroke/"
+      "/guides/first-90-days-after-stroke/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -607,7 +587,7 @@
       "/childrens-rehabilitation/cerebral-palsy/"
     ],
     "posts": [
-      "/health-library/first-90-days-after-stroke/"
+      "/guides/first-90-days-after-stroke/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -632,7 +612,7 @@
       "/older-adults/osteoporosis/"
     ],
     "posts": [
-      "/health-library/what-is-a-physiatrist/"
+      "/guides/what-is-a-physiatrist/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -843,8 +823,8 @@
       "/neuro-rehabilitation/spasticity/"
     ],
     "posts": [
-      "/health-library/cerebral-palsy-what-parents-ask-first/",
-      "/health-library/toe-walking-when-to-check/"
+      "/guides/cerebral-palsy-what-parents-ask-first/",
+      "/guides/toe-walking-when-to-check/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -875,7 +855,7 @@
       "/childrens-rehabilitation/developmental-delay/"
     ],
     "posts": [
-      "/health-library/cerebral-palsy-what-parents-ask-first/"
+      "/guides/cerebral-palsy-what-parents-ask-first/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -907,7 +887,7 @@
       "/childrens-rehabilitation/"
     ],
     "posts": [
-      "/health-library/school-and-therapy-for-children-with-dmd/"
+      "/guides/school-and-therapy-for-children-with-dmd/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -939,7 +919,7 @@
       "/childrens-rehabilitation/"
     ],
     "posts": [
-      "/health-library/toe-walking-when-to-check/"
+      "/guides/toe-walking-when-to-check/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -964,9 +944,9 @@
       "/older-adults/osteoporosis/"
     ],
     "posts": [
-      "/health-library/making-a-home-safer-against-falls/",
-      "/health-library/osteoporosis-after-50/",
-      "/health-library/walking-aids-cane-walker-or-none/"
+      "/guides/making-a-home-safer-against-falls/",
+      "/guides/osteoporosis-after-50/",
+      "/guides/walking-aids-cane-walker-or-none/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -998,8 +978,8 @@
       "/neuro-rehabilitation/parkinsons/"
     ],
     "posts": [
-      "/health-library/making-a-home-safer-against-falls/",
-      "/health-library/walking-aids-cane-walker-or-none/"
+      "/guides/making-a-home-safer-against-falls/",
+      "/guides/walking-aids-cane-walker-or-none/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -1031,7 +1011,7 @@
       "/pain-and-spine/back-pain/"
     ],
     "posts": [
-      "/health-library/osteoporosis-after-50/"
+      "/guides/osteoporosis-after-50/"
     ],
     "author": null,
     "reviewedBy": null,
@@ -1181,81 +1161,392 @@
     "links": null
   },
   {
-    "url": "/health-library/what-is-a-physiatrist/",
+    "url": "/guides/",
+    "title": "Guides on Pain, Movement and Recovery | Rehabify",
+    "description": "Plain answers about pain, movement and recovery, written and medically reviewed by a rehabilitation doctor in Bengaluru.",
+    "h1": "Plain answers about pain, movement and *recovery*."
+  },
+  {
+    "url": "/guides/topic/understanding-rehab/",
+    "title": "Understanding rehab Guides | Rehabify",
+    "description": "Guides on understanding rehab from a rehabilitation doctor in Bengaluru, medically reviewed.",
+    "h1": "Understanding rehab"
+  },
+  {
+    "url": "/guides/topic/pain-and-spine/",
+    "title": "Pain and spine Guides | Rehabify",
+    "description": "Guides on pain and spine from a rehabilitation doctor in Bengaluru, medically reviewed.",
+    "h1": "Pain and spine"
+  },
+  {
+    "url": "/guides/topic/neuro-rehabilitation/",
+    "title": "Neuro rehabilitation Guides | Rehabify",
+    "description": "Guides on neuro rehabilitation from a rehabilitation doctor in Bengaluru, medically reviewed.",
+    "h1": "Neuro rehabilitation"
+  },
+  {
+    "url": "/guides/topic/children/",
+    "title": "Children Guides | Rehabify",
+    "description": "Guides on children from a rehabilitation doctor in Bengaluru, medically reviewed.",
+    "h1": "Children"
+  },
+  {
+    "url": "/guides/topic/older-adults/",
+    "title": "Older adults Guides | Rehabify",
+    "description": "Guides on older adults from a rehabilitation doctor in Bengaluru, medically reviewed.",
+    "h1": "Older adults"
+  },
+  {
     "title": "What Is a Physiatrist? When to See One | Rehabify",
     "description": "A physiatrist is a doctor who treats pain and loss of movement without surgery. Learn what they do and when to see one in Bengaluru.",
+    "url": "/guides/what-is-a-physiatrist/",
     "h1": "What is a *physiatrist*?",
-    "badge": null,
-    "reviewer": null,
-    "lastReviewed": "[CONFIRM: sign-off date]",
-    "lastUpdated": null,
     "schema": "BlogPosting",
-    "about": null,
-    "related": null,
-    "posts": null,
     "author": "dr-dharshan-n-a",
     "reviewedBy": "dr-dharshan-n-a",
-    "datePublished": "[CONFIRM: launch date]",
-    "dateModified": "[CONFIRM: launch date]",
+    "datePublished": "",
+    "dateModified": "",
+    "lastReviewed": "",
     "readingTime": "5 min",
     "links": [
       "/",
       "/faqs/",
       "/dr-dharshan-n-a/",
       "/care/"
+    ],
+    "topic": "basics",
+    "featured": true,
+    "order": 1,
+    "keywords": [
+      "what",
+      "is",
+      "a",
+      "physiatrist"
+    ],
+    "inBrief": [
+      "A physiatrist is a medical doctor who specialises in Physical Medicine and Rehabilitation (PMR). They diagnose and treat pain, weakness and loss of movement caused by problems in the muscles, bones, joints, nerves, brain or spinal cord, mostly without surgery. At Rehabify in Bengaluru, Dr. Dharshan N A is a physiatrist (MD PMR) with a fellowship in interventional pain management."
     ]
   },
   {
-    "url": "/health-library/first-90-days-after-stroke/",
     "title": "First 90 Days After a Stroke: Rehab Guide | Rehabify",
     "description": "What stroke rehab looks like in the first 3 months: early goals, therapy, stiffness, home safety and warning signs, from a Bengaluru physiatrist.",
+    "url": "/guides/first-90-days-after-stroke/",
     "h1": "The first 90 days after a *stroke*",
-    "badge": null,
-    "reviewer": null,
-    "lastReviewed": "[CONFIRM: sign-off date]",
-    "lastUpdated": null,
     "schema": "BlogPosting",
-    "about": {
-      "type": "MedicalCondition",
-      "name": "Stroke"
-    },
-    "related": null,
-    "posts": null,
     "author": "dr-dharshan-n-a",
     "reviewedBy": "dr-dharshan-n-a",
-    "datePublished": "[CONFIRM: launch date]",
-    "dateModified": "[CONFIRM: launch date]",
+    "datePublished": "",
+    "dateModified": "",
+    "lastReviewed": "",
     "readingTime": "6 min",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Stroke"
+    },
     "links": [
       "/neuro-rehabilitation/stroke/",
       "/neuro-rehabilitation/spasticity/"
+    ],
+    "topic": "neuro",
+    "featured": false,
+    "order": 2,
+    "keywords": [
+      "Stroke",
+      "the",
+      "first",
+      "90",
+      "days",
+      "after",
+      "a",
+      "stroke"
+    ],
+    "inBrief": [
+      "The first 3 months after a stroke are when the brain is most ready to relearn, so this is when steady, well-planned rehab matters most. Rehab in this period focuses on safety, regaining movement and daily skills, and preventing problems such as stiffness, shoulder pain and falls. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist, plans stroke rehab with families from the hospital stage onwards."
     ]
   },
   {
-    "url": "/health-library/low-back-pain-when-to-worry/",
     "title": "Low Back Pain: What Helps and When to Worry | Rehabify",
     "description": "Most low back pain gets better with movement and time. Learn what helps, what to avoid and the warning signs that need urgent care.",
+    "url": "/guides/low-back-pain-when-to-worry/",
     "h1": "Low back pain: what helps, and when to *worry*",
-    "badge": null,
-    "reviewer": null,
-    "lastReviewed": "[CONFIRM: sign-off date]",
-    "lastUpdated": null,
     "schema": "BlogPosting",
-    "about": {
-      "type": "MedicalCondition",
-      "name": "Low back pain"
-    },
-    "related": null,
-    "posts": null,
     "author": "dr-dharshan-n-a",
     "reviewedBy": "dr-dharshan-n-a",
-    "datePublished": "[CONFIRM: launch date]",
-    "dateModified": "[CONFIRM: launch date]",
+    "datePublished": "",
+    "dateModified": "",
+    "lastReviewed": "",
     "readingTime": "5 min",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Low back pain"
+    },
     "links": [
       "/pain-and-spine/back-pain/",
       "/pain-and-spine/sciatica/",
       "/pain-and-spine/image-guided-injections/"
+    ],
+    "topic": "pain",
+    "featured": false,
+    "order": 3,
+    "keywords": [
+      "Low back pain",
+      "low",
+      "back",
+      "pain",
+      "what",
+      "helps",
+      "and",
+      "when",
+      "to",
+      "worry"
+    ],
+    "inBrief": [
+      "Most low back pain is not caused by serious damage, and most people improve within a few weeks by staying active and avoiding long bed rest. A small number of people have warning signs that need urgent care. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist trained in interventional pain management, helps people with back pain that is not settling, and checks for the signs that need faster action."
+    ]
+  },
+  {
+    "title": "Cerebral Palsy: Questions Parents Ask First | Rehabify",
+    "description": "Straight answers to what parents ask first about cerebral palsy: causes, walking, therapy, stiffness and what to watch, from a Bengaluru physiatrist.",
+    "url": "/guides/cerebral-palsy-what-parents-ask-first/",
+    "h1": "Cerebral palsy: the questions parents ask *first*",
+    "badge": "cerebral-palsy",
+    "schema": "BlogPosting",
+    "author": "dr-dharshan-n-a",
+    "reviewedBy": "dr-dharshan-n-a",
+    "datePublished": "",
+    "dateModified": "",
+    "lastReviewed": "",
+    "readingTime": "6 min",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Cerebral palsy",
+      "alternateName": [
+        "CP"
+      ]
+    },
+    "links": [
+      "/childrens-rehabilitation/",
+      "/childrens-rehabilitation/cerebral-palsy/"
+    ],
+    "topic": "children",
+    "featured": false,
+    "order": 4,
+    "keywords": [
+      "Cerebral palsy",
+      "CP",
+      "cerebral",
+      "palsy",
+      "the",
+      "questions",
+      "parents",
+      "ask",
+      "first"
+    ],
+    "inBrief": [
+      "Cerebral palsy (CP) is a lifelong condition that affects movement and posture. It is caused by an injury to, or a difference in, the developing brain. The brain injury does not get worse, but a child's needs change as they grow. Regular, goal-based rehab, planned with parents, helps many children do more for themselves. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist, answers the questions families ask most in the first months after hearing the words \"cerebral palsy\"."
+    ]
+  },
+  {
+    "title": "Toe Walking in Children: When to Get It Checked | Rehabify",
+    "description": "Toe walking is common in toddlers and often settles. Learn when it needs a check, what doctors look for and what helps, from a Bengaluru physiatrist.",
+    "url": "/guides/toe-walking-when-to-check/",
+    "h1": "Toe walking in children: when to get it *checked*",
+    "badge": "development",
+    "schema": "BlogPosting",
+    "author": "dr-dharshan-n-a",
+    "reviewedBy": "dr-dharshan-n-a",
+    "datePublished": "",
+    "dateModified": "",
+    "lastReviewed": "",
+    "readingTime": "5 min",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Toe walking"
+    },
+    "links": [
+      "/childrens-rehabilitation/",
+      "/childrens-rehabilitation/developmental-delay/"
+    ],
+    "topic": "children",
+    "featured": false,
+    "order": 5,
+    "keywords": [
+      "Toe walking",
+      "toe",
+      "walking",
+      "in",
+      "children",
+      "when",
+      "to",
+      "get",
+      "it",
+      "checked"
+    ],
+    "inBrief": [
+      "Many toddlers walk on their toes now and then while they learn to walk, and it often settles by about age 2 to 3. Toe walking should be checked if it continues after that age, affects one leg only, started after your child had been walking flat-footed, or comes with stiffness, falls or delays in other skills. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist, checks children who walk on their toes and helps families decide whether to watch, stretch or treat."
+    ]
+  },
+  {
+    "title": "School and Therapy for Children With DMD | Rehabify",
+    "description": "How to plan school, PE, rest and therapy for a child with Duchenne muscular dystrophy, with practical steps for parents from a Bengaluru physiatrist.",
+    "url": "/guides/school-and-therapy-for-children-with-dmd/",
+    "h1": "School and therapy for children with *Duchenne* muscular dystrophy",
+    "badge": "muscular-dystrophy",
+    "schema": "BlogPosting",
+    "author": "dr-dharshan-n-a",
+    "reviewedBy": "dr-dharshan-n-a",
+    "datePublished": "",
+    "dateModified": "",
+    "lastReviewed": "",
+    "readingTime": "6 min",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Duchenne muscular dystrophy",
+      "alternateName": [
+        "DMD"
+      ]
+    },
+    "links": [
+      "/childrens-rehabilitation/muscular-dystrophy/"
+    ],
+    "topic": "children",
+    "featured": false,
+    "order": 6,
+    "keywords": [
+      "Duchenne muscular dystrophy",
+      "DMD",
+      "school",
+      "and",
+      "therapy",
+      "for",
+      "children",
+      "with",
+      "duchenne",
+      "muscular",
+      "dystrophy"
+    ],
+    "inBrief": [
+      "Children with Duchenne muscular dystrophy (DMD) can go to school, learn, play and make friends. Because muscles get weaker over time, school needs some planning, and that plan needs to change as your child grows. Therapy helps keep joints flexible, keeps your child active in a safe way and supports independence. It does not stop the condition. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist, helps families plan therapy and school support alongside the child's neurologist."
+    ]
+  },
+  {
+    "title": "Making a Home Safer Against Falls | Rehabify",
+    "description": "Simple changes to bathrooms, floors, stairs, night lighting and footwear that lower the risk of falls at home, from a Bengaluru physiatrist.",
+    "url": "/guides/making-a-home-safer-against-falls/",
+    "h1": "Making a home safer against *falls*",
+    "schema": "BlogPosting",
+    "author": "dr-dharshan-n-a",
+    "reviewedBy": "dr-dharshan-n-a",
+    "datePublished": "",
+    "dateModified": "",
+    "lastReviewed": "",
+    "readingTime": "5 min",
+    "badge": "balance",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Falls in older adults"
+    },
+    "links": [
+      "/older-adults/",
+      "/older-adults/falls-and-balance/"
+    ],
+    "topic": "older",
+    "featured": false,
+    "order": 7,
+    "keywords": [
+      "Falls in older adults",
+      "making",
+      "a",
+      "home",
+      "safer",
+      "against",
+      "falls"
+    ],
+    "inBrief": [
+      "Most falls in older adults happen at home, often in the bathroom, on stairs or on the way to the toilet at night.",
+      "Small, low-cost changes help: grab rails, non-slip surfaces, firm mats, night lights and well-fitting footwear.",
+      "Home changes work better when combined with strength and balance exercise and a medicine review.",
+      "At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist, assesses why a person is unsteady and gives families a home safety plan."
+    ],
+    "relatedIntro": "More on staying steady and strong, from the same doctor.",
+    "keyTakeaways": [
+      "Start with the bathroom and the path from the bed to the toilet at night.",
+      "Grab rails, non-slip floors, night lights and firm footwear cost little and lower the risk.",
+      "Remove loose mats and clutter, and mark steps and thresholds so they are easy to see.",
+      "Pair home changes with strength and balance exercise, a medicine review and eye checks.",
+      "After a fall with a head injury, severe pain or new weakness, call 108 or 112."
+    ]
+  },
+  {
+    "title": "Osteoporosis After 50: Tests, Exercise, Falls | Rehabify",
+    "description": "Who should be tested for osteoporosis after 50, what a DEXA scan shows, safe exercise for weak bones and how to lower the risk of falls.",
+    "url": "/guides/osteoporosis-after-50/",
+    "h1": "Osteoporosis after *50*",
+    "schema": "BlogPosting",
+    "author": "dr-dharshan-n-a",
+    "reviewedBy": "dr-dharshan-n-a",
+    "datePublished": "",
+    "dateModified": "",
+    "lastReviewed": "",
+    "readingTime": "5 min",
+    "badge": "bones",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Osteoporosis"
+    },
+    "links": [
+      "/older-adults/osteoporosis/"
+    ],
+    "topic": "older",
+    "featured": false,
+    "order": 8,
+    "keywords": [
+      "Osteoporosis",
+      "osteoporosis",
+      "after",
+      "50"
+    ],
+    "inBrief": [
+      "Osteoporosis means thin, weak bones that break easily. It causes no symptoms until a bone breaks.",
+      "Women after menopause and men over 50 with risk factors should ask their doctor about testing, usually a bone density (DEXA) scan.",
+      "The right exercise, enough calcium, protein and vitamin D, medicines your doctor may prescribe, and fall prevention all lower the chance of a fracture.",
+      "At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist, assesses bone health and fall risk and plans safe exercise."
+    ]
+  },
+  {
+    "title": "Walking Aids: Cane, Walker or None? | Rehabify",
+    "description": "How to tell if you need a cane or walker, how a cane should be sized, which hand holds it and how to use stairs safely, from a Bengaluru physiatrist.",
+    "url": "/guides/walking-aids-cane-walker-or-none/",
+    "h1": "Walking aids: a cane, a walker, or *none*?",
+    "schema": "BlogPosting",
+    "author": "dr-dharshan-n-a",
+    "reviewedBy": "dr-dharshan-n-a",
+    "datePublished": "",
+    "dateModified": "",
+    "lastReviewed": "",
+    "readingTime": "5 min",
+    "badge": "older-adults",
+    "links": [
+      "/older-adults/falls-and-balance/",
+      "/neuro-rehabilitation/stroke/"
+    ],
+    "topic": "older",
+    "featured": false,
+    "order": 9,
+    "keywords": [
+      "walking",
+      "aids",
+      "a",
+      "cane",
+      "walker",
+      "or",
+      "none"
+    ],
+    "inBrief": [
+      "A walking aid can make walking safer and help you stay active, but the wrong aid, or one at the wrong height, can raise the risk of a fall.",
+      "A cane suits mild unsteadiness or pain in one leg. A walker suits poorer balance or weakness in both legs.",
+      "A cane is usually held in the hand opposite the weak or painful leg, with the handle at wrist height.",
+      "At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist, checks balance and walking and advises on the right aid, its height and how to use it."
     ]
   }
 ]

@@ -1,0 +1,391 @@
+.video-hero-columns {
+  align-items: center;
+}
+.video-hero-columns .doctors-actions {
+  margin-top: 30px;
+}
+.video-down-arrow {
+  display: inline-flex;
+  transform: rotate(90deg);
+}
+.video-page .video-call-window {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--care-line);
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: 0 40px 80px -48px rgba(10, 22, 38, 0.35);
+}
+.video-call-topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px 14px;
+  color: var(--care-label);
+  font:
+    400 11px/1.5 var(--font-code),
+    monospace;
+}
+.video-call-dots {
+  display: flex;
+  gap: 4px;
+}
+.video-call-dots i {
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--care-line);
+  border-radius: 50%;
+}
+.video-call-label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.video-call-private {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.video-call-screen {
+  position: relative;
+  aspect-ratio: 4 / 3.4;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--ice);
+}
+.video-call-crop {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(100% / 0.86);
+}
+.video-call-crop img {
+  object-fit: cover;
+  object-position: 46% 30%;
+}
+.video-self-view {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 26%;
+  aspect-ratio: 3 / 4;
+  border: 2px solid var(--card);
+  border-radius: 14px;
+  background: linear-gradient(150deg, var(--paper), var(--ice));
+  color: rgba(14, 34, 51, 0.22);
+}
+.video-self-view svg {
+  max-width: 70%;
+}
+.video-self-view > span {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  color: var(--care-label);
+  font:
+    400 10px/1.4 var(--font-code),
+    monospace;
+}
+.video-call-name {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  max-width: calc(100% - 164px);
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+}
+.video-call-name > span {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.video-call-name small {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--care-label);
+}
+.video-call-controls {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+}
+.video-call-controls > span {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+}
+.video-call-controls .video-call-end {
+  background: var(--ink);
+  color: var(--card);
+}
+.video-call-end svg {
+  transform: rotate(135deg);
+}
+.video-call-window figcaption {
+  padding: 12px 8px 4px;
+  font:
+    400 11px/1.6 var(--font-code),
+    monospace;
+  color: var(--care-label);
+}
+.video-fit {
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: var(--care-spacing);
+}
+.video-fit-results > #video-fit-result {
+  display: flex;
+  flex: 1;
+}
+.video-fit-result {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-d);
+}
+.video-fit-result[data-changed] {
+  animation: video-result-in 350ms ease both;
+}
+.video-fit-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--aqua);
+  font:
+    400 12px/1.5 var(--font-code),
+    monospace;
+}
+.video-fit-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+.video-fit-result[data-type="clinic"] .video-fit-badge {
+  color: var(--ice);
+}
+.video-fit-result[data-type="emergency"] .video-fit-badge {
+  color: var(--apricot);
+}
+.video-fit-result h3 {
+  margin-top: 24px;
+  color: var(--card);
+  font-size: clamp(28px, 3vw, 38px);
+}
+.video-fit-text {
+  max-width: 44ch;
+  margin-top: 20px;
+  color: rgba(217, 237, 243, 0.72);
+  font-size: 17px;
+  line-height: 1.65;
+}
+.video-fit-result .video-fit-actions {
+  padding-top: 32px;
+  margin-top: auto;
+}
+.video-emergency-button {
+  color: var(--night);
+  background: var(--apricot);
+}
+.video-emergency-button:hover {
+  background: var(--apricot);
+  opacity: 0.9;
+}
+.video-how {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 80px);
+  padding-bottom: var(--care-spacing);
+}
+.video-how-intro {
+  position: sticky;
+  top: 110px;
+}
+.video-how-intro > p:not(.care-kicker) {
+  margin-top: 24px;
+  color: var(--care-body);
+}
+.video-steps {
+  border-top: 1px solid var(--ink);
+}
+.video-steps > li {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  padding-block: 26px;
+  border-bottom: 1px solid var(--care-line);
+  scroll-margin-top: 110px;
+}
+.video-steps > li > span {
+  padding-top: 3px;
+  color: var(--blue-ink);
+  font:
+    400 13px/1.6 var(--font-code),
+    monospace;
+}
+.video-page .video-steps h3 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.video-steps p {
+  max-width: 52ch;
+  margin-top: 12px;
+  color: var(--care-body);
+  font-size: 16px;
+  line-height: 1.65;
+}
+.video-guidelines {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 10px;
+  border: 1px solid var(--care-line);
+  border-radius: 999px;
+  color: var(--care-label);
+  font:
+    400 11px/1.5 var(--font-code),
+    monospace;
+}
+.video-ready {
+  padding-bottom: var(--care-spacing);
+}
+.video-ready-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+}
+.video-glance {
+  padding: clamp(24px, 3vw, 40px);
+  background: var(--card);
+  border: 1px solid var(--care-line);
+  border-radius: 28px;
+}
+.video-glance h3 {
+  font-size: 26px;
+}
+.video-page .video-glance-facts > div {
+  grid-template-columns: 130px minmax(0, 1fr);
+}
+.video-glance-facts dd {
+  color: var(--care-body);
+  font-size: 17px;
+}
+.video-ready-tiles {
+  display: grid;
+  gap: 12px;
+}
+.video-ready-tiles li {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  align-content: center;
+  gap: 20px;
+  padding: 22px;
+  border: 1px solid var(--care-line);
+  border-radius: 20px;
+  background: var(--card);
+}
+.video-ready-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--paper);
+  color: var(--blue-ink);
+}
+.video-ready-tiles h3 {
+  font-size: 22px;
+}
+.video-ready-tiles p {
+  margin-top: 12px;
+  color: var(--care-body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+.video-page .doctors-faq > div:first-child > p:not(.care-kicker) {
+  margin-top: 24px;
+  color: var(--care-body);
+}
+.video-page .doctors-faq details a {
+  color: var(--blue-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@keyframes video-result-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 999px) {
+  .video-how,
+  .video-ready-columns,
+  .video-page .doctors-roles {
+    grid-template-columns: 1fr;
+  }
+  .video-how-intro {
+    position: static;
+  }
+  .video-page .doctors-roles > div + div {
+    border-left: 0;
+    border-top: 1px solid var(--care-line);
+  }
+  .video-call-window {
+    max-width: 600px;
+    width: 100%;
+    justify-self: center;
+  }
+}
+@media (max-width: 639px) {
+  .video-hero-columns .doctors-actions {
+    flex-direction: column;
+  }
+  .video-hero-columns .doctors-actions .btn {
+    width: 100%;
+  }
+  .video-page .video-glance-facts > div {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .video-steps > li {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+  .video-page .video-steps h3 {
+    font-size: 19px;
+  }
+  .video-fit-actions {
+    flex-direction: column;
+  }
+  .video-fit-actions .btn {
+    width: 100%;
+  }
+  .video-ready-tiles li {
+    gap: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .video-fit-result[data-changed] {
+    animation: none;
+  }
+}

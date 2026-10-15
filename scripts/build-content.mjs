@@ -153,3 +153,4 @@ await writeFile(
 process.stdout.write(
   `Parsed ${pages.length} pages into content/pages/. Routes:\n${manifest.map((p) => p.url).join("\n")}\n`,
 );
+await import("./import-guides.mjs");

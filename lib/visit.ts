@@ -19,6 +19,11 @@ export type VisitFacts = {
   phoneHours: string;
   firstConsultLength: string;
   confirmTime: string;
+  videoLength?: string;
+  videoPlatform?: string;
+  callDropRule?: string;
+  recordingPolicy?: string;
+  lastReviewed?: string;
 };
 
 export const visitFacts: VisitFacts = {
@@ -32,10 +37,15 @@ export const visitFacts: VisitFacts = {
   phoneHours: "",
   firstConsultLength: "",
   confirmTime: "",
+  videoLength: "",
+  videoPlatform: "",
+  callDropRule: "",
+  recordingPolicy: "",
+  lastReviewed: "",
 };
 
-export function visitValue(value: string) {
-  const text = value.trim();
+export function visitValue(value?: string) {
+  const text = (value ?? "").trim();
   return /confirm|\btbc\b/i.test(text) ? "" : text;
 }
 

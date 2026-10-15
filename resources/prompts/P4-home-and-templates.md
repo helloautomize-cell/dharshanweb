@@ -1,6 +1,6 @@
 # P4 · Home page and templates
 
-What it does: builds the real Home page (all 13 sections from design v3, including the two-doctor hero, the body map, the care track and the spine journey) and the full page templates for care hubs, care pages, both doctor profiles, posts, legal pages, contact, plan your visit, video consultation, Conditions A to Z, FAQs and the Health Library list.
+What it does: builds the real Home page (all 13 sections from design v3, including the two-doctor hero, the body map, the care track and the spine journey) and the full page templates for care hubs, care pages, both doctor profiles, posts, legal pages, contact, plan your visit, video consultation, Conditions A to Z, FAQs and the Guides list.
 Check before approving: compare Home on your phone and laptop with rehabify-design-v3.html side by side, try the body map with a finger and with the Tab key, and check the report's mobile Home height (9,000 to 10,500px) and Lighthouse numbers.
 
 ```
@@ -59,7 +59,7 @@ Part B. Templates (read design-development-plan.md section 4 for each):
 4. Post (used in Phase 5): 68ch reading column, reviewer box at the top, table of contents, body, callouts, FAQs, sources, related care cards and posts. Build it now with a fixture post that is not routed in production.
 5. Legal (7 pages): plain reading column, "Last updated" from site-config.legalLastUpdated, a left table of contents on desktop (on top, collapsed, on mobile), print styles (no nav, dock, footer stage or cookie banner when printed).
 6. Contact (/contact/): the form layout with the `#book` anchor and contact cards. Fields as in the content file and master Part 9.1 (name, mobile, age, doctor with "No preference", reason, format, preferred date and time, city, under-18 guardian, unticked consent with the exact text from site-plan.md section 4, the line under the form). Prefill from the query string and booking-context. Phase 6 wires the Server Action and email; for now the form posts nowhere and shows the fields only. ContactPage schema.
-7. Plan your visit, Video consultation, Conditions A to Z (full page version of the Home filter), FAQs (grouped as in the content file, one FAQPage), Health Library list (intro, category chips as filters, card grid ready for the 3 Phase 5 posts with designed covers: gradient plus badge, never video thumbnails).
+7. Plan your visit, Video consultation, Conditions A to Z (full page version of the Home filter), FAQs (grouped as in the content file, one FAQPage), Guides list (intro, category chips as filters, card grid ready for the 3 Phase 5 posts with designed covers: gradient plus badge, never video thumbnails).
 8. About, Our doctors, All care, Thank you: use the shared section components; no new one-off designs.
 
 Mobile rules (below 768px):
@@ -78,7 +78,7 @@ Performance budget (mobile, 4G, Moto G Power profile):
 Reduced motion (prefers-reduced-motion: reduce, and the Phase 1 toggle):
 - Every section renders its final, static state: goniometer at 95, rings filled, spine fully drawn and lit, care track and stacking cards as normal stacked layouts, no zoom, no marquee movement, no autoplay, no glow spin, no spotlight.
 
-Tests (Playwright, on Home, all 5 hubs, back-pain, stroke, both doctor profiles, contact, conditions, faqs, privacy-policy and health-library):
+Tests (Playwright, on Home, all 5 hubs, back-pain, stroke, both doctor profiles, contact, conditions, faqs, privacy-policy and guides):
 - No horizontal overflow at 390, 768, 1024 and 1440
 - Zero nested interactives
 - No section taller than 1.3 x viewport at 390x844 (hero excluded); Home document height at 390 between 9,000 and 10,500px

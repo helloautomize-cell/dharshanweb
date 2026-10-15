@@ -31,7 +31,7 @@ Non-negotiables (short form):
 - No Framer Motion, GSAP or Lenis.
 
 Pages in scope (call this list THE PAGES):
-/, /about/, /doctors/, /dr-dharshan-n-a/, /dr-selina-kh/, /care/, all 5 hubs (/pain-and-spine/, /neuro-rehabilitation/, /joints-and-sports/, /childrens-rehabilitation/, /older-adults/), /pain-and-spine/back-pain/, /neuro-rehabilitation/stroke/, /joints-and-sports/prp-and-prolotherapy/, /childrens-rehabilitation/cerebral-palsy/, /care/#a-z, /video-consultation/, /plan-your-visit/, /contact/, /faqs/, /health-library/, /health-library/what-is-a-physiatrist/, /thank-you/, the 404 page, /privacy-policy/.
+/, /about/, /doctors/, /dr-dharshan-n-a/, /dr-selina-kh/, /care/, all 5 hubs (/pain-and-spine/, /neuro-rehabilitation/, /joints-and-sports/, /childrens-rehabilitation/, /older-adults/), /pain-and-spine/back-pain/, /neuro-rehabilitation/stroke/, /joints-and-sports/prp-and-prolotherapy/, /childrens-rehabilitation/cerebral-palsy/, /care/#a-z, /video-consultation/, /plan-your-visit/, /contact/, /faqs/, /guides/, /guides/what-is-a-physiatrist/, /thank-you/, the 404 page, /privacy-policy/.
 Widths: 390, 768, 1024, 1440. Test the mobile widths with touch emulation.
 
 Step 1. Before screenshots.

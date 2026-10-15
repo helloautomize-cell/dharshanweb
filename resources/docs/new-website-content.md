@@ -5,13 +5,13 @@ Version 1 (all 45 pages and 3 launch posts) for review by Dr. Dharshan N A · 12
 Facts come from `client-answers.md`. Page list, URLs, menus, schema and global copy blocks are in `site-plan.md`. Visuals follow `rehabify-design-v3.html`.
 
 Contents
-- Part 1 · Core pages (Home, About, Our doctors, Dr. Dharshan N A, All care, Conditions A to Z, Video consultation, Plan your visit, Contact, FAQs, Health Library, Thank you, 404) ✅ this version
+- Part 1 · Core pages (Home, About, Our doctors, Dr. Dharshan N A, All care, Conditions A to Z, Video consultation, Plan your visit, Contact, FAQs, Guides, Thank you, 404) ✅ this version
 - Part 2 · Pain and spine (hub + 4 pages) ✅
 - Part 3 · Neuro rehabilitation (hub + 5) ✅
 - Part 4 · Joints and sports (hub + 6) ✅
 - Part 5 · Children and older adults (2 hubs + 5) ✅
 - Part 6 · Legal and trust (7) ✅
-- Part 7 · Health Library launch posts (3) ✅
+- Part 7 · Guides launch posts (3) ✅
 - Part 8 · Review guide for Dr. Dharshan and open confirmations ✅ (end of this file, grows with each part)
 
 Conventions: italic word in an H1 or H2 = the Instrument Serif accent phrase. `[CONFIRM: ...]` = yellow chip in development, hidden in production, blocks `npm run launch-check`. Section kickers (mono labels) are given in CAPS.
@@ -436,43 +436,81 @@ Empty search state: No match. Try a simpler word, or [ask us on WhatsApp].
 title: "Online Rehab Consultation with a Physiatrist | Rehabify"
 description: "See a rehabilitation doctor by video from anywhere in India. Share reports, move on camera and get a home plan. Book a video consult with Rehabify."
 url: /video-consultation/
-h1: "See a rehab doctor from *home*"
+h1: "See a rehab doctor *from home.*"
 schema: [MedicalWebPage, Service]
 ```
 
-### Intro (answer-first)
-A video consult at Rehabify is a private online appointment with Dr. Dharshan N A, a rehabilitation doctor. You share your reports, show how you move on camera and leave with a first plan and home exercises. It suits people far from Bengaluru, people who find travel hard, and follow-ups.
+### Intro
+A private online appointment with a rehabilitation doctor. Share your reports, show how you move on camera and leave with a first plan and home exercises.
 
-### At a glance
-- **Who you see:** Dr. Dharshan N A, MBBS, MD (PMR)
-- **How long:** [CONFIRM: e.g. 20 to 30 minutes]
-- **What you need:** a phone or laptop with a camera, a quiet room, space to move
-- **Good for:** first advice, follow-ups, home programmes, report reviews, family questions after a stroke
-- **Not for:** emergencies, or problems that need an examination or a procedure
-- **Platform:** [CONFIRM: video platform]
+Hero actions: Book a video consult (`/contact/?format=video#book`), Is video right for me? (`#fit`). The call window uses the supplied Dr. Dharshan video illustration, crops out the right edge, and has decorative controls only.
+
+### Is video right for you?
+Tell us what you need.
+Pick the closest match. We show whether a video consult suits it, or whether the clinic is the better first step.
+
+The nine choices, matching explanations and four result types are stored in `lib/video.ts`. The first choice is server-rendered. Emergencies show Call 108 and Call 112, never a booking action.
 
 ### How it works
-1. **Book** online or on WhatsApp and choose "Video consult".
-2. **Share reports** (scans, discharge summary, medicines) before the call.
-3. **Confirm your identity** at the start of the call, as required by India's Telemedicine Practice Guidelines.
-4. **Talk and move.** The doctor asks about your problem and may ask you to walk, bend or lift your arm on camera.
-5. **Your plan.** Advice, home exercises and, where allowed, a prescription.
-6. **Next step.** A follow-up video consult, or a clinic visit if you need an examination or a procedure.
+Six steps, from booking to plan.
+The same care as a clinic visit, done on camera. If you need to be examined in person, the doctor will say so.
+
+1. **Book and choose "Video consult"** Online or on WhatsApp. We confirm your time by phone or WhatsApp.
+2. **Share your reports** Scans, discharge summary and your list of medicines, before the call.
+3. **Confirm who you are** A quick identity check at the start of the call.
+4. **Talk and move** The doctor asks about your problem and may ask you to walk, bend or lift your arm on camera.
+5. **Your plan** Advice, home exercises and, where allowed, a prescription sent to you digitally.
+6. **Next step** A follow-up video consult, or a clinic visit if you need an examination or a procedure.
+
+The identity step carries the note: Telemedicine Practice Guidelines, India. HowTo schema uses the same six rows.
 
 ### Get ready
-- Wear loose clothes; keep a chair and a clear floor space nearby
-- Ask a family member to hold the phone if you need to move around
-- Keep your medicines and latest reports beside you
+Set up before the call.
+A little set-up means the doctor sees how you move, not just your face.
 
-### What a video consult cannot do
-Some problems need hands-on examination, scans or procedures. The doctor will tell you honestly if a video consult is not enough. Video consults are never for emergencies.
+At a glance uses the shared facts list. Who you see and Languages come from doctor content with `videoConsults: true` (Dr. Dharshan enabled, Dr. Selina disabled for now). `videoLength`, `videoPlatform`, `videoHours`, `callDropRule`, `recordingPolicy` and `lastReviewed` are optional typed visit facts in `lib/visit.ts`, initially empty. Missing values are omitted, not displayed as placeholders.
+
+- **What you need:** A phone or laptop with a camera, a quiet room, space to move
+- **Good for:** First advice, follow-ups, home programmes, report reviews, family questions after a stroke
+- **Not for:** Emergencies, or problems that need an examination or a procedure
+
+Three preparation tiles (copy in `lib/video.ts`):
+- **Your space:** Wear loose clothes. Keep a chair and a clear patch of floor nearby so you can walk a few steps.
+- **Your phone:** Charged, with the camera working. Ask a family member to hold it if you need to move around.
+- **Your papers:** Keep your medicines and latest reports beside you, even if you sent them before.
+
+### A video consult can
+Talk, watch and plan.
+- Give first advice and review your scans and reports
+- Watch how you walk, bend and lift on camera
+- Set and update a home exercise programme
+- Answer a family's questions after a stroke
+
+### It cannot
+Replace a hands-on exam. Plan a clinic visit (`/plan-your-visit/`).
+- Some problems need a hands-on examination, scans or a procedure
+- The doctor will tell you honestly if a video consult is not enough
+- Never for emergencies: call 108 or 112
 
 ### FAQs
-1. **Is a video consult as good as a clinic visit?** For many follow-ups and first advice, yes. The doctor can see how you move and talk through your reports. For a first assessment of a new injury, nerve problem or before any procedure, an in-person examination is usually needed, and the doctor will say so.
-2. **Can the doctor prescribe medicines by video?** The doctor can prescribe some medicines on a video consult, within the rules of India's Telemedicine Practice Guidelines 2020. Some medicines cannot be prescribed online. Your prescription is sent to you digitally after the call.
+Before you call.
+Short answers to what people ask most about video consults.
+
+1. **Is a video consult as good as a clinic visit?** For many follow-ups and first advice, yes. The doctor can see how you move and talk through your reports. For a first assessment of a new injury, a nerve problem or before any procedure, an in-person examination is usually needed, and the doctor will say so.
+2. **Can the doctor prescribe medicines by video?** The doctor can prescribe some medicines on a video consult, within India's Telemedicine Practice Guidelines 2020. Some medicines cannot be prescribed online. Your prescription is sent to you digitally after the call.
 3. **Can a family member join?** Yes. A family member or carer can join, and must join for a child or for an adult who needs help to communicate. Tell us their name when you book.
-4. **What if the call drops?** The doctor will call you back on the number you booked with. If the connection stays poor, the consult is moved to a phone call or a new time at no extra cost. [CONFIRM]
-5. **Is my video consult private?** Yes. Calls are not recorded [CONFIRM], and your reports are used only for your care, as explained in our Privacy Policy.
+4. **What if the call drops?** The doctor will call you back on the number you booked with.
+5. **Is my video consult private?** Yes. Your reports are used only for your care, as explained in our Privacy Policy.
+
+Append `callDropRule` to answer four and prepend `recordingPolicy` to answer five only when populated. Link Privacy Policy. The reviewed line says Medically reviewed by Rehabify, with a date only when populated; FAQPage schema matches rendered answers.
+
+### Booking close
+See your doctor without the journey.
+Choose "Video consult" when you book. The team confirms your time by phone or WhatsApp and tells you how to join.
+Actions: Book a video consult (`/contact/?format=video#book`), Message on WhatsApp. Prefer to call? +91 79048 42576.
+1. **You send a request:** Online, on WhatsApp or by phone. Choose "Video consult".
+2. **We confirm a time:** By phone or WhatsApp, with how to join the call.
+3. **You join from home:** With your reports beside you and room to move.
 
 ---
 
@@ -631,13 +669,13 @@ schema: [FAQPage]
 
 ---
 
-## Page 11 · Health Library
+## Page 11 · Guides
 
 ```yaml
-title: "Health Library | Rehabify"
-description: "Doctor-reviewed articles on back pain, stroke recovery, joint care and rehab at home from Rehabify's rehabilitation doctors."
-url: /health-library/
-h1: "Health *Library*"
+title: "Guides on Pain, Movement and Recovery | Rehabify"
+description: "Plain answers about pain, movement and recovery, written and medically reviewed by a rehabilitation doctor in Bengaluru."
+url: /guides/
+h1: "Plain answers about pain, movement and *recovery*."
 ```
 Intro: Plain-language articles on pain, movement and recovery, written or reviewed by our doctors.
 Category chips: All · Pain and spine · Neuro rehab · Joints and sport · Children · Older adults · About rehab
@@ -671,7 +709,7 @@ badge: pain-spine
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/neuro-rehabilitation/spinal-cord-injury/, /older-adults/osteoporosis/]
-posts: [/health-library/low-back-pain-when-to-worry/]
+posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
@@ -716,7 +754,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Low back pain", alternateName: ["Lumbago", "Kamar dard"] }
 related: [/pain-and-spine/sciatica/, /pain-and-spine/image-guided-injections/]
-posts: [/health-library/low-back-pain-when-to-worry/]
+posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
@@ -792,7 +830,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Neck pain", alternateName: ["Cervical pain", "Cervical spondylosis", "Gardan dard"] }
 related: [/pain-and-spine/back-pain/, /pain-and-spine/image-guided-injections/]
-posts: [/health-library/low-back-pain-when-to-worry/]
+posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
@@ -870,7 +908,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Sciatica", alternateName: ["Lumbar radiculopathy", "Leg pain from the back"] }
 related: [/pain-and-spine/back-pain/, /pain-and-spine/image-guided-injections/]
-posts: [/health-library/low-back-pain-when-to-worry/]
+posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
@@ -945,7 +983,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalProcedure, name: "Image-guided pain injections and nerve blocks", alternateName: ["Nerve block", "Facet joint injection", "Epidural steroid injection"] }
 related: [/pain-and-spine/back-pain/, /pain-and-spine/sciatica/]
-posts: [/health-library/low-back-pain-when-to-worry/]
+posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
@@ -1028,7 +1066,7 @@ badge: neuro
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/childrens-rehabilitation/cerebral-palsy/, /older-adults/falls-and-balance/]
-posts: [/health-library/first-90-days-after-stroke/]
+posts: [/guides/first-90-days-after-stroke/]
 ```
 
 ### Intro (answer-first)
@@ -1073,7 +1111,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Stroke", alternateName: ["Paralysis", "Hemiplegia", "Brain attack", "Lakwa"] }
 related: [/neuro-rehabilitation/spasticity/, /older-adults/falls-and-balance/]
-posts: [/health-library/first-90-days-after-stroke/]
+posts: [/guides/first-90-days-after-stroke/]
 ```
 
 ### Intro (answer-first)
@@ -1380,7 +1418,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Spasticity", alternateName: ["Muscle stiffness", "Muscle tightness after stroke", "Increased tone"] }
 related: [/neuro-rehabilitation/stroke/, /childrens-rehabilitation/cerebral-palsy/]
-posts: [/health-library/first-90-days-after-stroke/]
+posts: [/guides/first-90-days-after-stroke/]
 ```
 
 ### Intro (answer-first)
@@ -1468,7 +1506,7 @@ badge: joints
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/pain-and-spine/, /older-adults/osteoporosis/]
-posts: [/health-library/what-is-a-physiatrist/]
+posts: [/guides/what-is-a-physiatrist/]
 ```
 
 ### Intro (answer-first)
@@ -1974,7 +2012,7 @@ badge: children
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/childrens-rehabilitation/cerebral-palsy/, /neuro-rehabilitation/spasticity/]
-posts: [/health-library/cerebral-palsy-what-parents-ask-first/, /health-library/toe-walking-when-to-check/]
+posts: [/guides/cerebral-palsy-what-parents-ask-first/, /guides/toe-walking-when-to-check/]
 ```
 
 ### Intro (answer-first)
@@ -2019,7 +2057,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Cerebral palsy", alternateName: ["CP"] }
 related: [/neuro-rehabilitation/spasticity/, /childrens-rehabilitation/developmental-delay/]
-posts: [/health-library/cerebral-palsy-what-parents-ask-first/]
+posts: [/guides/cerebral-palsy-what-parents-ask-first/]
 ```
 
 ### Intro (answer-first)
@@ -2095,7 +2133,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Muscular dystrophy", alternateName: ["Duchenne muscular dystrophy", "DMD"] }
 related: [/childrens-rehabilitation/cerebral-palsy/, /childrens-rehabilitation/]
-posts: [/health-library/school-and-therapy-for-children-with-dmd/]
+posts: [/guides/school-and-therapy-for-children-with-dmd/]
 ```
 
 ### Intro (answer-first)
@@ -2169,7 +2207,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Developmental delay", alternateName: ["Global developmental delay", "Autism spectrum disorder support"] }
 related: [/childrens-rehabilitation/cerebral-palsy/, /childrens-rehabilitation/]
-posts: [/health-library/toe-walking-when-to-check/]
+posts: [/guides/toe-walking-when-to-check/]
 ```
 
 ### Intro (answer-first)
@@ -2242,7 +2280,7 @@ badge: older-adults
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/older-adults/falls-and-balance/, /older-adults/osteoporosis/]
-posts: [/health-library/making-a-home-safer-against-falls/, /health-library/osteoporosis-after-50/, /health-library/walking-aids-cane-walker-or-none/]
+posts: [/guides/making-a-home-safer-against-falls/, /guides/osteoporosis-after-50/, /guides/walking-aids-cane-walker-or-none/]
 ```
 
 ### Intro (answer-first)
@@ -2287,7 +2325,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Falls and balance problems", alternateName: ["Fall risk", "Imbalance in older adults"] }
 related: [/older-adults/osteoporosis/, /neuro-rehabilitation/parkinsons/]
-posts: [/health-library/making-a-home-safer-against-falls/, /health-library/walking-aids-cane-walker-or-none/]
+posts: [/guides/making-a-home-safer-against-falls/, /guides/walking-aids-cane-walker-or-none/]
 ```
 
 ### Intro (answer-first)
@@ -2363,7 +2401,7 @@ reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Osteoporosis", alternateName: ["Thin bones", "Low bone density"] }
 related: [/older-adults/falls-and-balance/, /pain-and-spine/back-pain/]
-posts: [/health-library/osteoporosis-after-50/]
+posts: [/guides/osteoporosis-after-50/]
 ```
 
 ### Intro (answer-first)
@@ -2808,7 +2846,7 @@ If you cannot use part of the site, write to [CONFIRM: email] or call or WhatsAp
 
 ---
 
-# Part 7 · Health Library launch posts
+# Part 7 · Guides launch posts
 
 Shared for all posts: reviewer box, "Last reviewed" date, emergency callout where relevant, related care cards, CTA band. Schema `BlogPosting` (author #dr-dharshan-n-a or #organization, reviewedBy #dr-dharshan-n-a, datePublished, dateModified) + `FAQPage`.
 
@@ -2819,7 +2857,7 @@ Shared for all posts: reviewer box, "Last reviewed" date, emergency callout wher
 ```yaml
 title: "What Is a Physiatrist? When to See One | Rehabify"
 description: "A physiatrist is a doctor who treats pain and loss of movement without surgery. Learn what they do and when to see one in Bengaluru."
-url: /health-library/what-is-a-physiatrist/
+url: /guides/what-is-a-physiatrist/
 h1: "What is a *physiatrist*?"
 schema: BlogPosting
 author: dr-dharshan-n-a
@@ -2900,7 +2938,7 @@ Callout:
 ```yaml
 title: "First 90 Days After a Stroke: Rehab Guide | Rehabify"
 description: "What stroke rehab looks like in the first 3 months: early goals, therapy, stiffness, home safety and warning signs, from a Bengaluru physiatrist."
-url: /health-library/first-90-days-after-stroke/
+url: /guides/first-90-days-after-stroke/
 h1: "The first 90 days after a *stroke*"
 schema: BlogPosting
 author: dr-dharshan-n-a
@@ -2975,7 +3013,7 @@ Callout:
 ```yaml
 title: "Low Back Pain: What Helps and When to Worry | Rehabify"
 description: "Most low back pain gets better with movement and time. Learn what helps, what to avoid and the warning signs that need urgent care."
-url: /health-library/low-back-pain-when-to-worry/
+url: /guides/low-back-pain-when-to-worry/
 h1: "Low back pain: what helps, and when to *worry*"
 schema: BlogPosting
 author: dr-dharshan-n-a

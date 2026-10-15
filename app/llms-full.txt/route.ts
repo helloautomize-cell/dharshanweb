@@ -1,5 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { getGuides } from "@/lib/guide-content.mjs";
+import { GUIDE_BASE, guideRouteEntries } from "@/lib/guides";
 
 export const dynamic = "force-static";
 export function GET() {
@@ -7,11 +9,15 @@ export function GET() {
   const manifest = JSON.parse(
     readFileSync(path.resolve("content/manifest.json"), "utf8"),
   ) as { url: string; title: string; description: string; noindex?: boolean }[];
-  const list = manifest
-    .filter((p) => !p.noindex)
+  const list = [
+    ...manifest.filter(
+      (page) => !page.noindex && !page.url.startsWith("/guides/"),
+    ),
+    ...guideRouteEntries(getGuides()),
+  ]
     .map(
-      (p) =>
-        `- [${p.title.replace(/\s*\|.*$/, "")}](https://www.rehabify.in${p.url}): ${p.description}`,
+      (page) =>
+        `- [${page.title.replace(/\s*\|.*$/, "")}](${GUIDE_BASE}${page.url}): ${page.description}`,
     )
     .join("\n");
   return new Response(`${base}\n## All pages\n${list}\n`, {

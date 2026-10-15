@@ -5,6 +5,7 @@ import {
   DirectoryBookingClose,
   DirectoryBreadcrumb,
   DirectoryFacts,
+  DirectoryFactsList,
   DirectoryComparison,
   DirectoryFaq,
   DirectoryPrinciples,
@@ -140,7 +141,7 @@ export function DoctorsIndexPage({ page }: { page: PageContent }) {
                 {confirmed(meta.credentials) && (
                   <p className="doctors-credentials">{meta.credentials}</p>
                 )}
-                <dl className="doctors-profile-facts">
+                <DirectoryFactsList facts={facts}>
                   {profile.focus.some((focus) => confirmed(focus.label)) && (
                     <div>
                       <dt>Focus</dt>
@@ -155,13 +156,7 @@ export function DoctorsIndexPage({ page }: { page: PageContent }) {
                       </dd>
                     </div>
                   )}
-                  {facts.map((fact) => (
-                    <div key={fact.label}>
-                      <dt>{fact.label}</dt>
-                      <dd>{fact.value}</dd>
-                    </div>
-                  ))}
-                </dl>
+                </DirectoryFactsList>
                 <div className="doctors-actions doctors-profile-actions">
                   <Link
                     className="btn btn-primary"

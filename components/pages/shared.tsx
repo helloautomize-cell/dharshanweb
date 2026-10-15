@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
 import { Icon } from "@/lib/icons";
 import { BlockRenderer } from "@/lib/markdown";
@@ -7,7 +7,7 @@ import { Confirm } from "@/components/primitives";
 import { extractFaqs } from "@/lib/faqs";
 import type { PageContent, PageMeta } from "@/lib/content";
 import { siteConfig } from "@/lib/site-config";
-import { knownLinks } from "@/lib/content";
+import { getPage, knownLinks } from "@/lib/content";
 
 export function H1({
   text,
@@ -32,19 +32,69 @@ export function H1({
     </h1>
   );
 }
-export function DirectoryBreadcrumb({ label }: { label: string }) {
+export function DirectoryBreadcrumb({
+  label,
+  items,
+}: {
+  label: string;
+  items?: { label: string; href?: string }[];
+}) {
+  const crumbs = [{ label: "Home", href: "/" }, ...(items ?? [{ label }])];
   return (
     <nav className="care-breadcrumb" aria-label="Breadcrumb">
       <ol>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li aria-hidden="true">/</li>
-        <li>
-          <span aria-current="page">{label}</span>
-        </li>
+        {crumbs.map((item, index) => (
+          <Fragment key={`${item.label}-${index}`}>
+            {index > 0 && <li aria-hidden="true">/</li>}
+            <li>
+              {index < crumbs.length - 1 && item.href ? (
+                <Link href={item.href}>{item.label}</Link>
+              ) : (
+                <span aria-current="page">{item.label}</span>
+              )}
+            </li>
+          </Fragment>
+        ))}
       </ol>
     </nav>
+  );
+}
+export function DirectoryHero({
+  label,
+  kicker,
+  title,
+  headingId,
+  description,
+  actions,
+  facts,
+  breadcrumbItems,
+}: {
+  label: string;
+  kicker: string;
+  title: string;
+  headingId: string;
+  description: string;
+  actions: ReactNode;
+  facts: { value: number; label: string }[];
+  breadcrumbItems?: { label: string; href?: string }[];
+}) {
+  return (
+    <section className="care-hero care-container" aria-labelledby={headingId}>
+      <DirectoryBreadcrumb label={label} items={breadcrumbItems} />
+      <div className="care-hero-columns doctors-hero-columns">
+        <div>
+          <p className="care-kicker">{kicker}</p>
+          <div id={headingId}>
+            <H1 className="care-title" text={title} />
+          </div>
+        </div>
+        <div className="doctors-hero-intro">
+          <p>{description}</p>
+          <div className="doctors-actions">{actions}</div>
+        </div>
+      </div>
+      <DirectoryFacts facts={facts} />
+    </section>
   );
 }
 export function DirectoryFacts({
@@ -63,6 +113,34 @@ export function DirectoryFacts({
         </p>
       ))}
     </div>
+  );
+}
+export function DirectoryFactsList({
+  facts,
+  children,
+  className = "",
+}: {
+  facts: { label: string; value: ReactNode }[];
+  children?: ReactNode;
+  className?: string;
+}) {
+  return (
+    <dl className={`doctors-profile-facts ${className}`}>
+      {children}
+      {facts
+        .filter(
+          (fact) =>
+            fact.value !== undefined &&
+            fact.value !== null &&
+            fact.value !== "",
+        )
+        .map((fact) => (
+          <div key={fact.label}>
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+          </div>
+        ))}
+    </dl>
   );
 }
 export function DirectorySectionHeader({
@@ -95,10 +173,12 @@ export function DirectoryReviewer({
   lastReviewed,
   reveal = false,
   showPending = false,
+  practiceOnly = false,
 }: {
   lastReviewed?: string;
   reveal?: boolean;
   showPending?: boolean;
+  practiceOnly?: boolean;
 }) {
   const date =
     lastReviewed && !lastReviewed.includes("[CONFIRM")
@@ -106,19 +186,35 @@ export function DirectoryReviewer({
       : undefined;
   return (
     <aside className="care-reviewer" data-care-reveal={reveal || undefined}>
-      <Image
-        src="/images/doctors/dr-dharshan-avatar-160.jpg"
-        width={28}
-        height={28}
-        alt=""
-      />
+      {!practiceOnly && (
+        <Image
+          src="/images/doctors/dr-dharshan-avatar-160.jpg"
+          width={28}
+          height={28}
+          alt=""
+        />
+      )}
       <div>
         <p>
           Medically reviewed by{" "}
-          <Link href="/dr-dharshan-n-a/">Dr. Dharshan N A</Link>, consultant in
-          physical medicine and rehabilitation
+          {practiceOnly ? (
+            <>
+              Rehabify
+              {date && (
+                <>
+                  {" "}
+                  · Last reviewed <time dateTime={date}>{date}</time>
+                </>
+              )}
+            </>
+          ) : (
+            <>
+              <Link href="/dr-dharshan-n-a/">Dr. Dharshan N A</Link>, consultant
+              in physical medicine and rehabilitation
+            </>
+          )}
         </p>
-        {(date || showPending) && (
+        {!practiceOnly && (date || showPending) && (
           <p>
             Last reviewed:{" "}
             {date ? (
@@ -136,23 +232,31 @@ export function DirectoryBookingClose({
   heading,
   description,
   firstStep = "Online, on WhatsApp or by phone.",
+  secondStep = "By phone or WhatsApp, for the clinic or a video consult.",
   lastStep = "Bring your reports and wear loose clothes.",
+  lastStepTitle = "You meet your doctor",
+  bookingLabel = "Book a consultation",
+  bookingHref = "/contact/#book",
   reveal = false,
 }: {
   heading: ReactNode;
   description: string;
   firstStep?: string;
+  secondStep?: string;
   lastStep?: string;
+  lastStepTitle?: string;
+  bookingLabel?: string;
+  bookingHref?: string;
   reveal?: boolean;
 }) {
   const steps = [
     { title: "You send a request", text: firstStep },
     {
       title: "We confirm a time",
-      text: "By phone or WhatsApp, for the clinic or a video consult.",
+      text: secondStep,
     },
     {
-      title: "You meet your doctor",
+      title: lastStepTitle,
       text: lastStep,
     },
   ];
@@ -165,13 +269,13 @@ export function DirectoryBookingClose({
     >
       <div className="care-container care-book-columns">
         <div data-care-reveal={reveal || undefined}>
-          <p className="care-kicker">Book a consultation</p>
+          <p className="care-kicker">{bookingLabel}</p>
           <h2 id="care-book-heading">{heading}</h2>
           <p>{description}</p>
           <div className="care-book-actions">
-            <Link className="btn btn-invert" href="/contact/#book">
+            <Link className="btn btn-invert" href={bookingHref}>
               <Icon name="calendar" size={20} />
-              Book a consultation
+              {bookingLabel}
             </Link>
             <Link className="btn btn-ghost" href={siteConfig.whatsapp}>
               <Icon name="whatsapp" size={20} />
@@ -246,18 +350,43 @@ export function DirectoryComparison({
     </div>
   );
 }
+export function DirectoryFaqList({
+  faqs,
+}: {
+  faqs: { question: string; answer: string; answerContent?: ReactNode }[];
+}) {
+  return (
+    <div className="doctors-faq-list">
+      {faqs.map((faq, index) => (
+        <details key={faq.question} open={index === 0}>
+          <summary>
+            <span>{faq.question}</span>
+            <span className="doctors-faq-toggle">
+              <Icon name="plus" size={20} />
+            </span>
+          </summary>
+          <p>{faq.answerContent ?? faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  );
+}
 export function DirectoryFaq({
   heading,
   description,
   faqs,
   lastReviewed,
   headingId = "doctors-faq-heading",
+  reviewer,
+  reviewerPosition = "list",
 }: {
   heading: ReactNode;
   description: string;
-  faqs: { question: string; answer: string }[];
+  faqs: { question: string; answer: string; answerContent?: ReactNode }[];
   lastReviewed?: string;
   headingId?: string;
+  reviewer?: ReactNode;
+  reviewerPosition?: "intro" | "list";
 }) {
   return (
     <section
@@ -269,22 +398,13 @@ export function DirectoryFaq({
         <p className="care-kicker">Questions</p>
         <h2 id={headingId}>{heading}</h2>
         <p>{description}</p>
+        {reviewerPosition === "intro" &&
+          (reviewer ?? <DirectoryReviewer lastReviewed={lastReviewed} />)}
       </div>
       <div>
-        <div className="doctors-faq-list">
-          {faqs.map((faq, index) => (
-            <details key={faq.question} open={index === 0}>
-              <summary>
-                <span>{faq.question}</span>
-                <span className="doctors-faq-toggle">
-                  <Icon name="plus" size={20} />
-                </span>
-              </summary>
-              <p>{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-        <DirectoryReviewer lastReviewed={lastReviewed} />
+        <DirectoryFaqList faqs={faqs} />
+        {reviewerPosition === "list" &&
+          (reviewer ?? <DirectoryReviewer lastReviewed={lastReviewed} />)}
       </div>
     </section>
   );
@@ -443,11 +563,10 @@ export function RelatedLinks({ links: raw }: { links?: string[] }) {
     "/older-adults/falls-and-balance/": "Falls and balance",
     "/older-adults/osteoporosis/": "Osteoporosis",
     "/video-consultation/": "Video consultation",
-    "/health-library/what-is-a-physiatrist/":
+    "/guides/what-is-a-physiatrist/":
       "What is a physiatrist, and when should you see one?",
-    "/health-library/first-90-days-after-stroke/":
-      "The first 90 days after a stroke",
-    "/health-library/low-back-pain-when-to-worry/":
+    "/guides/first-90-days-after-stroke/": "The first 90 days after a stroke",
+    "/guides/low-back-pain-when-to-worry/":
       "Low back pain: what helps, and the warning signs",
   };
   return (
@@ -457,7 +576,9 @@ export function RelatedLinks({ links: raw }: { links?: string[] }) {
         {links.map((href) => (
           <li key={href}>
             <Link href={href}>
-              {names[href] ?? href.replaceAll("/", " ").trim()}
+              {names[href] ??
+                getPage(href)?.meta.h1?.replaceAll("*", "") ??
+                href.replaceAll("/", " ").trim()}
               <Icon name="arrow" size={16} />
             </Link>
           </li>
@@ -502,7 +623,7 @@ function humanize(slug: string) {
     "joints-and-sports": "Joints and sports",
     "childrens-rehabilitation": "Children's rehabilitation",
     "older-adults": "Older adults",
-    "health-library": "Health library",
+    guides: "Guides",
   };
   return (
     known[slug] ??

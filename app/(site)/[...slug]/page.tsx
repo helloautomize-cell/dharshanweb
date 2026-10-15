@@ -4,11 +4,11 @@ import { allRoutes, getPage } from "@/lib/content";
 import { SITE_INDEXABLE } from "@/lib/site-config";
 import { DoctorsIndexPage } from "@/components/pages/doctors-index-page";
 import { VisitPage } from "@/components/pages/visit-page";
+import { VideoPage } from "@/components/pages/video-page";
 import {
   CareIndexPage,
   ContentPage,
   DoctorPage,
-  PostPage,
 } from "@/components/pages/templates";
 
 const KICKERS: Record<string, string> = {
@@ -18,7 +18,7 @@ const KICKERS: Record<string, string> = {
   "/plan-your-visit/": "Plan your visit",
   "/contact/": "Contact and book",
   "/faqs/": "FAQs",
-  "/health-library/": "Health library",
+  "/guides/": "Guides",
   "/thank-you/": "Thank you",
   "/privacy-policy/": "Legal",
   "/terms-of-use/": "Legal",
@@ -39,7 +39,7 @@ function hubKicker(url: string) {
 }
 export function generateStaticParams() {
   return allRoutes()
-    .filter((url) => url !== "/")
+    .filter((url) => url !== "/" && !url.startsWith("/guides/"))
     .map((url) => ({ slug: url.split("/").filter(Boolean) }));
 }
 export async function generateMetadata({
@@ -72,7 +72,7 @@ export default async function RoutePage({
   if (url === "/care/") return <CareIndexPage page={page} />;
   if (url === "/doctors/") return <DoctorsIndexPage page={page} />;
   if (url === "/plan-your-visit/") return <VisitPage page={page} />;
+  if (url === "/video-consultation/") return <VideoPage page={page} />;
   if (url.startsWith("/dr-")) return <DoctorPage page={page} />;
-  if (url.startsWith("/health-library/")) return <PostPage page={page} />;
   return <ContentPage page={page} kicker={hubKicker(url)} />;
 }

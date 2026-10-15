@@ -243,7 +243,7 @@ export function SiteHeader() {
             Doctors
           </Link>
           <Link href="/video-consultation/">Video consultation</Link>
-          <Link href="/health-library/">Health library</Link>
+          <Link href="/guides/">Guides</Link>
           <Link href="/plan-your-visit/">Plan your visit</Link>
           <Link href="/contact/">Contact</Link>
         </nav>

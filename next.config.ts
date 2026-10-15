@@ -14,6 +14,20 @@ const config: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/health-library", destination: "/guides/", statusCode: 301 },
+      { source: "/health-library/", destination: "/guides/", statusCode: 301 },
+      {
+        source: "/health-library/:slug",
+        destination: "/guides/:slug/",
+        statusCode: 301,
+      },
+      {
+        source: "/health-library/:slug/",
+        destination: "/guides/:slug/",
+        statusCode: 301,
+      },
+      { source: "/blogs", destination: "/guides/", statusCode: 301 },
+      { source: "/blogs/:slug*", destination: "/guides/", statusCode: 301 },
       { source: "/conditions", destination: "/care/#a-z", statusCode: 301 },
       { source: "/conditions/", destination: "/care/#a-z", statusCode: 301 },
       {
@@ -44,12 +58,6 @@ const config: NextConfig = {
         permanent: true,
       },
       { source: "/about-us", destination: "/about/", permanent: true },
-      { source: "/blogs", destination: "/health-library/", permanent: true },
-      {
-        source: "/blogs/:slug*",
-        destination: "/health-library/",
-        permanent: true,
-      },
     ];
   },
   async headers() {

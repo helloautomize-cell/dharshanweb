@@ -79,7 +79,7 @@ Tasks:
    f. Commits stay under the agency identity. Do not rewrite history.
 
 6. Performance
-   a. Lighthouse on the preview, mobile, median of 3 runs each, on: /, /pain-and-spine/, /pain-and-spine/back-pain/, /dr-dharshan-n-a/, /contact/, /health-library/what-is-a-physiatrist/.
+   a. Lighthouse on the preview, mobile, median of 3 runs each, on: /, /pain-and-spine/, /pain-and-spine/back-pain/, /dr-dharshan-n-a/, /contact/, /guides/what-is-a-physiatrist/.
    b. Targets now: Performance at least 90, Accessibility 100, Best Practices 100. SEO will read about 60 to 70 while noindex is on; that is expected. Targets after launch: SEO 100 on all six.
    c. CLS under 0.05 (target 0). LCP under 2.0 s on mobile 4G. Only the hero portrait is preloaded; fonts self-hosted; map and video load on click.
    d. JS budget: Home first-load JS under 120 KB gzipped (design plan section 0). Report every route's first-load JS and flag any over 150 KB with the cause.

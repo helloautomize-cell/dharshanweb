@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { getGuides } from "@/lib/guide-content.mjs";
+import { GUIDE_BASE, guideRouteEntries } from "@/lib/guides";
 
 type ManifestPage = {
   url: string;
@@ -10,20 +12,36 @@ type ManifestPage = {
   datePublished?: string | null;
   noindex?: boolean;
 };
-const BASE = "https://www.rehabify.in";
 export default function sitemap(): MetadataRoute.Sitemap {
   const manifest = JSON.parse(
     readFileSync(path.resolve("content/manifest.json"), "utf8"),
   ) as ManifestPage[];
-  return manifest
-    .filter((p) => !p.noindex && p.url !== "/404/")
-    .map((p) => {
+  const pages = manifest
+    .filter(
+      (page) =>
+        !page.noindex &&
+        page.url !== "/404/" &&
+        !page.url.startsWith("/guides/"),
+    )
+    .map((page) => {
       const last =
-        p.dateModified ?? p.lastReviewed ?? p.lastUpdated ?? p.datePublished;
+        page.dateModified ??
+        page.lastReviewed ??
+        page.lastUpdated ??
+        page.datePublished;
       return {
-        url: `${BASE}${p.url}`,
+        url: `${GUIDE_BASE}${page.url}`,
         ...(last && !last.includes("[CONFIRM") ? { lastModified: last } : {}),
       };
     });
+  return [
+    ...pages,
+    ...guideRouteEntries(getGuides()).map((page) => ({
+      url: `${GUIDE_BASE}${page.url}`,
+      ...("dateModified" in page && page.dateModified
+        ? { lastModified: page.dateModified }
+        : {}),
+    })),
+  ];
 }
 export const dynamic = "force-static";
