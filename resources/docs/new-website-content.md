@@ -484,39 +484,88 @@ Some problems need hands-on examination, scans or procedures. The doctor will te
 title: "Plan Your Visit | Rehabify Bengaluru"
 description: "Timings, address, what to bring and what to wear for your rehab consultation at Rehabify in Bengaluru."
 url: /plan-your-visit/
-h1: "Plan your *visit*"
+h1: "Everything to know before you *come in.*"
 ```
 
-### Timings
-Consultations: [CONFIRM: days and hours] · Video consults: [CONFIRM] · Phone and WhatsApp: [CONFIRM] · Sundays and holidays: [CONFIRM]
+### Intro
+What to bring, what to wear and how to reach us, for a clinic visit or a video consult. Build your checklist below so nothing is left at home.
 
-### Address and directions
-[CONFIRM: address with landmark] · [Get directions] (Google Maps, click to load)
-Nearest metro or bus stop: [CONFIRM]
+### Your checklist
+H2: Pack once, forget *nothing.*
+Choose how you will be seen and anything that applies to you. The list updates as you go, and your ticks stay on this device.
 
-### Booking
-Book online, call or WhatsApp +91 79048 42576. We confirm your time by phone or WhatsApp [CONFIRM: how fast].
+Formats: Clinic visit, Video consult.
+Situations: Coming with a child, Just out of hospital, After a stroke, Uses a walker or wheelchair, Knee or shoulder problem.
 
-### What to bring
-- Scans (MRI, CT, X-ray) and their reports, on CD or phone
-- Hospital discharge summary, if you were admitted
-- A list of medicines, or the medicines themselves
-- Walking aids, splints or braces you use
-- A family member, if you need help walking or after a stroke
+Checklist items (format; situation):
+- Scans and their reports / MRI, CT or X-ray, on CD or your phone. (clinic; always)
+- Scans and reports, ready to share / Send them before the consult, or keep them open on your phone. (video; always)
+- Your medicines / A list of what you take, or the medicines themselves. (both; always)
+- Loose, comfortable clothes / So the doctor can see how you move. (both; always)
+- A quiet spot with room to move / The doctor may ask you to stand, walk or show a movement. (video; always)
+- Shorts or a T-shirt in your bag / Helps the doctor see the knee or shoulder. (clinic; knee or shoulder)
+- Shorts or a T-shirt on / Helps the doctor see the knee or shoulder on camera. (video; knee or shoulder)
+- Hospital discharge summary / If you were admitted recently. (both; hospital)
+- A family member / To help you on the day, especially after a stroke. (both; stroke)
+- Walking aids, splints or braces / The ones you use every day. (both; mobility)
+- Ask for a wheelchair at the entrance / Mention it when you book. (clinic; mobility)
+- A parent or guardian / Required for anyone under 18. (both; child)
+- School or therapy reports / If you have them. (both; child)
+
+Tick items as you pack. Send the list to whoever is coming with you.
+All packed. See you soon.
+Buttons: Send on WhatsApp, Clear ticks.
+The hero count uses the actual default clinic checklist count (3), rather than the brief's inconsistent fixed count of 5.
+
+### Getting here
+H2: Find us in *Bengaluru.*
+Every detail here is checked with the clinic before it goes on the site. Until a detail is confirmed, call or WhatsApp us and we will tell you.
+Completed location copy: Directions, hours and access for your visit.
+Missing location rows: Being confirmed.
+Map caption: Map and directions / The map appears here once the address is confirmed. It loads only when you tap it.
+Need directions or times today? WhatsApp +91 79048 42576.
+Unknown facts are empty typed fields in `lib/visit.ts`, not placeholder strings. Consultation hours use seven unknown days until verified; video hours, phone hours, consultation length and confirmation time are omitted until supplied.
+
+### On the day
+H2: Small things that *help.*
+So the doctor can see how you move, and nobody has to wait for paperwork.
 
 ### What to wear
 Loose, comfortable clothes so the doctor can see how your back, hips, knees or shoulders move. Shorts or a T-shirt in your bag help for knee and shoulder problems.
 
 ### Access
-[CONFIRM: lift, wheelchair, ramp, parking]. Tell us when you book if you need a wheelchair at the entrance.
+Tell us when you book if you need a wheelchair at the entrance. Bring the walking aids, splints or braces you use every day.
 
 ### Children
 A parent or guardian must come with anyone under 18. Bring school or therapy reports if you have them.
 
+### Clinic visit
+H3: When you need to be *examined.*
+- A full examination of how you move, your nerves and strength
+- Image-guided injections, when the doctor decides they are suitable
+- Bring scans and reports on CD or your phone
+
+### Video consult
+H3: When travel is *hard.*
+Link: How video consults work
+- First advice, follow-ups and home programmes
+- A good start straight after a hospital stay
+- If you need an examination or a procedure, the doctor will ask you to come in
+
 ### FAQs
-1. **How long is the first consultation?** [CONFIRM: e.g. about 30 to 45 minutes]. The doctor needs time to ask questions, examine how you move and explain the plan.
-2. **Will I need tests on the day?** Usually not. The doctor decides if you need scans or blood tests after examining you, and explains why.
-3. **Can I come straight from hospital after a stroke?** Yes. Bring the discharge summary and scans. If travel is hard, start with a video consult.
+H2: Before you *visit.*
+Short answers to what people ask most before a first consultation.
+1. **Will I need tests on the day?** Usually not. The doctor decides if you need scans or blood tests after examining you, and explains why.
+2. **Can I come straight from hospital after a stroke?** Yes. Bring the discharge summary and scans. If travel is hard, start with a video consult.
+3. **Do I need a referral?** No. You can book directly. Bring any scans, reports or hospital discharge summary to a clinic visit, or share them before a video consult.
+4. **Can a family member come with me?** Yes, and we suggest it if you need help walking or are recovering from a stroke. For anyone under 18, a parent or guardian must come.
+Optional FAQ when consultation length exists: How long is the first consultation? / About <value>. The doctor needs time to ask questions, examine how you move and explain the plan.
+
+### Booking
+H2: Book your visit, we *confirm* the rest.
+Choose a clinic visit or a video consult. The team confirms your time by phone or WhatsApp.
+Append the confirmation time only when verified.
+Steps: You send a request / Online, on WhatsApp or by phone.; We confirm a time / By phone or WhatsApp, for the clinic or a video consult.; You meet your doctor / With your checklist packed and loose clothes on.
 
 ---
 
