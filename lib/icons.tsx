@@ -1,6 +1,7 @@
 import type { ComponentType } from "react";
 import {
   AlertTriangle,
+  Armchair,
   ArrowRight,
   CalendarDays,
   Check,
@@ -9,6 +10,7 @@ import {
   Clock,
   FileText,
   Info,
+  Lock,
   MapPin,
   Menu,
   MessageCircle,
@@ -19,6 +21,8 @@ import {
   Play,
   Plus,
   Search,
+  Smartphone,
+  UserRound,
   Video,
   Volume2,
   X,
@@ -28,6 +32,10 @@ import {
 // Stroke is fixed at 1.75 and icons are decorative by default.
 const icons = {
   alert: AlertTriangle,
+  seat: Armchair,
+  lock: Lock,
+  smartphone: Smartphone,
+  user: UserRound,
   arrow: ArrowRight,
   calendar: CalendarDays,
   check: Check,

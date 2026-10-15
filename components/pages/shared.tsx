@@ -65,6 +65,34 @@ export function DirectoryFacts({
     </div>
   );
 }
+export function DirectoryFactsList({
+  facts,
+  children,
+  className = "",
+}: {
+  facts: { label: string; value: ReactNode }[];
+  children?: ReactNode;
+  className?: string;
+}) {
+  return (
+    <dl className={`doctors-profile-facts ${className}`}>
+      {children}
+      {facts
+        .filter(
+          (fact) =>
+            fact.value !== undefined &&
+            fact.value !== null &&
+            fact.value !== "",
+        )
+        .map((fact) => (
+          <div key={fact.label}>
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+          </div>
+        ))}
+    </dl>
+  );
+}
 export function DirectorySectionHeader({
   kicker,
   heading,
@@ -95,10 +123,12 @@ export function DirectoryReviewer({
   lastReviewed,
   reveal = false,
   showPending = false,
+  practiceOnly = false,
 }: {
   lastReviewed?: string;
   reveal?: boolean;
   showPending?: boolean;
+  practiceOnly?: boolean;
 }) {
   const date =
     lastReviewed && !lastReviewed.includes("[CONFIRM")
@@ -106,19 +136,35 @@ export function DirectoryReviewer({
       : undefined;
   return (
     <aside className="care-reviewer" data-care-reveal={reveal || undefined}>
-      <Image
-        src="/images/doctors/dr-dharshan-avatar-160.jpg"
-        width={28}
-        height={28}
-        alt=""
-      />
+      {!practiceOnly && (
+        <Image
+          src="/images/doctors/dr-dharshan-avatar-160.jpg"
+          width={28}
+          height={28}
+          alt=""
+        />
+      )}
       <div>
         <p>
           Medically reviewed by{" "}
-          <Link href="/dr-dharshan-n-a/">Dr. Dharshan N A</Link>, consultant in
-          physical medicine and rehabilitation
+          {practiceOnly ? (
+            <>
+              Rehabify
+              {date && (
+                <>
+                  {" "}
+                  · Last reviewed <time dateTime={date}>{date}</time>
+                </>
+              )}
+            </>
+          ) : (
+            <>
+              <Link href="/dr-dharshan-n-a/">Dr. Dharshan N A</Link>, consultant
+              in physical medicine and rehabilitation
+            </>
+          )}
         </p>
-        {(date || showPending) && (
+        {!practiceOnly && (date || showPending) && (
           <p>
             Last reviewed:{" "}
             {date ? (
@@ -136,23 +182,31 @@ export function DirectoryBookingClose({
   heading,
   description,
   firstStep = "Online, on WhatsApp or by phone.",
+  secondStep = "By phone or WhatsApp, for the clinic or a video consult.",
   lastStep = "Bring your reports and wear loose clothes.",
+  lastStepTitle = "You meet your doctor",
+  bookingLabel = "Book a consultation",
+  bookingHref = "/contact/#book",
   reveal = false,
 }: {
   heading: ReactNode;
   description: string;
   firstStep?: string;
+  secondStep?: string;
   lastStep?: string;
+  lastStepTitle?: string;
+  bookingLabel?: string;
+  bookingHref?: string;
   reveal?: boolean;
 }) {
   const steps = [
     { title: "You send a request", text: firstStep },
     {
       title: "We confirm a time",
-      text: "By phone or WhatsApp, for the clinic or a video consult.",
+      text: secondStep,
     },
     {
-      title: "You meet your doctor",
+      title: lastStepTitle,
       text: lastStep,
     },
   ];
@@ -165,13 +219,13 @@ export function DirectoryBookingClose({
     >
       <div className="care-container care-book-columns">
         <div data-care-reveal={reveal || undefined}>
-          <p className="care-kicker">Book a consultation</p>
+          <p className="care-kicker">{bookingLabel}</p>
           <h2 id="care-book-heading">{heading}</h2>
           <p>{description}</p>
           <div className="care-book-actions">
-            <Link className="btn btn-invert" href="/contact/#book">
+            <Link className="btn btn-invert" href={bookingHref}>
               <Icon name="calendar" size={20} />
-              Book a consultation
+              {bookingLabel}
             </Link>
             <Link className="btn btn-ghost" href={siteConfig.whatsapp}>
               <Icon name="whatsapp" size={20} />
@@ -252,12 +306,16 @@ export function DirectoryFaq({
   faqs,
   lastReviewed,
   headingId = "doctors-faq-heading",
+  reviewer,
+  reviewerPosition = "list",
 }: {
   heading: ReactNode;
   description: string;
-  faqs: { question: string; answer: string }[];
+  faqs: { question: string; answer: string; answerContent?: ReactNode }[];
   lastReviewed?: string;
   headingId?: string;
+  reviewer?: ReactNode;
+  reviewerPosition?: "intro" | "list";
 }) {
   return (
     <section
@@ -269,6 +327,8 @@ export function DirectoryFaq({
         <p className="care-kicker">Questions</p>
         <h2 id={headingId}>{heading}</h2>
         <p>{description}</p>
+        {reviewerPosition === "intro" &&
+          (reviewer ?? <DirectoryReviewer lastReviewed={lastReviewed} />)}
       </div>
       <div>
         <div className="doctors-faq-list">
@@ -280,11 +340,12 @@ export function DirectoryFaq({
                   <Icon name="plus" size={20} />
                 </span>
               </summary>
-              <p>{faq.answer}</p>
+              <p>{faq.answerContent ?? faq.answer}</p>
             </details>
           ))}
         </div>
-        <DirectoryReviewer lastReviewed={lastReviewed} />
+        {reviewerPosition === "list" &&
+          (reviewer ?? <DirectoryReviewer lastReviewed={lastReviewed} />)}
       </div>
     </section>
   );
