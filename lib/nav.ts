@@ -2,6 +2,7 @@ export const navLinks = [
   { href: "/video-consultation/", label: "Video consults" },
   { href: "/doctors/", label: "Doctors" },
   { href: "/plan-your-visit/", label: "Visit" },
+  { href: "/guides/", label: "Guides" },
 ] as const;
 
 export const megaExtras = [
