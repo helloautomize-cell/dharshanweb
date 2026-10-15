@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Icon } from "@/lib/icons";
 import { BlockRenderer } from "@/lib/markdown";
@@ -29,6 +30,170 @@ export function H1({
         ),
       )}
     </h1>
+  );
+}
+export function DirectoryBreadcrumb({ label }: { label: string }) {
+  return (
+    <nav className="care-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li>
+          <span aria-current="page">{label}</span>
+        </li>
+      </ol>
+    </nav>
+  );
+}
+export function DirectoryFacts({
+  facts,
+  reveal = false,
+}: {
+  facts: { value: number; label: string }[];
+  reveal?: boolean;
+}) {
+  return (
+    <div className="care-facts" data-care-reveal={reveal || undefined}>
+      {facts.map((fact) => (
+        <p key={fact.label}>
+          <b>{fact.value}</b>
+          <span>{fact.label}</span>
+        </p>
+      ))}
+    </div>
+  );
+}
+export function DirectorySectionHeader({
+  kicker,
+  heading,
+  description,
+  id,
+  reveal = false,
+}: {
+  kicker: string;
+  heading: ReactNode;
+  description: string;
+  id: string;
+  reveal?: boolean;
+}) {
+  return (
+    <header
+      className="care-section-head"
+      data-care-reveal={reveal || undefined}
+    >
+      <div>
+        <p className="care-kicker">{kicker}</p>
+        <h2 id={id}>{heading}</h2>
+      </div>
+      <p>{description}</p>
+    </header>
+  );
+}
+export function DirectoryReviewer({
+  lastReviewed,
+  reveal = false,
+  showPending = false,
+}: {
+  lastReviewed?: string;
+  reveal?: boolean;
+  showPending?: boolean;
+}) {
+  const date =
+    lastReviewed && !lastReviewed.includes("[CONFIRM")
+      ? lastReviewed
+      : undefined;
+  return (
+    <aside className="care-reviewer" data-care-reveal={reveal || undefined}>
+      <Image
+        src="/images/doctors/dr-dharshan-avatar-160.jpg"
+        width={28}
+        height={28}
+        alt=""
+      />
+      <div>
+        <p>
+          Medically reviewed by{" "}
+          <Link href="/dr-dharshan-n-a/">Dr. Dharshan N A</Link>, consultant in
+          physical medicine and rehabilitation
+        </p>
+        {(date || showPending) && (
+          <p>
+            Last reviewed:{" "}
+            {date ? (
+              <time dateTime={date}>{date}</time>
+            ) : (
+              <Confirm>{lastReviewed}</Confirm>
+            )}
+          </p>
+        )}
+      </div>
+    </aside>
+  );
+}
+export function DirectoryBookingClose({
+  heading,
+  description,
+  firstStep = "Online, on WhatsApp or by phone.",
+  reveal = false,
+}: {
+  heading: ReactNode;
+  description: string;
+  firstStep?: string;
+  reveal?: boolean;
+}) {
+  const steps = [
+    { title: "You send a request", text: firstStep },
+    {
+      title: "We confirm a time",
+      text: "By phone or WhatsApp, for the clinic or a video consult.",
+    },
+    {
+      title: "You meet your doctor",
+      text: "Bring your reports and wear loose clothes.",
+    },
+  ];
+  return (
+    <section
+      className="care-book on-night"
+      id="book"
+      data-dark
+      aria-labelledby="care-book-heading"
+    >
+      <div className="care-container care-book-columns">
+        <div data-care-reveal={reveal || undefined}>
+          <p className="care-kicker">Book a consultation</p>
+          <h2 id="care-book-heading">{heading}</h2>
+          <p>{description}</p>
+          <div className="care-book-actions">
+            <Link className="btn btn-invert" href="/contact/#book">
+              <Icon name="calendar" size={20} />
+              Book a consultation
+            </Link>
+            <Link className="btn btn-ghost" href={siteConfig.whatsapp}>
+              <Icon name="whatsapp" size={20} />
+              Message on WhatsApp
+            </Link>
+          </div>
+          <p className="care-call">
+            Prefer to call?{" "}
+            <Link href={siteConfig.phoneHref}>{siteConfig.phone}</Link>
+          </p>
+        </div>
+        <ol className="care-book-steps" data-care-reveal={reveal || undefined}>
+          {steps.map((step, index) => (
+            <li key={step.title}>
+              <span>{index + 1}</span>
+              <div>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
   );
 }
 export function EmergencyStrip() {

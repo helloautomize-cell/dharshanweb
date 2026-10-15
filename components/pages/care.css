@@ -1178,10 +1178,6 @@ body:has(.care-page) .site-footer::before {
   .care-doctor-list small {
     font-size: 11px;
   }
-  .care-book,
-  body:has(.care-page) .site-footer {
-    margin-inline: -8px;
-  }
   .care-book-columns {
     gap: 48px;
   }
@@ -1190,6 +1186,12 @@ body:has(.care-page) .site-footer::before {
   }
   .care-book-actions .btn {
     width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  .care-book,
+  body:has(.care-page) .site-footer {
+    margin-inline: -8px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
