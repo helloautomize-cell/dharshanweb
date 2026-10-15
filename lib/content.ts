@@ -32,6 +32,8 @@ export type PageMeta = {
   focusAreas?: string;
   avatar?: string;
   doctor?: {
+    videoConsults: boolean;
+    videoCredentials?: string;
     tag: string;
     portrait: string;
     bookLabel: string;

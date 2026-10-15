@@ -109,6 +109,24 @@ export function faqPage(faqs: { question: string; answer: string }[]) {
     })),
   });
 }
+export function howTo(
+  name: string,
+  url: string,
+  steps: { title: string; detail: string }[],
+) {
+  return {
+    "@type": "HowTo",
+    "@id": `${BASE}${url}#how`,
+    name,
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.detail,
+      url: `${BASE}${url}#video-step-${index + 1}`,
+    })),
+  };
+}
 export function blogPosting(meta: PageMeta) {
   return clean({
     "@type": "BlogPosting",
