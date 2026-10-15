@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/lib/icons";
 import { megaExtras, megaGroups, navLinks } from "@/lib/nav";
 import { siteConfig } from "@/lib/site-config";
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
@@ -133,6 +135,7 @@ export function SiteHeader() {
               <Link
                 ref={careLink}
                 href="/care/"
+                aria-current={pathname === "/care/" ? "page" : undefined}
                 aria-expanded={megaOpen}
                 aria-haspopup="true"
                 onFocus={() => {
@@ -217,7 +220,12 @@ export function SiteHeader() {
       </header>
       <div className="mobile-menu" data-open={menuOpen || undefined} data-dark>
         <nav aria-label="Mobile">
-          <Link href="/care/">All care</Link>
+          <Link
+            href="/care/"
+            aria-current={pathname === "/care/" ? "page" : undefined}
+          >
+            All care
+          </Link>
           {megaGroups.map((group) => (
             <Link key={group.title} href={group.href} className="sub">
               {group.title}

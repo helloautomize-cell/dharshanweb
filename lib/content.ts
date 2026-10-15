@@ -21,6 +21,16 @@ export type PageMeta = {
   readingTime?: string;
   links?: string[];
   noindex?: boolean;
+  careTitle?: string;
+  summary?: string;
+  keywords?: string[];
+  areaId?: string;
+  careOrder?: number;
+  audience?: string;
+  firstStep?: string;
+  credentials?: string;
+  focusAreas?: string;
+  avatar?: string;
 };
 export type PageSection = { heading: string; body: string };
 export type PageContent = { meta: PageMeta; sections: PageSection[] };

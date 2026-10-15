@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { regions } from "@/lib/styleguide-copy";
+import type { CareRegion } from "@/lib/care";
 
 /* v3 body map: AI body illustrations on the night panel, front and back views
    crossfaded, with an SVG hotspot overlay (viewBox 1600 x 2400) laid exactly
@@ -67,6 +68,121 @@ const srcSet = (side: "front" | "back", format: "avif" | "webp") =>
     .join(", ");
 const sizes = "(max-width: 640px) 280px, 360px";
 
+function BodyFigurePicture({ side }: { side: "front" | "back" }) {
+  return (
+    <picture>
+      <source type="image/avif" srcSet={srcSet(side, "avif")} sizes={sizes} />
+      <source type="image/webp" srcSet={srcSet(side, "webp")} sizes={sizes} />
+      <Image
+        src={`/images/illustrations/body-${side}-1200.webp`}
+        alt={
+          side === "front"
+            ? "Illustration: front view of the human body"
+            : "Illustration: back view of the human body"
+        }
+        fill
+        unoptimized
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+  );
+}
+
+export function CompactBodyMap({ careRegions }: { careRegions: CareRegion[] }) {
+  const [selected, setSelected] = useState(2);
+  const panelId = useId();
+  return (
+    <div className="care-body-map on-night" data-dark>
+      <div className="care-body-visual">
+        <div
+          className="care-body-figure"
+          role="group"
+          aria-label="Choose a body area on the front view"
+        >
+          <div className="fig-pic on">
+            <BodyFigurePicture side="front" />
+          </div>
+          {careRegions.map((region, index) => (
+            <button
+              key={region.name}
+              className="care-body-hotspot"
+              type="button"
+              style={{ left: `${region.x}%`, top: `${region.y}%` }}
+              aria-label={region.name}
+              aria-pressed={selected === index}
+              aria-controls={panelId}
+              onClick={() => setSelected(index)}
+            >
+              <span className="care-body-dot" aria-hidden="true" />
+              <span className="care-body-label" aria-hidden="true">
+                {region.name}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="care-body-content">
+        <p className="care-kicker">Not sure which area?</p>
+        <h2>
+          Start from where it <span className="serif">hurts.</span>
+        </h2>
+        <p>
+          Choose a part of the body. We show the care that most often fits. Your
+          doctor confirms it at the first visit.
+        </p>
+        <div
+          className="care-region-pills"
+          role="group"
+          aria-label="Choose a body area"
+        >
+          {careRegions.map((region, index) => (
+            <button
+              key={region.name}
+              type="button"
+              aria-pressed={selected === index}
+              aria-controls={panelId}
+              onClick={() => setSelected(index)}
+            >
+              {region.name}
+            </button>
+          ))}
+        </div>
+        <div id={panelId} className="care-region-results" aria-live="polite">
+          {careRegions.map((region, index) => (
+            <ul
+              key={region.name}
+              hidden={selected !== index}
+              aria-label={`Care for ${region.name.toLowerCase()}`}
+            >
+              {region.links.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href}>
+                    <span>
+                      <strong>{link.title}</strong>
+                      <small>{link.line}</small>
+                    </span>
+                    <ArrowRight
+                      size={20}
+                      strokeWidth={1.75}
+                      aria-hidden="true"
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
+        <p className="care-body-note">
+          Pain in more than one place? That is common.{" "}
+          <Link href="#book">Book one consultation</Link> and we look at all of
+          it.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function BodyMap() {
   const [selected, setSelected] = useState(2);
   const [view, setView] = useState<"front" | "back">("front");
@@ -103,30 +219,7 @@ export function BodyMap() {
                 className={`fig-pic${view === side ? " on" : ""}`}
                 aria-hidden={view !== side}
               >
-                <picture>
-                  <source
-                    type="image/avif"
-                    srcSet={srcSet(side, "avif")}
-                    sizes={sizes}
-                  />
-                  <source
-                    type="image/webp"
-                    srcSet={srcSet(side, "webp")}
-                    sizes={sizes}
-                  />
-                  <Image
-                    src={`/images/illustrations/body-${side}-1200.webp`}
-                    alt={
-                      side === "front"
-                        ? "Illustration: front view of the human body"
-                        : "Illustration: back view of the human body"
-                    }
-                    fill
-                    unoptimized
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <BodyFigurePicture side={side} />
               </div>
             ))}
             <svg
