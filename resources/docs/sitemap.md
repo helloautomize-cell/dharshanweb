@@ -10,7 +10,7 @@ Final URL list for the coding agent. `trailingSlash: true`, lowercase, final hos
 | 4 | Dr. Dharshan N A | `/dr-dharshan-n-a/` | Core | Yes |
 | 4b | Dr. Selina Kh | `/dr-selina-kh/` | Core | Yes |
 | 5 | All care | `/care/` | Core | Yes |
-| 6 | Conditions A to Z | `/conditions/` | Core | Yes |
+| 6 | Conditions A to Z (Care section) | `/care/#a-z` | Section | No separate URL |
 | 7 | Video consultation | `/video-consultation/` | Core | Yes |
 | 8 | Plan your visit | `/plan-your-visit/` | Core | Yes |
 | 9 | Contact and book | `/contact/` | Core | Yes |

@@ -20,7 +20,7 @@ export default function NotFound() {
         <Link className="btn btn-invert" href="/contact/#book">
           <span className="button-label">Book a consultation</span>
         </Link>
-        <Link className="btn btn-ghost" href="/conditions/">
+        <Link className="btn btn-ghost" href="/care/#where">
           Where does it hurt?
         </Link>
         <Link className="btn btn-ghost" href="/">

@@ -41,6 +41,20 @@ export function CareEffects() {
       if (!frame) frame = requestAnimationFrame(update);
     };
     update();
+    const letterLinks = [
+      ...root.querySelectorAll<HTMLAnchorElement>(".care-az-letters a"),
+    ];
+    const updateLetter = () => {
+      const active =
+        letterLinks.find((link) => link.hash === location.hash) ??
+        letterLinks[0];
+      for (const link of letterLinks) {
+        if (link === active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      }
+    };
+    updateLetter();
+    addEventListener("hashchange", updateLetter);
     addEventListener("scroll", schedule, { passive: true });
     addEventListener("resize", schedule);
     const animations = new Set<Animation>();
@@ -77,6 +91,7 @@ export function CareEffects() {
     return () => {
       removeEventListener("scroll", schedule);
       removeEventListener("resize", schedule);
+      removeEventListener("hashchange", updateLetter);
       reduced.removeEventListener("change", stop);
       cancelAnimationFrame(frame);
       observer.disconnect();

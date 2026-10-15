@@ -117,7 +117,7 @@ On night, the accent phrase in H2 uses an aqua-to-apricot text gradient. On pape
 | 7 | Ways to see us (stacking cards) | 3 sticky cards that stack as you scroll: In clinic · Video consult (video-call UI mock) · Home programme (phone UI mock with exercise ticks). |
 | 8 | Meet the doctor | A large portrait with zoom on scroll (scale 1.08 to 1), a credentials list, a languages chip [CONFIRM], profile link. Two doctors from day one (design v3): the large Dr. Dharshan block, then a two-card row below it (Dr. Dharshan, Dr. Selina Kh). Dr. Selina's card shows a "Photo to be added" arch with the ice mark until `doctors/dr-selina-hero.jpg` exists. |
 | 9 | Plan your visit | A night strip: address [CONFIRM], hours [CONFIRM], directions, a click-to-load map. |
-| 10 | Conditions A to Z | A live filter input plus letter chips. Results animate in a grid. Uses data from `lib/conditions.ts`. |
+| 10 | Conditions A to Z | A live filter input plus letter chips. Results animate in a grid. Uses data from `content/care-conditions.ts`. |
 | 11 | FAQs | Grid-rows accordion (`grid-template-rows: 0fr → 1fr`). Native `<details>` underneath, so it works without JS. FAQPage schema. |
 | 12 | Callouts | Emergency (alert) and "this site is for information" (info). |
 | 13 | CTA + footer | The night stage with the glow button and the wordmark. |

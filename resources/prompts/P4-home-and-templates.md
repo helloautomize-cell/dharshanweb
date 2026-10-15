@@ -13,7 +13,7 @@ Before starting, confirm these paths exist and list them:
 - resources/docs/IMAGE-PROMPTS.md
 - resources/design/rehabify-design-v3.html
 - resources/content/index.md and resources/content/pain-and-spine/back-pain.md (from Phase 3)
-- lib/schema.ts, lib/conditions.ts, lib/booking-context.ts, lib/service-badges.ts, lib/site-config.ts
+- lib/schema.ts, content/care-conditions.ts, lib/booking-context.ts, lib/service-badges.ts, lib/site-config.ts
 - public/images/doctors/dr-dharshan-hero.jpg and public/images/alt-text.json
 If any is missing, STOP and tell me. Do not substitute another file.
 
@@ -39,7 +39,7 @@ Part A. Home (app/page.tsx), in this order, each section with `data-spine` for t
 3. Why Rehabify (bento): the 5 tiles from the content file. Cursor spotlight via a CSS variable set on pointermove (rAF throttled, off on touch and reduced motion). Goals ring fills once on view. The clinic or video switch is a working toggle mock (a real button with aria-pressed).
 4. Where does it hurt? (night). The client likes this section most: polish it.
    - Front and back body figure SVG (toggle with two 48px buttons, aria-pressed). Hotspots for neck, shoulder, back, hip, knee, ankle, head and hand, each a real `<button>` with an aria-label, in a logical Tab order (head to feet), with a visible focus ring and a soft pulse (off under reduced motion).
-   - Hover, tap or Enter shows the region card: region name, its conditions and links to the matching care pages, all from the content file and lib/conditions.ts. The card is an aria-live="polite" region. Esc closes it.
+   - Hover, tap or Enter shows the region card: region name, its conditions and links to the matching care pages, all from the content file and content/care-conditions.ts. The card is an aria-live="polite" region. Esc closes it.
    - Below 768px: region chips above the figure (a horizontal scroll row), the figure scales to fit 390px with no overflow, and the card opens below the figure.
    - All region card text is in the initial HTML (rendered hidden, not fetched), so curl and crawlers see it.
 5. Care track: the 5 care groups as large night cards (badge from lib/service-badges.ts, title, conditions, arrow). Desktop 1024px and wider: pinned horizontal scroll (sticky container, translateX from scroll progress, CSS scroll timeline with the rAF fallback). Below 1024px: native swipe carousel, cards about 84% wide with the next one peeking, scroll-snap, a progress bar. Under reduced motion: a normal grid, nothing pinned.
@@ -47,7 +47,7 @@ Part A. Home (app/page.tsx), in this order, each section with `data-spine` for t
 7. Ways to see us: 3 sticky stacking cards (In clinic, Video consult with the video-call UI mock, Home programme with the phone UI mock and exercise ticks). Mobile: the cards stack without sticky if that keeps the section under 1.3 viewports. Reduced motion: plain stacked cards.
 8. Meet the doctor: the large Dr. Dharshan block (portrait with zoom on scroll from scale 1.08 to 1, credentials timeline, the three principles, languages chip from site-config, KMC [CONFIRM] caption, "Book with Dr. Dharshan" prefilled via booking-context, "Full profile"). Then a row of two doctor cards, Dr. Dharshan N A and Dr. Selina Kh, using the Our doctors card copy; Dr. Selina's card shows the "Photo to be added" arch until her approved photo exists, and her Book button prefills her.
 9. Plan your visit (night strip): kicker, H3, address and hours from site-config ([CONFIRM] chips), chips, Get directions, and a click-to-load map (a static placeholder with a "Show map" button; no Google request until clicked).
-10. Conditions A to Z: a live filter input (label, 48px, placeholder from the content file) plus letter chips. Results filter as you type with a short fade, grouped as in lib/conditions.ts, each name a link. The full list is in the initial HTML and the filter only hides items, so it works without JS. The empty state text and WhatsApp link from the content file.
+10. Conditions A to Z: a live filter input (label, 48px, placeholder from the content file) plus letter chips. Results filter as you type with a short fade, grouped as in content/care-conditions.ts, each name a link. The full list is in the initial HTML and the filter only hides items, so it works without JS. The empty state text and WhatsApp link from the content file.
 11. FAQs: the 4 Quick answers as a grid-rows accordion (grid-template-rows 0fr to 1fr) on native `<details>`, plus the WhatsApp help card. FAQPage schema from the same array.
 12. Callouts: the emergency callout (alert) and the information notice, plus the tip line, from the content file.
 13. CTA band and footer: the night stage with the glow button and the wordmark (Phase 2 footer).

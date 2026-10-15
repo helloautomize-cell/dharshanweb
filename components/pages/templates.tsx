@@ -1,5 +1,4 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import Link from "next/link";
 import { DoctorPortrait } from "@/components/primitives";
 import { BlockRenderer, metaLine } from "@/lib/markdown";
 import { extractFaqs } from "@/lib/faqs";
@@ -22,7 +21,6 @@ import {
   medicalWebPage,
   physician,
 } from "@/lib/schema";
-import { conditions } from "@/lib/conditions";
 export { CareIndexPage } from "@/components/pages/care-index-page";
 
 function JsonLd({ data }: { data: object }) {
@@ -172,44 +170,6 @@ export function PostPage({ page }: { page: PageContent }) {
       <ReviewerBox
         meta={{ ...meta, reviewer: meta.reviewedBy ?? meta.reviewer }}
       />
-      <EmergencyStrip />
-      <CtaBand />
-    </div>
-  );
-}
-export function ConditionsPage({ page }: { page: PageContent }) {
-  const meta = page.meta;
-  const letters = [
-    ...new Set(conditions.map((c) => c.name[0].toUpperCase())),
-  ].sort();
-  return (
-    <div className="page-main">
-      <JsonLd data={graph(meta)} />
-      <PageHead page={page} kicker="Conditions" />
-      <nav className="az-jump" aria-label="Jump to letter">
-        {letters.map((l) => (
-          <Link key={l} href={`#az-${l}`}>
-            {l}
-          </Link>
-        ))}
-      </nav>
-      <div className="az-list">
-        {letters.map((letter) => (
-          <section key={letter} id={`az-${letter}`} className="az-group">
-            <h2 className="az-letter">{letter}</h2>
-            <ul>
-              {conditions
-                .filter((c) => c.name[0].toUpperCase() === letter)
-                .map((c) => (
-                  <li key={c.name}>
-                    <Link href={c.href}>{c.name}</Link>
-                  </li>
-                ))}
-            </ul>
-          </section>
-        ))}
-      </div>
-      <SectionBlocks page={page} exclude={/^(intro|conditions)/i} />
       <EmergencyStrip />
       <CtaBand />
     </div>

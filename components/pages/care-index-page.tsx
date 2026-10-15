@@ -16,6 +16,7 @@ import { getCareAreas, getCareRegions } from "@/lib/care";
 import { breadcrumb, careItemList, graph } from "@/lib/schema";
 import { Icon } from "@/lib/icons";
 import { siteConfig } from "@/lib/site-config";
+import { conditions } from "@/content/care-conditions";
 import "./care.css";
 
 const steps = [
@@ -40,6 +41,9 @@ const steps = [
 export function CareIndexPage({ page }: { page: PageContent }) {
   const areas = getCareAreas();
   const topics = areas.flatMap((area) => area.topics);
+  const letters = [
+    ...new Set(conditions.map((condition) => condition.name[0].toUpperCase())),
+  ].sort();
   const doctors = [getPage("/dr-dharshan-n-a/")!, getPage("/dr-selina-kh/")!];
   const formats = Object.keys(siteConfig.formats).filter(
     (format) => format === "clinic" || format === "video",
@@ -193,6 +197,57 @@ export function CareIndexPage({ page }: { page: PageContent }) {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section
+        id="a-z"
+        className="care-az care-container care-section"
+        aria-labelledby="care-az-heading"
+      >
+        <DirectorySectionHeader
+          id="care-az-heading"
+          kicker="A to Z"
+          heading={
+            <>
+              Every condition, by <span className="serif">name.</span>
+            </>
+          }
+          description="Looking for a specific name? Each one opens the page that covers it."
+        />
+        <nav className="care-az-letters" aria-label="Conditions A to Z letters">
+          {letters.map((letter, index) => (
+            <a
+              key={letter}
+              href={`#az-${letter}`}
+              aria-current={index === 0 ? "location" : undefined}
+            >
+              {letter}
+            </a>
+          ))}
+        </nav>
+        <div className="care-az-list">
+          {letters.map((letter) => (
+            <section
+              key={letter}
+              id={`az-${letter}`}
+              className="care-az-group"
+              aria-labelledby={`az-${letter}-heading`}
+            >
+              <h3 id={`az-${letter}-heading`}>{letter}</h3>
+              <ul>
+                {conditions
+                  .filter(
+                    (condition) => condition.name[0].toUpperCase() === letter,
+                  )
+                  .map((condition) => (
+                    <li key={condition.name}>
+                      <Link href={condition.href}>{condition.name}</Link>
+                    </li>
+                  ))}
+              </ul>
+            </section>
+          ))}
         </div>
       </section>
 

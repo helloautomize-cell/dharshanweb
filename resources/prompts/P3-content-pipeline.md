@@ -51,7 +51,7 @@ Tasks:
    f. Titles over 60 characters, descriptions over 160, duplicate titles or descriptions, a missing canonical
    g. Any AggregateRating or Review type in JSON-LD
    It also writes reports/launch-check.json (every finding with route, rule, text and the source file and line). Add unit tests with one fixture per rule proving each rule catches its case and passes a clean page.
-6. lib/conditions.ts: the A to Z data from new-website-content.md Page 6, every name word for word, grouped as written, each with a route. Link to the detail page whose content covers the condition; if no detail page covers it, link to its group hub. List every hub fallback in the report so I can check it.
+6. content/care-conditions.ts: the A to Z data from new-website-content.md Page 6, every name word for word, grouped as written, each with a route. Link to the detail page whose content covers the condition; if no detail page covers it, link to its group hub. List every hub fallback in the report so I can check it.
 7. lib/booking-context.ts: route to { reason, doctor, format } prefill. Reasons are exactly the booking reason list in site-plan.md section 6. /dr-selina-kh/ prefills Dr. Selina Kh, /dr-dharshan-n-a/ prefills Dr. Dharshan N A, every other page "No preference". /video-consultation/ prefills format = video. The Book buttons in the nav, dock, CTA band and pages use it.
 8. lib/whatsapp.ts (from Phase 2): use the page H1 from content. lib/nav.ts (from Phase 2): check every link resolves to one of the 46 routes; the build fails on a dead link.
 9. lib/schema.ts, a single @graph builder. Every page outputs exactly one `<script type="application/ld+json">` with one @graph. Stable absolute @ids on https://www.rehabify.in: `/#website`, `/#clinic`, `/#dr-dharshan-n-a`, `/#dr-selina-kh`, plus `{page url}#webpage` and `{page url}#breadcrumb`.
@@ -90,7 +90,7 @@ Acceptance:
 - The launch-check summary: count per rule, then the full [CONFIRM] list grouped by page
 - Schema validator results for the 6 pages above; the list of omitted schema properties
 - The curl output for every redirect
-- Hub fallbacks in lib/conditions.ts, and any page slot with no copy in the content file
+- Hub fallbacks in content/care-conditions.ts, and any page slot with no copy in the content file
 - Tests run and results; Lighthouse scores
 - Remaining issues
 STOP after this. Do not start Phase 4.
