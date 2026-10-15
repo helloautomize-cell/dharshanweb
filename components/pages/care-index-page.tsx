@@ -3,8 +3,14 @@ import Link from "next/link";
 import { CareFinder } from "@/components/care-finder";
 import { CareEffects } from "@/components/care-effects";
 import { CompactBodyMap } from "@/components/body-map";
-import { Confirm } from "@/components/primitives";
-import { H1 } from "@/components/pages/shared";
+import {
+  H1,
+  DirectoryBreadcrumb,
+  DirectoryFacts,
+  DirectorySectionHeader,
+  DirectoryReviewer,
+  DirectoryBookingClose,
+} from "@/components/pages/shared";
 import { getPage, section, type PageContent } from "@/lib/content";
 import { getCareAreas, getCareRegions } from "@/lib/care";
 import { breadcrumb, careItemList, graph } from "@/lib/schema";
@@ -28,17 +34,6 @@ const steps = [
   {
     title: "Review",
     text: "Regular check-ins, in clinic or by video, so the plan changes as you do.",
-  },
-];
-const bookingSteps = [
-  { title: "You send a request", text: "Online, on WhatsApp or by phone." },
-  {
-    title: "We confirm a time",
-    text: "By phone or WhatsApp, for the clinic or a video consult.",
-  },
-  {
-    title: "You meet your doctor",
-    text: "Bring your reports and wear loose clothes.",
   },
 ];
 
@@ -69,17 +64,7 @@ export function CareIndexPage({ page }: { page: PageContent }) {
         className="care-hero care-container"
         aria-labelledby="care-heading"
       >
-        <nav className="care-breadcrumb" aria-label="Breadcrumb">
-          <ol>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li>
-              <span aria-current="page">Care</span>
-            </li>
-          </ol>
-        </nav>
+        <DirectoryBreadcrumb label="Care" />
         <div className="care-hero-columns">
           <div>
             <p className="care-kicker">All care at Rehabify</p>
@@ -92,24 +77,18 @@ export function CareIndexPage({ page }: { page: PageContent }) {
           </div>
           <CareFinder topics={topics} />
         </div>
-        <div className="care-facts" data-care-reveal>
-          <p>
-            <b>{areas.length}</b>
-            <span>areas of care</span>
-          </p>
-          <p>
-            <b>{topics.length}</b>
-            <span>conditions and treatments</span>
-          </p>
-          <p>
-            <b>{doctors.length}</b>
-            <span>physiatrists (MD PMR)</span>
-          </p>
-          <p>
-            <b>{formats.length}</b>
-            <span>ways to be seen: clinic or video</span>
-          </p>
-        </div>
+        <DirectoryFacts
+          reveal
+          facts={[
+            { value: areas.length, label: "areas of care" },
+            { value: topics.length, label: "conditions and treatments" },
+            { value: doctors.length, label: "physiatrists (MD PMR)" },
+            {
+              value: formats.length,
+              label: "ways to be seen: clinic or video",
+            },
+          ]}
+        />
         <figure className="care-exam" data-care-reveal>
           <Image
             src="/images/doctors/dr-dharshan-exam.jpg"
@@ -230,18 +209,17 @@ export function CareIndexPage({ page }: { page: PageContent }) {
         className="care-how care-container care-section"
         aria-labelledby="care-how-heading"
       >
-        <header className="care-section-head" data-care-reveal>
-          <div>
-            <p className="care-kicker">How care works</p>
-            <h2 id="care-how-heading">
+        <DirectorySectionHeader
+          reveal
+          id="care-how-heading"
+          kicker="How care works"
+          heading={
+            <>
               The same four steps, in <span className="serif">every</span> area.
-            </h2>
-          </div>
-          <p>
-            A back, a stroke or a child&apos;s first steps need different
-            treatments. The way we plan them stays the same.
-          </p>
-        </header>
+            </>
+          }
+          description="A back, a stroke or a child's first steps need different treatments. The way we plan them stays the same."
+        />
         <ol className="care-steps">
           {steps.map((step, index) => (
             <li key={step.title} data-care-reveal>
@@ -304,71 +282,23 @@ export function CareIndexPage({ page }: { page: PageContent }) {
               </li>
             ))}
           </ul>
-          <aside className="care-reviewer" data-care-reveal>
-            <Image
-              src="/images/doctors/dr-dharshan-avatar-160.jpg"
-              width={28}
-              height={28}
-              alt=""
-            />
-            <div>
-              <p>
-                Medically reviewed by{" "}
-                <Link href="/dr-dharshan-n-a/">Dr. Dharshan N A</Link>,
-                consultant in physical medicine and rehabilitation
-              </p>
-              <p>
-                Last reviewed: <Confirm>{page.meta.lastReviewed!}</Confirm>
-              </p>
-            </div>
-          </aside>
+          <DirectoryReviewer
+            reveal
+            showPending
+            lastReviewed={page.meta.lastReviewed}
+          />
         </div>
       </section>
 
-      <section
-        className="care-book on-night"
-        id="book"
-        data-dark
-        aria-labelledby="care-book-heading"
-      >
-        <div className="care-container care-book-columns">
-          <div data-care-reveal>
-            <p className="care-kicker">Book a consultation</p>
-            <h2 id="care-book-heading">
-              One visit to find the <span className="serif">right</span> care.
-            </h2>
-            <p>
-              You do not need to know the area or the condition. Tell us what is
-              wrong and the team confirms your time by phone or WhatsApp.
-            </p>
-            <div className="care-book-actions">
-              <Link className="btn btn-invert" href="/contact/#book">
-                <Icon name="calendar" size={20} />
-                Book a consultation
-              </Link>
-              <Link className="btn btn-ghost" href={siteConfig.whatsapp}>
-                <Icon name="whatsapp" size={20} />
-                Message on WhatsApp
-              </Link>
-            </div>
-            <p className="care-call">
-              Prefer to call?{" "}
-              <Link href={siteConfig.phoneHref}>{siteConfig.phone}</Link>
-            </p>
-          </div>
-          <ol className="care-book-steps" data-care-reveal>
-            {bookingSteps.map((step, index) => (
-              <li key={step.title}>
-                <span>{index + 1}</span>
-                <div>
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      <DirectoryBookingClose
+        reveal
+        heading={
+          <>
+            One visit to find the <span className="serif">right</span> care.
+          </>
+        }
+        description="You do not need to know the area or the condition. Tell us what is wrong and the team confirms your time by phone or WhatsApp."
+      />
     </div>
   );
 }

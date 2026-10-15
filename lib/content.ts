@@ -31,6 +31,14 @@ export type PageMeta = {
   credentials?: string;
   focusAreas?: string;
   avatar?: string;
+  doctor?: {
+    tag: string;
+    portrait: string;
+    bookLabel: string;
+    focus: { label: string; href: string }[];
+    facts: { label: string; value: string }[];
+    languages?: string[];
+  };
 };
 export type PageSection = { heading: string; body: string };
 export type PageContent = { meta: PageMeta; sections: PageSection[] };
@@ -79,6 +87,12 @@ export function getPage(url: string): PageContent | null {
   } catch {
     return null;
   }
+}
+export function getDoctorPages(): PageContent[] {
+  return allRoutes()
+    .filter((url) => /^\/dr-[^/]+\/$/.test(url))
+    .map(getPage)
+    .filter((page): page is PageContent => !!page?.meta.doctor);
 }
 export function section(
   page: PageContent,

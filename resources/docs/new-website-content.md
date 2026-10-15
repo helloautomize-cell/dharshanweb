@@ -212,14 +212,60 @@ Five groups, each linked: Pain and spine · Neuro rehabilitation · Joints and s
 title: "Our Doctors | Rehabify Bengaluru"
 description: "Meet the rehabilitation doctors at Rehabify. Qualifications, focus areas and how to book a clinic or video consultation."
 url: /doctors/
-h1: "Meet your *doctors*"
+h1: "The doctors who lead your *rehab.*"
 ```
 
-Intro: Every plan at Rehabify is led by a doctor trained in physical medicine and rehabilitation.
+Intro: Every plan at Rehabify is led by a physiatrist, a doctor trained in physical medicine and rehabilitation. Choose a doctor below, or book with no preference and the team will suggest the right one for you.
 
-Doctor card 1: Dr. Dharshan N A · Consultant physiatrist · MBBS, MD (PMR) · Neuro-rehabilitation, pain and spine, children and older adults · [Book with Dr. Dharshan] [View profile]
-Doctor card 2: Dr. Selina Kh · Consultant physiatrist · Physical Medicine and Rehabilitation [CONFIRM: qualifications] · Stroke, spinal cord injury, rheumatology and pain management · [Book with Dr. Selina] [View profile]
-Home hero and Home doctor section show both doctors (design v3). The booking form has a doctor choice: Dr. Dharshan N A · Dr. Selina Kh · No preference.
+Facts: 2 physiatrists (PM&R); 6 languages spoken; 2 ways to be seen: clinic or video; 0 referrals needed to book. Doctor and language totals come from confirmed doctor content.
+
+Doctor card 1: Dr. Dharshan N A. Lead physiatrist. Consultant physiatrist. MBBS, MD (Physical Medicine and Rehabilitation), Fellowship in Interventional Pain Management. Focus: Neuro rehab, Pain and spine, Joints and sports, Children, Older adults. Procedures: Ultrasound and fluoroscopy-guided injections and nerve blocks, when suitable. Languages: Tamil, Telugu, Kannada, English, Manipuri, Hindi. Sees: Adults, children and older adults, in clinic or by video. [Book with Dr. Dharshan] [Full profile]
+
+Doctor card 2: Dr. Selina Kh. Physiatrist. Consultant physiatrist. Physician, Physical Medicine and Rehabilitation. Focus: Stroke, Spinal cord injury, Spasticity, Joint and rheumatic pain. Approach: Care built around the person, with plain explanations at every step. Works with: Your therapists and other doctors, on one shared plan. Qualifications and languages stay hidden until confirmed. [Book with Dr. Selina] [Full profile]
+
+### Who to see
+Not sure who to see? Start with what you need help with. Pick the closest match. We show which doctor usually leads that care. Either doctor can see you first and bring in the other when it helps.
+
+- Stroke: Dharshan: Neuro rehab after stroke, including spasticity and arm use. Selina: Stroke rehabilitation and recovery of daily tasks.
+- Spinal cord injury: Dharshan: Rehab plans, pressure-injury prevention and mobility. Selina: Spinal cord injury rehabilitation.
+- Back or neck pain: Dharshan: Exercise first, with image-guided injections when suitable. Selina: Back, neck and joint pain care.
+- Joint or rheumatic pain: Selina: Joint and rheumatology-related pain. Dharshan: Knee osteoarthritis, shoulder pain, PRP when suitable.
+- Sports injury or surgery: Dharshan: Sports injuries, after fracture or joint replacement.
+- Head injury or Parkinson's: Dharshan: Neuro rehab for head injury and Parkinson's disease.
+- My child: Dharshan: Cerebral palsy, muscular dystrophy and developmental delay.
+- An older parent: Dharshan: Falls, balance, osteoporosis and staying independent.
+
+Still unsure? Choose No preference when you book and the team will match you.
+
+### How our doctors work
+Your goals first, explained plainly. Both doctors work the same way: they find what is stopping you, agree on what you want back, and lead one plan with your therapists.
+
+- Goals first: Every plan starts from what you want to be able to do again, such as walking to the market or sleeping without pain.
+- Explained plainly: Scans, options and next steps in simple words, so you can decide with the doctor, not after them.
+- One team: Your physiatrist leads, and works with physiotherapists and other therapists on one written plan.
+
+Your physiatrist: A doctor who leads the plan. Finds the cause of pain or weakness; Orders and reads your scans; Prescribes medicines and splints; Does image-guided procedures when suitable.
+
+Your physiotherapist: A therapist who delivers it. Teaches and guides your exercises; Gives hands-on treatment; Checks your home programme; Reports progress back to your doctor.
+
+### FAQs
+Before you book. Short answers to what people ask most about choosing a doctor.
+
+1. **Can I see either doctor?** Yes. If you are not sure who to see, choose "No preference" in the booking form and the team will suggest a doctor based on your reason for visiting.
+2. **Do I need a referral?** No. You can book directly. Bring any scans, reports or hospital discharge summary to a clinic visit, or share them before a video consult.
+3. **Can I see a doctor by video?** Yes, for first advice, follow-ups and home programmes. If you need an examination or a procedure, the doctor will ask you to come in.
+4. **Do you see children?** Yes. Dr. Dharshan looks after children with cerebral palsy, muscular dystrophy and developmental delay. A parent or guardian attends every consultation.
+
+Reviewer: Dr. Dharshan N A, consultant in physical medicine and rehabilitation. Review date stays hidden until confirmed.
+
+### Booking close
+Choose a doctor, or let us match you. Pick Dr. Dharshan, Dr. Selina or No preference. The team confirms your time by phone or WhatsApp. [Book a consultation] [Message on WhatsApp]. Prefer to call? +91 79048 42576.
+
+1. You send a request: Online, on WhatsApp or by phone, with your doctor choice.
+2. We confirm a time: By phone or WhatsApp, for the clinic or a video consult.
+3. You meet your doctor: Bring your reports and wear loose clothes.
+
+Home hero and Home doctor section show both doctors (design v3). The booking form has a doctor choice: Dr. Dharshan N A, Dr. Selina Kh, No preference.
 
 ---
 
