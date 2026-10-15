@@ -5,6 +5,7 @@ const isDev = process.env.NODE_ENV !== "production";
 
 const config: NextConfig = {
   trailingSlash: true,
+  skipTrailingSlashRedirect: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   images: {
@@ -13,6 +14,19 @@ const config: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/conditions", destination: "/care/#a-z", statusCode: 301 },
+      { source: "/conditions/", destination: "/care/#a-z", statusCode: 301 },
+      {
+        source: "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
+        destination: "/:file",
+        statusCode: 308,
+        missing: [{ type: "header", key: "x-nextjs-data" }],
+      },
+      {
+        source: "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+$)",
+        destination: "/:notfile/",
+        statusCode: 308,
+      },
       { source: "/home", destination: "/", permanent: true },
       {
         source: "/home/monthly",

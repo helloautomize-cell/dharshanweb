@@ -17,7 +17,6 @@ const PAGES = [
   "/neuro-rehabilitation/stroke/",
   "/joints-and-sports/prp-and-prolotherapy/",
   "/childrens-rehabilitation/cerebral-palsy/",
-  "/conditions/",
   "/video-consultation/",
   "/plan-your-visit/",
   "/contact/",

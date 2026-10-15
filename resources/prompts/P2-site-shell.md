@@ -37,7 +37,7 @@ Tasks:
    a. false: every response carries `X-Robots-Tag: noindex, nofollow` (set in next.config headers for all paths, all hosts), every page has `<meta name="robots" content="noindex, nofollow">` through the root metadata, and app/robots.ts returns `User-agent: *` and `Disallow: /`.
    b. true: no noindex header or meta (except /thank-you/ and /styleguide/, which stay noindex always), and robots.ts allows all crawlers. Phase 3 adds the AI crawler list and the sitemap line.
    c. Set SITE_INDEXABLE=false on every Vercel environment now. The vercel.app URL must never be indexable.
-3. lib/nav.ts: one source for the desktop nav, mega panel, mobile menu and footer columns, typed, exactly as site-plan.md section 3: Logo · Care (mega panel) · Where it hurts (Home `#where`, elsewhere `/conditions/`) · Video consults · Doctors · Visit · Book a consultation (glow). Mega panel groups and link labels word for word from site-plan.md section 3, each with its URL from section 2.
+3. lib/nav.ts: one source for the desktop nav, mega panel, mobile menu and footer columns, typed, exactly as site-plan.md section 3: Logo · Care (mega panel) · Where it hurts (Home `#where`, elsewhere `/care/#where`) · Video consults · Doctors · Visit · Book a consultation (glow). Mega panel groups and link labels word for word from site-plan.md section 3, each with its URL from section 2.
 4. Floating pill nav (Radix NavigationMenu):
    a. Fixed, centred, 66px tall, white glass (backdrop blur 20px, saturate 160%). It shrinks to 56px after 80px of scroll (one passive scroll listener with rAF, or a sentinel observer).
    b. Sliding hover indicator moves between links with `--ease`, 240ms. It follows keyboard focus too.

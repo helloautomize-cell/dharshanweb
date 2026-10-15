@@ -29,7 +29,7 @@ Entity statement (used word for word in About, `llms.txt`, `entity-facts.md` and
 | 4 | Dr. Dharshan N A | `/dr-dharshan-n-a/` (kept from old site) | Dr. Dharshan *N A* | Dr Dharshan physiatrist, Dr Dharshan N A |
 | 4b | Dr. Selina Kh | `/dr-selina-kh/` (kept from old site) | Dr. Selina *Kh* | Dr Selina Kh physiatrist, PMR doctor Bengaluru |
 | 5 | All care | `/care/` | Care for pain, nerves and *movement* | rehabilitation services |
-| 6 | Conditions A to Z | `/conditions/` | Look up a *condition* | condition + rehab |
+| 6 | Conditions A to Z (Care section) | `/care/#a-z` | Every condition, by *name.* | condition + rehab |
 | 7 | Video consultation | `/video-consultation/` | See a rehab doctor from *home* | online physiatrist consultation India |
 | 8 | Plan your visit | `/plan-your-visit/` | Plan your *visit* | what to bring, timings |
 | 9 | Contact and book | `/contact/` (form anchor `#book`) | Book a *consultation* | Rehabify phone, book |
@@ -98,7 +98,7 @@ Old rehabify.in blog posts: reviewed one by one in `current-website-audit.md`; k
 ## 3. Navigation (matches design v2)
 
 ### Floating pill navbar (desktop)
-Logo · Care ▾ (mega panel) · Where it hurts (Home `#where`, elsewhere `/conditions/`) · Video consults · Doctors · Visit · **Book a consultation** (glow button)
+Logo · Care ▾ (mega panel) · Video consults · Doctors · Visit · **Book a consultation** (glow button)
 
 Utility info moves out of a separate bar: hours, phone and "Medical emergency? Call 108 or 112" sit in the mega panel footer, the mobile menu footer and the site footer. The emergency line also appears on every symptom page callout.
 

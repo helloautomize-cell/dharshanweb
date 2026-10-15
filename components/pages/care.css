@@ -511,6 +511,69 @@ body:has(.care-page) .site-footer::before {
   padding: clamp(32px, 4.5vw, 64px);
   color: var(--ice);
 }
+.care-az-letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 32px;
+}
+.care-az-letters a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: var(--care-label);
+  font:
+    400 13px/1 var(--font-code),
+    monospace;
+}
+.care-az-letters a[aria-current],
+.care-az-letters a:hover {
+  color: var(--ink);
+}
+.care-az-list {
+  column-count: 4;
+  column-gap: 32px;
+}
+.care-az-group {
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 28px;
+  border-top: 1px solid var(--care-line);
+  padding-top: 16px;
+}
+.care-az-group h3 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 600;
+}
+.care-az-group a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding-block: 8px;
+  color: var(--care-body);
+  font-size: 15px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.care-az-group a:hover {
+  color: var(--blue-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 1000px) {
+  .care-az-list {
+    column-count: 3;
+  }
+}
+@media (max-width: 640px) {
+  .care-az-list {
+    column-count: 2;
+    column-gap: 20px;
+  }
+}
 .care-body-visual {
   display: grid;
   align-items: center;

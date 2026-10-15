@@ -151,7 +151,7 @@ Kicker: PLAN YOUR VISIT · H3: See the doctor in Bengaluru. · [CONFIRM: address
 
 ### CONDITIONS A TO Z
 H2: Look up a *condition.* · Lede: Type a word. The list filters as you type, and each name opens its own page. · Search placeholder: Try knee, stroke or sciatica
-Groups as in `/conditions/` (Page 6).
+Groups as in `/care/#a-z` (Page 6).
 
 ### QUICK ANSWERS
 H2: Before you *book.*
@@ -412,16 +412,14 @@ Five hub blocks, each with its badge, one line and child links:
 
 ---
 
-## Page 6 · Conditions A to Z
+## Page 6 · Conditions A to Z (now a Care section)
 
-```yaml
-title: "Conditions A to Z | Rehabify Bengaluru"
-description: "Search the conditions Rehabify's rehabilitation doctors look after, from back pain and sciatica to stroke, cerebral palsy and osteoporosis."
-url: /conditions/
-h1: "Look up a *condition*"
-```
+URL: `/care/#a-z`, directly after Areas of care and before the body map.
+Kicker: A to Z
+H2: Every condition, by *name.*
+Text: Looking for a specific name? Each one opens the page that covers it.
 
-Intro: Type a word or browse by area. Each condition links to the page that covers it.
+The 40 registered names and their existing targets are preserved in `content/care-conditions.ts`. Letter navigation and the complete list are server-rendered, with no separate page or search input.
 
 - Pain and spine: Low back pain · Neck pain · Sciatica · Facet joint pain · Disc problems · Myofascial pain · Cervical radiculopathy
 - Brain and nerves: Stroke · Head injury · Spinal cord injury · Parkinson's disease · Spasticity · Nerve injuries

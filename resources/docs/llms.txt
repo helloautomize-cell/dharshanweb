@@ -20,7 +20,7 @@ Information on this site is for general education and does not replace a consult
 - [Joints and sports](https://www.rehabify.in/joints-and-sports/): knee pain, shoulder pain, sports injuries, after fracture or surgery, PRP and prolotherapy, prosthetic rehab
 - [Children's rehabilitation](https://www.rehabify.in/childrens-rehabilitation/): cerebral palsy, muscular dystrophy, developmental delay
 - [Older adults](https://www.rehabify.in/older-adults/): falls and balance, osteoporosis
-- [Conditions A to Z](https://www.rehabify.in/conditions/)
+- [Conditions A to Z](https://www.rehabify.in/care/#a-z)
 
 ## Health Library
 - [What is a physiatrist, and when should you see one?](https://www.rehabify.in/health-library/what-is-a-physiatrist/)

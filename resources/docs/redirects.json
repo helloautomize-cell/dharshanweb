@@ -1,6 +1,8 @@
 {
   "_note": "Old rehabify.in (Google Sites) URLs to the new site. Next.js redirects() with permanent: true (308 is fine, or set statusCode 301). 410 rules are served by middleware. No chains: every source goes straight to its final URL with trailing slash. The old root / keeps its URL and needs no rule.",
   "redirects": [
+    { "source": "/conditions", "destination": "/care/#a-z", "status": 301 },
+    { "source": "/conditions/", "destination": "/care/#a-z", "status": 301 },
     { "source": "/home", "destination": "/", "status": 301 },
     { "source": "/home/monthly", "destination": "/plan-your-visit/", "status": 301 },
     { "source": "/home/pricing", "destination": "/plan-your-visit/", "status": 301 },

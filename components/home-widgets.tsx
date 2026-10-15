@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { goals } from "@/lib/styleguide-copy";
-import { conditions } from "@/lib/conditions";
+import { conditions } from "@/content/care-conditions";
 
 export function GoalsTile() {
   const [selected, setSelected] = useState([true, true, false, false]);

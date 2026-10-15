@@ -7,7 +7,6 @@ const ROUTES = [
   "/dr-dharshan-n-a/",
   "/dr-selina-kh/",
   "/care/",
-  "/conditions/",
   "/video-consultation/",
   "/plan-your-visit/",
   "/contact/",
@@ -64,9 +63,16 @@ test("doctor page has portrait and Physician schema", async ({ page }) => {
 });
 
 test("conditions A to Z lists every registered condition", async ({ page }) => {
-  await page.goto("/conditions/");
-  const count = await page.locator(".az-group li a").count();
-  expect(count).toBeGreaterThan(30);
+  await page.goto("/care/#a-z");
+  const { conditions } = await import("../content/care-conditions");
+  const links = page.locator("#a-z .care-az-group li a");
+  await expect(links).toHaveCount(conditions.length);
+  for (const condition of conditions) {
+    await expect(links.filter({ hasText: condition.name })).toHaveAttribute(
+      "href",
+      condition.href,
+    );
+  }
 });
 
 test("old URLs redirect and removed ones return 410", async ({ request }) => {

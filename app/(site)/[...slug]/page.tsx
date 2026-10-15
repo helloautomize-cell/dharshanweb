@@ -6,7 +6,6 @@ import { DoctorsIndexPage } from "@/components/pages/doctors-index-page";
 import { VisitPage } from "@/components/pages/visit-page";
 import {
   CareIndexPage,
-  ConditionsPage,
   ContentPage,
   DoctorPage,
   PostPage,
@@ -70,7 +69,6 @@ export default async function RoutePage({
   const url = "/" + (await params).slug.join("/") + "/";
   const page = getPage(url);
   if (!page) notFound();
-  if (url === "/conditions/") return <ConditionsPage page={page} />;
   if (url === "/care/") return <CareIndexPage page={page} />;
   if (url === "/doctors/") return <DoctorsIndexPage page={page} />;
   if (url === "/plan-your-visit/") return <VisitPage page={page} />;
