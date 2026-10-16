@@ -6,9 +6,11 @@ import { Icon } from "@/lib/icons";
 export function GuideReader({
   sections,
   related,
+  label = "In this guide",
 }: {
   sections: { id: string; label: string }[];
   related: ReactNode;
+  label?: string;
 }) {
   const rail = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -57,9 +59,9 @@ export function GuideReader({
   }, [sections]);
   return (
     <>
-      <aside ref={rail} className="guide-rail" aria-label="In this guide">
+      <aside ref={rail} className="guide-rail" aria-label={label}>
         <div className="guide-rail-sticky">
-          <p className="care-kicker">In this guide</p>
+          <p className="care-kicker">{label}</p>
           <ol className="guide-toc">
             {sections.map((section) => (
               <li key={section.id}>
@@ -75,7 +77,7 @@ export function GuideReader({
       </aside>
       <details className="guide-mobile-contents">
         <summary>
-          In this guide
+          {label}
           <Icon name="chevronDown" size={18} />
         </summary>
         <ol>
