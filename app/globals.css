@@ -1297,7 +1297,7 @@ section[id] {
   display: inline-flex;
   gap: 5px;
   align-items: center;
-  min-height: 44px;
+  min-height: 48px;
 }
 .links li > a:hover {
   background: rgba(10, 110, 148, 0.09);
@@ -1558,7 +1558,8 @@ main:has(> :last-child[data-dark]) + .site-footer::before {
 .f-links a {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
+  min-height: 48px;
+  min-width: 48px;
   font-size: 15px;
   color: rgba(217, 237, 243, 0.8);
   text-decoration: none;
@@ -1574,7 +1575,7 @@ main:has(> :last-child[data-dark]) + .site-footer::before {
 .f-contact > a {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
+  min-height: 48px;
   font-size: 15px;
   font-weight: 600;
   color: var(--ice);
@@ -1585,8 +1586,8 @@ main:has(> :last-child[data-dark]) + .site-footer::before {
   text-underline-offset: 4px;
 }
 .f-wa {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 1px solid rgba(217, 237, 243, 0.28);
   display: inline-grid;
@@ -1634,7 +1635,7 @@ main:has(> :last-child[data-dark]) + .site-footer::before {
 .footer-link-button {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
+  min-height: 48px;
   padding: 0;
   border: 0;
   background: none;
@@ -1784,6 +1785,8 @@ main:has(> :last-child[data-dark]) + .site-footer::before {
   }
   .site-nav .btn {
     padding-inline: 8px;
+    min-width: 48px;
+    justify-content: center;
   }
   .cookie-banner {
     bottom: 84px;
@@ -3145,7 +3148,7 @@ h4 {
   border-radius: 999px;
   cursor: pointer;
   color: var(--ink-2);
-  min-height: 36px;
+  min-height: 48px;
 }
 .seg button[aria-pressed="true"] {
   background: var(--night);
@@ -3167,6 +3170,9 @@ h4 {
   color: var(--ink-2);
 }
 .cond-strip a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
   color: inherit;
   text-decoration: none;
   transition: color 0.15s ease;
@@ -3351,6 +3357,9 @@ h4 {
 }
 .ages span,
 .ages a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
   padding: 8px 12px;
   border-radius: 999px;
   background: var(--paper);
@@ -3557,7 +3566,7 @@ h4 {
   background: #fff;
   border-radius: 999px;
   padding: 10px 16px;
-  min-height: 44px;
+  min-height: 48px;
   font:
     600 15px/1 var(--font-body),
     sans-serif;
@@ -3593,7 +3602,7 @@ h4 {
   gap: 0 24px;
 }
 .bm-panel li {
-  padding: 12px 0;
+  padding: 0;
   border-bottom: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
@@ -3603,10 +3612,13 @@ h4 {
 .bm-panel li a {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
   font-weight: 500;
   text-decoration: none;
   width: 100%;
+  min-height: 48px;
+  padding-block: 12px;
 }
 .bm-panel li a svg {
   flex: none;
@@ -4375,6 +4387,8 @@ h4 {
 .az a {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
   padding: 8px 10px;
   margin-inline: -10px;
   border-radius: 10px;
@@ -4781,6 +4795,25 @@ h4 {
   body {
     padding-inline: 8px;
   }
+  .sec {
+    padding-block: 56px;
+  }
+  .head,
+  .section-head {
+    margin-bottom: 28px;
+  }
+  .ci-groups {
+    gap: 32px;
+  }
+  .stack {
+    gap: 20px;
+  }
+  .sc {
+    min-height: 0;
+  }
+  .bm-l {
+    min-height: 460px;
+  }
   .hero {
     padding-top: 110px;
   }
@@ -4925,7 +4958,7 @@ h4 {
 }
 .bm-l .body-view button {
   color: var(--ice-2);
-  min-height: 40px;
+  min-height: 48px;
 }
 .bm-l .body-view button[aria-pressed="true"] {
   background: var(--ice);
