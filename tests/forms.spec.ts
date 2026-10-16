@@ -7,6 +7,10 @@ const validDate = () => {
 };
 
 async function fillValid(page: import("@playwright/test").Page) {
+  // Answer the consent banner first: it covers the form until dismissed.
+  const essential = page.getByRole("button", { name: "Essential only" });
+  await essential.waitFor({ state: "visible", timeout: 6000 }).catch(() => {});
+  if (await essential.isVisible()) await essential.click();
   await page
     .locator('input[name="format"][value="clinic"]')
     .check({ force: true });

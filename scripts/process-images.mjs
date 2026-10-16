@@ -220,7 +220,7 @@ for (const [input, name, ratio, text] of items) {
     alt[filename] = text;
   }
   if (/-hero$|-portrait$/.test(name))
-    for (const width of [160, 320, 480, 800])
+    for (const width of [160, 320, 480, 800, 1120])
       for (const format of ["avif", "webp"]) {
         const filename = `doctors/${name}-${width}.${format}`;
         await sharp(file)

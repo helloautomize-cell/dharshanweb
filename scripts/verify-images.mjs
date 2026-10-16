@@ -41,7 +41,7 @@ for (const file of (await readdir("public/images/doctors")).filter((file) =>
   /\.(jpg|avif|webp)$/.test(file),
 )) {
   const name = file
-    .replace(/-(160|320|480|800)(?=\.(jpg|avif|webp)$)/, "")
+    .replace(/-(160|320|480|800|1120)(?=\.(jpg|avif|webp)$)/, "")
     .replace("-portrait", "-hero")
     .replace(/\.(jpg|avif|webp)$/, ".png");
   const original = await sharp(`resources/images/doctors/${name}`).metadata();

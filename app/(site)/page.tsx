@@ -58,17 +58,6 @@ const calIcon = (
   </svg>
 );
 
-/* Vertebra positions along the journey curve at (i+.5)/6 of path length,
-   matching v3's getPointAtLength output. */
-const journeyVerts: [number, number][] = [
-  [52, 68],
-  [41, 154],
-  [63, 228],
-  [60, 318],
-  [40, 406],
-  [49, 512],
-];
-
 const condStrip: [string, string][] = [
   ["Back pain", "/pain-and-spine/back-pain/"],
   ["Neck pain", "/pain-and-spine/neck-pain/"],
@@ -374,12 +363,11 @@ export default function Home() {
         <div className="head" style={{ maxWidth: 820 }}>
           <span className="kicker">Your recovery</span>
           <h2 className="h2">
-            Six steps, one <span className="serif">spine.</span>
+            Six steps,
+            <br />
+            one <span className="serif">plan.</span>
           </h2>
-          <p className="lede">
-            As you scroll, the spine draws itself and each step lights up a
-            vertebra.
-          </p>
+          <p className="lede">Each step builds on the one before it.</p>
         </div>
         <div className="jr">
           <div className="jr-pin stage on-night" data-dark>
@@ -395,35 +383,28 @@ export default function Home() {
               <defs>
                 <linearGradient id="jg" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0" stopColor="#6FD0E6" />
-                  <stop offset="1" stopColor="#F2B48A" />
+                  <stop offset="1" stopColor="#D9EDF3" />
                 </linearGradient>
               </defs>
-              <path
-                className="track"
-                d="M60 20 C 30 120, 90 200, 60 300 S 30 480, 60 580"
-              />
+              <path className="track" d="M60 30 V 570" />
               <path
                 className="drawn"
                 id="jpath"
-                d="M60 20 C 30 120, 90 200, 60 300 S 30 480, 60 580"
+                d="M60 30 V 570"
                 pathLength="1000"
                 strokeDasharray="1000"
                 strokeDashoffset="1000"
               />
               <g id="jverts">
                 {recoverySteps.map((_, i) => {
-                  // positions along the curve, matching getPointAtLength
-                  const pts = journeyVerts[i];
+                  const y = 62 + i * 95;
                   return (
-                    <rect
-                      key={i}
-                      className="v"
-                      x={pts[0] - 16}
-                      y={pts[1] - 8}
-                      width="32"
-                      height="16"
-                      rx="8"
-                    />
+                    <g key={i} className="v" transform={`translate(0 ${y})`}>
+                      <circle cx="60" cy="0" r="4" />
+                      <text x="80" y="4">
+                        {String(i + 1).padStart(2, "0")}
+                      </text>
+                    </g>
                   );
                 })}
               </g>
@@ -469,7 +450,7 @@ export default function Home() {
             </h2>
           </div>
           <p className="lede">
-            <Confirm>formats offered and clinic location</Confirm>
+            Three ways to start care, each confirmed by phone or WhatsApp.
           </p>
         </div>
         <div className="stack">
@@ -542,11 +523,8 @@ export default function Home() {
             />
             <div className="float">
               <div>
-                <b>Dr. Dharshan N A</b>
-                <br />
-                <span>
-                  KMC Reg. No. <Confirm>CONFIRM</Confirm>
-                </span>
+                <b>Dr. Dharshan N&nbsp;A</b>
+                <span>Consultant in Physical Medicine and Rehabilitation</span>
               </div>
               <span className="mono" style={{ color: "var(--aqua)" }}>
                 Lead physiatrist
@@ -628,13 +606,10 @@ export default function Home() {
             </div>
             <div>
               <span className="mono">Lead physiatrist</span>
-              <h3>Dr. Dharshan N A</h3>
+              <h3>Dr. Dharshan N&nbsp;A</h3>
               <p>
                 MD Physical Medicine and Rehabilitation · Fellowship in
                 Interventional Pain Management
-              </p>
-              <p className="fine">
-                KMC Reg. No. <Confirm>CONFIRM</Confirm>
               </p>
             </div>
             <Link className="btn btn-ghost" href={doctor.slug}>
@@ -655,11 +630,7 @@ export default function Home() {
               <h3>Dr. Selina Kh</h3>
               <p>
                 Physical Medicine and Rehabilitation. Stroke, spinal cord
-                injury, rheumatology and pain management.{" "}
-                <Confirm>qualifications</Confirm>
-              </p>
-              <p className="fine">
-                Reg. No. <Confirm>CONFIRM</Confirm>
+                injury, rheumatology and pain management.
               </p>
             </div>
             <Link className="btn btn-ghost" href={second.slug}>
@@ -671,56 +642,22 @@ export default function Home() {
 
       {/* 10 · VISIT */}
       <section className="wrap" id="visit">
-        <div className="visit on-night" id="visitband">
-          <Image
-            src="/images/doctors/dr-dharshan-banner.jpg"
-            alt="Dr. Dharshan N A standing on the right in a hospital lobby"
-            fill
-            sizes="(max-width: 1240px) 100vw, 1176px"
-          />
-          <div className="float">
+        <div className="visit on-night" id="visitband" data-dark>
+          <div className="visit-panel">
             <span className="kicker">Plan your visit</span>
             <h3>See the doctor in Bengaluru.</h3>
             <p>
-              <Confirm>clinic address, landmark and hours</Confirm>
+              {siteConfig.address.includes("[CONFIRM")
+                ? "To be confirmed, shared when you book."
+                : siteConfig.address}
             </p>
             <div className="row">
               <span>By appointment</span>
-              <span>
-                Lift access <Confirm>CONFIRM</Confirm>
-              </span>
-              <span>
-                Parking <Confirm>CONFIRM</Confirm>
-              </span>
+              <span>Video consults too</span>
             </div>
-            <div
-              style={{
-                display: "flex",
-                gap: 10,
-                flexWrap: "wrap",
-                marginTop: 6,
-              }}
-            >
-              <Link className="btn btn-invert" href="/plan-your-visit/">
-                <span className="ic">
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z" />
-                    <circle cx="12" cy="9" r="2.5" />
-                  </svg>
-                </span>
-                Get directions
-              </Link>
-            </div>
+            <Link className="btn care-guide visit-dir" href="/plan-your-visit/">
+              Get directions {arrow}
+            </Link>
           </div>
         </div>
       </section>
