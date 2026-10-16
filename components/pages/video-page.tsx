@@ -359,9 +359,7 @@ export function VideoPage({ page }: { page: PageContent }) {
         headingId="video-faq-heading"
         description="Short answers to what people ask most about video consults."
         faqs={faqs}
-        reviewer={
-          <DirectoryReviewer practiceOnly lastReviewed={facts.lastReviewed} />
-        }
+        reviewer={<DirectoryReviewer lastReviewed={facts.lastReviewed} />}
         reviewerPosition="intro"
       />
       <DirectoryBookingClose

@@ -4,14 +4,8 @@ import type { ReactNode } from "react";
 import { imageApprovals } from "@/lib/site-config";
 
 export function Confirm({ children }: { children: ReactNode }) {
-  return (
-    <span
-      className="confirm-chip"
-      hidden={process.env.NODE_ENV === "production"}
-    >
-      {children}
-    </span>
-  );
+  if (process.env.NODE_ENV === "production") return null;
+  return <span className="confirm-chip">{children}</span>;
 }
 export function Brand({
   variant = "blue",
@@ -109,7 +103,7 @@ export function DoctorPortrait({
         ? "(max-width: 767px) 55vw, 350px"
         : "(max-width: 767px) 90px, 120px");
   const srcSet = (format: string) =>
-    [160, 320, 480, 800]
+    [160, 320, 480, 800, 1120]
       .map((width) => `/images/doctors/${id}-${width}.${format} ${width}w`)
       .join(", ");
   const responsive = /-(hero|portrait)$/.test(id);
