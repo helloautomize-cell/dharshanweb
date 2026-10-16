@@ -16,6 +16,7 @@ import { getDoctorPages, section, type PageContent } from "@/lib/content";
 import { extractFaqs } from "@/lib/faqs";
 import { Icon } from "@/lib/icons";
 import { breadcrumb, doctorsItemList, faqPage, graph } from "@/lib/schema";
+import { altFor } from "@/lib/alt-text";
 import "./care.css";
 import "./doctors.css";
 
@@ -118,7 +119,7 @@ export function DoctorsIndexPage({ page }: { page: PageContent }) {
               >
                 <Image
                   src={`/images/doctors/${profile.portrait}.jpg`}
-                  alt={`Portrait of ${name}`}
+                  alt={altFor(`doctors/${profile.portrait}.jpg`)}
                   fill
                   sizes="(max-width: 639px) calc(100vw - 72px), (max-width: 759px) calc(100vw - 116px), (max-width: 1330px) 44vw, 572px"
                   preload={index === 0}

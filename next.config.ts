@@ -8,6 +8,7 @@ const config: NextConfig = {
   skipTrailingSlashRedirect: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
+  compiler: { reactRemoveProperties: true },
   images: {
     formats: ["image/avif", "image/webp"],
     imageSizes: [32, 48, 64, 96, 128, 256, 384, 480],
@@ -30,6 +31,23 @@ const config: NextConfig = {
       { source: "/blogs/:slug*", destination: "/guides/", statusCode: 301 },
       { source: "/conditions", destination: "/care/#a-z", statusCode: 301 },
       { source: "/conditions/", destination: "/care/#a-z", statusCode: 301 },
+      { source: "/home", destination: "/", statusCode: 301 },
+      {
+        source: "/home/monthly",
+        destination: "/plan-your-visit/",
+        statusCode: 301,
+      },
+      {
+        source: "/home/pricing",
+        destination: "/plan-your-visit/",
+        statusCode: 301,
+      },
+      {
+        source: "/home/book-an-appointment-now",
+        destination: "/contact/",
+        statusCode: 301,
+      },
+      { source: "/about-us", destination: "/about/", statusCode: 301 },
       {
         source: "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
         destination: "/:file",
@@ -37,27 +55,11 @@ const config: NextConfig = {
         missing: [{ type: "header", key: "x-nextjs-data" }],
       },
       {
-        source: "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+$)",
+        source:
+          "/:notfile((?!\\.well-known(?:/.*)?)(?!ai-tools(?:/|$))(?!dr-dharshan-n-a$|dr-selina-kh$)(?:[^/]+/)*[^/\\.]+$)",
         destination: "/:notfile/",
         statusCode: 308,
       },
-      { source: "/home", destination: "/", permanent: true },
-      {
-        source: "/home/monthly",
-        destination: "/plan-your-visit/",
-        permanent: true,
-      },
-      {
-        source: "/home/pricing",
-        destination: "/plan-your-visit/",
-        permanent: true,
-      },
-      {
-        source: "/home/book-an-appointment-now",
-        destination: "/contact/",
-        permanent: true,
-      },
-      { source: "/about-us", destination: "/about/", permanent: true },
     ];
   },
   async headers() {

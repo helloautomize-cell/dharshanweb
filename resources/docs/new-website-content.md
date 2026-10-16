@@ -5,6 +5,7 @@ Version 1 (all 45 pages and 3 launch posts) for review by Dr. Dharshan N A · 12
 Facts come from `client-answers.md`. Page list, URLs, menus, schema and global copy blocks are in `site-plan.md`. Visuals follow `rehabify-design-v3.html`.
 
 Contents
+
 - Part 1 · Core pages (Home, About, Our doctors, Dr. Dharshan N A, All care, Conditions A to Z, Video consultation, Plan your visit, Contact, FAQs, Guides, Thank you, 404) ✅ this version
 - Part 2 · Pain and spine (hub + 4 pages) ✅
 - Part 3 · Neuro rehabilitation (hub + 5) ✅
@@ -35,7 +36,7 @@ schema: [MedicalWebPage, FAQPage]
 
 Pill: Physical medicine and rehabilitation · Bengaluru and online
 
-H1: Rehab that moves *with you.*
+H1: Rehab that moves _with you._
 
 Sub: A rehabilitation doctor assesses how you move, sets goals with you and plans each step back to the things you want to do. For pain, stroke, spine and sports injuries.
 
@@ -57,16 +58,18 @@ Fields: I need help with [dropdown = booking reasons, site-plan section 6] · Se
 Behaviour: opens `/contact/#book` with the three choices prefilled.
 
 ### Marquee (conditions)
+
 Stroke · Back pain · Knee osteoarthritis · Spinal cord injury · Sciatica · Frozen shoulder · Neck pain · Parkinson's disease · Sports injuries · Cerebral palsy · Head injury · Osteoporosis
 
 ### WHY REHABIFY (bento)
 
-H2: Rehab planned by a *doctor*, around your goals.
+H2: Rehab planned by a _doctor_, around your goals.
 
 Lede: Physiatrists are doctors who specialise in movement, pain and function. That changes where your rehab starts and how it is measured.
 
 Tiles:
-- **HOW IT STARTS** · Quote tile: *Your plan is written by a* **rehabilitation doctor** *after examining you, and it changes as you do.* · Byline: Dr. Dharshan N A, MBBS, MD (Physical Medicine and Rehabilitation)
+
+- **HOW IT STARTS** · Quote tile: _Your plan is written by a_ **rehabilitation doctor** _after examining you, and it changes as you do._ · Byline: Dr. Dharshan N A, MBBS, MD (Physical Medicine and Rehabilitation)
 - **GOALS YOU CHOOSE · TRY IT** · Progress is measured in the things you can do again. · Example goals (tickable, labelled "example"): Walk to the market · Climb two floors · Sleep without pain · Back to badminton · Ring: "2 of 4 goals reached"
 - **PAIN CARE** · Image-guided injections, only when suitable. · Most plans start with exercise and medicines. Nerve blocks and joint injections are guided by imaging.
 - **NEURO REHAB** · Brain, spine and nerve recovery. · Stroke, head injury, spinal cord injury, Parkinson's disease.
@@ -75,28 +78,29 @@ Tiles:
 
 ### FIND CARE BY CONCERN (body map)
 
-H2: Where does it *hurt?*
+H2: Where does it _hurt?_
 
 Lede: Tap the body or choose an area. You will see what the doctor looks after there and where to go next.
 
-| Region | Line | Conditions (each links) | Link |
-|---|---|---|---|
-| Brain and nerves | Recovery of movement, balance, speech and daily tasks after damage to the brain, spinal cord or nerves. | Stroke · Head injury · Parkinson's disease · Spasticity · Nerve injuries · Balance problems | /neuro-rehabilitation/ |
-| Neck and shoulder | Stiffness and pain in the neck and shoulder, including pain that travels down the arm. | Neck pain · Cervical radiculopathy · Frozen shoulder · Shoulder pain · Myofascial pain · Posture problems | /pain-and-spine/neck-pain/ |
-| Back and spine (default) | Back pain from discs, joints and muscles, and recovery after spinal cord injury. | Low back pain · Sciatica · Facet joint pain · Spinal cord injury · Disc problems · Osteoporosis | /pain-and-spine/ |
-| Elbow, wrist and hand | Pain and weakness that make gripping, writing and lifting hard. | Tennis elbow · Wrist pain · Hand weakness · Nerve compression · Arthritis of the hand · After a fracture | /joints-and-sports/ |
-| Hip and knee | Joint pain and stiffness that limit walking, stairs and sport. | Knee osteoarthritis · Hip pain · Ligament injuries · Sports injuries · After joint surgery · Gait problems | /joints-and-sports/knee-pain/ |
-| Ankle and foot | Pain and instability that affect standing and walking. | Heel pain · Ankle sprains · Foot care · Flat feet · Walking aids · Prosthetic training | /joints-and-sports/ |
+| Region                   | Line                                                                                                    | Conditions (each links)                                                                                    | Link                          |
+| ------------------------ | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| Brain and nerves         | Recovery of movement, balance, speech and daily tasks after damage to the brain, spinal cord or nerves. | Stroke · Head injury · Parkinson's disease · Spasticity · Nerve injuries · Balance problems                | /neuro-rehabilitation/        |
+| Neck and shoulder        | Stiffness and pain in the neck and shoulder, including pain that travels down the arm.                  | Neck pain · Cervical radiculopathy · Frozen shoulder · Shoulder pain · Myofascial pain · Posture problems  | /pain-and-spine/neck-pain/    |
+| Back and spine (default) | Back pain from discs, joints and muscles, and recovery after spinal cord injury.                        | Low back pain · Sciatica · Facet joint pain · Spinal cord injury · Disc problems · Osteoporosis            | /pain-and-spine/              |
+| Elbow, wrist and hand    | Pain and weakness that make gripping, writing and lifting hard.                                         | Tennis elbow · Wrist pain · Hand weakness · Nerve compression · Arthritis of the hand · After a fracture   | /joints-and-sports/           |
+| Hip and knee             | Joint pain and stiffness that limit walking, stairs and sport.                                          | Knee osteoarthritis · Hip pain · Ligament injuries · Sports injuries · After joint surgery · Gait problems | /joints-and-sports/knee-pain/ |
+| Ankle and foot           | Pain and instability that affect standing and walking.                                                  | Heel pain · Ankle sprains · Foot care · Flat feet · Walking aids · Prosthetic training                     | /joints-and-sports/           |
 
 Also row: Children's rehab · Older adults · After a fracture or surgery · Amputation and prosthesis
 
 ### HOW WE CAN HELP (pinned care track)
 
-H2: Care for pain, nerves and *movement.*
+H2: Care for pain, nerves and _movement._
 
 Lede: Each card opens a full page on the condition, what happens at your visit and what to expect.
 
 Cards (group · title · line):
+
 1. Pain and spine · Back pain · Discs, joints and muscles. Exercise first, procedures when suitable.
 2. Pain and spine · Neck pain · Including pain that travels down the arm.
 3. Pain and spine · Sciatica · Pain that runs from the back down the leg.
@@ -109,33 +113,33 @@ Cards (group · title · line):
 10. Children · Children's rehab · Cerebral palsy, muscular dystrophy and development.
 11. Older adults · Falls and balance · Balance, strength and safety at home.
 12. Joints and sport · Prosthetic training · Learning to walk with a new limb.
-Link under the track: See all care →
+    Link under the track: See all care →
 
 ### YOUR RECOVERY (spine scrollytelling)
 
-H2: Six steps, one *spine.*
+H2: Six steps, one _spine._
 
-| Step | Title | Text | Tags |
-|---|---|---|---|
-| 01 | Book | Book online, call or WhatsApp. Choose a clinic visit or a video consult. | Clinic or video · Confirmed by phone |
-| 02 | First consultation | The doctor asks about your problem, checks how you move, your strength, balance and pain, and reads your scans. | Movement · Strength · Balance |
-| 03 | Your goals | Together you agree on what matters: walking without support, sleeping without pain, getting back to work or sport. | Your words · Measurable |
-| 04 | Your plan | Exercise, therapy, medicines and, only when suitable, image-guided procedures. Every part explained in plain words. | Written plan · Plain words |
-| 05 | Practice at home | A home programme with clear steps, sets and repetitions, so progress continues between visits. | Home programme · WhatsApp questions |
-| 06 | Review and adjust | At each review the doctor measures your progress and changes the plan as you improve. | Range of motion · Next goal |
+| Step | Title              | Text                                                                                                                | Tags                                 |
+| ---- | ------------------ | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| 01   | Book               | Book online, call or WhatsApp. Choose a clinic visit or a video consult.                                            | Clinic or video · Confirmed by phone |
+| 02   | First consultation | The doctor asks about your problem, checks how you move, your strength, balance and pain, and reads your scans.     | Movement · Strength · Balance        |
+| 03   | Your goals         | Together you agree on what matters: walking without support, sleeping without pain, getting back to work or sport.  | Your words · Measurable              |
+| 04   | Your plan          | Exercise, therapy, medicines and, only when suitable, image-guided procedures. Every part explained in plain words. | Written plan · Plain words           |
+| 05   | Practice at home   | A home programme with clear steps, sets and repetitions, so progress continues between visits.                      | Home programme · WhatsApp questions  |
+| 06   | Review and adjust  | At each review the doctor measures your progress and changes the plan as you improve.                               | Range of motion · Next goal          |
 
 ### WAYS TO SEE US (stacking cards)
 
-H2: In clinic, by video or at *home.*
+H2: In clinic, by video or at _home._
 
 1. **01 · CLINIC VISIT** · See the doctor in person. · A full examination of how you move, with procedures done on site when needed. · Bring scans, reports and medicines · Wear loose clothes · By appointment · [Book a clinic visit]
 2. **02 · VIDEO CONSULT** · Start from home. · Share your reports, show the doctor how you move on camera and leave with a first plan. · Good for first advice and follow-ups · Reports shared before the call · The doctor says if you need to come in · [Book a video consult]
 3. **03 · HOME PROGRAMME** · Keep going between visits. · Every plan comes with exercises for home, checked and changed at each review. · Clear steps, sets and repetitions · Updated as you improve · Questions on WhatsApp
-[CONFIRM: formats offered; home visits?]
+   [CONFIRM: formats offered; home visits?]
 
 ### MEET YOUR DOCTOR
 
-Kicker: MEET YOUR DOCTOR · H2: Dr. Dharshan *N A* · Role: Consultant in Physical Medicine and Rehabilitation
+Kicker: MEET YOUR DOCTOR · H2: Dr. Dharshan _N A_ · Role: Consultant in Physical Medicine and Rehabilitation
 
 Bio: He looks after people recovering from stroke, brain and spinal cord injury, and people living with back, neck and joint pain. His work covers children, adults and older adults, with image-guided pain procedures when they are suitable.
 
@@ -147,14 +151,17 @@ Photo caption: Dr. Dharshan N A · KMC Reg. No. [CONFIRM] · LEAD PHYSIATRIST
 Buttons: [Book with Dr. Dharshan] [Full profile →]
 
 ### Visit band
+
 Kicker: PLAN YOUR VISIT · H3: See the doctor in Bengaluru. · [CONFIRM: address, landmark and hours] · Chips: By appointment · Lift access [CONFIRM] · Parking [CONFIRM] · [Get directions]
 
 ### CONDITIONS A TO Z
-H2: Look up a *condition.* · Lede: Type a word. The list filters as you type, and each name opens its own page. · Search placeholder: Try knee, stroke or sciatica
+
+H2: Look up a _condition._ · Lede: Type a word. The list filters as you type, and each name opens its own page. · Search placeholder: Try knee, stroke or sciatica
 Groups as in `/care/#a-z` (Page 6).
 
 ### QUICK ANSWERS
-H2: Before you *book.*
+
+H2: Before you _book._
 
 1. **What is a physiatrist?** A physiatrist is a doctor who specialises in Physical Medicine and Rehabilitation. They diagnose and treat problems with muscles, joints, nerves and the spine, and lead your rehab plan with physiotherapists and other therapists. The aim is less pain and more of the movement and independence you need for daily life.
 2. **Do I need a referral?** No. You can book directly. Bring any scans, reports or hospital discharge summary to a clinic visit, or share them before a video consult, so the doctor can see the full picture.
@@ -164,6 +171,7 @@ H2: Before you *book.*
 Help card: Still not sure? Send a message and the team will help you choose the right appointment. [WhatsApp +91 79048 42576]
 
 ### Notices row
+
 Emergency callout (global) · Reviewer box (global) · Tip: Wear loose clothes to your visit so the doctor can check how your back, hips and knees move.
 
 ### CTA band (global)
@@ -181,12 +189,15 @@ schema: [AboutPage]
 ```
 
 ### Intro
+
 Rehabify is a physical medicine and rehabilitation practice in Bengaluru that also sees patients by video across India. It is led by Dr. Dharshan N A, a physiatrist: a doctor trained to treat pain and to help people move and function again after illness or injury.
 
 ### Why Rehabify was started
+
 Many people go from doctor to doctor with back pain, or leave hospital after a stroke with no clear plan for the months that follow. Rehab works best when one doctor looks at the whole problem, sets goals with you and keeps adjusting the plan as you improve. Rehabify was started to make that kind of care easier to reach, in person and from home. [CONFIRM: founding story in Dr. Dharshan's words, founding year]
 
 ### How we work
+
 - **We start with function.** What can you not do today that you want to do again? That becomes the goal.
 - **We examine before we treat.** Movement, strength, balance, nerves and pain are checked before any plan is made.
 - **We keep procedures in their place.** Exercise and medicines come first. Image-guided procedures are offered only when they are likely to help.
@@ -194,9 +205,11 @@ Many people go from doctor to doctor with back pain, or leave hospital after a s
 - **We explain everything.** Your diagnosis, your options and your next step, in plain words.
 
 ### What we look after
+
 Five groups, each linked: Pain and spine · Neuro rehabilitation · Joints and sports · Children's rehabilitation · Older adults
 
 ### Facts at a glance
+
 - Practice: Rehabify, physical medicine and rehabilitation
 - Lead doctor: Dr. Dharshan N A, MBBS, MD (PMR), Fellowship in Interventional Pain Management
 - Where: Bengaluru [CONFIRM: area] and online across India
@@ -224,6 +237,7 @@ Doctor card 1: Dr. Dharshan N A. Lead physiatrist. Consultant physiatrist. MBBS,
 Doctor card 2: Dr. Selina Kh. Physiatrist. Consultant physiatrist. Physician, Physical Medicine and Rehabilitation. Focus: Stroke, Spinal cord injury, Spasticity, Joint and rheumatic pain. Approach: Care built around the person, with plain explanations at every step. Works with: Your therapists and other doctors, on one shared plan. Qualifications and languages stay hidden until confirmed. [Book with Dr. Selina] [Full profile]
 
 ### Who to see
+
 Not sure who to see? Start with what you need help with. Pick the closest match. We show which doctor usually leads that care. Either doctor can see you first and bring in the other when it helps.
 
 - Stroke: Dharshan: Neuro rehab after stroke, including spasticity and arm use. Selina: Stroke rehabilitation and recovery of daily tasks.
@@ -238,6 +252,7 @@ Not sure who to see? Start with what you need help with. Pick the closest match.
 Still unsure? Choose No preference when you book and the team will match you.
 
 ### How our doctors work
+
 Your goals first, explained plainly. Both doctors work the same way: they find what is stopping you, agree on what you want back, and lead one plan with your therapists.
 
 - Goals first: Every plan starts from what you want to be able to do again, such as walking to the market or sleeping without pain.
@@ -249,6 +264,7 @@ Your physiatrist: A doctor who leads the plan. Finds the cause of pain or weakne
 Your physiotherapist: A therapist who delivers it. Teaches and guides your exercises; Gives hands-on treatment; Checks your home programme; Reports progress back to your doctor.
 
 ### FAQs
+
 Before you book. Short answers to what people ask most about choosing a doctor.
 
 1. **Can I see either doctor?** Yes. If you are not sure who to see, choose "No preference" in the booking form and the team will suggest a doctor based on your reason for visiting.
@@ -259,6 +275,7 @@ Before you book. Short answers to what people ask most about choosing a doctor.
 Reviewer: Dr. Dharshan N A, consultant in physical medicine and rehabilitation. Review date stays hidden until confirmed.
 
 ### Booking close
+
 Choose a doctor, or let us match you. Pick Dr. Dharshan, Dr. Selina or No preference. The team confirms your time by phone or WhatsApp. [Book a consultation] [Message on WhatsApp]. Prefer to call? +91 79048 42576.
 
 1. You send a request: Online, on WhatsApp or by phone, with your doctor choice.
@@ -280,13 +297,15 @@ schema: [ProfilePage]
 ```
 
 ### Hero (split)
+
 Kicker: CONSULTANT PHYSIATRIST
-H1: Dr. Dharshan *N A*
+H1: Dr. Dharshan _N A_
 Line: Consultant in Physical Medicine and Rehabilitation
 Key facts card: Qualifications MBBS, MD (PMR), Fellowship in Interventional Pain Management · Practising as a consultant since 2023 · Languages Tamil, Telugu, Kannada, English, Manipuri, Hindi · Karnataka Medical Council Reg. No. [CONFIRM]
 Buttons: [Book with Dr. Dharshan] [Video consult]
 
 ### About
+
 Dr. Dharshan N A is a physiatrist, a doctor who specialises in physical medicine and rehabilitation. He looks after adults, children and older adults with conditions that affect movement and daily life: stroke, spinal cord and head injury, Parkinson's disease, back and neck pain, joint pain and sports injuries.
 
 His training covers rehabilitation and interventional pain management. That means he can treat pain with exercise, medicines and, when suitable, image-guided injections and nerve blocks, and then build the rehab plan that helps you stay well.
@@ -294,52 +313,59 @@ His training covers rehabilitation and interventional pain management. That mean
 He has worked in a 30-bed rehabilitation department at a teaching hospital, in a multispecialty hospital and in senior care in Bengaluru, where he set up fall-prevention and pressure-injury plans and led team-based rehab.
 
 ### How Dr. Dharshan works (his own words, lightly edited)
+
 Medicine has three parts: preventing illness, treating it and restoring function. Physical medicine and rehabilitation covers all three, and his main focus is restoring lost function, ability and independence.
 
 - **Non-surgical first.** He looks at what can be done with what is available. For someone who comes four years after a stroke with a lot of tightness, he asks what function they could still gain. If pain is the limit, he treats the pain. If tightness is the limit, he decides which muscle to target.
 - **Change the plan if nothing changes.** If a treatment does not help, he changes the activities or finds a device that restores function.
 - **Never limited to one organ or one diagnosis.** The question is always what function he can help you regain.
 - **Independence matters.** "What is the point of saving a life if you are not able to do your work independently?"
-[Source: Dr. Dharshan's own answer, website_information.docx, 12 Oct 2026. CONFIRM final wording with him]
+  [Source: Dr. Dharshan's own answer, website_information.docx, 12 Oct 2026. CONFIRM final wording with him]
 
 ### Education and training
-| Years | Qualification | Institution |
-|---|---|---|
-| 2013 to 2019 | MBBS | Annapoorana Medical College and Hospitals, Salem, Tamil Nadu |
-| 2020 to 2023 | MD, Physical Medicine and Rehabilitation | Regional Institute of Medical Sciences, Imphal, Manipur |
-| [CONFIRM: year] | Fellowship in Interventional Pain Management | Delhi Pain Management Centre |
+
+| Years           | Qualification                                | Institution                                                  |
+| --------------- | -------------------------------------------- | ------------------------------------------------------------ |
+| 2013 to 2019    | MBBS                                         | Annapoorana Medical College and Hospitals, Salem, Tamil Nadu |
+| 2020 to 2023    | MD, Physical Medicine and Rehabilitation     | Regional Institute of Medical Sciences, Imphal, Manipur      |
+| [CONFIRM: year] | Fellowship in Interventional Pain Management | Delhi Pain Management Centre                                 |
 
 MD thesis: Correlation of balance impairment with pain and functional disability in people with primary osteoarthritis of the knee.
 
 ### Memberships
+
 - Life Member, Indian Association of Physical Medicine and Rehabilitation (IAPMR)
 - Life Member, Karnataka Association of Rehabilitation Medicine (KARM) [CONFIRM: full name of KARM]
 - Life Member, Global Regenerative Orthopedic Sciences Foundation
 
 ### Research publications (International Journal of Scientific Research)
+
 - Ultrasound-guided intra-articular injection of platelet-rich plasma versus high molecular weight hyaluronic acid, cartilage thickness and physical function in primary knee osteoarthritis: a randomised controlled trial (October 2024)
 - Profile of pressure ulcer and other complications in traumatic spinal cord injury patients (April 2022)
 - Effectiveness of ultrasound-guided local ozone injection in carpal tunnel syndrome: a randomised controlled trial (February 2022)
 - Ultrasound-guided autologous blood injection versus extracorporeal shockwave therapy in chronic Achilles tendinopathy: a randomised controlled trial (March 2021)
-[CONFIRM: author position and DOI or link for each; publish as a plain list, no claims about results]
+  [CONFIRM: author position and DOI or link for each; publish as a plain list, no claims about results]
 
 ### Experience
+
 - Specialist, Physical Medicine and Rehabilitation, Manipal Hospital, Sarjapur Road, Bengaluru [CONFIRM: start date; current role per Dr. Dharshan, 12 Oct 2026]
 - Consultant, senior care, Bengaluru (October 2025 to [CONFIRM: end date]): rehabilitation for stroke, brain injury, Parkinson's disease, fractures and complex musculoskeletal conditions; ICF-based plans; spasticity and pain care; fall prevention and pressure injury protocols with a multidisciplinary team.
 - Consultant, physical medicine and rehabilitation, multispecialty hospital, Bengaluru (March to August 2025): image-guided joint, peri-articular and trigger point injections and peripheral nerve blocks; spine pain (cervical, thoracic and lumbar radiculopathy, facet and myofascial pain); neuro-rehabilitation for adults and older adults; paediatric rehabilitation for cerebral palsy, Duchenne muscular dystrophy and autism.
 - Junior Consultant, multispecialty hospital, Bengaluru (November 2024 to February 2025): neuro-rehabilitation for brain injury, stroke, spinal cord and nerve injuries, with early mobilisation, tone assessment and cognitive screening, working with neurosurgery, neurology, physiotherapy and ICU teams.
 - Senior Resident, Department of PMR, Regional Institute of Medical Sciences, Imphal (September 2023 to September 2024): managed stroke, spinal cord injury, cerebral palsy and rheumatological disorders in a 30-bed PMR department; planned care for rheumatology and chronic pain with physicians, physiotherapists and occupational therapists; used medicines, nerve blocks and physical therapy modalities for pain.
-[DECISION D2: name the hospitals or keep generic. Manipal Hospital is a large brand: naming it could read as an endorsement or a booking route. Default stays generic until Dr. Dharshan and the hospital's rules (some hospitals restrict doctors' outside promotion) are confirmed. Also confirm that Rehabify and his hospital role are both stated correctly]
+  [DECISION D2: name the hospitals or keep generic. Manipal Hospital is a large brand: naming it could read as an endorsement or a booking route. Default stays generic until Dr. Dharshan and the hospital's rules (some hospitals restrict doctors' outside promotion) are confirmed. Also confirm that Rehabify and his hospital role are both stated correctly]
 
 ### Conditions and services (non-clickable chip groups)
+
 - Pain and spine: Low back pain · Neck pain · Sciatica · Facet joint pain · Myofascial pain · Image-guided injections · Nerve blocks
 - Brain and nerves: Stroke · Spinal cord injury · Head injury · Parkinson's disease · Spasticity
 - Joints and sport: Knee osteoarthritis · Shoulder pain · Sports injuries · After fracture or surgery · PRP and prolotherapy [CONFIRM] · Prosthetic training
 - Children: Cerebral palsy · Duchenne muscular dystrophy · Developmental delay · Autism support
 - Older adults: Falls and balance · Osteoporosis · Pressure injury prevention
-Mobile: 6 chips per group + "Show all (n)".
+  Mobile: 6 chips per group + "Show all (n)".
 
 ### FAQs
+
 1. **What does a physiatrist do that a physiotherapist does not?** A physiatrist is a medical doctor. Dr. Dharshan diagnoses the cause of pain or weakness, orders and reads scans, prescribes medicines, does image-guided procedures when needed and leads the rehab plan. Physiotherapists are therapists who deliver much of the exercise and hands-on treatment. The two work together.
 2. **Does Dr. Dharshan see children?** Yes. He looks after children with cerebral palsy, muscular dystrophy and developmental delay, together with their parents and therapists. A parent or guardian attends every consultation, in clinic or by video.
 3. **Can I see Dr. Dharshan by video?** Yes. Video consults suit first advice, follow-ups and home programmes. If you need an examination or a procedure, he will ask you to come in.
@@ -361,29 +387,35 @@ reviewer: dr-selina-kh
 Only what is confirmed so far is written here. Everything else is a chip for Dr. Selina to fill in or approve.
 
 ### Hero (split, same layout as Dr. Dharshan)
+
 Kicker: CONSULTANT PHYSIATRIST
-H1: Dr. Selina *Kh*
+H1: Dr. Selina _Kh_
 Line: Consultant in Physical Medicine and Rehabilitation
 Key facts card: Qualifications [CONFIRM] · Practising since [CONFIRM] · Languages [CONFIRM] · Medical Council Reg. No. [CONFIRM: council and number]
 Buttons: [Book with Dr. Selina] [Video consult]
 
 ### About
+
 Dr. Selina Kh is a physiatrist, a doctor who specialises in physical medicine and rehabilitation. She looks after people recovering from stroke and spinal cord injury, people living with joint and rheumatic conditions, and people with long-term pain. [CONFIRM: she confirms this list of focus areas and adds children or older adults if she sees them]
 
 Her care is built around the person, not just the diagnosis. She explains what is happening, supports you through the hard parts of recovery and helps you get back your confidence as well as your movement. [CONFIRM: replace with her own words]
 
 ### How Dr. Selina works
+
 - **The person first.** [CONFIRM: her words]
 - **Plain explanations.** Scans, options and next steps in simple language.
 - **One team.** She works with therapists and other doctors on one plan.
 
 ### Education and training
+
 [CONFIRM: degrees, institutions and years. Needed before launch. Until then this block is hidden and the page shows only the facts above.]
 
 ### Care she looks after
+
 Stroke rehabilitation · Spinal cord injury rehabilitation · Spasticity care · Back, neck and joint pain · Rheumatology-related pain [CONFIRM] (each links to its care page)
 
 ### FAQs
+
 1. **How do I book with Dr. Selina?** Choose her in the booking form, or call or message on WhatsApp and ask for her. You can choose a clinic visit or a video consult [CONFIRM: formats and days she sees patients].
 2. **Can I see either doctor?** Yes. If you are not sure who to see, choose "No preference" and the team will suggest a doctor based on your reason for visiting.
 3. **Do Dr. Dharshan and Dr. Selina work together?** Yes. Both work at Rehabify and can share your plan so that your care stays consistent. [CONFIRM: how cases are shared]
@@ -404,6 +436,7 @@ h1: "Care for pain, nerves and *movement*"
 Intro: Rehabify in Bengaluru looks after problems that change how you move and live day to day. Dr. Dharshan N A and Dr. Selina Kh are physiatrists: doctors who lead your rehab plan. Find your concern below, or search for it.
 
 Five hub blocks, each with its badge, one line and child links:
+
 - **Pain and spine.** Back and neck pain, sciatica, and image-guided procedures when suitable. → Back pain · Neck pain · Sciatica · Image-guided injections and nerve blocks
 - **Neuro rehabilitation.** Rehab after stroke and injury to the brain or spinal cord, and for Parkinson's disease. → Stroke · Spinal cord injury · Head injury · Parkinson's disease · Spasticity
 - **Joints and sports.** Joint pain, sports injuries and rehab after fractures or surgery. → Knee pain · Shoulder pain · Sports injuries · After fracture or surgery · PRP and prolotherapy · Prosthetic rehab
@@ -416,7 +449,7 @@ Five hub blocks, each with its badge, one line and child links:
 
 URL: `/care/#a-z`, directly after Areas of care and before the body map.
 Kicker: A to Z
-H2: Every condition, by *name.*
+H2: Every condition, by _name._
 Text: Looking for a specific name? Each one opens the page that covers it.
 
 The 40 registered names and their existing targets are preserved in `content/care-conditions.ts`. Letter navigation and the complete list are server-rendered, with no separate page or search input.
@@ -441,17 +474,20 @@ schema: [MedicalWebPage, Service]
 ```
 
 ### Intro
+
 A private online appointment with a rehabilitation doctor. Share your reports, show how you move on camera and leave with a first plan and home exercises.
 
 Hero actions: Book a video consult (`/contact/?format=video#book`), Is video right for me? (`#fit`). The call window uses the supplied Dr. Dharshan video illustration, crops out the right edge, and has decorative controls only.
 
 ### Is video right for you?
+
 Tell us what you need.
 Pick the closest match. We show whether a video consult suits it, or whether the clinic is the better first step.
 
 The nine choices, matching explanations and four result types are stored in `lib/video.ts`. The first choice is server-rendered. Emergencies show Call 108 and Call 112, never a booking action.
 
 ### How it works
+
 Six steps, from booking to plan.
 The same care as a clinic visit, done on camera. If you need to be examined in person, the doctor will say so.
 
@@ -465,6 +501,7 @@ The same care as a clinic visit, done on camera. If you need to be examined in p
 The identity step carries the note: Telemedicine Practice Guidelines, India. HowTo schema uses the same six rows.
 
 ### Get ready
+
 Set up before the call.
 A little set-up means the doctor sees how you move, not just your face.
 
@@ -475,24 +512,30 @@ At a glance uses the shared facts list. Who you see and Languages come from doct
 - **Not for:** Emergencies, or problems that need an examination or a procedure
 
 Three preparation tiles (copy in `lib/video.ts`):
+
 - **Your space:** Wear loose clothes. Keep a chair and a clear patch of floor nearby so you can walk a few steps.
 - **Your phone:** Charged, with the camera working. Ask a family member to hold it if you need to move around.
 - **Your papers:** Keep your medicines and latest reports beside you, even if you sent them before.
 
 ### A video consult can
+
 Talk, watch and plan.
+
 - Give first advice and review your scans and reports
 - Watch how you walk, bend and lift on camera
 - Set and update a home exercise programme
 - Answer a family's questions after a stroke
 
 ### It cannot
+
 Replace a hands-on exam. Plan a clinic visit (`/plan-your-visit/`).
+
 - Some problems need a hands-on examination, scans or a procedure
 - The doctor will tell you honestly if a video consult is not enough
 - Never for emergencies: call 108 or 112
 
 ### FAQs
+
 Before you call.
 Short answers to what people ask most about video consults.
 
@@ -505,9 +548,11 @@ Short answers to what people ask most about video consults.
 Append `callDropRule` to answer four and prepend `recordingPolicy` to answer five only when populated. Link Privacy Policy. The reviewed line says Medically reviewed by Rehabify, with a date only when populated; FAQPage schema matches rendered answers.
 
 ### Booking close
+
 See your doctor without the journey.
 Choose "Video consult" when you book. The team confirms your time by phone or WhatsApp and tells you how to join.
 Actions: Book a video consult (`/contact/?format=video#book`), Message on WhatsApp. Prefer to call? +91 79048 42576.
+
 1. **You send a request:** Online, on WhatsApp or by phone. Choose "Video consult".
 2. **We confirm a time:** By phone or WhatsApp, with how to join the call.
 3. **You join from home:** With your reports beside you and room to move.
@@ -524,16 +569,19 @@ h1: "Everything to know before you *come in.*"
 ```
 
 ### Intro
+
 What to bring, what to wear and how to reach us, for a clinic visit or a video consult. Build your checklist below so nothing is left at home.
 
 ### Your checklist
-H2: Pack once, forget *nothing.*
+
+H2: Pack once, forget _nothing._
 Choose how you will be seen and anything that applies to you. The list updates as you go, and your ticks stay on this device.
 
 Formats: Clinic visit, Video consult.
 Situations: Coming with a child, Just out of hospital, After a stroke, Uses a walker or wheelchair, Knee or shoulder problem.
 
 Checklist items (format; situation):
+
 - Scans and their reports / MRI, CT or X-ray, on CD or your phone. (clinic; always)
 - Scans and reports, ready to share / Send them before the consult, or keep them open on your phone. (video; always)
 - Your medicines / A list of what you take, or the medicines themselves. (both; always)
@@ -554,7 +602,8 @@ Buttons: Send on WhatsApp, Clear ticks.
 The hero count uses the actual default clinic checklist count (3), rather than the brief's inconsistent fixed count of 5.
 
 ### Getting here
-H2: Find us in *Bengaluru.*
+
+H2: Find us in _Bengaluru._
 Every detail here is checked with the clinic before it goes on the site. Until a detail is confirmed, call or WhatsApp us and we will tell you.
 Completed location copy: Directions, hours and access for your visit.
 Missing location rows: Being confirmed.
@@ -563,42 +612,53 @@ Need directions or times today? WhatsApp +91 79048 42576.
 Unknown facts are empty typed fields in `lib/visit.ts`, not placeholder strings. Consultation hours use seven unknown days until verified; video hours, phone hours, consultation length and confirmation time are omitted until supplied.
 
 ### On the day
-H2: Small things that *help.*
+
+H2: Small things that _help._
 So the doctor can see how you move, and nobody has to wait for paperwork.
 
 ### What to wear
+
 Loose, comfortable clothes so the doctor can see how your back, hips, knees or shoulders move. Shorts or a T-shirt in your bag help for knee and shoulder problems.
 
 ### Access
+
 Tell us when you book if you need a wheelchair at the entrance. Bring the walking aids, splints or braces you use every day.
 
 ### Children
+
 A parent or guardian must come with anyone under 18. Bring school or therapy reports if you have them.
 
 ### Clinic visit
-H3: When you need to be *examined.*
+
+H3: When you need to be _examined._
+
 - A full examination of how you move, your nerves and strength
 - Image-guided injections, when the doctor decides they are suitable
 - Bring scans and reports on CD or your phone
 
 ### Video consult
-H3: When travel is *hard.*
+
+H3: When travel is _hard._
 Link: How video consults work
+
 - First advice, follow-ups and home programmes
 - A good start straight after a hospital stay
 - If you need an examination or a procedure, the doctor will ask you to come in
 
 ### FAQs
-H2: Before you *visit.*
+
+H2: Before you _visit._
 Short answers to what people ask most before a first consultation.
+
 1. **Will I need tests on the day?** Usually not. The doctor decides if you need scans or blood tests after examining you, and explains why.
 2. **Can I come straight from hospital after a stroke?** Yes. Bring the discharge summary and scans. If travel is hard, start with a video consult.
 3. **Do I need a referral?** No. You can book directly. Bring any scans, reports or hospital discharge summary to a clinic visit, or share them before a video consult.
 4. **Can a family member come with me?** Yes, and we suggest it if you need help walking or are recovering from a stroke. For anyone under 18, a parent or guardian must come.
-Optional FAQ when consultation length exists: How long is the first consultation? / About <value>. The doctor needs time to ask questions, examine how you move and explain the plan.
+   Optional FAQ when consultation length exists: How long is the first consultation? / About <value>. The doctor needs time to ask questions, examine how you move and explain the plan.
 
 ### Booking
-H2: Book your visit, we *confirm* the rest.
+
+H2: Book your visit, we _confirm_ the rest.
 Choose a clinic visit or a video consult. The team confirms your time by phone or WhatsApp.
 Append the confirmation time only when verified.
 Steps: You send a request / Online, on WhatsApp or by phone.; We confirm a time / By phone or WhatsApp, for the clinic or a video consult.; You meet your doctor / With your checklist packed and loose clothes on.
@@ -618,11 +678,13 @@ schema: [ContactPage]
 Intro: Choose a clinic visit or a video consult. We confirm your time by phone or WhatsApp.
 
 ### Form (`#book`)
+
 Fields: Patient name · Mobile (+91) · Age + Years/Months · Format [Clinic visit | Video consult] · Reason (dropdown, site-plan section 6) · Preferred date (today to +60 days) · Time of day (Morning / Afternoon / Evening, from hours) · City (optional) · Under 18 → guardian name + guardian consent · Consent checkbox (global line) · [Request a time]
 Under the form: global line.
 Failure state: Something went wrong. Your details are still here. Call or WhatsApp +91 79048 42576 and we will book you straight away.
 
 ### Contact cards
+
 - Call or WhatsApp: +91 79048 42576
 - Email: [CONFIRM]
 - Address: [CONFIRM] · Get directions
@@ -642,29 +704,35 @@ schema: [FAQPage]
 ```
 
 ### About rehab
+
 1. **What is a physiatrist?** (Home Q1)
 2. **What is the difference between a physiatrist and a physiotherapist?** (Profile Q1)
 3. **What is physical medicine and rehabilitation?** It is the medical specialty that treats pain and helps people regain movement and independence after illness, injury or surgery. It covers the spine, joints, muscles, nerves and the brain, and works through exercise, therapy, medicines, aids and procedures.
 4. **How long does rehab take?** It depends on the problem. A sprain may need a few weeks; recovery after a stroke or spinal cord injury continues for months. Your goals and review dates are set at the first consultation so you can see progress.
 
 ### Booking and visits
+
 5. **Do I need a referral?** (Home Q2)
 6. **How do I book?** Online, by phone or on WhatsApp at +91 79048 42576.
 7. **What should I bring?** Scans, reports, discharge summary, medicines and any walking aids.
 
 ### Video consults
+
 8. **Can rehab start with a video consult?** (Home Q3)
 9. **Can I get a prescription by video?** (Video Q2)
 
 ### Treatment
+
 10. **Is every pain treated with an injection?** (Home Q4)
 11. **Will I need surgery?** Many spine and joint problems improve without surgery. If the doctor finds signs that surgery may help, such as severe nerve compression, he will explain why and refer you to a surgeon of your choice.
 12. **Do you offer physiotherapy?** [CONFIRM: in-house or partner therapists]
 
 ### Children
+
 13. **Can my child be seen?** Yes, with a parent or guardian present at every consultation.
 
 ### Privacy
+
 14. **How is my information used?** Only to arrange and give your care. See the Privacy Policy.
 
 ---
@@ -677,6 +745,7 @@ description: "Plain answers about pain, movement and recovery, written and medic
 url: /guides/
 h1: "Plain answers about pain, movement and *recovery*."
 ```
+
 Intro: Plain-language articles on pain, movement and recovery, written or reviewed by our doctors.
 Category chips: All · Pain and spine · Neuro rehab · Joints and sport · Children · Older adults · About rehab
 
@@ -684,13 +753,13 @@ Category chips: All · Pain and spine · Neuro rehab · Joints and sport · Chil
 
 ## Page 12 · Thank you (noindex)
 
-H1: Thank you, we have your *request*
+H1: Thank you, we have your _request_
 Text: We will call or WhatsApp you on the number you gave to confirm your time [CONFIRM: how fast]. If you chose a video consult, we will send the link and ask for your reports before the call.
 Emergency line (global). Buttons: [Back to home] [Read: what to bring]
 
 ## Page 13 · 404
 
-H1: We could not find that *page*
+H1: We could not find that _page_
 Text: The page may have moved when we rebuilt our website. Try one of these:
 Links: Back pain · Stroke rehab · Knee pain · Video consultation · Conditions A to Z · Book a consultation
 
@@ -708,14 +777,17 @@ h1: "Pain and *spine*"
 badge: pain-spine
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-related: [/neuro-rehabilitation/spinal-cord-injury/, /older-adults/osteoporosis/]
+related:
+  [/neuro-rehabilitation/spinal-cord-injury/, /older-adults/osteoporosis/]
 posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
+
 Back and neck pain are among the most common reasons people miss work and stop doing what they enjoy. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist with a fellowship in interventional pain management, finds the likely source of the pain and builds a plan that starts with movement and, when suitable, adds image-guided procedures.
 
 ### At a glance
+
 - **Who it is for:** adults with back pain, neck pain, sciatica or arm pain, new or long-standing
 - **First step:** a consultation with examination of movement, nerves and strength
 - **Main treatments:** exercise-based rehab, posture and work advice, medicines, image-guided injections or nerve blocks when suitable
@@ -723,15 +795,18 @@ Back and neck pain are among the most common reasons people miss work and stop d
 - **Aim:** less pain, more movement, and fewer flare-ups
 
 ### Care in this area (track cards)
+
 Back pain · Neck pain · Sciatica · Image-guided injections and nerve blocks
 
 ### What your care includes (step tracker, 4 steps)
+
 1. **Find the source.** History, examination and a careful look at your scans. Many scans show age-related changes that are not the cause of pain.
 2. **Calm the pain.** Medicines, activity changes and, when suitable, an image-guided injection.
 3. **Restore movement.** A graded exercise programme with a physiotherapist and at home.
 4. **Prevent the next flare.** Work set-up, lifting, sleep and fitness habits.
 
 ### FAQs
+
 1. **Do I need an MRI for back pain?** Most back pain does not need an MRI at first. Scans are useful when pain lasts beyond 4 to 6 weeks despite treatment, when there is weakness or numbness, or when warning signs are present. The doctor will tell you if you need one.
 2. **Is bed rest good for back pain?** Usually not. Short rest during a bad flare is fine, but staying active within comfort helps most people recover faster. The doctor will show you which movements are safe.
 3. **What does a pain physician do that other doctors do not?** A physiatrist trained in interventional pain management can target the exact source of pain with image-guided injections or nerve blocks, and combine this with rehab so the benefit lasts.
@@ -752,15 +827,22 @@ h1: "Low back *pain*"
 badge: back-pain
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Low back pain", alternateName: ["Lumbago", "Kamar dard"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Low back pain",
+    alternateName: ["Lumbago", "Kamar dard"],
+  }
 related: [/pain-and-spine/sciatica/, /pain-and-spine/image-guided-injections/]
 posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
+
 Low back pain is pain, stiffness or tightness between the bottom of the ribs and the top of the legs. Most people have it at some point, and most improve within weeks, but for some it keeps coming back or lasts for months. At Rehabify in Bengaluru, Dr. Dharshan N A examines how your back moves, looks for the likely source of the pain and builds a plan to reduce pain and get you moving again.
 
 ### At a glance
+
 - **What it is:** pain in the lower back, sometimes spreading to the buttock or thigh
 - **How common:** most adults have back pain at some point in life
 - **Common causes:** muscle and ligament strain, disc problems, facet joint arthritis, posture and work habits, low activity
@@ -769,6 +851,7 @@ Low back pain is pain, stiffness or tightness between the bottom of the ribs and
 - **Aim:** less pain, normal movement and fewer flare-ups
 
 ### Common causes
+
 - **Strain of muscles and ligaments,** often after lifting, twisting or a sudden movement
 - **Disc problems,** where a disc bulges and irritates nearby tissues or a nerve
 - **Facet joint pain,** from the small joints at the back of the spine, often worse on bending backwards
@@ -777,12 +860,14 @@ Low back pain is pain, stiffness or tightness between the bottom of the ribs and
 - **Less common causes** such as fracture from osteoporosis, infection or inflammatory back pain, which the doctor checks for
 
 ### Who should see a doctor
+
 - Back pain that lasts more than 2 to 3 weeks or keeps coming back
 - Pain that spreads below the knee, or tingling or numbness in the leg
 - Pain that wakes you at night or is worse in the morning with stiffness that lasts over 30 minutes
 - Back pain with osteoporosis, cancer history or steroid use
 
 ### What happens at Rehabify
+
 1. **History.** When it started, what makes it better or worse, your work, sleep and activity.
 2. **Examination.** How your spine bends and twists, nerve tests in the legs, strength, reflexes, hip and pelvis checks.
 3. **Scans if needed.** Your existing scans are reviewed. New scans are advised only if they will change your treatment.
@@ -792,18 +877,23 @@ Low back pain is pain, stiffness or tightness between the bottom of the ribs and
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring scans and reports, and a list of medicines
 - Wear loose clothes
 - Note what you can and cannot do because of the pain (sit, drive, lift, sleep)
 
 ### After your visit
+
 You leave with a written plan, home exercises and a review date. Most people are reviewed after 2 to 4 weeks [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Go to an emergency department or call 108 or 112 if back pain comes with numbness around the private parts or inner thighs, new difficulty passing urine or controlling your bowels, weakness in both legs, fever, or follows a fall or accident.
 
 ### FAQs
+
 1. **Should I rest or keep moving with back pain?** Keep moving within comfort. Walking and gentle activity help most people recover faster than bed rest. Avoid heavy lifting during a flare, and return to normal activities step by step. The doctor will show you which movements are safe for your back.
 2. **Do I need an MRI?** Not usually at first. An MRI helps when pain lasts beyond 4 to 6 weeks despite treatment, when there is leg weakness or numbness, or if warning signs are present. Many MRI findings, such as disc bulges, are common in people without pain, so the doctor reads them together with your examination.
 3. **Is a slipped disc the same as back pain?** No. A "slipped" or bulging disc is one possible cause of back pain, and it often heals without surgery. Many people have disc bulges on scans without any pain. The doctor checks whether the disc is really the source of your symptoms.
@@ -812,6 +902,7 @@ Callout:
 6. **Can I go to work with back pain?** Many people can, with changes such as shorter sitting periods and lighter tasks for a while. Staying at work often helps recovery. The doctor can advise on what is safe for your job.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) guideline NG59, Low back pain and sciatica in over 16s
 - American College of Physicians guideline on non-invasive treatment of low back pain
 - WHO guideline on management of chronic primary low back pain in adults, 2023
@@ -828,15 +919,22 @@ h1: "Neck *pain*"
 badge: neck-pain
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Neck pain", alternateName: ["Cervical pain", "Cervical spondylosis", "Gardan dard"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Neck pain",
+    alternateName: ["Cervical pain", "Cervical spondylosis", "Gardan dard"],
+  }
 related: [/pain-and-spine/back-pain/, /pain-and-spine/image-guided-injections/]
 posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
+
 Neck pain is pain or stiffness in the neck, sometimes spreading to the shoulders, upper back, head or arm. It is very common in people who work long hours at a desk or on a phone, and most cases settle with the right exercise and habits. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist (MD PMR) with a fellowship in interventional pain management, finds the likely source of your neck pain and plans care to ease it and keep it from coming back.
 
 ### At a glance
+
 - **What it is:** pain or stiffness in the neck, at times with headache or arm pain
 - **How common:** one of the most common pain problems in adults
 - **Common causes:** posture and screen habits, muscle strain, age-related wear (cervical spondylosis), disc problems, a pinched nerve
@@ -845,6 +943,7 @@ Neck pain is pain or stiffness in the neck, sometimes spreading to the shoulders
 - **Aim:** less pain, easier movement and fewer flare-ups
 
 ### Common causes
+
 - **Posture and screen habits,** such as long hours looking down at a laptop or phone
 - **Muscle strain,** after sleeping awkwardly, a sudden movement or carrying heavy bags
 - **Cervical spondylosis,** age-related wear of the discs and joints in the neck, which is common and often causes no pain at all
@@ -854,6 +953,7 @@ Neck pain is pain or stiffness in the neck, sometimes spreading to the shoulders
 - **Less common causes** such as inflammatory arthritis, infection or pressure on the spinal cord, which the doctor checks for
 
 ### Who should see a doctor
+
 - Neck pain that lasts more than 2 to 3 weeks or keeps coming back
 - Pain, tingling or numbness spreading into the arm or hand
 - Weakness in the arm or hand, or dropping things
@@ -861,6 +961,7 @@ Neck pain is pain or stiffness in the neck, sometimes spreading to the shoulders
 - Neck pain after a fall or road accident
 
 ### What happens at Rehabify
+
 1. **History.** When the pain started, your work and screen use, sleep, and what makes it better or worse.
 2. **Examination.** Neck movement, posture, shoulder checks, nerve tests in the arms, strength and reflexes.
 3. **Scans if needed.** Your existing scans are reviewed. New scans are advised only if they will change your treatment.
@@ -870,18 +971,23 @@ Neck pain is pain or stiffness in the neck, sometimes spreading to the shoulders
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring scans, reports and a list of medicines
 - Wear a top that lets the doctor see your neck and shoulders
 - Note how many hours you spend at a desk or on a phone, and your pillow and sleep position
 
 ### After your visit
+
 You leave with a written plan, home exercises, simple desk and sleep changes, and a review date. Most people are reviewed after 2 to 4 weeks [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Go to an emergency department or call 108 or 112 if neck pain follows a fall or road accident, or comes with weakness or numbness in both arms or legs, trouble walking or with balance, loss of bladder or bowel control, fever with a stiff neck, or a sudden severe headache.
 
 ### FAQs
+
 1. **Is cervical spondylosis serious?** Usually not. Cervical spondylosis means age-related wear in the neck, and most adults over 40 show it on X-rays, often without any pain. It becomes a concern only when it presses on a nerve or the spinal cord. The doctor checks for this during the examination and explains what your scan really means.
 2. **Should I wear a neck collar?** Mostly no. A soft collar may help for a few days after an injury, but wearing it for long weakens the neck muscles and slows recovery. Gentle movement and exercise usually help more. The doctor will tell you if a collar is needed in your case.
 3. **Which pillow is best for neck pain?** There is no single right pillow. Choose one that keeps your neck level with your body, neither bent up nor dropping down. Sleeping on your back or side usually suits the neck better than lying on your stomach. The doctor can give advice based on your posture.
@@ -890,6 +996,7 @@ Callout:
 6. **When is an injection used for neck pain?** When pain clearly comes from a specific joint or nerve and has not settled with exercise and medicines. The injection is guided by imaging so it reaches the right place. It is used to calm pain so rehab can work, not as the only treatment.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) Clinical Knowledge Summary, Neck pain
 - American Physical Therapy Association (APTA) clinical practice guideline, Neck pain, 2017
 - North American Spine Society (NASS) guideline on cervical radiculopathy from degenerative disorders
@@ -906,15 +1013,22 @@ h1: "Sciatica and *leg pain*"
 badge: sciatica
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Sciatica", alternateName: ["Lumbar radiculopathy", "Leg pain from the back"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Sciatica",
+    alternateName: ["Lumbar radiculopathy", "Leg pain from the back"],
+  }
 related: [/pain-and-spine/back-pain/, /pain-and-spine/image-guided-injections/]
 posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
+
 Sciatica is pain that travels from the lower back or buttock down the leg, often below the knee, because a nerve root in the lower back is irritated or pressed. Many people improve within 6 to 12 weeks without surgery. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist (MD PMR) with a fellowship in interventional pain management, checks which nerve is involved and plans care to ease the pain and get you moving.
 
 ### At a glance
+
 - **What it is:** nerve pain from the back running down one leg, sometimes with tingling, numbness or weakness
 - **How common:** common in adults between 30 and 60
 - **Common causes:** a bulging or herniated disc, narrowing of the spinal canal (spinal stenosis), a slipped vertebra
@@ -923,6 +1037,7 @@ Sciatica is pain that travels from the lower back or buttock down the leg, often
 - **Aim:** less leg pain, safe walking and sitting, and return to work and daily life
 
 ### Common causes
+
 - **Disc herniation,** where the soft centre of a disc pushes out and irritates a nerve root. This is the most common cause
 - **Lumbar spinal stenosis,** narrowing of the spinal canal with age, which often causes leg pain on walking that eases on sitting or bending forward
 - **Spondylolisthesis,** where one vertebra slips forward on the one below
@@ -930,6 +1045,7 @@ Sciatica is pain that travels from the lower back or buttock down the leg, often
 - **Less common causes** such as infection or a growth, which the doctor checks for
 
 ### Who should see a doctor
+
 - Leg pain that is severe, or lasts more than 2 weeks
 - Tingling or numbness in the leg or foot
 - Weakness, such as a foot that slaps or trips, or trouble standing on the toes or heels
@@ -937,6 +1053,7 @@ Sciatica is pain that travels from the lower back or buttock down the leg, often
 - Sciatica that keeps coming back
 
 ### What happens at Rehabify
+
 1. **History.** Where the pain travels, how long it has been there, and what you can and cannot do.
 2. **Examination.** Nerve stretch tests, sensation, strength in each muscle group, and reflexes, to find the nerve root involved.
 3. **Scans if needed.** An MRI is advised when pain does not settle, when there is weakness, or when an injection or surgery is being considered.
@@ -946,18 +1063,23 @@ Sciatica is pain that travels from the lower back or buttock down the leg, often
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring any MRI or X-ray films and reports, and a list of medicines
 - Note how far you can walk and how long you can sit before the pain starts
 - Wear loose clothes so your legs can be examined
 
 ### After your visit
+
 You leave with a written plan, home exercises and a review date. If weakness is present, the doctor will check you again sooner. Most people are reviewed after 2 to 4 weeks [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Go to an emergency department or call 108 or 112 if sciatica comes with numbness around the private parts or inner thighs, new difficulty passing urine or controlling your bowels, weakness in both legs, or weakness that is getting worse quickly. These can be signs of cauda equina syndrome, which needs urgent treatment.
 
 ### FAQs
+
 1. **Does sciatica go away on its own?** Often, yes. Many people with sciatica from a disc improve within 6 to 12 weeks, as the disc shrinks back and the nerve settles. Staying active within comfort and the right exercises help. If pain is severe, lasts longer, or comes with weakness, see a doctor.
 2. **Do I need surgery for a slipped disc with sciatica?** Most people do not. Surgery is considered when there is severe or worsening weakness, warning signs such as bladder problems, or pain that stays severe despite good non-surgical care. If surgery may help, the doctor will explain why and refer you to a spine surgeon.
 3. **What is a nerve root injection?** It is an injection of a steroid and a local anaesthetic close to the irritated nerve root, guided by imaging so it reaches the right place. It can calm leg pain for a period so that you can move and do rehab. Relief varies from person to person, and it is offered only when suitable.
@@ -965,6 +1087,7 @@ Callout:
 5. **Why does my leg hurt when the problem is in my back?** The nerves to your legs leave the spine in the lower back. When a nerve root is pressed or inflamed there, you feel the pain along the path of that nerve, in the buttock, thigh, calf or foot, even though the cause is in the back.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) guideline NG59, Low back pain and sciatica in over 16s
 - North American Spine Society (NASS) guideline on lumbar disc herniation with radiculopathy
 - American College of Physicians guideline on non-invasive treatment of low back pain
@@ -981,15 +1104,23 @@ h1: "Image-guided injections and *nerve blocks*"
 badge: injection
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalProcedure, name: "Image-guided pain injections and nerve blocks", alternateName: ["Nerve block", "Facet joint injection", "Epidural steroid injection"] }
+about:
+  {
+    type: MedicalProcedure,
+    name: "Image-guided pain injections and nerve blocks",
+    alternateName:
+      ["Nerve block", "Facet joint injection", "Epidural steroid injection"],
+  }
 related: [/pain-and-spine/back-pain/, /pain-and-spine/sciatica/]
 posts: [/guides/low-back-pain-when-to-worry/]
 ```
 
 ### Intro (answer-first)
+
 Image-guided injections and nerve blocks place medicine close to the source of pain, using ultrasound or X-ray to guide the needle [CONFIRM: imaging used, ultrasound and/or fluoroscopy]. They are used to calm pain from a specific joint or nerve so that rehab can work. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist (MD PMR) with a fellowship in interventional pain management, offers these procedures only when examination and scans show they are suitable.
 
 ### At a glance
+
 - **What it is:** a targeted injection of a local anaesthetic, often with a steroid, near a painful joint or nerve
 - **Who it may suit:** people whose pain clearly comes from a specific joint or nerve and has not settled with exercise and medicines
 - **Common types:** facet joint injections and medial branch blocks, nerve root (epidural) injections, sacroiliac joint injections, peripheral nerve blocks, joint injections [CONFIRM: list of procedures offered]
@@ -998,9 +1129,11 @@ Image-guided injections and nerve blocks place medicine close to the source of p
 - **Part of a plan:** always combined with exercise and rehab, never the only treatment
 
 ### What it is
+
 A nerve block is an injection that numbs a nerve for a while. It can ease pain, and it can also help the doctor confirm where the pain comes from. Imaging lets the doctor see the needle and the target, so the medicine goes to the right place and nearby structures are avoided.
 
 Common procedures include:
+
 - **Facet joint injection or medial branch block,** for pain from the small joints at the back of the spine
 - **Transforaminal or epidural steroid injection,** for leg or arm pain from an irritated nerve root
 - **Sacroiliac joint injection,** for pain low in the back near the pelvis
@@ -1008,6 +1141,7 @@ Common procedures include:
 - **Radiofrequency ablation,** which uses heat to quiet a small pain nerve for longer, when a test block has helped [CONFIRM: offered or not]
 
 ### Who should see a doctor about it
+
 - Back, neck, leg or arm pain that has lasted more than 6 weeks despite exercise and medicines
 - Pain that limits sleep, work or rehab
 - People who want to avoid or delay surgery and want to know all options
@@ -1016,6 +1150,7 @@ Common procedures include:
 An injection is not suitable for everyone. The doctor will tell you if it is right for you, and explain other options.
 
 ### What happens at Rehabify
+
 1. **Consultation first.** History, examination and review of scans to find the likely source of pain. A procedure is not done at the first visit unless planned in advance [CONFIRM].
 2. **Discussion and consent.** The doctor explains the procedure, what it may and may not do, the risks and other options. You sign a consent form.
 3. **The procedure.** You lie in a comfortable position. The skin is cleaned and numbed. The needle is guided with imaging and the medicine is injected. Most procedures take 15 to 30 minutes [CONFIRM].
@@ -1025,6 +1160,7 @@ An injection is not suitable for everyone. The doctor will tell you if it is rig
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Tell the doctor if you take blood thinners (such as aspirin, clopidogrel or warfarin), have diabetes, an allergy, an infection or may be pregnant
 - Do not stop any medicine on your own; the doctor will advise
 - Eat a light meal unless told otherwise [CONFIRM: fasting rules]
@@ -1032,13 +1168,17 @@ The doctor decides the right tests and treatment for you after examining you.
 - Bring your scans and reports
 
 ### After your visit
+
 Some numbness or heaviness may last a few hours. Steroid medicine, when used, usually starts to work in 2 to 7 days. Rest for the day, then return to light activity. Keep a simple pain diary for 2 weeks. A review is planned to check the effect and progress your rehab [CONFIRM: review timing]. You can send questions on WhatsApp.
 
 ### When to get help urgently
+
 Callout:
+
 > Go to an emergency department or call 108 or 112 if after a procedure you have fever, increasing pain or swelling at the injection site, new weakness or numbness that does not wear off after a few hours, a severe headache, difficulty breathing, or loss of bladder or bowel control.
 
 ### FAQs
+
 1. **Does a nerve block hurt?** The skin is numbed first, so most people feel pressure and brief discomfort rather than sharp pain. Some feel a short flare of their usual pain as the medicine goes in. The doctor explains each step as it happens.
 2. **How long does the relief last?** It varies. Some people get a few weeks of relief, others several months, and some do not benefit. The aim is to calm pain enough for rehab to work. Results cannot be promised, and the doctor will discuss what is realistic for you.
 3. **Are steroid injections safe?** They are generally safe when done with imaging guidance by a trained doctor and with limits on how often they are repeated. Possible side effects include a short rise in blood sugar, facial flushing, infection, bleeding and, rarely, nerve injury. The doctor explains the risks before you consent.
@@ -1047,6 +1187,7 @@ Callout:
 6. **Can I go back to work after the procedure?** Most people rest for the rest of the day and return to desk work the next day. Heavier work may need a few more days. The doctor will advise based on your job and the procedure.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) guideline NG59, Low back pain and sciatica in over 16s (radiofrequency denervation and epidural injections)
 - American Society of Regional Anesthesia and Pain Medicine (ASRA) guidance on interventional spine and pain procedures in patients on blood thinners
 - Faculty of Pain Medicine of the Royal College of Anaesthetists, information for patients on pain procedures
@@ -1065,14 +1206,17 @@ h1: "Neuro *rehabilitation*"
 badge: neuro
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-related: [/childrens-rehabilitation/cerebral-palsy/, /older-adults/falls-and-balance/]
+related:
+  [/childrens-rehabilitation/cerebral-palsy/, /older-adults/falls-and-balance/]
 posts: [/guides/first-90-days-after-stroke/]
 ```
 
 ### Intro (answer-first)
+
 Neuro rehabilitation helps people regain movement, independence and confidence after an illness or injury of the brain, spinal cord or nerves. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist (MD PMR), assesses what has changed, sets clear goals with you and your family, and leads a plan that brings together exercise, therapy, medicines and equipment.
 
 ### At a glance
+
 - **Who it is for:** adults after stroke, spinal cord injury or head injury, and people living with Parkinson's disease or spasticity
 - **First step:** a consultation with a full check of movement, strength, balance, speech, swallowing and daily tasks
 - **Main treatments:** goal-based therapy plans, spasticity care, medicines, splints and mobility aids, home programmes, family training
@@ -1080,15 +1224,18 @@ Neuro rehabilitation helps people regain movement, independence and confidence a
 - **Aim:** more independence in daily life, safer movement and fewer complications
 
 ### Care in this area (track cards)
+
 Stroke · Spinal cord injury · Head injury · Parkinson's disease · Spasticity
 
 ### What your care includes (step tracker, 4 steps)
+
 1. **Assess.** What you can do now, what has changed, and what matters most to you and your family.
 2. **Set goals.** Clear, practical goals, such as walking to the bathroom, eating on your own or returning to work.
 3. **Rehab together.** One plan shared by the doctor, physiotherapists and other therapists, with exercise, medicines, splints and aids.
 4. **Live well at home.** Home programme, family training, home safety and regular reviews as needs change.
 
 ### FAQs
+
 1. **What is a physiatrist?** A physiatrist is a doctor who specialises in physical medicine and rehabilitation (PMR). They look at how an illness or injury affects movement and daily life, and lead the rehab plan with therapists. They also treat pain, spasticity and other problems that slow recovery.
 2. **Is it too late to start rehab months after a stroke or injury?** It is rarely too late. Most recovery happens in the first months, but many people keep making gains for a long time with the right practice. Rehab can also help prevent stiffness, pain and falls, whenever it starts.
 3. **Can family members take part?** Yes, and it helps. Family members learn how to assist safely, how to do home exercises, and what warning signs to watch for. We encourage a family member to come to the first visit.
@@ -1109,15 +1256,22 @@ h1: "Stroke *rehabilitation*"
 badge: stroke
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Stroke", alternateName: ["Paralysis", "Hemiplegia", "Brain attack", "Lakwa"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Stroke",
+    alternateName: ["Paralysis", "Hemiplegia", "Brain attack", "Lakwa"],
+  }
 related: [/neuro-rehabilitation/spasticity/, /older-adults/falls-and-balance/]
 posts: [/guides/first-90-days-after-stroke/]
 ```
 
 ### Intro (answer-first)
+
 Stroke rehabilitation helps people relearn movement and daily skills after a stroke, and lowers the risk of problems such as stiffness, shoulder pain and falls. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist (MD PMR), assesses what the stroke has changed, sets goals with the person and family, and leads a plan with therapists that continues at home.
 
 ### At a glance
+
 - **What it is:** a stroke happens when blood supply to part of the brain is blocked or a blood vessel bleeds
 - **Common effects:** weakness on one side (hemiplegia), poor balance, speech or swallowing problems, memory and mood changes
 - **Best time to start:** as soon as the doctors treating the stroke say it is safe, and it keeps helping for months
@@ -1126,6 +1280,7 @@ Stroke rehabilitation helps people relearn movement and daily skills after a str
 - **Aim:** more independence in walking, self-care and daily life
 
 ### What stroke can change
+
 - **Movement,** weakness or clumsiness of the arm, leg or face on one side
 - **Spasticity,** muscles that stay tight and stiff, making movement harder
 - **Balance and walking,** with a higher risk of falls
@@ -1134,12 +1289,14 @@ Stroke rehabilitation helps people relearn movement and daily skills after a str
 - **Thinking and mood,** memory, attention, tiredness and low mood
 
 ### Who should see a rehab doctor
+
 - Anyone recovering from a recent stroke, once medically stable
 - People months or years after a stroke who want to improve walking, arm use or independence
 - Stroke survivors with tight muscles, painful shoulder, falls or swelling of the hand or foot
 - Families who need guidance on care, equipment and home safety
 
 ### What happens at Rehabify
+
 1. **History.** Type and date of the stroke, hospital treatment, other health problems, and life before the stroke.
 2. **Examination.** Strength, muscle tone, sensation, balance, walking, arm and hand use, speech and swallowing screening, and daily tasks.
 3. **Goals.** What matters most to you, such as walking at home, dressing or returning to work.
@@ -1149,19 +1306,24 @@ Stroke rehabilitation helps people relearn movement and daily skills after a str
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring discharge summaries, scan reports and a list of medicines
 - Bring a family member or carer
 - Bring any splints, walking aids or wheelchair you use
 - Note the main tasks you want to manage better
 
 ### After your visit
+
 You and your family leave with a written plan, home exercises, safety advice and a review date. Reviews are usually more frequent in the early months [CONFIRM: typical review interval]. Video follow-ups can help track progress at home. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > A new stroke is an emergency. Call 108 or 112 at once if you notice BE FAST signs: loss of **B**alance, **E**yesight change, **F**ace drooping, **A**rm weakness, **S**peech difficulty. **T**ime to call. Also seek urgent care for a sudden severe headache, a fit, chest pain or a sudden drop in alertness.
 
 ### FAQs
+
 1. **How long does recovery after a stroke take?** It differs for each person. The fastest gains usually come in the first 3 to 6 months, but many people keep improving for much longer with regular practice. Recovery depends on the size and site of the stroke, general health and how much rehab is done.
 2. **When should stroke rehab start?** As soon as the treating doctors say it is safe, often within days in hospital. Rehab started early helps prevent stiffness and complications. If rehab stopped after discharge, it is worth starting again at any stage.
 3. **Why does the shoulder hurt after a stroke?** The weak arm can pull on the shoulder joint, and tight muscles add to the strain. Shoulder pain is common after a stroke. Correct positioning, support for the arm, exercise and, when suitable, injections or nerve blocks can help.
@@ -1170,6 +1332,7 @@ Callout:
 6. **Can another stroke be prevented?** The risk can be lowered. Take medicines as prescribed, control blood pressure, sugar and cholesterol, stop smoking and stay active. Your neurologist or family doctor manages these, and rehab helps you stay active safely.
 
 ### Sources
+
 - American Heart Association / American Stroke Association (AHA/ASA) guidelines for adult stroke rehabilitation and recovery
 - National Institute for Health and Care Excellence (NICE) guideline NG236, Stroke rehabilitation in adults, 2023
 - World Health Organization (WHO), Rehabilitation 2030 and package of interventions for rehabilitation, stroke module
@@ -1186,15 +1349,22 @@ h1: "Spinal cord injury *rehabilitation*"
 badge: spinal-cord
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Spinal cord injury", alternateName: ["Paraplegia", "Quadriplegia", "Tetraplegia", "SCI"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Spinal cord injury",
+    alternateName: ["Paraplegia", "Quadriplegia", "Tetraplegia", "SCI"],
+  }
 related: [/neuro-rehabilitation/spasticity/, /pain-and-spine/]
 posts: []
 ```
 
 ### Intro (answer-first)
+
 Spinal cord injury rehabilitation helps people build strength, independence and healthy routines after damage to the spinal cord, from an accident, fall, infection, tumour or other illness. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist (MD PMR), assesses the level of injury, sets goals with you and your family, and plans long-term care for movement, bladder, bowel, skin and spasticity.
 
 ### At a glance
+
 - **What it is:** damage to the spinal cord that affects movement, sensation and body functions below the level of injury
 - **Types:** paraplegia (legs and lower body) or tetraplegia, also called quadriplegia (arms and legs); complete or incomplete
 - **First step:** consultation with a full neurological and functional assessment
@@ -1203,6 +1373,7 @@ Spinal cord injury rehabilitation helps people build strength, independence and 
 - **Aim:** the most independence possible and fewer complications
 
 ### What spinal cord injury can change
+
 - **Movement and sensation** below the level of injury
 - **Bladder and bowel control,** needing a regular routine
 - **Skin,** with a risk of pressure sores on areas you cannot feel
@@ -1212,12 +1383,14 @@ Spinal cord injury rehabilitation helps people build strength, independence and 
 - **Mood, sexual health and return to work or study**
 
 ### Who should see a rehab doctor
+
 - Anyone with a new spinal cord injury, once medically stable
 - People living with a long-standing injury who want to improve independence
 - People with pressure sores, repeated urine infections, spasticity or pain
 - Families who need training and advice on equipment and home changes
 
 ### What happens at Rehabify
+
 1. **History.** How and when the injury happened, surgery, current routines and goals.
 2. **Examination.** Strength and sensation by level (the ISNCSCI standard), muscle tone, skin check, sitting balance, transfers and wheelchair use.
 3. **Goals.** Practical aims such as transferring on your own, managing your bladder, or returning to work.
@@ -1227,19 +1400,24 @@ Spinal cord injury rehabilitation helps people build strength, independence and 
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring discharge summaries, MRI reports and a list of medicines
 - Bring your wheelchair, cushion, braces or catheter supplies if you use them
 - Note your bladder and bowel routine and any skin problems
 - Bring a family member or carer
 
 ### After your visit
+
 You leave with a written plan covering exercise, bladder, bowel and skin care, equipment advice and a review date. Long-term reviews help catch problems early [CONFIRM: typical review interval]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Call 108 or 112 or go to an emergency department for a sudden pounding headache with flushing or sweating above the injury and high blood pressure (autonomic dysreflexia), fever with chills, breathing trouble, chest pain, a swollen painful leg, or new loss of strength or sensation. For autonomic dysreflexia, sit upright, loosen tight clothing and check the catheter while help comes.
 
 ### FAQs
+
 1. **Can a person walk again after a spinal cord injury?** It depends on the level of injury and whether it is complete or incomplete. Some people with incomplete injuries regain walking, with or without aids. Others reach full independence using a wheelchair. The doctor will discuss realistic goals after examining you.
 2. **How can pressure sores be prevented?** Change position often, at least every 2 hours in bed and by shifting weight every 15 to 30 minutes in a wheelchair. Use the right cushion and mattress, keep skin clean and dry, eat well and check your skin daily with a mirror or a family member's help.
 3. **What is autonomic dysreflexia?** It is a sudden, dangerous rise in blood pressure that can happen in injuries at or above the mid-chest level. It is often triggered by a full bladder, constipation or a skin problem. Signs include a pounding headache and sweating. It needs urgent action.
@@ -1247,6 +1425,7 @@ Callout:
 5. **Can I return to work or study?** Many people do, with changes to the workplace, transport and routine. Rehab works on the skills, equipment and stamina needed. The doctor can also advise on disability certificates and support where relevant.
 
 ### Sources
+
 - Consortium for Spinal Cord Medicine, clinical practice guidelines (Paralyzed Veterans of America)
 - American Spinal Injury Association (ASIA), International Standards for Neurological Classification of Spinal Cord Injury (ISNCSCI)
 - World Health Organization (WHO) and ISCoS, International Perspectives on Spinal Cord Injury
@@ -1263,15 +1442,22 @@ h1: "Head injury *rehabilitation*"
 badge: head-injury
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Traumatic brain injury", alternateName: ["Head injury", "Brain injury", "TBI", "Concussion"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Traumatic brain injury",
+    alternateName: ["Head injury", "Brain injury", "TBI", "Concussion"],
+  }
 related: [/neuro-rehabilitation/stroke/, /neuro-rehabilitation/spasticity/]
 posts: []
 ```
 
 ### Intro (answer-first)
+
 Head injury rehabilitation helps people recover movement, thinking, communication and daily skills after an injury to the brain, often from a road accident or fall. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist (MD PMR), assesses how the injury has affected the person, sets goals with the family and leads a plan with therapists from the early stage through return to home, study or work.
 
 ### At a glance
+
 - **What it is:** damage to the brain from a blow, jolt or penetrating injury to the head (traumatic brain injury)
 - **Severity:** mild (including concussion), moderate or severe
 - **Common effects:** weakness, poor balance, headaches, tiredness, memory and attention problems, mood and behaviour changes
@@ -1280,6 +1466,7 @@ Head injury rehabilitation helps people recover movement, thinking, communicatio
 - **Aim:** the most independence possible in daily life
 
 ### What a head injury can change
+
 - **Movement and balance,** weakness, stiffness or poor coordination
 - **Thinking,** memory, attention, planning and slower processing
 - **Communication and swallowing**
@@ -1288,12 +1475,14 @@ Head injury rehabilitation helps people recover movement, thinking, communicatio
 - **Spasticity and joint stiffness** after moderate or severe injury
 
 ### Who should see a rehab doctor
+
 - People recovering from a moderate or severe head injury, once medically stable
 - People with headaches, dizziness, poor concentration or tiredness weeks after a mild injury or concussion
 - Families caring for someone with changes in behaviour or daily function
 - Students or workers planning a return after a head injury
 
 ### What happens at Rehabify
+
 1. **History.** How the injury happened, hospital care, scans, and changes the family has noticed.
 2. **Examination.** Strength, tone, balance, walking, arm use, screening of memory and attention, and daily tasks.
 3. **Goals.** Agreed with the person and family, such as self-care, safe walking or a graded return to work.
@@ -1303,18 +1492,23 @@ Head injury rehabilitation helps people recover movement, thinking, communicatio
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring discharge summaries, CT or MRI reports and a list of medicines
 - Bring a family member who knows how the person was before and after the injury
 - Note changes in sleep, mood, memory or behaviour
 
 ### After your visit
+
 You and your family leave with a written plan, home activities, safety advice and a review date [CONFIRM: typical review interval]. Video follow-ups can help check progress at home. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Call 108 or 112 or go to an emergency department if after a head injury there is a worsening headache, repeated vomiting, a fit, increasing drowsiness or confusion, slurred speech, new weakness, fluid from the nose or ears, or unequal pupils.
 
 ### FAQs
+
 1. **How long does recovery from a head injury take?** It varies widely. Most people with a mild injury or concussion recover within weeks. Recovery from a moderate or severe injury can continue for months or years. Regular rehab, rest, sleep and a gradual return to activity support recovery.
 2. **Why does my family member seem like a different person?** Injury to parts of the brain that control emotions and behaviour can cause irritability, low mood, impulsiveness or loss of interest. These changes are common and often improve with time, structure and support. The team can guide the family and arrange psychology support.
 3. **When can I return to work or study after a concussion?** Usually step by step, starting with short hours and light tasks once symptoms allow. Most people return within a few weeks. If symptoms such as headache or poor focus last longer, a rehab plan can help.
@@ -1322,6 +1516,7 @@ Callout:
 5. **Can rehab help years after a brain injury?** Often yes. Rehab can still improve walking, stiffness, pain, daily routines and confidence long after the injury. Goals are set around what matters most now.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) guideline NG232, Head injury: assessment and early management, 2023
 - Scottish Intercollegiate Guidelines Network (SIGN) guideline 130, Brain injury rehabilitation in adults
 - World Health Organization (WHO), Package of interventions for rehabilitation, traumatic brain injury module
@@ -1338,15 +1533,22 @@ h1: "Parkinson's disease *rehabilitation*"
 badge: parkinsons
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Parkinson's disease", alternateName: ["Parkinsonism", "PD"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Parkinson's disease",
+    alternateName: ["Parkinsonism", "PD"],
+  }
 related: [/older-adults/falls-and-balance/, /neuro-rehabilitation/]
 posts: []
 ```
 
 ### Intro (answer-first)
+
 Parkinson's disease rehabilitation uses regular, targeted exercise and practical strategies to help people with Parkinson's move better, stay steady and keep doing daily tasks for longer. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist (MD PMR), assesses walking, balance and daily function, and builds a plan that works alongside the medicines prescribed by your neurologist.
 
 ### At a glance
+
 - **What it is:** a slowly progressing condition of the brain that affects movement, causing slowness, stiffness, tremor and balance problems
 - **Who it is for:** people at any stage of Parkinson's disease, and their families
 - **First step:** consultation with assessment of walking, balance, posture and daily tasks
@@ -1355,6 +1557,7 @@ Parkinson's disease rehabilitation uses regular, targeted exercise and practical
 - **Aim:** better movement, fewer falls and more independence
 
 ### What Parkinson's can change
+
 - **Slowness of movement** (bradykinesia) and smaller steps
 - **Stiffness** (rigidity) of muscles
 - **Tremor,** often at rest
@@ -1364,6 +1567,7 @@ Parkinson's disease rehabilitation uses regular, targeted exercise and practical
 - **Non-movement symptoms** such as poor sleep, constipation, low mood and tiredness
 
 ### Who should see a rehab doctor
+
 - Anyone newly diagnosed, to start an exercise plan early
 - People with falls, near falls or freezing
 - People finding it harder to dress, get out of a chair or turn in bed
@@ -1371,6 +1575,7 @@ Parkinson's disease rehabilitation uses regular, targeted exercise and practical
 - Families wanting advice on home safety and support
 
 ### What happens at Rehabify
+
 1. **History.** Symptoms, medicines and timing, falls, and daily routines.
 2. **Examination.** Walking, turning, balance tests, posture, strength, flexibility and how you get up from a chair.
 3. **Goals.** Such as walking outdoors safely, getting up without help or reducing falls.
@@ -1380,19 +1585,24 @@ Parkinson's disease rehabilitation uses regular, targeted exercise and practical
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring your list of medicines with timings, and your neurologist's notes
 - Plan the visit when your medicines are working well, unless asked otherwise
 - Bring a family member and any walking aid you use
 - Note when falls or freezing happen
 
 ### After your visit
+
 You leave with a written exercise plan, safety advice and a review date [CONFIRM: typical review interval]. Video follow-ups help keep your exercise programme up to date as needs change. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Call 108 or 112 or go to an emergency department after a fall with a head injury, severe pain or inability to get up, or for sudden confusion, choking, high fever with stiffness, or a sudden severe worsening of movement.
 
 ### FAQs
+
 1. **Does exercise help Parkinson's disease?** Yes. Regular exercise improves walking, balance, strength and flexibility, and helps people stay independent for longer. It works alongside medicines, not instead of them. The best programme is one you can do regularly and enjoy.
 2. **What can I do when my feet freeze?** Cueing strategies often help, such as stepping over a line on the floor, counting or walking to a beat, or shifting your weight before stepping. The team will teach strategies that work for you and practise them in real situations.
 3. **How can falls be prevented with Parkinson's?** Exercise for balance and strength, take medicines on time, turn slowly in wide arcs, use good lighting and remove loose rugs. Grab bars in the bathroom and the right walking aid also help. The team will check your home risks with you.
@@ -1400,6 +1610,7 @@ Callout:
 5. **Does Rehabify change my Parkinson's medicines?** Your neurologist manages Parkinson's medicines. The rehab doctor may share observations, such as when symptoms worsen during the day, with your consent, to help your neurologist plan treatment.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) guideline NG71, Parkinson's disease in adults
 - European Physiotherapy Guideline for Parkinson's Disease (KNGF and ParkinsonNet)
 - World Health Organization (WHO), Parkinson disease: a public health approach, technical brief, 2022
@@ -1416,15 +1627,24 @@ h1: "Spasticity *care*"
 badge: spasticity
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Spasticity", alternateName: ["Muscle stiffness", "Muscle tightness after stroke", "Increased tone"] }
-related: [/neuro-rehabilitation/stroke/, /childrens-rehabilitation/cerebral-palsy/]
+about:
+  {
+    type: MedicalCondition,
+    name: "Spasticity",
+    alternateName:
+      ["Muscle stiffness", "Muscle tightness after stroke", "Increased tone"],
+  }
+related:
+  [/neuro-rehabilitation/stroke/, /childrens-rehabilitation/cerebral-palsy/]
 posts: [/guides/first-90-days-after-stroke/]
 ```
 
 ### Intro (answer-first)
+
 Spasticity means muscles that stay tight and stiff after an injury or illness of the brain or spinal cord, such as stroke, spinal cord injury, head injury, multiple sclerosis or cerebral palsy. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist (MD PMR), assesses which muscles are affected and how the stiffness limits daily life, then plans treatment that may include stretching, splints, medicines and targeted injections when suitable.
 
 ### At a glance
+
 - **What it is:** muscles that stay tight, resist stretching and sometimes jerk or spasm
 - **Common causes:** stroke, spinal cord injury, head injury, multiple sclerosis, cerebral palsy
 - **Effects:** stiffness, pain, a bent elbow, clenched hand or pointed foot, difficulty walking, dressing or hygiene
@@ -1433,9 +1653,11 @@ Spasticity means muscles that stay tight and stiff after an injury or illness of
 - **Aim:** easier movement and care, less pain and fewer fixed joint contractures
 
 ### What it is
+
 After damage to the brain or spinal cord, the signals that normally keep muscles relaxed are disrupted, so some muscles stay overactive. Spasticity is not always harmful. Some stiffness can help a weak leg bear weight. Treatment aims at the stiffness that causes pain or gets in the way of function or care. Without treatment, muscles and joints can shorten and become fixed (contractures).
 
 ### Who should see a doctor
+
 - Stiffness that makes walking, dressing, washing or sleeping harder
 - A hand that stays clenched, an elbow that stays bent or a foot that points down or turns in
 - Painful spasms or stiffness
@@ -1443,6 +1665,7 @@ After damage to the brain or spinal cord, the signals that normally keep muscles
 - Children with cerebral palsy whose stiffness affects movement or care
 
 ### What happens at Rehabify
+
 1. **History.** The cause of spasticity, what it affects in daily life, and current medicines and therapy.
 2. **Examination.** Muscle tone scales, range of movement, walking and arm use, and checks for pain, skin and contractures.
 3. **Goals.** Such as easier hand hygiene, a flatter foot for walking, or less pain at night.
@@ -1452,19 +1675,24 @@ After damage to the brain or spinal cord, the signals that normally keep muscles
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring discharge summaries, a list of medicines and any splints you use
 - Note which tasks the stiffness makes hard, and when it is worse
 - Bring a family member or carer, especially if they help with daily care
 - For children, a parent or guardian gives consent and attends the visit
 
 ### After your visit
+
 You leave with a written plan, stretching and positioning routines and a review date. If an injection is given, its effect usually starts within 1 to 2 weeks and wears off over about 3 months, so therapy continues during that time [CONFIRM: review timing]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Seek urgent care or call 108 or 112 if, after an injection, there is difficulty swallowing, breathing or speaking, or new widespread weakness. Also seek urgent care for a sudden large increase in spasms with fever, a swollen hot leg, or, in spinal cord injury, a pounding headache with high blood pressure.
 
 ### FAQs
+
 1. **Is spasticity the same as weakness?** No. Weakness means a muscle cannot produce enough force. Spasticity means a muscle stays tight and resists stretching. They often occur together after a stroke or spinal cord injury, and treating spasticity alone does not restore strength, so rehab works on both.
 2. **What are botulinum toxin injections for spasticity?** Botulinum toxin is a medicine injected into selected overactive muscles to relax them for a few months. It can ease stiffness and make stretching, splinting and care easier. It works best alongside therapy, and the effect varies from person to person.
 3. **Can spasticity be stopped completely?** Usually not, because it comes from the original brain or spinal cord injury. It can often be reduced and managed so that it causes less pain and gets in the way less. Regular stretching and review help prevent fixed joints.
@@ -1472,6 +1700,7 @@ Callout:
 5. **Why are splints important?** Splints and orthoses hold a muscle in a stretched position for longer periods, which helps prevent contractures and can improve walking or hand position. They need to fit well and be checked regularly to avoid skin damage.
 
 ### Sources
+
 - Royal College of Physicians (UK), Spasticity in adults: management using botulinum toxin, national guidelines 2018
 - American Academy of Neurology (AAN) practice guideline update on botulinum neurotoxin for spasticity, 2016
 - National Institute for Health and Care Excellence (NICE) guideline CG145, Spasticity in under 19s: management
@@ -1479,6 +1708,7 @@ Callout:
 ---
 
 ### Confirmations raised in this part
+
 - Typical review interval after visits for neck pain and sciatica (2 to 4 weeks), and for stroke, spinal cord injury, head injury, Parkinson's and spasticity
 - Imaging used for procedures: ultrasound, fluoroscopy (X-ray) or both
 - Full list of image-guided procedures offered, including whether radiofrequency ablation is offered
@@ -1510,9 +1740,11 @@ posts: [/guides/what-is-a-physiatrist/]
 ```
 
 ### Intro (answer-first)
+
 Painful knees, stiff shoulders and sports injuries can stop you walking, working or playing the way you want. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist with a fellowship in interventional pain management, examines how the joint moves and builds a plan that starts with exercise and, when suitable, adds medicines or image-guided injections.
 
 ### At a glance
+
 - **Who it is for:** adults and active people with joint pain, stiffness, sports injuries, recovery after a fracture or surgery, or limb loss
 - **First step:** a consultation with examination of the joint, strength, balance and how you move
 - **Main treatments:** exercise-based rehab, activity advice, medicines, image-guided injections when suitable, prosthetic training
@@ -1520,15 +1752,18 @@ Painful knees, stiff shoulders and sports injuries can stop you walking, working
 - **Aim:** less pain, better movement and a safe return to work, walking or sport
 
 ### Care in this area (track cards)
+
 Knee pain and osteoarthritis · Shoulder pain and frozen shoulder · Sports injuries · Rehab after a fracture or surgery · PRP and prolotherapy · Amputation and prosthetic rehab
 
 ### What your care includes (step tracker, 4 steps)
+
 1. **Find the cause.** History, examination of the joint and a review of your X-rays or scans.
 2. **Calm the pain.** Medicines, activity changes and, when suitable, an image-guided injection.
 3. **Build strength and movement.** A graded exercise programme with a physiotherapist and at home.
 4. **Return to what matters.** Step-by-step return to work, walking, stairs or sport, with checks along the way.
 
 ### FAQs
+
 1. **Do I need surgery for knee or shoulder pain?** Most people do not. Exercise, weight management and pain control help many people. If surgery may help, the doctor will explain why and refer you to an orthopaedic surgeon of your choice.
 2. **Is a physiatrist the same as an orthopaedic surgeon?** No. A physiatrist is a doctor who treats pain and movement problems without surgery, using rehab, medicines and procedures. Both often work together, for example before and after a joint replacement.
 3. **Should I rest a painful joint?** Short rest during a flare is fine, but long rest makes joints stiffer and muscles weaker. The doctor will show you which activities are safe.
@@ -1549,15 +1784,27 @@ h1: "Knee pain and *osteoarthritis*"
 badge: knee
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Knee osteoarthritis", alternateName: ["Knee arthritis", "Ghutne ka dard"] }
-related: [/joints-and-sports/prp-and-prolotherapy/, /joints-and-sports/after-fracture-or-surgery/, /older-adults/falls-and-balance/]
+about:
+  {
+    type: MedicalCondition,
+    name: "Knee osteoarthritis",
+    alternateName: ["Knee arthritis", "Ghutne ka dard"],
+  }
+related:
+  [
+    /joints-and-sports/prp-and-prolotherapy/,
+    /joints-and-sports/after-fracture-or-surgery/,
+    /older-adults/falls-and-balance/,
+  ]
 posts: []
 ```
 
 ### Intro (answer-first)
+
 Knee pain is very common, and in adults over 40 the most common cause is osteoarthritis, where the cartilage and bone in the joint slowly change. It can make walking, stairs and sitting on the floor hard. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist whose MD research looked at balance and function in knee osteoarthritis, examines your knee and builds a plan to reduce pain and keep you moving.
 
 ### At a glance
+
 - **What it is:** pain, stiffness or swelling in the knee, often worse on stairs, squatting or after rest
 - **Who gets it:** more common after 40, with higher body weight, past knee injury or heavy kneeling and squatting work
 - **Common causes:** osteoarthritis, pain at the front of the knee, ligament or meniscus injury, tendon problems
@@ -1566,6 +1813,7 @@ Knee pain is very common, and in adults over 40 the most common cause is osteoar
 - **Aim:** less pain, better walking and balance, and delaying or avoiding surgery where possible
 
 ### Common causes
+
 - **Osteoarthritis,** the slow wear and repair of the joint, often in both knees
 - **Pain at the front of the knee** (patellofemoral pain), common in younger and active people
 - **Meniscus or ligament injury,** often after a twist
@@ -1574,12 +1822,14 @@ Knee pain is very common, and in adults over 40 the most common cause is osteoar
 - **Less common causes** such as inflammatory arthritis, gout or infection, which the doctor checks for
 
 ### Who should see a doctor
+
 - Knee pain that lasts more than 2 to 3 weeks or keeps coming back
 - Pain that stops you walking, climbing stairs or sleeping
 - A knee that locks, gives way or swells
 - Knee pain with falls or poor balance
 
 ### What happens at Rehabify
+
 1. **History.** When it started, what makes it worse, your work, activity and any past injury.
 2. **Examination.** Swelling, range of movement, ligament tests, muscle strength, walking and balance.
 3. **Scans if needed.** A standing X-ray is often enough. MRI is advised only if it will change your treatment.
@@ -1589,19 +1839,24 @@ Knee pain is very common, and in adults over 40 the most common cause is osteoar
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring X-rays, scans and a list of medicines
 - Wear shorts or loose trousers that roll up above the knee
 - Bring the shoes you walk in most days
 - Note what you find hard: stairs, squatting, sitting on the floor, walking distance
 
 ### After your visit
+
 You leave with a written plan, home exercises and a review date. Most people are reviewed after 4 to 6 weeks [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Go to an emergency department if your knee becomes hot, red and very swollen with fever, if you cannot put any weight on it after a fall or injury, or if your calf becomes painful and swollen. Call 108 or 112 in an emergency.
 
 ### FAQs
+
 1. **Is walking bad for knee osteoarthritis?** No. Walking and strengthening exercise are among the most helpful treatments. Start with short walks and build up. Pain that settles within a day is usually safe.
 2. **Can knee osteoarthritis be reversed?** The changes in the joint do not reverse, but pain and function often improve a lot with exercise, weight loss and good pain control.
 3. **Do knee injections help?** Steroid injections can ease a flare for some weeks. Other injections, such as hyaluronic acid or PRP, have mixed evidence. The doctor will explain the options and whether any are suitable for you.
@@ -1609,6 +1864,7 @@ Callout:
 5. **Does losing weight help my knees?** Yes. Even a small weight loss reduces the load on the knee and often reduces pain.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) guideline NG226, Osteoarthritis in over 16s: diagnosis and management
 - American College of Rheumatology (ACR) and Arthritis Foundation guideline for osteoarthritis of the hand, hip and knee, 2019
 - American Academy of Orthopaedic Surgeons (AAOS) clinical practice guideline, Management of osteoarthritis of the knee (non-arthroplasty)
@@ -1625,15 +1881,27 @@ h1: "Shoulder pain and *frozen* shoulder"
 badge: shoulder
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Frozen shoulder", alternateName: ["Adhesive capsulitis", "Shoulder pain"] }
-related: [/pain-and-spine/neck-pain/, /pain-and-spine/image-guided-injections/, /joints-and-sports/sports-injuries/]
+about:
+  {
+    type: MedicalCondition,
+    name: "Frozen shoulder",
+    alternateName: ["Adhesive capsulitis", "Shoulder pain"],
+  }
+related:
+  [
+    /pain-and-spine/neck-pain/,
+    /pain-and-spine/image-guided-injections/,
+    /joints-and-sports/sports-injuries/,
+  ]
 posts: []
 ```
 
 ### Intro (answer-first)
+
 Shoulder pain can make it hard to dress, reach up, sleep on one side or lift. Frozen shoulder is one common cause, where the shoulder becomes painful and then stiff over months. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist with a fellowship in interventional pain management, finds the likely cause and builds a plan to ease pain and bring back movement.
 
 ### At a glance
+
 - **What it is:** pain or stiffness in the shoulder, sometimes spreading down the upper arm
 - **Who gets it:** frozen shoulder is more common between 40 and 60 and in people with diabetes or thyroid problems
 - **Common causes:** frozen shoulder, rotator cuff problems, pain from the neck, arthritis
@@ -1642,6 +1910,7 @@ Shoulder pain can make it hard to dress, reach up, sleep on one side or lift. Fr
 - **Aim:** less pain at night, more movement and use of the arm in daily life
 
 ### Common causes
+
 - **Frozen shoulder,** where the joint lining becomes inflamed and tight. It often goes through a painful phase, a stiff phase and a slow thawing phase
 - **Rotator cuff problems,** such as tendon irritation or tears, often pain when lifting the arm
 - **Pain coming from the neck,** felt in the shoulder or arm
@@ -1649,12 +1918,14 @@ Shoulder pain can make it hard to dress, reach up, sleep on one side or lift. Fr
 - **Less common causes** such as dislocation, fracture or pain referred from the heart or chest, which the doctor checks for
 
 ### Who should see a doctor
+
 - Shoulder pain lasting more than 2 to 3 weeks
 - Pain that wakes you at night or stops you lying on that side
 - Shoulder that is getting stiffer, so you cannot reach behind your back or above your head
 - Shoulder pain with diabetes
 
 ### What happens at Rehabify
+
 1. **History.** When it started, what movements hurt, your work, sleep and other health problems such as diabetes.
 2. **Examination.** Range of movement, strength of the rotator cuff, neck checks and specific shoulder tests.
 3. **Scans if needed.** Ultrasound or X-ray may be advised. MRI only if it will change your treatment.
@@ -1664,18 +1935,23 @@ Shoulder pain can make it hard to dress, reach up, sleep on one side or lift. Fr
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring scans, reports and a list of medicines, including diabetes medicines
 - Wear a loose top or vest so the shoulder can be examined
 - Note which daily tasks are hard: dressing, combing hair, reaching a shelf
 
 ### After your visit
+
 You leave with a written plan, home exercises and a review date. Most people are reviewed after 2 to 4 weeks [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Call 108 or 112 straight away if shoulder or arm pain comes with chest pain, breathlessness, sweating or pain in the jaw. Go to an emergency department if the shoulder looks out of shape after a fall, or is hot and swollen with fever.
 
 ### FAQs
+
 1. **How long does frozen shoulder last?** It often lasts from many months to over a year. Treatment aims to ease pain and keep as much movement as possible while it settles.
 2. **Should I keep moving a frozen shoulder?** Yes, within comfort. Gentle stretching helps. Forcing painful movement during the early painful phase can make it worse, so the exercises change with each stage.
 3. **Does an injection help frozen shoulder?** A steroid injection into the joint can reduce pain, especially in the early phase, and make exercise easier. The doctor will advise whether it is suitable for you.
@@ -1683,6 +1959,7 @@ Callout:
 5. **Can shoulder pain come from the neck?** Yes. Neck problems can cause pain in the shoulder and arm. The doctor checks the neck as part of the examination.
 
 ### Sources
+
 - American Academy of Orthopaedic Surgeons (AAOS) clinical practice guideline, Management of rotator cuff injuries
 - British Elbow and Shoulder Society (BESS) and Royal College of Surgeons patient care pathway for frozen shoulder
 - NICE Clinical Knowledge Summary, Shoulder pain
@@ -1699,15 +1976,27 @@ h1: "Sports *injuries*"
 badge: sports
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Sports injury", alternateName: ["Sprain", "Muscle strain", "Tendinopathy"] }
-related: [/joints-and-sports/knee-pain/, /joints-and-sports/shoulder-pain/, /joints-and-sports/prp-and-prolotherapy/]
+about:
+  {
+    type: MedicalCondition,
+    name: "Sports injury",
+    alternateName: ["Sprain", "Muscle strain", "Tendinopathy"],
+  }
+related:
+  [
+    /joints-and-sports/knee-pain/,
+    /joints-and-sports/shoulder-pain/,
+    /joints-and-sports/prp-and-prolotherapy/,
+  ]
 posts: []
 ```
 
 ### Intro (answer-first)
+
 Sports injuries range from a twisted ankle to a torn ligament or a tendon that keeps hurting. Good rehab helps you heal and lowers the chance of getting hurt again. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist with a fellowship in interventional pain management, works out what is injured, plans your rehab and guides a step-by-step return to sport.
 
 ### At a glance
+
 - **What it is:** injury to muscles, tendons, ligaments, joints or bones during sport or exercise
 - **Who gets it:** runners, cricketers, footballers, badminton players, gym-goers and weekend players
 - **Common injuries:** ankle sprain, hamstring or calf strain, knee ligament or meniscus injury, tennis elbow, Achilles and patellar tendon pain, shoulder injuries
@@ -1716,6 +2005,7 @@ Sports injuries range from a twisted ankle to a torn ligament or a tendon that k
 - **Aim:** a safe return to your sport and fewer repeat injuries
 
 ### Common causes
+
 - **Sudden injuries,** such as a twist, fall or collision
 - **Overuse,** from training too much too soon, often in tendons
 - **Weak or tight muscles** and poor balance
@@ -1723,12 +2013,14 @@ Sports injuries range from a twisted ankle to a torn ligament or a tendon that k
 - **Returning too early** after an earlier injury
 
 ### Who should see a doctor
+
 - An injury that is not improving after 1 to 2 weeks
 - Swelling, a joint that gives way or locks
 - Pain that stops you training or comes back each time you play
 - Before returning to sport after a ligament injury or surgery
 
 ### What happens at Rehabify
+
 1. **History.** How the injury happened, your sport, training load and goals.
 2. **Examination.** The injured area, joint stability, strength, flexibility, balance and movement patterns.
 3. **Scans if needed.** Ultrasound, X-ray or MRI only if it will change your treatment.
@@ -1738,18 +2030,23 @@ Sports injuries range from a twisted ankle to a torn ligament or a tendon that k
 The doctor decides the right tests and treatment for you after examining you. If surgery may help, such as for some ligament tears, you are referred to a sports or orthopaedic surgeon of your choice.
 
 ### How to prepare
+
 - Bring scans and reports
 - Wear sports clothes and bring your training shoes
 - Note your training schedule and the date of any match or event you want to return for
 
 ### After your visit
+
 You leave with a written plan, a home and gym programme and a review date. Reviews are usually every 2 to 4 weeks during rehab [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Go to an emergency department if a limb looks out of shape, you cannot put weight on it, there is numbness or a cold, pale limb, or after a head injury with confusion, vomiting or drowsiness. Call 108 or 112 in an emergency.
 
 ### FAQs
+
 1. **Should I use ice and rest?** In the first day or two, protect the area and keep it comfortable. After that, gentle movement and gradual loading usually help healing more than long rest.
 2. **When can I go back to sport?** When you have full movement, good strength compared with the other side and can do sport-specific movements without pain. Time alone is not the test.
 3. **Do I need an MRI for a sports injury?** Not always. Many injuries are diagnosed by examination. MRI helps when a ligament or meniscus tear is suspected or the injury is not healing.
@@ -1757,6 +2054,7 @@ Callout:
 5. **How can I prevent another injury?** Warm up, build training load slowly, keep up strength and balance work, and use the right shoes and equipment.
 
 ### Sources
+
 - American Academy of Orthopaedic Surgeons (AAOS) OrthoInfo, Sports injuries
 - International Olympic Committee (IOC) consensus statement on load in sport and risk of injury, 2016
 - 2016 consensus statement on return to sport from the First World Congress in Sports Physical Therapy, Bern
@@ -1773,15 +2071,27 @@ h1: "Rehab after a fracture or *surgery*"
 badge: fracture
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalProcedure, name: "Rehabilitation after fracture or orthopaedic surgery", alternateName: ["Post-operative rehab", "Knee replacement rehab"] }
-related: [/joints-and-sports/knee-pain/, /older-adults/osteoporosis/, /older-adults/falls-and-balance/]
+about:
+  {
+    type: MedicalProcedure,
+    name: "Rehabilitation after fracture or orthopaedic surgery",
+    alternateName: ["Post-operative rehab", "Knee replacement rehab"],
+  }
+related:
+  [
+    /joints-and-sports/knee-pain/,
+    /older-adults/osteoporosis/,
+    /older-adults/falls-and-balance/,
+  ]
 posts: []
 ```
 
 ### Intro (answer-first)
+
 After a fracture or an operation such as a knee or hip replacement, rehab helps you get back movement, strength and confidence. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist with a fellowship in interventional pain management, plans your rehab in line with your surgeon's advice, manages pain and sets clear goals for walking, work and daily life.
 
 ### At a glance
+
 - **Who it is for:** people recovering from a fracture, joint replacement, ligament repair, spine surgery or other orthopaedic surgery
 - **When to start:** often within days of surgery, as advised by your surgeon
 - **What rehab covers:** pain and swelling, joint movement, muscle strength, walking, balance, stairs and return to work
@@ -1790,6 +2100,7 @@ After a fracture or an operation such as a knee or hip replacement, rehab helps 
 - **Aim:** a safe return to independent daily life
 
 ### What rehab covers
+
 - **Pain and swelling control,** so you can move and sleep
 - **Joint movement,** such as bending and straightening the knee after a replacement
 - **Strength,** of the muscles weakened by injury, surgery or rest
@@ -1798,12 +2109,14 @@ After a fracture or an operation such as a knee or hip replacement, rehab helps 
 - **Bone health,** after a fracture from a minor fall, which can be a sign of osteoporosis
 
 ### Who should see a doctor
+
 - Anyone after a fracture or orthopaedic surgery who wants a planned rehab programme
 - Stiffness, pain or weakness that is not improving as expected
 - Difficulty walking, or fear of falling after surgery
 - A fracture after a minor fall
 
 ### What happens at Rehabify
+
 1. **History.** Your injury or operation, your surgeon's instructions, weight-bearing limits and your goals.
 2. **Examination.** Wound area, swelling, movement, strength, walking and balance.
 3. **Your notes.** Discharge summary, operation notes and X-rays are reviewed. The plan follows your surgeon's advice.
@@ -1813,19 +2126,24 @@ After a fracture or an operation such as a knee or hip replacement, rehab helps 
 The doctor decides the right tests and treatment for you after examining you, and stays in touch with your surgeon when needed.
 
 ### How to prepare
+
 - Bring your discharge summary, operation notes, X-rays and list of medicines
 - Wear loose clothes that allow the operated area to be seen
 - Bring your walking aid and any brace
 - Bring a family member if you need help getting around
 
 ### After your visit
+
 You leave with a written plan, home exercises and a review date. Reviews are usually every 1 to 2 weeks in the early weeks [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Contact your surgeon or go to an emergency department if the wound becomes red, hot, swollen or leaks fluid, if you have fever, if the calf becomes painful and swollen, or if pain suddenly gets much worse. Call 108 or 112 straight away for chest pain or sudden breathlessness.
 
 ### FAQs
+
 1. **When should rehab start after a knee replacement?** Usually within a day or two of surgery in hospital, then continuing for several weeks after you go home. Your surgeon sets the early limits.
 2. **How long does rehab take?** It depends on the injury or operation. Many people make most of their progress in the first 3 months, and keep improving for up to a year.
 3. **Is pain during exercises normal?** Some discomfort is expected. Pain that is sharp, getting worse each day or comes with swelling and redness should be checked.
@@ -1833,6 +2151,7 @@ Callout:
 5. **Why check my bones after a fracture?** A fracture from a minor fall may be a sign of osteoporosis. Treating it lowers the risk of another fracture.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) guideline NG157, Joint replacement (primary): hip, knee and shoulder
 - NICE guideline NG38, Fractures (non-complex): assessment and management
 - American Academy of Orthopaedic Surgeons (AAOS) OrthoInfo, Total knee replacement exercise guide
@@ -1849,15 +2168,27 @@ h1: "PRP and *prolotherapy*"
 badge: prp
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalProcedure, name: "Platelet-rich plasma injection", alternateName: ["PRP injection", "Prolotherapy"] }
-related: [/joints-and-sports/knee-pain/, /joints-and-sports/sports-injuries/, /pain-and-spine/image-guided-injections/]
+about:
+  {
+    type: MedicalProcedure,
+    name: "Platelet-rich plasma injection",
+    alternateName: ["PRP injection", "Prolotherapy"],
+  }
+related:
+  [
+    /joints-and-sports/knee-pain/,
+    /joints-and-sports/sports-injuries/,
+    /pain-and-spine/image-guided-injections/,
+  ]
 posts: []
 ```
 
 ### Intro (answer-first)
+
 PRP (platelet-rich plasma) and prolotherapy are injections used for some joint, tendon and ligament problems. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist with a fellowship in interventional pain management, may offer them [CONFIRM: PRP and prolotherapy offered at Rehabify] when they are suitable, and only as part of a rehab plan. The evidence for them is mixed, and he will explain what they can and cannot do before you decide.
 
 ### At a glance
+
 - **What PRP is:** a small amount of your own blood, spun to concentrate the platelets, then injected into the problem area
 - **What prolotherapy is:** an injection of a solution, often a sugar (dextrose) solution, near a painful ligament or tendon
 - **Sometimes considered for:** knee osteoarthritis, tennis elbow, some tendon problems, some ligament pain
@@ -1866,17 +2197,20 @@ PRP (platelet-rich plasma) and prolotherapy are injections used for some joint, 
 - **Not:** a way to grow new cartilage or a replacement for exercise
 
 ### What it is
+
 - **PRP:** blood is taken from your arm, spun in a machine to separate the platelets, and the platelet-rich part is injected, often guided by ultrasound [CONFIRM: ultrasound guidance available]
 - **Prolotherapy:** a solution is injected at the points where ligaments or tendons attach to bone, sometimes over a few sessions
 - **Why they are used:** both are thought to help the body's own healing response, but how well they work is still being studied
 - **Who is not suitable:** people with some blood disorders, active infection, certain cancers, or who take some blood-thinning medicines
 
 ### Who should see a doctor
+
 - Long-standing knee, tendon or ligament pain not improving with exercise and other treatment
 - Anyone who has been advised PRP or prolotherapy elsewhere and wants a second opinion
 - Anyone wanting to understand the options before deciding
 
 ### What happens at Rehabify
+
 1. **History and examination.** To confirm the source of pain and check what treatment you have already had.
 2. **Review of scans.** To see whether the problem is one where these injections may be considered.
 3. **Discussion.** The doctor explains the evidence, possible benefits, risks, costs and other options, so you can decide.
@@ -1886,19 +2220,24 @@ PRP (platelet-rich plasma) and prolotherapy are injections used for some joint, 
 The doctor decides whether the procedure is suitable for you after examining you.
 
 ### How to prepare
+
 - Bring scans, reports and a list of medicines, including blood thinners and painkillers
 - Ask the doctor which medicines to stop before the procedure; do not stop any on your own
 - Eat normally and drink water on the day
 - Plan to rest the area for a day or two afterwards
 
 ### After your visit
+
 Some soreness for a few days is common. You leave with written advice on activity, pain relief and your exercise plan, and a review date [CONFIRM: usual review interval after PRP]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Contact the clinic or go to an emergency department if the injected area becomes very red, hot and swollen, you develop fever, or pain gets much worse after the first few days. Call 108 or 112 in an emergency.
 
 ### FAQs
+
 1. **Does PRP regrow cartilage in the knee?** There is no good evidence that it regrows cartilage. Some people report less pain for a time. The doctor will explain what to expect.
 2. **Is PRP better than a steroid injection?** Studies give mixed results. Steroids tend to act faster but for a shorter time. The choice depends on your problem and preferences.
 3. **How many injections are needed?** It varies. Some plans use one PRP injection, others a short course. Prolotherapy is often given over several sessions.
@@ -1906,6 +2245,7 @@ Callout:
 5. **Will I still need exercise?** Yes. Exercise remains the main treatment for joint and tendon pain. Injections, if used, support rehab rather than replace it.
 
 ### Sources
+
 - American College of Rheumatology (ACR) and Arthritis Foundation guideline for osteoarthritis of the hand, hip and knee, 2019 (recommends against PRP for knee osteoarthritis)
 - National Institute for Health and Care Excellence (NICE) interventional procedures guidance IPG637, Platelet-rich plasma injections for knee osteoarthritis
 - American Academy of Orthopaedic Surgeons (AAOS) clinical practice guideline, Management of osteoarthritis of the knee (non-arthroplasty)
@@ -1922,15 +2262,26 @@ h1: "Amputation and *prosthetic* rehab"
 badge: prosthesis
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalProcedure, name: "Prosthetic rehabilitation", alternateName: ["Amputee rehabilitation", "Artificial limb training"] }
-related: [/joints-and-sports/after-fracture-or-surgery/, /older-adults/falls-and-balance/]
+about:
+  {
+    type: MedicalProcedure,
+    name: "Prosthetic rehabilitation",
+    alternateName: ["Amputee rehabilitation", "Artificial limb training"],
+  }
+related:
+  [
+    /joints-and-sports/after-fracture-or-surgery/,
+    /older-adults/falls-and-balance/,
+  ]
 posts: []
 ```
 
 ### Intro (answer-first)
+
 After losing part of a leg or arm, rehab helps you heal well, manage pain, get ready for an artificial limb (prosthesis) and learn to use it in daily life. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist with a fellowship in interventional pain management, plans each stage of rehab and works with your prosthetist and therapists.
 
 ### At a glance
+
 - **Who it is for:** people after amputation from diabetes, poor circulation, injury or other causes, and their families
 - **Stages:** before surgery where possible, healing and stump care, preparing for a prosthesis, training with it, long-term follow-up
 - **What rehab covers:** wound and stump care, phantom and stump pain, strength, balance, walking, daily tasks
@@ -1939,6 +2290,7 @@ After losing part of a leg or arm, rehab helps you heal well, manage pain, get r
 - **Aim:** as much independence as possible, with or without a prosthesis
 
 ### What rehab covers
+
 - **Stump care,** shaping with bandages or a shrinker sock, skin checks and wound healing
 - **Pain,** including phantom limb pain (pain felt in the missing part) and stump pain
 - **Strength and flexibility,** to prevent joint stiffness and build the muscles needed to walk
@@ -1947,12 +2299,14 @@ After losing part of a leg or arm, rehab helps you heal well, manage pain, get r
 - **Daily life,** wheelchair skills where needed, home changes, driving and return to work
 
 ### Who should see a doctor
+
 - Anyone who has had, or is about to have, an amputation
 - Phantom or stump pain that is hard to bear
 - A prosthesis that hurts, does not fit or is not being used
 - Falls or skin problems while using a prosthesis
 
 ### What happens at Rehabify
+
 1. **History.** The cause of amputation, other health problems such as diabetes or heart disease, your home and goals.
 2. **Examination.** Stump shape and skin, joint movement, strength, balance and the other leg or arm.
 3. **Your plan.** Stump care, pain management and exercise. The doctor discusses whether a prosthesis is suitable and when.
@@ -1962,18 +2316,23 @@ After losing part of a leg or arm, rehab helps you heal well, manage pain, get r
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring discharge and surgery notes, and a list of medicines
 - Bring your prosthesis, liner and socks if you have them, and the shoes you wear with it
 - Bring a family member or carer if possible
 
 ### After your visit
+
 You leave with a written plan, home exercises and a review date [CONFIRM: usual review interval]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Contact your surgeon or go to an emergency department if the stump wound opens, leaks, smells or becomes red, hot and swollen, if you have fever, or if your remaining foot becomes cold, pale, blue or develops a new wound. Call 108 or 112 in an emergency.
 
 ### FAQs
+
 1. **Will I be able to walk with a prosthesis?** Many people can, but it depends on your overall health, strength, balance and the level of amputation. The doctor will discuss realistic goals with you.
 2. **What is phantom limb pain?** Pain or other feelings in the part of the limb that is no longer there. It is common and real. Medicines, desensitisation, mirror therapy and other treatments can help.
 3. **When can I get a prosthesis?** Usually after the wound has healed and swelling has settled, often several weeks after surgery. The timing depends on healing.
@@ -1981,6 +2340,7 @@ Callout:
 5. **How do I protect my other foot if I have diabetes?** Check it every day, wear well-fitting shoes, keep sugar under control and see a doctor quickly for any wound.
 
 ### Sources
+
 - World Health Organization (WHO) Standards for prosthetics and orthotics, 2017
 - British Society of Rehabilitation Medicine (BSRM) guidance, Amputee and prosthetic rehabilitation: standards and guidelines
 - International Society of Physical and Rehabilitation Medicine (ISPRM) resources on amputee rehabilitation
@@ -1988,6 +2348,7 @@ Callout:
 ---
 
 ### Confirmations raised in this part
+
 - Sign-off date (lastReviewed) for Pages 25 to 31
 - Minimum age for sports injury consults (Page 25)
 - Usual review intervals: knee 4 to 6 weeks (26), shoulder 2 to 4 weeks (27), sports rehab 2 to 4 weeks (28), post-surgery 1 to 2 weeks (29), after PRP (30), prosthetic rehab (31)
@@ -2011,14 +2372,21 @@ h1: "Children's *rehabilitation*"
 badge: children
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-related: [/childrens-rehabilitation/cerebral-palsy/, /neuro-rehabilitation/spasticity/]
-posts: [/guides/cerebral-palsy-what-parents-ask-first/, /guides/toe-walking-when-to-check/]
+related:
+  [/childrens-rehabilitation/cerebral-palsy/, /neuro-rehabilitation/spasticity/]
+posts:
+  [
+    /guides/cerebral-palsy-what-parents-ask-first/,
+    /guides/toe-walking-when-to-check/,
+  ]
 ```
 
 ### Intro (answer-first)
+
 Some children need extra help to sit, stand, walk, use their hands or keep up at school. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist (MD Physical Medicine and Rehabilitation), assesses how your child moves and plays, sets goals with you and works with your child's therapists and school so that everyone follows one plan.
 
 ### At a glance
+
 - **Who it is for:** children and teenagers with cerebral palsy, muscular dystrophy, developmental delay, toe walking or other movement problems
 - **First step:** a consultation with you and your child, including a play-based examination
 - **Main treatments:** therapy plans, stretching and strengthening, splints and orthoses, mobility aids, spasticity management when suitable
@@ -2026,15 +2394,18 @@ Some children need extra help to sit, stand, walk, use their hands or keep up at
 - **Aim:** more independence in daily life, at home and at school
 
 ### Care in this area (track cards)
+
 Cerebral palsy · Muscular dystrophy · Developmental delay and autism support
 
 ### What your care includes (step tracker, 4 steps)
+
 1. **Meet and assess.** You tell us about your child's day. The doctor examines movement, muscle tone, joints and posture through play.
 2. **Set goals together.** Goals that matter to your family, such as sitting at the table, walking to class or dressing.
 3. **Plan the team.** Physiotherapy, occupational therapy, speech therapy, orthoses and medicines, linked into one plan with your child's current therapists and school.
 4. **Review and adjust.** Children grow and change, so the plan is checked at regular reviews.
 
 ### FAQs
+
 1. **Does a parent need to come to every visit?** Yes. A parent or legal guardian attends every visit and gives consent for any examination or treatment. Older children are also asked for their own agreement.
 2. **We already have a therapist. Do we need to change?** No. Rehabify can work with your child's current physiotherapist, occupational therapist or speech therapist and share a written plan with them.
 3. **What is a physiatrist's role for a child?** A physiatrist is a doctor for movement and function. The doctor looks at the whole picture, including muscle tone, joints, splints, equipment and medicines, and links the different therapies together.
@@ -2056,14 +2427,20 @@ badge: cerebral-palsy
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 about: { type: MedicalCondition, name: "Cerebral palsy", alternateName: ["CP"] }
-related: [/neuro-rehabilitation/spasticity/, /childrens-rehabilitation/developmental-delay/]
+related:
+  [
+    /neuro-rehabilitation/spasticity/,
+    /childrens-rehabilitation/developmental-delay/,
+  ]
 posts: [/guides/cerebral-palsy-what-parents-ask-first/]
 ```
 
 ### Intro (answer-first)
+
 Cerebral palsy (CP) is a group of conditions that affect movement and posture. It is caused by injury to or differences in the developing brain, before, during or soon after birth. The brain injury does not get worse, but the child's needs change as they grow. At Rehabify in Bengaluru, Dr. Dharshan N A works with parents, therapists and schools to plan rehab that helps your child do more for themselves.
 
 ### At a glance
+
 - **What it is:** a lifelong condition that affects muscle tone, movement and posture
 - **How it shows:** stiff or floppy muscles, late sitting or walking, toe walking, using one hand more than the other
 - **Other needs it can bring:** feeding, speech, vision, learning or seizures, which other specialists also look after
@@ -2072,6 +2449,7 @@ Cerebral palsy (CP) is a group of conditions that affect movement and posture. I
 - **Aim:** comfort, function and independence at home and at school
 
 ### What cerebral palsy is
+
 - **Spastic CP,** the most common type, with stiff, tight muscles
 - **Dyskinetic CP,** with movements the child cannot control
 - **Ataxic CP,** with problems of balance and coordination
@@ -2080,12 +2458,14 @@ Cerebral palsy (CP) is a group of conditions that affect movement and posture. I
 CP can affect one side of the body, both legs, or all four limbs. Common causes include being born very early, low oxygen around birth, infection, or bleeding in the brain. Often no single cause is found.
 
 ### Who should see a doctor
+
 - A baby who is late to hold the head, sit, crawl or walk
 - Very stiff or very floppy limbs, or a strong preference for one hand before age 1
 - Toe walking, frequent falls or a walk that looks different
 - A child with CP whose stiffness, pain or posture is getting worse, or who is growing fast
 
 ### What happens at Rehabify
+
 1. **History.** Birth, development, current therapies, daily routine, school and what you would most like to change.
 2. **Examination.** Muscle tone, joint range, posture, sitting, standing and walking, and hand use, done through play.
 3. **Goals.** Clear goals set with you and, where possible, your child.
@@ -2095,19 +2475,24 @@ CP can affect one side of the body, both legs, or all four limbs. Common causes 
 The doctor decides the right tests and treatment for your child after examining them.
 
 ### How to prepare
+
 - Bring birth and medical records, scans, and previous therapy reports
 - Bring current splints, shoes and walking aids
 - Dress your child in comfortable clothes that make it easy to see legs and arms
 - Bring a favourite toy or snack, and short videos of your child moving at home if you can
 
 ### After your visit
+
 You leave with a written plan, home exercises and a review date. Reviews are usually every few months, and more often after a growth spurt or a new treatment [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Call 108 or 112 or go to an emergency department if your child has a seizure lasting more than 5 minutes, trouble breathing, choking while eating, or is very drowsy and hard to wake.
 
 ### FAQs
+
 1. **Will my child walk?** It depends on the type and severity of CP, and on age. The doctor can explain what is likely for your child and set goals that matter, whether that is walking, using a walker or getting around in a wheelchair.
 2. **Does cerebral palsy get worse?** The brain injury does not get worse. But muscles and joints can become tighter as a child grows, which is why regular reviews and stretching are important.
 3. **What are splints or orthoses for?** They hold a joint in a better position, help with standing or walking, and slow down tightness. The doctor advises on the type and checks the fit as your child grows.
@@ -2115,6 +2500,7 @@ Callout:
 5. **Can my child go to a regular school?** Many children with CP do. The doctor can suggest seating, access and support, and write to the school with your consent.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) guideline NG62, Cerebral palsy in under 25s: assessment and management
 - NICE guideline CG145, Spasticity in under 19s: management
 - American Academy for Cerebral Palsy and Developmental Medicine (AACPDM) care pathways
@@ -2131,15 +2517,22 @@ h1: "Muscular *dystrophy*"
 badge: muscular-dystrophy
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Muscular dystrophy", alternateName: ["Duchenne muscular dystrophy", "DMD"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Muscular dystrophy",
+    alternateName: ["Duchenne muscular dystrophy", "DMD"],
+  }
 related: [/childrens-rehabilitation/cerebral-palsy/, /childrens-rehabilitation/]
 posts: [/guides/school-and-therapy-for-children-with-dmd/]
 ```
 
 ### Intro (answer-first)
+
 Muscular dystrophies are genetic conditions that make muscles weaker over time. Duchenne muscular dystrophy (DMD) is the most common type in children and mostly affects boys. There is no cure yet, but good rehab can help a child stay active, comfortable and independent for longer. At Rehabify in Bengaluru, Dr. Dharshan N A plans stretching, splints, equipment and activity with your family, alongside your child's neurologist and therapists.
 
 ### At a glance
+
 - **What it is:** a group of inherited conditions where muscles slowly get weaker
 - **How it shows:** frequent falls, trouble climbing stairs or getting up from the floor, large calves, toe walking
 - **Diagnosis:** made by a neurologist or paediatrician with blood tests and genetic tests
@@ -2148,6 +2541,7 @@ Muscular dystrophies are genetic conditions that make muscles weaker over time. 
 - **Aim:** keep joints flexible, stay active safely and support independence
 
 ### What it is
+
 - **Duchenne muscular dystrophy (DMD):** signs usually start between ages 2 and 5
 - **Becker muscular dystrophy:** similar to DMD but milder and slower
 - **Other types,** such as limb-girdle and facioscapulohumeral dystrophy, which can start later
@@ -2155,12 +2549,14 @@ Muscular dystrophies are genetic conditions that make muscles weaker over time. 
 As muscles weaken, joints such as the ankles, knees and hips can get tight, the spine can curve, and in later stages the heart and breathing muscles can be affected. Your child's neurologist and other specialists look after these with the rehab team.
 
 ### Who should see a doctor
+
 - A child who falls often, walks on toes or uses hands to push up from the floor
 - A child with a diagnosis who needs a stretching programme, splints or equipment
 - Tight ankles, pain, or a change in walking or posture
 - Planning for school, a wheelchair or home changes
 
 ### What happens at Rehabify
+
 1. **History.** Diagnosis, medicines, current therapy, daily routine and school.
 2. **Examination.** Strength, joint range, posture, spine, walking and timed tasks such as rising from the floor.
 3. **Your plan.** Daily stretching, safe activity, night splints, and advice on avoiding over-tiring exercise.
@@ -2170,18 +2566,23 @@ As muscles weaken, joints such as the ankles, knees and hips can get tight, the 
 The doctor decides the right tests and treatment for your child after examining them.
 
 ### How to prepare
+
 - Bring the diagnosis report, genetic test results and a list of medicines
 - Bring splints, shoes and any equipment your child uses
 - Note what has changed in the last 6 months, such as falls or stairs
 
 ### After your visit
+
 You leave with a written plan, a home stretching programme and a review date. Reviews are usually every 4 to 6 months [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Call 108 or 112 or go to an emergency department if your child has trouble breathing, a weak cough with a chest infection, chest pain, fainting, or a fall with severe pain or a possible broken bone.
 
 ### FAQs
+
 1. **Can rehab stop muscular dystrophy?** No. Rehab does not stop the condition, but it can help keep joints flexible, delay tightness, and help your child stay active and independent for longer.
 2. **Is exercise safe for my child?** Gentle, regular activity such as swimming and play is usually encouraged. Heavy, straining exercise can harm weak muscles. The doctor will explain what is safe.
 3. **Why are night splints used?** They hold the ankles in a stretched position while your child sleeps, which helps slow down tightness of the calf muscles.
@@ -2189,6 +2590,7 @@ Callout:
 5. **Do you work with the school?** Yes, with your consent. The doctor can suggest seating, toilet access, rest breaks and safe PE.
 
 ### Sources
+
 - DMD Care Considerations Working Group, Diagnosis and management of Duchenne muscular dystrophy (Lancet Neurology, 2018)
 - National Institute for Health and Care Excellence (NICE) guidance on neuromuscular conditions [CONFIRM: preferred reference]
 - World Health Organization (WHO), Rehabilitation fact sheet
@@ -2205,15 +2607,23 @@ h1: "Developmental delay and *autism* support"
 badge: development
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Developmental delay", alternateName: ["Global developmental delay", "Autism spectrum disorder support"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Developmental delay",
+    alternateName:
+      ["Global developmental delay", "Autism spectrum disorder support"],
+  }
 related: [/childrens-rehabilitation/cerebral-palsy/, /childrens-rehabilitation/]
 posts: [/guides/toe-walking-when-to-check/]
 ```
 
 ### Intro (answer-first)
+
 Developmental delay means a child reaches milestones, such as sitting, walking, talking or playing, later than expected. Some children with delay are later found to have autism, which is a difference in how a child communicates and experiences the world. At Rehabify in Bengaluru, Dr. Dharshan N A looks at your child's movement, motor skills and daily activities, and helps your family plan therapy with paediatricians, therapists and schools. Rehabify does not diagnose or treat autism itself; it supports the motor and daily living needs that can come with it.
 
 ### At a glance
+
 - **What it is:** reaching motor, speech, social or learning milestones later than most children
 - **How it shows:** late sitting or walking, clumsiness, toe walking, low muscle tone, trouble with hand skills or self-care
 - **Diagnosis of autism:** made by a developmental paediatrician, child psychiatrist or psychologist
@@ -2222,6 +2632,7 @@ Developmental delay means a child reaches milestones, such as sitting, walking, 
 - **Aim:** help your child take part more easily at home, in play and at school
 
 ### Common causes and links
+
 - **Being born early** or a difficult birth
 - **Genetic conditions,** such as Down syndrome
 - **Low muscle tone** or coordination difficulties
@@ -2229,6 +2640,7 @@ Developmental delay means a child reaches milestones, such as sitting, walking, 
 - **Often no single cause** is found, and many children catch up with support
 
 ### Who should see a doctor
+
 - Not sitting alone by 9 months or not walking by 18 months
 - Persistent toe walking after age 2 to 3
 - Losing skills your child already had
@@ -2236,6 +2648,7 @@ Developmental delay means a child reaches milestones, such as sitting, walking, 
 - A child with an autism diagnosis who needs help with motor skills or daily routines
 
 ### What happens at Rehabify
+
 1. **History.** Birth, milestones, health, current therapies, sleep, feeding and school.
 2. **Examination.** Muscle tone, posture, balance, walking, hand skills and play, at your child's pace.
 3. **Your plan.** Goals for physiotherapy and occupational therapy, a home activity programme, and orthoses or shoes if needed.
@@ -2244,18 +2657,23 @@ Developmental delay means a child reaches milestones, such as sitting, walking, 
 The doctor decides the right tests and treatment for your child after examining them.
 
 ### How to prepare
+
 - Bring birth records, milestone notes, and any assessment or therapy reports
 - Bring short videos of your child walking or playing at home
 - Bring a favourite toy or snack and allow extra time; quiet appointment times can be requested [CONFIRM]
 
 ### After your visit
+
 You leave with a written plan, home activities and a review date. Reviews are usually every 2 to 3 months [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Call 108 or 112 or go to an emergency department if your child has a seizure, sudden weakness, a fall with a head injury, or is very drowsy and hard to wake.
 
 ### FAQs
+
 1. **Do you treat autism?** No. Autism is not something to be treated away. Rehabify helps with the motor, posture and daily living needs some autistic children have, and works with the specialists who diagnose and support autism.
 2. **Will my child catch up?** Many children with delay make good progress, especially with early support. The doctor will explain what to expect for your child after the assessment.
 3. **Why does my child walk on their toes?** Toe walking is common in young children and often settles. When it continues, it can be linked to tight calves, low tone, autism or other conditions. The doctor checks for these.
@@ -2263,6 +2681,7 @@ Callout:
 5. **Can you help with school?** Yes. With your consent, the doctor can suggest seating, handwriting aids, movement breaks and other supports.
 
 ### Sources
+
 - American Academy of Pediatrics (AAP), Clinical report on identification, evaluation and management of children with autism spectrum disorder, 2020
 - National Institute for Health and Care Excellence (NICE) guideline CG170, Autism spectrum disorder in under 19s: support and management
 - World Health Organization (WHO), Nurturing care for early childhood development
@@ -2280,13 +2699,20 @@ badge: older-adults
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
 related: [/older-adults/falls-and-balance/, /older-adults/osteoporosis/]
-posts: [/guides/making-a-home-safer-against-falls/, /guides/osteoporosis-after-50/, /guides/walking-aids-cane-walker-or-none/]
+posts:
+  [
+    /guides/making-a-home-safer-against-falls/,
+    /guides/osteoporosis-after-50/,
+    /guides/walking-aids-cane-walker-or-none/,
+  ]
 ```
 
 ### Intro (answer-first)
+
 Getting older should not mean giving up walking, travel or living on your own. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist who also works in senior care, assesses balance, strength, bones and joints, and plans rehab that helps older adults stay steady, active and independent. Family members are welcome at every visit.
 
 ### At a glance
+
 - **Who it is for:** adults over 60 with falls, poor balance, osteoporosis, joint pain, weakness or slow recovery after illness or surgery
 - **First step:** a consultation with a review of medicines, balance and walking
 - **Main treatments:** strength and balance exercise, walking aids, home safety advice, bone health plans, pain management
@@ -2294,15 +2720,18 @@ Getting older should not mean giving up walking, travel or living on your own. A
 - **Aim:** fewer falls, stronger bones and more independence
 
 ### Care in this area (track cards)
+
 Falls and balance · Osteoporosis
 
 ### What your care includes (step tracker, 4 steps)
+
 1. **Check the whole picture.** Balance, strength, walking, eyesight, medicines, bones and memory concerns.
 2. **Set goals together.** Such as walking to the temple, using stairs or travelling to see family.
 3. **Build strength and balance.** A graded exercise plan with a physiotherapist and at home, with the right walking aid.
 4. **Make home safer.** Simple changes to lighting, floors, bathrooms and footwear, and a plan for regular reviews.
 
 ### FAQs
+
 1. **Is it too late to start exercise at 75 or 80?** No. Strength and balance can improve at any age with the right exercise. The plan starts gently and builds up.
 2. **Can a family member come along?** Yes, and it helps. Family members can learn the home exercises and safety tips. Video consults let relatives in other cities join in.
 3. **Do you look at all my medicines?** Yes. Some medicines can cause dizziness or falls. The doctor reviews your list and may suggest a discussion with your prescribing doctor.
@@ -2323,15 +2752,26 @@ h1: "Falls and *balance*"
 badge: balance
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Falls and balance problems", alternateName: ["Fall risk", "Imbalance in older adults"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Falls and balance problems",
+    alternateName: ["Fall risk", "Imbalance in older adults"],
+  }
 related: [/older-adults/osteoporosis/, /neuro-rehabilitation/parkinsons/]
-posts: [/guides/making-a-home-safer-against-falls/, /guides/walking-aids-cane-walker-or-none/]
+posts:
+  [
+    /guides/making-a-home-safer-against-falls/,
+    /guides/walking-aids-cane-walker-or-none/,
+  ]
 ```
 
 ### Intro (answer-first)
+
 Falls are common as we get older, but they are not a normal part of ageing, and many can be prevented. A fall can lead to a broken hip, loss of confidence and less independence. At Rehabify in Bengaluru, Dr. Dharshan N A, whose MD research looked at balance, finds out why you are unsteady and plans exercise, aids and home changes to lower your risk of falling.
 
 ### At a glance
+
 - **What it is:** unsteadiness, dizziness or one or more falls, or a fear of falling
 - **How common:** about one in three people over 65 falls each year
 - **Common causes:** weak legs, poor balance, medicines, eyesight, foot problems, low blood pressure on standing, home hazards
@@ -2340,6 +2780,7 @@ Falls are common as we get older, but they are not a normal part of ageing, and 
 - **Aim:** fewer falls and more confidence moving around
 
 ### Common causes
+
 - **Weak leg muscles and poor balance,** often after illness or long rest
 - **Medicines,** especially sleeping tablets, some blood pressure tablets and many medicines taken together
 - **Dizziness** from blood pressure dropping on standing, or inner ear problems
@@ -2348,12 +2789,14 @@ Falls are common as we get older, but they are not a normal part of ageing, and 
 - **Home hazards,** such as loose mats, poor lighting, wet bathroom floors and stairs without rails
 
 ### Who should see a doctor
+
 - Anyone who has fallen in the last year
 - Feeling unsteady when walking or turning
 - Fear of falling that stops you going out
 - Needing to hold furniture or walls to move around the house
 
 ### What happens at Rehabify
+
 1. **History.** Falls, near falls, dizziness, medicines, eyesight, health conditions and home set-up.
 2. **Examination.** Blood pressure lying and standing, strength, joints, feet, sensation, and balance and walking tests such as getting up from a chair and walking.
 3. **Your plan.** A strength and balance programme, the right walking aid, footwear advice, and a medicine review with your prescribing doctor.
@@ -2363,19 +2806,24 @@ Falls are common as we get older, but they are not a normal part of ageing, and 
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring all your medicines in a bag, or a full list
 - Bring your walking stick or walker and wear your usual shoes
 - Note when and how any falls happened
 - Bring a family member if you can
 
 ### After your visit
+
 You leave with a written plan, home exercises and a review date. Most people are reviewed after 4 to 6 weeks [CONFIRM]. You or your family can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Call 108 or 112 or go to an emergency department after a fall if there is a head injury and the person takes blood thinners, severe pain or a leg that looks shortened or turned, inability to stand, confusion, or sudden weakness, numbness or slurred speech.
 
 ### FAQs
+
 1. **Are falls just part of getting old?** No. Many falls have causes that can be found and changed, such as weak muscles, medicines or home hazards.
 2. **What exercise helps prevent falls?** Exercise that challenges balance and builds leg strength, done regularly over months. Tai chi and supervised home programmes are good examples. The doctor will pick what is safe for you.
 3. **I am afraid of falling, so I stay at home. Is that safer?** Usually not. Moving less makes muscles weaker and raises the risk of falling. A guided programme helps build confidence safely.
@@ -2383,6 +2831,7 @@ Callout:
 5. **Do I need a walker?** Not always. The doctor checks your balance and walking and advises if a cane or walker would make you safer, and sets the right height.
 
 ### Sources
+
 - World Guidelines for Falls Prevention and Management for Older Adults, 2022 (Age and Ageing)
 - National Institute for Health and Care Excellence (NICE) guideline CG161, Falls in older people: assessing risk and prevention
 - World Health Organization (WHO), Step Safely: strategies for preventing and managing falls across the life-course, 2021
@@ -2399,15 +2848,22 @@ h1: "Osteo*porosis*"
 badge: bones
 reviewer: dr-dharshan-n-a
 lastReviewed: "[CONFIRM: sign-off date]"
-about: { type: MedicalCondition, name: "Osteoporosis", alternateName: ["Thin bones", "Low bone density"] }
+about:
+  {
+    type: MedicalCondition,
+    name: "Osteoporosis",
+    alternateName: ["Thin bones", "Low bone density"],
+  }
 related: [/older-adults/falls-and-balance/, /pain-and-spine/back-pain/]
 posts: [/guides/osteoporosis-after-50/]
 ```
 
 ### Intro (answer-first)
+
 Osteoporosis means the bones have become thin and weak, so they break more easily, often after a minor fall. It causes no symptoms until a bone breaks, most often in the hip, spine or wrist. At Rehabify in Bengaluru, Dr. Dharshan N A checks your bone health and fall risk, plans safe exercise and works with you on medicines, diet and pain after a fracture.
 
 ### At a glance
+
 - **What it is:** thin, fragile bones that break easily
 - **Who gets it:** more common in women after menopause and in men and women over 50
 - **How it is found:** a bone density (DEXA) scan, or after a fracture from a minor fall
@@ -2416,6 +2872,7 @@ Osteoporosis means the bones have become thin and weak, so they break more easil
 - **Aim:** fewer fractures and staying active
 
 ### Common causes and risk factors
+
 - **Age and menopause,** when bone loss speeds up
 - **Family history** of hip fracture or osteoporosis
 - **Long-term steroid tablets** and some other medicines
@@ -2424,12 +2881,14 @@ Osteoporosis means the bones have become thin and weak, so they break more easil
 - **Conditions** such as rheumatoid arthritis, thyroid problems, diabetes and early menopause
 
 ### Who should see a doctor
+
 - A broken bone after a minor fall from standing height or less
 - Loss of height, a curved upper back, or sudden back pain without injury
 - Women after menopause and men over 50 with risk factors above
 - Anyone on long-term steroid tablets
 
 ### What happens at Rehabify
+
 1. **History.** Past fractures, falls, medicines, diet, menopause, family history and activity.
 2. **Examination.** Height, posture, spine tenderness, strength and balance.
 3. **Tests if needed.** A bone density (DEXA) scan, blood tests such as vitamin D and calcium, and spine X-rays if a fracture is suspected.
@@ -2439,18 +2898,23 @@ Osteoporosis means the bones have become thin and weak, so they break more easil
 The doctor decides the right tests and treatment for you after examining you.
 
 ### How to prepare
+
 - Bring any DEXA scan, X-rays and blood reports
 - Bring a list of medicines, including calcium, vitamin D and steroids
 - Note any past fractures and falls
 
 ### After your visit
+
 You leave with a written plan, home exercises and a review date. Reviews depend on your treatment, often every 3 to 6 months at first [CONFIRM]. You can send questions on WhatsApp between visits.
 
 ### When to get help urgently
+
 Callout:
+
 > Call 108 or 112 or go to an emergency department after a fall if you cannot stand or bear weight, have severe hip, back or wrist pain, a limb that looks out of shape, or new weakness or numbness in the legs.
 
 ### FAQs
+
 1. **Can osteoporosis be reversed?** Bone strength can improve with medicines, exercise and good nutrition, and the risk of fracture can come down. The doctor will explain what to expect in your case.
 2. **Is exercise safe with osteoporosis?** Yes, the right kind is. Strength training, walking and balance work help bones and lower fall risk. Avoid sudden twisting and bending forward with weights. The doctor will show you safe movements.
 3. **Is calcium enough on its own?** Usually not. Calcium and vitamin D are important, but many people also need bone medicines, exercise and fall prevention.
@@ -2458,6 +2922,7 @@ Callout:
 5. **Can men get osteoporosis?** Yes. It is less common than in women but often missed. Men over 50 with risk factors or a fracture from a minor fall should be checked.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) clinical knowledge summary and guidance on osteoporosis, assessing the risk of fragility fracture (CG146)
 - Indian Menopause Society clinical practice guidelines on postmenopausal osteoporosis
 - International Osteoporosis Foundation (IOF) and World Health Organization (WHO) guidance on osteoporosis and fracture risk
@@ -2465,6 +2930,7 @@ Callout:
 ---
 
 ### Confirmations raised in this part
+
 - Youngest age of child seen at Rehabify (Page 32 FAQ)
 - Whether botulinum toxin injections for spasticity are offered (Page 33)
 - Review intervals: CP every few months; DMD every 4 to 6 months; developmental delay every 2 to 3 months; falls 4 to 6 weeks; osteoporosis 3 to 6 months (Pages 33 to 38)
@@ -2494,9 +2960,11 @@ lastUpdated: "[CONFIRM: date set at launch]"
 ```
 
 ### Intro
+
 This policy explains what personal data Rehabify collects, why, how long we keep it and what rights you have. It is written to follow India's Digital Personal Data Protection Act, 2023 (DPDP Act) and the DPDP Rules, 2025. This website is run by [CONFIRM: legal entity name], [CONFIRM: address], Bengaluru, Karnataka. In this policy, "Rehabify", "we" and "us" mean that entity.
 
 ### At a glance
+
 - **What we collect:** your name, phone, email, reason for visit, and health details you choose to share or that we record during care
 - **Why:** to book and give you care, to keep medical records and to reply to you
 - **We never:** sell your data, use it for advertising, or share it for marketing
@@ -2505,6 +2973,7 @@ This policy explains what personal data Rehabify collects, why, how long we keep
 - **Contact:** Privacy contact, Dr. Dharshan N A, [CONFIRM: email]
 
 ### 1. What data we collect
+
 - **When you book or contact us:** name, phone number, email (optional), preferred date, clinic or video format, reason for visit and any message you write.
 - **When you are our patient:** medical history, examination findings, scans and reports you share, treatment notes, prescriptions and follow-up records.
 - **For video consults:** the details above, plus the call link and any photos or videos you send to help the doctor assess you. We do not record video consults [CONFIRM].
@@ -2514,6 +2983,7 @@ This policy explains what personal data Rehabify collects, why, how long we keep
 Please do not send detailed health information through the website form. Share it at your visit or on a channel the clinic tells you to use.
 
 ### 2. Why we use it (purpose)
+
 - To confirm, reschedule or remind you of appointments
 - To assess, treat and follow up with you, and to keep medical records required by law
 - To answer your questions and complaints
@@ -2524,12 +2994,15 @@ Please do not send detailed health information through the website form. Share i
 We use your data only for the purpose we told you about. If we need it for a new purpose, we will ask again.
 
 ### 3. Consent
+
 We ask for your consent with an unticked checkbox on our forms. The consent notice tells you what we collect and why. You can withdraw consent at any time by writing to the privacy contact. Withdrawing consent does not affect care already given or records the law requires us to keep.
 
 **Children under 18:** we need verifiable consent from a parent or legal guardian before we process a child's data. A parent or guardian should fill in the form and attend or join consults with the child.
 
 ### 4. Who we share it with
+
 We share data only as needed to run our service, with providers who process it on our behalf under contract [CONFIRM: list of processors]:
+
 - Website hosting (Vercel)
 - Email delivery for booking requests (Resend)
 - Spam protection (Cloudflare Turnstile)
@@ -2540,15 +3013,19 @@ We share data only as needed to run our service, with providers who process it o
 We also share data when the law requires it, with a doctor or hospital you are referred to with your agreement, or in a medical emergency to protect your life. Some providers may store data outside India, as allowed under the DPDP Act.
 
 ### 5. How long we keep it
+
 - **Medical records:** at least 3 years from your last visit, as required by medical regulations, or longer where the law or your care needs it [CONFIRM]
 - **Enquiries where no visit happened:** 12 months, then deleted
 - **Website analytics:** as set in Google Analytics, no longer than 14 months [CONFIRM]
 
 ### 6. How we protect it
+
 Access is limited to people who need it for your care or for running the clinic. We use encrypted connections (HTTPS), secure accounts with strong passwords, and providers with recognised security practices. If a personal data breach happens, we will inform you and the Data Protection Board of India as the law requires.
 
 ### 7. Your rights
+
 Under the DPDP Act you can:
+
 - **Access:** ask for a summary of the data we hold about you and how we use it
 - **Correct and update:** ask us to fix data that is wrong or incomplete
 - **Erase:** ask us to delete data we no longer need, except records we must keep by law
@@ -2559,13 +3036,16 @@ Under the DPDP Act you can:
 To use any right, write to the privacy contact. We may ask you to confirm your identity first.
 
 ### 8. Cookies
+
 We use essential cookies to make the site work and remember your cookie choice. Analytics cookies load only if you click Accept on the cookie banner. You can change your choice anytime from "Cookie settings" in the footer. We do not use advertising cookies.
 
 ### 9. Privacy contact and grievances
+
 Privacy contact: Dr. Dharshan N A, Rehabify, [CONFIRM: address] · Email: [CONFIRM: email] · Phone: +91 79048 42576.
 We aim to acknowledge your request within 24 hours and resolve it within 7 days. If it needs longer, we will tell you why.
 
 ### 10. Changes
+
 We may update this policy. The "Last updated" date at the top will change, and important changes will be shown on the website.
 
 ---
@@ -2581,21 +3061,27 @@ lastUpdated: "[CONFIRM: date set at launch]"
 ```
 
 ### Intro
+
 These terms apply when you use www.rehabify.in, send a booking request or take a video consultation with Rehabify. This website is run by [CONFIRM: legal entity name], [CONFIRM: address], Bengaluru. By using the site you agree to these terms. If you do not agree, please do not use the site.
 
 ### 1. The website is for general information
+
 Pages on this site explain conditions and treatments in general terms. They do not replace a consultation, and they do not create a doctor and patient relationship. See our Medical Disclaimer.
 
 ### 2. Booking requests
+
 - A form, call or WhatsApp message is a request, not a confirmed appointment. We confirm by phone or WhatsApp.
 - Please give correct details. If you book for someone else, you confirm you have their permission, or that you are the parent or guardian of a child under 18.
 - Appointment, cancellation and refund rules are on the Appointments, Cancellation and Refund page.
 
 ### 3. Not for emergencies
+
 This website, our phone line and WhatsApp are not emergency services. **Medical emergency? Call 108 or 112.**
 
 ### 4. Telemedicine notice (Telemedicine Practice Guidelines, 2020)
+
 Rehabify offers video consultations [CONFIRM: formats offered] under the Telemedicine Practice Guidelines, 2020, issued by the Board of Governors in supersession of the Medical Council of India.
+
 - **Who consults:** a registered medical practitioner. Dr. Dharshan N A, Karnataka Medical Council Reg. No. [CONFIRM], will tell you his name and registration at the start of the consult.
 - **Identity:** we will confirm your name, age and, for a child, the parent or guardian joining the call.
 - **Consent:** when you start a video consult that you booked, your consent is implied. For a first consult or a new problem, we may ask for your clear agreement.
@@ -2605,18 +3091,23 @@ Rehabify offers video consultations [CONFIRM: formats offered] under the Telemed
 - **Emergencies:** video consults are not for emergencies.
 
 ### 5. Using the site fairly
+
 Do not misuse the site, try to break its security, send spam, or copy its content for commercial use. Text, design, logo and images belong to Rehabify or are used with permission. You may share links and print pages for personal use.
 
 ### 6. Links to other sites
+
 We link to sites such as Google Maps and guideline bodies. We are not responsible for their content or privacy practices.
 
 ### 7. Limits of liability
+
 We work to keep information correct and up to date, but the site is provided "as is". To the extent the law allows, Rehabify is not liable for loss caused by relying on general website content without a consultation. Nothing here limits rights you have under Indian consumer law.
 
 ### 8. Law and disputes
+
 These terms follow the laws of India. Courts in Bengaluru, Karnataka have jurisdiction [CONFIRM]. Please contact us first so we can try to resolve any problem.
 
 ### 9. Contact
+
 Email [CONFIRM: email] · Phone +91 79048 42576 · Address [CONFIRM].
 
 ---
@@ -2632,9 +3123,11 @@ lastUpdated: "[CONFIRM: date set at launch]"
 ```
 
 ### Intro
+
 The health information on this website is for general education. It is not a diagnosis, a treatment plan or a substitute for seeing a doctor. Every person is different, and the right care depends on your history and examination.
 
 ### What this means for you
+
 - **Do not start, stop or change treatment** or medicines based on this website alone. Speak to your doctor first.
 - **Exercises shown are examples.** Do them only if your doctor or physiotherapist has said they are safe for you. Stop if pain gets sharply worse.
 - **Results differ from person to person.** We do not promise any outcome. Where evidence for a treatment is mixed, we say so.
@@ -2643,13 +3136,17 @@ The health information on this website is for general education. It is not a dia
 - **Using the site, the form or WhatsApp** does not make you our patient. A doctor and patient relationship starts at your consultation.
 
 ### Emergencies
+
 Callout:
+
 > Medical emergency? Call 108 or 112, or go to the nearest emergency department. Do not wait for a rehab appointment or a reply on WhatsApp.
 
 ### Images
+
 Some images on this site are illustrations or AI-assisted images, not photos of real patients. See our Editorial and Medical Review Policy.
 
 ### Questions
+
 If anything on the site is unclear or seems wrong, write to [CONFIRM: email]. We review every report.
 
 ---
@@ -2665,9 +3162,11 @@ lastUpdated: "[CONFIRM: date set at launch]"
 ```
 
 ### Intro
+
 Every health page on this website is checked and approved by a doctor before it goes live. This page explains who writes our content, how it is reviewed, where facts come from, and how we use AI tools.
 
 ### At a glance
+
 - **Reviewer:** Dr. Dharshan N A, MBBS, MD (Physical Medicine and Rehabilitation), Karnataka Medical Council Reg. No. [CONFIRM]
 - **Sources:** national and international clinical guidelines and peer-reviewed research
 - **Dates:** every medical page shows "Last reviewed"
@@ -2676,9 +3175,11 @@ Every health page on this website is checked and approved by a doctor before it 
 - **AI use:** disclosed, and always approved by the doctor
 
 ### Who writes and reviews
+
 Pages are drafted by our content team (Automize Media Labs, the agency that built the site) and by Dr. Dharshan N A. Dr. Dharshan reviews every medical page for accuracy, safety and plain language, and his name and review date appear in the reviewer box. Nothing medical is published without his approval.
 
 ### Our writing rules
+
 - Plain English, short sentences, terms explained the first time they appear
 - Facts only. No "best", no cure claims, no promises of results, no testimonials or patient numbers, as required by the Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002, and the Drugs and Magic Remedies (Objectionable Advertisements) Act, 1954
 - Where evidence is mixed or weak, we say so
@@ -2686,17 +3187,21 @@ Pages are drafted by our content team (Automize Media Labs, the agency that buil
 - Every page lists its main sources
 
 ### Sources we use
+
 Clinical guidelines from bodies such as NICE (UK), the World Health Organization, the American Heart Association and American Stroke Association, the American Academy of Orthopaedic Surgeons, the Indian Council of Medical Research, and peer-reviewed journals. We do not use other clinics' marketing pages as sources.
 
 ### AI-assisted content and images
+
 - **Images:** some images on this site, including some portraits of our doctors and illustrations, are AI-assisted. Each AI-assisted portrait is based on the real person and is approved in writing by that person [CONFIRM: written approval]. AI-assisted images never show results, before and after changes, or real patients. Illustrations of the body are simplified and not to scale.
 - **Text:** AI tools may help draft or edit text. A person checks every draft, and the doctor reviews and approves every medical statement. AI tools never give medical advice on this site.
 - **Labels:** AI-assisted images are marked in their alt text or caption [CONFIRM: labelling method].
 
 ### Corrections
+
 If you find an error, write to [CONFIRM: email]. We aim to reply within 7 days, correct confirmed errors promptly and update the "Last reviewed" date.
 
 ### Independence
+
 Rehabify does not accept payment, gifts or sponsorship for content. We do not name or promote medicine brands or devices.
 
 ---
@@ -2712,9 +3217,11 @@ lastUpdated: "[CONFIRM: date set at launch]"
 ```
 
 ### Intro
+
 At Rehabify in Bengaluru, you have the right to safe, respectful care that you understand and agree to. These rights follow the Charter of Patients' Rights from the Ministry of Health and Family Welfare, Government of India. Care also goes better when patients and families take part, so we list a few responsibilities too.
 
 ### Your rights
+
 1. **Information.** To know your condition, the likely cause, the treatment options, their risks and benefits, and the expected cost, in words you understand.
 2. **Records and reports.** To get copies of your medical records and test reports. We aim to provide them within 72 hours of your request [CONFIRM].
 3. **Informed consent.** To agree or refuse before any procedure, such as an injection or nerve block. You can ask questions and take time to decide.
@@ -2729,9 +3236,11 @@ At Rehabify in Bengaluru, you have the right to safe, respectful care that you u
 12. **Complaints.** To raise a concern and get a fair hearing, without it affecting your care.
 
 ### Children and people who need support
+
 For patients under 18, a parent or guardian gives consent and attends consults. The child's views are heard and respected. Adults may bring a family member or carer, and may name someone to receive information on their behalf.
 
 ### Your responsibilities
+
 - Share your full medical history, medicines and allergies, and bring scans and reports
 - Follow the plan you agreed to, and tell us if you cannot or if things change
 - Do your home exercises as advised, and report new or worsening symptoms
@@ -2740,6 +3249,7 @@ For patients under 18, a parent or guardian gives consent and attends consults. 
 - Pay for services as agreed
 
 ### Raising a concern
+
 Speak to the doctor or front desk, or write to [CONFIRM: email] or call +91 79048 42576. We aim to acknowledge your concern within 24 hours and resolve it within 7 days. If you are not satisfied, you may contact the Karnataka Medical Council or other authorities.
 
 Charter of Patients' Rights displayed at reception: [CONFIRM].
@@ -2757,9 +3267,11 @@ lastUpdated: "[CONFIRM: date set at launch]"
 ```
 
 ### Intro
+
 This page explains how appointments work at Rehabify for clinic visits and video consultations, how to change or cancel them, and when you get a refund. Fees are explained when we confirm your booking [CONFIRM: fees not shown on site, decision D3].
 
 ### At a glance
+
 - **Book:** website form, phone or WhatsApp on +91 79048 42576
 - **Confirmed:** only after we call or message you back [CONFIRM: confirmation time]
 - **Reschedule or cancel:** free with at least [CONFIRM: 12 hours] notice
@@ -2767,18 +3279,21 @@ This page explains how appointments work at Rehabify for clinic visits and video
 - **Refunds:** to the original payment method within [CONFIRM: 7 working days]
 
 ### Booking
+
 1. Send a request with your preferred date, time and format (clinic visit or video consult).
 2. We call or message to confirm the slot and the fee.
 3. You get a confirmation with the time, address or video link, and what to bring.
-Hours: [CONFIRM: consultation days and hours, video consult hours].
+   Hours: [CONFIRM: consultation days and hours, video consult hours].
 
 ### Clinic visits
+
 - Payment at the clinic after the consult [CONFIRM: payment methods]
 - Please arrive 10 minutes early with scans, reports and a medicines list
 - If you are more than [CONFIRM: 15 minutes] late, we may need to move you to the next free slot
 - Sometimes the doctor runs late because of a patient who needs extra time. We will tell you if the delay is long
 
 ### Video consultations
+
 - Paid in advance to confirm the slot [CONFIRM: payment method and advance payment]
 - The link is sent by [CONFIRM: WhatsApp or email] before the consult
 - Join from a quiet place with good light, and keep scans and reports ready to show or send
@@ -2786,22 +3301,27 @@ Hours: [CONFIRM: consultation days and hours, video consult hours].
 - If the doctor decides during the call that you need an in-person exam, the video fee is [CONFIRM: adjusted against the clinic visit, or not]
 
 ### Rescheduling and cancelling
+
 - Reschedule or cancel by phone or WhatsApp at least [CONFIRM: 12 hours] before your slot
 - Prepaid fees for a cancellation with enough notice are refunded in full, or moved to a new slot if you prefer
 - Cancellation with less notice, or not joining a video consult within [CONFIRM: 10 minutes] of the start: [CONFIRM: fee not refunded, or one free reschedule]
 
 ### If we cancel
+
 If Rehabify cancels or the doctor cannot attend, you can choose a new slot or a full refund.
 
 ### Technical problems
+
 If a video consult fails because of a problem at our end and cannot be completed, we will offer a new slot or a full refund. If the problem is at your end, we will try a phone call or a new slot at no extra charge where possible.
 
 ### Refunds
+
 - Paid back to the original payment method within [CONFIRM: 7 working days] of approval
 - Fees for consults already completed and procedures already done are not refundable
 - Procedure charges, if paid in advance, follow the same notice rules [CONFIRM]
 
 ### Questions
+
 Write to [CONFIRM: email] or call +91 79048 42576.
 
 ---
@@ -2817,9 +3337,11 @@ lastUpdated: "[CONFIRM: date set at launch]"
 ```
 
 ### Intro
+
 Many of our patients live with pain, weakness, stiffness or reduced vision, so the website should be easy for everyone to use. Rehabify aims for www.rehabify.in to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA.
 
 ### What we have done
+
 - Works with screen readers such as NVDA, JAWS, VoiceOver and TalkBack
 - Every function can be reached by keyboard, with a visible focus outline
 - Text and buttons meet colour contrast rules in light and dark areas
@@ -2832,16 +3354,20 @@ Many of our patients live with pain, weakness, stiffness or reduced vision, so t
 - Plain English and short sentences throughout
 
 ### Known limits
+
 - Embedded maps and videos from Google and YouTube may not fully meet WCAG 2.2. We give the address and a text summary next to them.
 - Older PDF documents, if any, may not be fully accessible. Ask us and we will send the content in another format.
 
 ### Testing
+
 We test with automated tools (Lighthouse and axe), keyboard-only use and a screen reader before launch and after major changes [CONFIRM: test date].
 
 ### At the clinic
+
 [CONFIRM: lift, ramp, wheelchair access, accessible toilet, parking]. If you need help getting in, tell us when you book and we will plan for it.
 
 ### Report a barrier
+
 If you cannot use part of the site, write to [CONFIRM: email] or call or WhatsApp +91 79048 42576. Tell us the page and what went wrong. We aim to reply within 24 hours and to fix the issue or give you the information another way within 7 days.
 
 ---
@@ -2870,12 +3396,15 @@ links: [/, /faqs/, /dr-dharshan-n-a/, /care/]
 ```
 
 ### Intro (answer-first)
+
 A physiatrist is a medical doctor who specialises in Physical Medicine and Rehabilitation (PMR). They diagnose and treat pain, weakness and loss of movement caused by problems in the muscles, bones, joints, nerves, brain or spinal cord, mostly without surgery. At Rehabify in Bengaluru, Dr. Dharshan N A is a physiatrist (MD PMR) with a fellowship in interventional pain management.
 
 ### What a physiatrist does
+
 The aim of a physiatrist is simple: help you do more of what matters to you, with less pain. That might be walking to the shop, going back to work, playing cricket again or getting dressed without help.
 
 To do this, a physiatrist:
+
 - **Finds the cause.** A detailed history and examination of how you move, your nerves, strength and balance. Scans and nerve tests are used when they will change your care.
 - **Treats the whole problem.** Pain, stiffness, weakness, balance and daily activities, not just one scan finding.
 - **Leads a team.** Physiotherapists, occupational therapists, speech therapists, orthotists and your other doctors work to one plan.
@@ -2883,7 +3412,9 @@ To do this, a physiatrist:
 - **Plans for the long term.** Home programmes and follow-up so progress lasts.
 
 ### Physiatrist, physiotherapist or orthopaedic surgeon?
+
 These three roles often get mixed up.
+
 - **A physiatrist** is a doctor (MBBS, then a 3-year MD or DNB in PMR). They diagnose, prescribe medicines, order tests, do procedures and plan rehab.
 - **A physiotherapist** is a trained therapist who delivers exercise and movement treatment. Physiatrists and physiotherapists usually work closely together.
 - **An orthopaedic surgeon** is a doctor who operates on bones and joints. If surgery may help you, a physiatrist will explain why and refer you to a surgeon of your choice.
@@ -2891,7 +3422,9 @@ These three roles often get mixed up.
 Many problems do not need surgery. A physiatrist is often a good first doctor for long-lasting pain or a loss of movement, and a good partner before and after surgery.
 
 ### When should you see a physiatrist?
+
 Consider seeing one if you have:
+
 - **Back, neck or joint pain** that lasts more than a few weeks or keeps coming back
 - **Sciatica,** with pain, tingling or numbness down the leg
 - **A stroke, spinal cord injury or head injury,** to plan rehab and manage stiffness, pain and daily tasks
@@ -2905,6 +3438,7 @@ Consider seeing one if you have:
 You do not always need a referral. You can book directly.
 
 ### What happens at a first visit
+
 1. **Your story.** What happened, what you can and cannot do, and what you want to get back to.
 2. **Examination.** Movement, strength, nerves, reflexes, walking and balance.
 3. **Review of scans and reports.** Bring everything you have.
@@ -2913,13 +3447,17 @@ You do not always need a referral. You can book directly.
 Follow-ups can often be done by video consult, especially for checking home programmes.
 
 ### What a physiatrist cannot promise
+
 Recovery depends on the condition, how long it has been there, your general health and how much rehab you can do. A good physiatrist will tell you honestly what is likely, set realistic goals and change the plan as you progress.
 
 ### When to get help urgently
+
 Callout:
+
 > Medical emergency? Call 108 or 112 for sudden weakness on one side, a drooping face, slurred speech, loss of bladder or bowel control, or severe pain after a fall. Do not wait for a rehab appointment.
 
 ### FAQs
+
 1. **Is a physiatrist a real doctor?** Yes. A physiatrist has an MBBS degree and a postgraduate degree (MD or DNB) in Physical Medicine and Rehabilitation, and is registered with a State Medical Council.
 2. **Do I need a referral to see a physiatrist?** No. You can book directly with Rehabify. If you already have a doctor, we can share updates with them with your consent.
 3. **Does a physiatrist do surgery?** No. Physiatrists treat without open surgery. Some, like Dr. Dharshan N A, are trained to do image-guided injections and nerve blocks when suitable.
@@ -2927,6 +3465,7 @@ Callout:
 5. **Can I see a physiatrist by video?** Yes, for many follow-ups and some first consults. The doctor may ask you to visit the clinic if an in-person examination is needed.
 
 ### Sources
+
 - International Society of Physical and Rehabilitation Medicine (ISPRM), description of the specialty
 - World Health Organization, Rehabilitation 2030 initiative and rehabilitation fact sheet
 - National Medical Commission, MD Physical Medicine and Rehabilitation curriculum
@@ -2952,14 +3491,17 @@ links: [/neuro-rehabilitation/stroke/, /neuro-rehabilitation/spasticity/]
 ```
 
 ### Intro (answer-first)
+
 The first 3 months after a stroke are when the brain is most ready to relearn, so this is when steady, well-planned rehab matters most. Rehab in this period focuses on safety, regaining movement and daily skills, and preventing problems such as stiffness, shoulder pain and falls. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist, plans stroke rehab with families from the hospital stage onwards.
 
 ### Why the first 90 days matter
+
 After a stroke, the brain starts to rewire itself. Healthy areas learn to take over some work from damaged areas. This process is called neuroplasticity. It is most active in the early weeks and months, which is why guidelines advise starting rehab as soon as a person is medically stable.
 
 Recovery does not stop at 90 days. Many people keep improving for a year or longer, and practice still helps years later. But habits set in the first months, good or bad, shape what comes next.
 
 ### Weeks 1 to 2: in hospital
+
 - **Medical care first.** The stroke team finds the cause and starts medicines to lower the risk of another stroke.
 - **Early, gentle movement.** Sitting up, changing position and short periods out of bed when the team says it is safe.
 - **Swallowing check.** Before eating or drinking, to prevent food going into the lungs.
@@ -2967,7 +3509,9 @@ Recovery does not stop at 90 days. Many people keep improving for a year or long
 - **Planning.** The family meets the rehab team to discuss goals and going home.
 
 ### Weeks 2 to 6: going home and building routine
+
 This is often the hardest stage for families. A clear plan helps.
+
 - **Therapy most days.** Physiotherapy for sitting balance, standing and walking; occupational therapy for dressing, bathing and using the hand; speech therapy if talking or swallowing is affected.
 - **A home programme.** Short sessions spread through the day work better than one long session.
 - **Home safety.** Clear paths, a chair in the shower, grab rails near the toilet, and good lighting at night.
@@ -2975,12 +3519,14 @@ This is often the hardest stage for families. A clear plan helps.
 - **The carer.** Learn safe ways to help with transfers. Look after your own rest and health too.
 
 ### Weeks 6 to 12: getting more independent
+
 - **Harder goals.** Walking outdoors, climbing stairs, preparing simple meals, returning to hobbies.
 - **The weak hand.** Repeated task practice, such as picking up objects, helps the hand and arm. In some people, using the weak arm more while the strong arm rests can help, if the doctor and therapist advise it.
 - **Thinking and mood.** Memory, attention and low mood are common after a stroke. Tell the doctor; help is available.
 - **Work and driving.** Ask before you drive again. Return to work is planned step by step.
 
 ### Problems to watch for, and what helps
+
 - **Spasticity (muscle stiffness).** Tight muscles in the arm or leg, often a bent elbow, a clenched fist or a pointed foot. Daily stretching, positioning and splints help. When stiffness gets in the way of care or movement, a physiatrist may offer botulinum toxin injections, combined with therapy.
 - **Shoulder pain.** Common on the weak side. Support the arm, avoid pulling on it during transfers, and get it checked early.
 - **Falls.** Poor balance and a weak leg raise the risk. Practise balance with a therapist and make the home safer.
@@ -2988,13 +3534,17 @@ This is often the hardest stage for families. A clear plan helps.
 - **Another stroke.** Take medicines as advised, and keep blood pressure, sugar and cholesterol under control.
 
 ### How a physiatrist helps
+
 A physiatrist looks at the whole picture: movement, stiffness, pain, swallowing, bladder, mood and home life. They set goals with the family, coordinate therapists, adjust medicines, treat spasticity and plan equipment. At Rehabify, follow-up can be at the clinic or by video consult, so families can get advice without a long trip.
 
 ### When to get help urgently
+
 Callout:
+
 > Call 108 or 112 straight away if there is sudden new weakness or numbness, a drooping face, slurred speech, sudden confusion, loss of vision, a severe headache, or a fall with a head injury. Think **BE FAST**: Balance, Eyes, Face, Arm, Speech, Time to call.
 
 ### FAQs
+
 1. **When should stroke rehab start?** As soon as the person is medically stable, often within the first days in hospital. Early care focuses on positioning, gentle movement and swallowing safety.
 2. **Does recovery stop after 3 months?** No. Recovery is fastest in the first months, but many people keep improving for a year or more with regular practice.
 3. **How much therapy is enough?** It depends on the person. Guidelines encourage as much task practice as the person can safely do, spread across the day, plus a home programme.
@@ -3002,6 +3552,7 @@ Callout:
 5. **Can stroke rehab be done at home?** Much of it can, with a home programme, therapist visits and video follow-ups. Clinic visits are still needed for examination and some treatments.
 
 ### Sources
+
 - American Heart Association and American Stroke Association, Guidelines for Adult Stroke Rehabilitation and Recovery
 - National Institute for Health and Care Excellence (NICE) guideline NG236, Stroke rehabilitation in adults, 2023
 - World Health Organization, Rehabilitation fact sheet
@@ -3023,18 +3574,26 @@ dateModified: "[CONFIRM: launch date]"
 lastReviewed: "[CONFIRM: sign-off date]"
 readingTime: "5 min"
 about: { type: MedicalCondition, name: "Low back pain" }
-links: [/pain-and-spine/back-pain/, /pain-and-spine/sciatica/, /pain-and-spine/image-guided-injections/]
+links:
+  [
+    /pain-and-spine/back-pain/,
+    /pain-and-spine/sciatica/,
+    /pain-and-spine/image-guided-injections/,
+  ]
 ```
 
 ### Intro (answer-first)
+
 Most low back pain is not caused by serious damage, and most people improve within a few weeks by staying active and avoiding long bed rest. A small number of people have warning signs that need urgent care. At Rehabify in Bengaluru, Dr. Dharshan N A, a physiatrist trained in interventional pain management, helps people with back pain that is not settling, and checks for the signs that need faster action.
 
 ### Why backs hurt
+
 The lower back is made of bones (vertebrae), discs, small joints, ligaments, muscles and nerves. Pain can come from any of these. In most people, no single damaged structure is found. Doctors call this "non-specific" back pain. It is real pain, but it is usually not dangerous.
 
 Common triggers include lifting or twisting, long hours of sitting, poor sleep, stress and low fitness. Scans often show disc bulges or "wear and tear", but these are common in people without any pain, so they do not always explain the problem.
 
 ### What helps
+
 - **Keep moving.** Walk, do your normal tasks as much as pain allows, and increase step by step. Movement helps the back recover faster than rest.
 - **Avoid long bed rest.** A day or two of taking it easy during a bad flare is fine, but staying in bed longer tends to slow recovery.
 - **Exercise.** A programme of strengthening, stretching and general fitness, ideally guided by a physiotherapist, helps both pain and future flare-ups. Yoga or Pilates can help some people.
@@ -3044,13 +3603,16 @@ Common triggers include lifting or twisting, long hours of sitting, poor sleep, 
 - **Sleep and stress.** Both affect how strongly you feel pain.
 
 ### What usually does not help
+
 - Long bed rest
 - Routine X-rays or MRI in the first weeks without warning signs
 - Belts or braces worn all day for a long time
 - Treatments that promise a quick fix or a "permanent cure"
 
 ### When to see a doctor
+
 Book a consultation if:
+
 - Pain lasts more than 2 to 3 weeks, or keeps coming back
 - Pain spreads below the knee, or there is tingling or numbness in the leg (this may be sciatica)
 - Pain wakes you at night, or there is morning stiffness lasting over 30 minutes
@@ -3058,8 +3620,11 @@ Book a consultation if:
 - Pain stops you working, sleeping or caring for family
 
 ### The warning signs to act on now
+
 Callout:
+
 > **Go to an emergency department or call 108 or 112** if back pain comes with:
+>
 > - numbness around the private parts, buttocks or inner thighs
 > - new difficulty passing urine, or loss of bladder or bowel control
 > - weakness in both legs, or a leg that is getting weaker quickly
@@ -3071,6 +3636,7 @@ Callout:
 Also see a doctor soon if you have unexplained weight loss with back pain, or you are over 50 with new back pain for the first time.
 
 ### How Rehabify helps with back pain
+
 1. **Examination** of how your back moves, nerve tests, strength and the hips and pelvis.
 2. **Review of scans,** with new ones only if they will change your treatment.
 3. **A plan that starts with movement:** a graded exercise programme, work and posture advice, and medicines for comfort.
@@ -3078,6 +3644,7 @@ Also see a doctor soon if you have unexplained weight loss with back pain, or yo
 5. **Prevention:** a home programme to lower the chance of the next flare.
 
 ### FAQs
+
 1. **How long does low back pain last?** Many episodes improve within 2 to 6 weeks. Some people have pain that lasts longer or returns, and they benefit from a planned exercise programme.
 2. **Do I need an MRI for back pain?** Not usually at first. An MRI helps if warning signs are present, there is leg weakness or numbness, or pain has not improved after 4 to 6 weeks of treatment.
 3. **Is it safe to exercise with back pain?** Yes, for most people. Start gently and build up. Some discomfort is normal; sharp or spreading pain means slow down and ask your doctor.
@@ -3085,6 +3652,7 @@ Also see a doctor soon if you have unexplained weight loss with back pain, or yo
 5. **Will I need surgery?** Most people with back pain do not. Surgery is considered for specific problems, such as severe nerve compression, and the doctor will refer you to a spine surgeon if needed.
 
 ### Sources
+
 - National Institute for Health and Care Excellence (NICE) guideline NG59, Low back pain and sciatica in over 16s
 - American College of Physicians guideline on non-invasive treatment of low back pain, 2017
 - WHO guideline on management of chronic primary low back pain in adults, 2023
@@ -3092,6 +3660,7 @@ Also see a doctor soon if you have unexplained weight loss with back pain, or yo
 ---
 
 ### Confirmations raised in this part
+
 - Legal entity name and full address (all 7 legal pages, Terms jurisdiction clause: courts in Bengaluru)
 - Single clinic email (privacy contact, complaints, accessibility, corrections)
 - Legal review of the 7 pages, or "approved as written"
@@ -3119,6 +3688,7 @@ Also see a doctor soon if you have unexplained weight loss with back pain, or yo
 How to review: read each page as a patient would. Mark anything that is not how you work. You do not need to fix wording; tell us what is wrong and we rewrite. We never ask about drug names, machine models or protocols.
 
 Open confirmations so far:
+
 1. Address, landmark, hours, video consult hours, Sunday rule
 2. KMC registration number; fellowship year; languages
 3. Email; legal entity; founding year

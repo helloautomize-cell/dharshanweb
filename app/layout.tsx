@@ -43,6 +43,11 @@ export const metadata: Metadata = {
   robots: SITE_INDEXABLE
     ? { index: true, follow: true }
     : { index: false, follow: false },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "Rehabify",
+  },
   metadataBase: new URL("https://www.rehabify.in/"),
 };
 export default function RootLayout({

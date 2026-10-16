@@ -21,74 +21,74 @@ Entity statement (used word for word in About, `llms.txt`, `entity-facts.md` and
 
 ### Core (12 + 404)
 
-| # | Page | URL | H1 (italic = serif accent) | Main search intent |
-|---|---|---|---|---|
-| 1 | Home | `/` | Rehab that moves *with you.* | physiatrist Bengaluru, rehabilitation doctor Bengaluru |
-| 2 | About Rehabify | `/about/` | About *Rehabify* | Rehabify Bengaluru |
-| 3 | Our doctors | `/doctors/` | Meet your *doctors* | PMR doctor Bengaluru |
-| 4 | Dr. Dharshan N A | `/dr-dharshan-n-a/` (kept from old site) | Dr. Dharshan *N A* | Dr Dharshan physiatrist, Dr Dharshan N A |
-| 4b | Dr. Selina Kh | `/dr-selina-kh/` (kept from old site) | Dr. Selina *Kh* | Dr Selina Kh physiatrist, PMR doctor Bengaluru |
-| 5 | All care | `/care/` | Care for pain, nerves and *movement* | rehabilitation services |
-| 6 | Conditions A to Z (Care section) | `/care/#a-z` | Every condition, by *name.* | condition + rehab |
-| 7 | Video consultation | `/video-consultation/` | See a rehab doctor from *home* | online physiatrist consultation India |
-| 8 | Plan your visit | `/plan-your-visit/` | Plan your *visit* | what to bring, timings |
-| 9 | Contact and book | `/contact/` (form anchor `#book`) | Book a *consultation* | Rehabify phone, book |
-| 10 | FAQs | `/faqs/` | Questions people *often* ask | what is a physiatrist |
-| 11 | Guides | `/guides/` | Health *Library* | |
-| 12 | Thank you (noindex) | `/thank-you/` | Thank you, we have your *request* | |
-| 13 | 404 | | We could not find that *page* | |
+| #   | Page                             | URL                                      | H1 (italic = serif accent)           | Main search intent                                     |
+| --- | -------------------------------- | ---------------------------------------- | ------------------------------------ | ------------------------------------------------------ |
+| 1   | Home                             | `/`                                      | Rehab that moves _with you._         | physiatrist Bengaluru, rehabilitation doctor Bengaluru |
+| 2   | About Rehabify                   | `/about/`                                | About _Rehabify_                     | Rehabify Bengaluru                                     |
+| 3   | Our doctors                      | `/doctors/`                              | Meet your _doctors_                  | PMR doctor Bengaluru                                   |
+| 4   | Dr. Dharshan N A                 | `/dr-dharshan-n-a/` (kept from old site) | Dr. Dharshan _N A_                   | Dr Dharshan physiatrist, Dr Dharshan N A               |
+| 4b  | Dr. Selina Kh                    | `/dr-selina-kh/` (kept from old site)    | Dr. Selina _Kh_                      | Dr Selina Kh physiatrist, PMR doctor Bengaluru         |
+| 5   | All care                         | `/care/`                                 | Care for pain, nerves and _movement_ | rehabilitation services                                |
+| 6   | Conditions A to Z (Care section) | `/care/#a-z`                             | Every condition, by _name._          | condition + rehab                                      |
+| 7   | Video consultation               | `/video-consultation/`                   | See a rehab doctor from _home_       | online physiatrist consultation India                  |
+| 8   | Plan your visit                  | `/plan-your-visit/`                      | Plan your _visit_                    | what to bring, timings                                 |
+| 9   | Contact and book                 | `/contact/` (form anchor `#book`)        | Book a _consultation_                | Rehabify phone, book                                   |
+| 10  | FAQs                             | `/faqs/`                                 | Questions people _often_ ask         | what is a physiatrist                                  |
+| 11  | Guides                           | `/guides/`                               | Health _Library_                     |                                                        |
+| 12  | Thank you (noindex)              | `/thank-you/`                            | Thank you, we have your _request_    |                                                        |
+| 13  | 404                              |                                          | We could not find that _page_        |                                                        |
 
 ### Care pages (24): 5 hubs + 19 detail pages
 
-| # | Page | URL | Parent | Badge | Primary query |
-|---|---|---|---|---|---|
-| 14 | Pain and spine | `/pain-and-spine/` | Hub | pain-spine | pain doctor Bengaluru, back pain specialist |
-| 15 | Back pain | `/pain-and-spine/back-pain/` | 14 | back-pain | low back pain treatment Bengaluru |
-| 16 | Neck pain | `/pain-and-spine/neck-pain/` | 14 | neck-pain | neck pain doctor, cervical pain |
-| 17 | Sciatica | `/pain-and-spine/sciatica/` | 14 | sciatica | sciatica treatment without surgery |
-| 18 | Image-guided injections and nerve blocks | `/pain-and-spine/image-guided-injections/` | 14 | injection | nerve block, facet injection Bengaluru |
-| 19 | Neuro rehabilitation | `/neuro-rehabilitation/` | Hub | neuro | neuro rehab Bengaluru |
-| 20 | Stroke rehabilitation | `/neuro-rehabilitation/stroke/` | 19 | stroke | stroke rehab Bengaluru, paralysis recovery |
-| 21 | Spinal cord injury rehab | `/neuro-rehabilitation/spinal-cord-injury/` | 19 | spinal-cord | spinal cord injury rehabilitation |
-| 22 | Head injury rehab | `/neuro-rehabilitation/head-injury/` | 19 | head-injury | brain injury rehab |
-| 23 | Parkinson's disease rehab | `/neuro-rehabilitation/parkinsons/` | 19 | parkinsons | Parkinson's physiotherapy doctor |
-| 24 | Spasticity care | `/neuro-rehabilitation/spasticity/` | 19 | spasticity | muscle stiffness after stroke |
-| 25 | Joints and sports | `/joints-and-sports/` | Hub | joints | joint pain doctor, sports medicine Bengaluru |
-| 26 | Knee pain and osteoarthritis | `/joints-and-sports/knee-pain/` | 25 | knee | knee pain without surgery |
-| 27 | Shoulder pain and frozen shoulder | `/joints-and-sports/shoulder-pain/` | 25 | shoulder | frozen shoulder treatment |
-| 28 | Sports injuries | `/joints-and-sports/sports-injuries/` | 25 | sports | sports injury rehab |
-| 29 | Rehab after a fracture or surgery | `/joints-and-sports/after-fracture-or-surgery/` | 25 | fracture | post-surgery rehab, knee replacement rehab |
-| 30 | PRP and prolotherapy | `/joints-and-sports/prp-and-prolotherapy/` | 25 | prp | PRP injection knee Bengaluru [CONFIRM: offered] |
-| 31 | Amputation and prosthetic rehab | `/joints-and-sports/prosthetic-rehab/` | 25 | prosthesis | prosthetic training |
-| 32 | Children's rehabilitation | `/childrens-rehabilitation/` | Hub | children | paediatric rehab Bengaluru |
-| 33 | Cerebral palsy | `/childrens-rehabilitation/cerebral-palsy/` | 32 | cerebral-palsy | cerebral palsy treatment Bengaluru |
-| 34 | Muscular dystrophy | `/childrens-rehabilitation/muscular-dystrophy/` | 32 | muscular-dystrophy | DMD rehab |
-| 35 | Developmental delay and autism support | `/childrens-rehabilitation/developmental-delay/` | 32 | development | developmental delay therapy |
-| 36 | Older adults | `/older-adults/` | Hub | older-adults | geriatric rehab Bengaluru |
-| 37 | Falls and balance | `/older-adults/falls-and-balance/` | 36 | balance | fall prevention elderly |
-| 38 | Osteoporosis | `/older-adults/osteoporosis/` | 36 | bones | osteoporosis doctor |
+| #   | Page                                     | URL                                              | Parent | Badge              | Primary query                                   |
+| --- | ---------------------------------------- | ------------------------------------------------ | ------ | ------------------ | ----------------------------------------------- |
+| 14  | Pain and spine                           | `/pain-and-spine/`                               | Hub    | pain-spine         | pain doctor Bengaluru, back pain specialist     |
+| 15  | Back pain                                | `/pain-and-spine/back-pain/`                     | 14     | back-pain          | low back pain treatment Bengaluru               |
+| 16  | Neck pain                                | `/pain-and-spine/neck-pain/`                     | 14     | neck-pain          | neck pain doctor, cervical pain                 |
+| 17  | Sciatica                                 | `/pain-and-spine/sciatica/`                      | 14     | sciatica           | sciatica treatment without surgery              |
+| 18  | Image-guided injections and nerve blocks | `/pain-and-spine/image-guided-injections/`       | 14     | injection          | nerve block, facet injection Bengaluru          |
+| 19  | Neuro rehabilitation                     | `/neuro-rehabilitation/`                         | Hub    | neuro              | neuro rehab Bengaluru                           |
+| 20  | Stroke rehabilitation                    | `/neuro-rehabilitation/stroke/`                  | 19     | stroke             | stroke rehab Bengaluru, paralysis recovery      |
+| 21  | Spinal cord injury rehab                 | `/neuro-rehabilitation/spinal-cord-injury/`      | 19     | spinal-cord        | spinal cord injury rehabilitation               |
+| 22  | Head injury rehab                        | `/neuro-rehabilitation/head-injury/`             | 19     | head-injury        | brain injury rehab                              |
+| 23  | Parkinson's disease rehab                | `/neuro-rehabilitation/parkinsons/`              | 19     | parkinsons         | Parkinson's physiotherapy doctor                |
+| 24  | Spasticity care                          | `/neuro-rehabilitation/spasticity/`              | 19     | spasticity         | muscle stiffness after stroke                   |
+| 25  | Joints and sports                        | `/joints-and-sports/`                            | Hub    | joints             | joint pain doctor, sports medicine Bengaluru    |
+| 26  | Knee pain and osteoarthritis             | `/joints-and-sports/knee-pain/`                  | 25     | knee               | knee pain without surgery                       |
+| 27  | Shoulder pain and frozen shoulder        | `/joints-and-sports/shoulder-pain/`              | 25     | shoulder           | frozen shoulder treatment                       |
+| 28  | Sports injuries                          | `/joints-and-sports/sports-injuries/`            | 25     | sports             | sports injury rehab                             |
+| 29  | Rehab after a fracture or surgery        | `/joints-and-sports/after-fracture-or-surgery/`  | 25     | fracture           | post-surgery rehab, knee replacement rehab      |
+| 30  | PRP and prolotherapy                     | `/joints-and-sports/prp-and-prolotherapy/`       | 25     | prp                | PRP injection knee Bengaluru [CONFIRM: offered] |
+| 31  | Amputation and prosthetic rehab          | `/joints-and-sports/prosthetic-rehab/`           | 25     | prosthesis         | prosthetic training                             |
+| 32  | Children's rehabilitation                | `/childrens-rehabilitation/`                     | Hub    | children           | paediatric rehab Bengaluru                      |
+| 33  | Cerebral palsy                           | `/childrens-rehabilitation/cerebral-palsy/`      | 32     | cerebral-palsy     | cerebral palsy treatment Bengaluru              |
+| 34  | Muscular dystrophy                       | `/childrens-rehabilitation/muscular-dystrophy/`  | 32     | muscular-dystrophy | DMD rehab                                       |
+| 35  | Developmental delay and autism support   | `/childrens-rehabilitation/developmental-delay/` | 32     | development        | developmental delay therapy                     |
+| 36  | Older adults                             | `/older-adults/`                                 | Hub    | older-adults       | geriatric rehab Bengaluru                       |
+| 37  | Falls and balance                        | `/older-adults/falls-and-balance/`               | 36     | balance            | fall prevention elderly                         |
+| 38  | Osteoporosis                             | `/older-adults/osteoporosis/`                    | 36     | bones              | osteoporosis doctor                             |
 
 Practo also lists cardiopulmonary, oncology, pelvic, women's and post-COVID rehab. They stay off the site until Dr. Dharshan confirms he offers them (`client-answers.md` Q17). Adding one later = one new detail page.
 
 ### Legal and trust (7)
 
-| # | Page | URL |
-|---|---|---|
-| 39 | Privacy Policy | `/privacy-policy/` |
-| 40 | Terms of Use | `/terms-of-use/` |
-| 41 | Medical Disclaimer | `/medical-disclaimer/` |
-| 42 | Editorial and Medical Review Policy (incl. AI-assisted images) | `/editorial-policy/` |
-| 43 | Patient Rights and Responsibilities | `/patient-rights/` |
-| 44 | Appointments, Cancellation and Refund (incl. video consults) | `/appointments-cancellation-refund/` |
-| 45 | Accessibility Statement | `/accessibility/` |
-| + | Telemedicine notice (section on Video consultation + Terms) | |
+| #   | Page                                                           | URL                                  |
+| --- | -------------------------------------------------------------- | ------------------------------------ |
+| 39  | Privacy Policy                                                 | `/privacy-policy/`                   |
+| 40  | Terms of Use                                                   | `/terms-of-use/`                     |
+| 41  | Medical Disclaimer                                             | `/medical-disclaimer/`               |
+| 42  | Editorial and Medical Review Policy (incl. AI-assisted images) | `/editorial-policy/`                 |
+| 43  | Patient Rights and Responsibilities                            | `/patient-rights/`                   |
+| 44  | Appointments, Cancellation and Refund (incl. video consults)   | `/appointments-cancellation-refund/` |
+| 45  | Accessibility Statement                                        | `/accessibility/`                    |
+| +   | Telemedicine notice (section on Video consultation + Terms)    |                                      |
 
 ### Guides at launch (3 posts)
 
-| Slug | Title | Links to |
-|---|---|---|
-| `/guides/what-is-a-physiatrist/` | What is a physiatrist, and when should you see one? | Home, FAQs, Dr. Dharshan |
-| `/guides/first-90-days-after-stroke/` | The first 90 days after a stroke: what rehab looks like | Stroke, Spasticity |
+| Slug                                   | Title                                                      | Links to                        |
+| -------------------------------------- | ---------------------------------------------------------- | ------------------------------- |
+| `/guides/what-is-a-physiatrist/`       | What is a physiatrist, and when should you see one?        | Home, FAQs, Dr. Dharshan        |
+| `/guides/first-90-days-after-stroke/`  | The first 90 days after a stroke: what rehab looks like    | Stroke, Spasticity              |
 | `/guides/low-back-pain-when-to-worry/` | Low back pain: what helps, and the warning signs to act on | Back pain, Sciatica, Injections |
 
 Old rehabify.in blog posts: reviewed one by one in `current-website-audit.md`; keep, rewrite or 410. [CONFIRM: export of old posts]
@@ -98,11 +98,13 @@ Old rehabify.in blog posts: reviewed one by one in `current-website-audit.md`; k
 ## 3. Navigation (matches design v2)
 
 ### Floating pill navbar (desktop)
+
 Logo · Care ▾ (mega panel) · Video consults · Doctors · Visit · Guides · **Book a consultation** (glow button)
 
 Utility info moves out of a separate bar: hours, phone and "Medical emergency? Call 108 or 112" sit in the mega panel footer, the mobile menu footer and the site footer. The emergency line also appears on every symptom page callout.
 
 ### Mega panel "Care" (4 columns + preview card)
+
 - Pain and spine: Back pain · Neck pain · Sciatica · Image-guided injections
 - Brain and nerves: Stroke · Spinal cord injury · Head injury · Parkinson's · Spasticity
 - Joints and sport: Knee pain · Shoulder pain · Sports injuries · After fracture or surgery · PRP · Prosthetic rehab
@@ -111,18 +113,22 @@ Utility info moves out of a separate bar: hours, phone and "Medical emergency? C
 - Panel footer row: hours · phone · emergency line
 
 ### Mobile menu (full-screen night sheet, accordions all closed)
+
 Care groups (5) · Conditions A to Z · Video consultation · Our doctors · About · Plan your visit · Guides · FAQs · Contact
 Fixed footer: Book · Call · today's hours line
 
 ### Mobile dock (below 900px, every page)
+
 Book (ice) · Call (sheet: +91 79048 42576) · WhatsApp (green, pre-filled). Hidden while typing in a form and on the thank-you page.
 
 WhatsApp pre-fill: "Hello Rehabify, I would like to book a consultation about [page title]. My name is "
 
 ### Spine navigator (desktop 1280px+, Home and long hub pages only)
+
 Vertebra rail on the left, one vertebra per section, labelled C1 to S1 on hover.
 
 ### Footer (night)
+
 Logo (ice) + entity line · phone/WhatsApp · email (obfuscated) · address `[CONFIRM]` · Get directions · Columns: Care · Patients (Book, Video consults, Plan your visit, Conditions A to Z, FAQs, Guides) · Legal (7) + Cookie settings · Social `[CONFIRM]` · emergency line · giant faded "Rehabify" wordmark.
 Bottom line: "© [year] Rehabify. This website is run by [CONFIRM: legal entity name], [address]. Information here is for general education and does not replace a consultation. Dr. Dharshan N A, Karnataka Medical Council Reg. No. [CONFIRM]."
 
@@ -133,21 +139,26 @@ Bottom line: "© [year] Rehabify. This website is run by [CONFIRM: legal entity 
 **Emergency line:** Medical emergency? Call 108 or 112.
 
 **Emergency callout (symptom pages):**
+
 > **Get help straight away.** Call 108 or 112, or go to the nearest emergency department, for sudden weakness or numbness on one side of the body, a drooping face, slurred speech, sudden loss of bladder or bowel control, numbness around the private parts, back pain after a fall or accident, or back pain with fever. Do not wait for a rehab appointment.
 
 **Reviewer box:**
+
 > Medically reviewed by **Dr. Dharshan N A**, MBBS, MD (Physical Medicine and Rehabilitation) · Karnataka Medical Council Reg. No. [CONFIRM] · Last reviewed [date set at sign-off]
 > This page explains general care at Rehabify. It does not replace a consultation. Read our [editorial policy](/editorial-policy/).
 
 **CTA band (night stage):**
-> Your next step can be a *small one.*
+
+> Your next step can be a _small one._
 > Clinic visit or video consult. The team confirms your time by phone or WhatsApp [CONFIRM: confirmation time, e.g. "within 2 hours, 9 am to 7 pm"].
 > [Book a consultation] [Call +91 79048 42576] [WhatsApp]
 
 **Form consent (checkbox, unticked):**
+
 > I agree that Rehabify may use these details to contact me about my appointment, as explained in the [Privacy Policy](/privacy-policy/).
 
 **Under the form:**
+
 > Please do not include detailed medical information here. You can share it with the doctor at your consultation.
 
 **Generic treatment line:** The doctor decides the right tests and treatment for you after examining you.
@@ -192,16 +203,16 @@ Format choice on the form: Clinic visit · Video consult
 
 ## 7. Schema plan (one `@graph` per page)
 
-| Page | Types |
-|---|---|
-| All | `WebSite` (#website, en-IN), `MedicalClinic` (#clinic), `Physician` (#dr-dharshan-n-a, #dr-selina-kh), `BreadcrumbList` |
-| Home | + `MedicalWebPage`, `FAQPage` |
-| Dr. Dharshan | + `ProfilePage` (mainEntity #dr-dharshan-n-a) |
-| Dr. Selina | + `ProfilePage` (mainEntity #dr-selina-kh; Physician with medicalSpecialty PMR, credentials and registration [CONFIRM]) |
-| Care pages | + `MedicalWebPage` (about `MedicalCondition` or `MedicalTherapy`/`MedicalProcedure`, reviewedBy, lastReviewed), `FAQPage` |
-| Video consultation | + `MedicalWebPage`, `Service` (availableChannel `ServiceChannel` online) |
-| Posts | `BlogPosting` (author + reviewedBy, datePublished, dateModified), `FAQPage` |
-| Contact | `ContactPage` |
+| Page               | Types                                                                                                                     |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| All                | `WebSite` (#website, en-IN), `MedicalClinic` (#clinic), `Physician` (#dr-dharshan-n-a, #dr-selina-kh), `BreadcrumbList`   |
+| Home               | + `MedicalWebPage`, `FAQPage`                                                                                             |
+| Dr. Dharshan       | + `ProfilePage` (mainEntity #dr-dharshan-n-a)                                                                             |
+| Dr. Selina         | + `ProfilePage` (mainEntity #dr-selina-kh; Physician with medicalSpecialty PMR, credentials and registration [CONFIRM])   |
+| Care pages         | + `MedicalWebPage` (about `MedicalCondition` or `MedicalTherapy`/`MedicalProcedure`, reviewedBy, lastReviewed), `FAQPage` |
+| Video consultation | + `MedicalWebPage`, `Service` (availableChannel `ServiceChannel` online)                                                  |
+| Posts              | `BlogPosting` (author + reviewedBy, datePublished, dateModified), `FAQPage`                                               |
+| Contact            | `ContactPage`                                                                                                             |
 
 `MedicalClinic` (#clinic): name "Rehabify", url https://www.rehabify.in/, telephone +91-7904842576, email [CONFIRM], address + geo [CONFIRM], openingHoursSpecification [CONFIRM], medicalSpecialty "PhysicalMedicineAndRehabilitation" (text, schema.org has no enum), knowsAbout list, availableService (MedicalTherapy items), areaServed Bengaluru + India (online), founder #dr-dharshan-n-a, foundingDate [CONFIRM], sameAs [CONFIRM: GBP, Instagram, Facebook, Practo]. No AggregateRating, no Review.
 
@@ -221,16 +232,16 @@ Not used: testimonials, review quotes, counters, before/after, offers, pop-ups.
 
 ## 9. Old URL map (301 / 410)
 
-| Old URL | New |
-|---|---|
-| `/home` | `/` |
-| `/about-us` | `/about/` |
-| `/dr-dharshan-n-a` | `/dr-dharshan-n-a/` (same) |
-| `/dr-selina-kh` | `/dr-selina-kh/` (same path, new page) |
-| `/blogs`, `/blogs/*` | `/guides/` or the matching new post |
-| `/home/book-an-appointment-now` | `/contact/#book` |
-| `/home/pricing`, `/home/monthly` | `/plan-your-visit/` [CONFIRM: what "Monthly" was] |
-| `/ai-tools` and each AI tool page | 410 Gone [DECISION D1] |
+| Old URL                           | New                                               |
+| --------------------------------- | ------------------------------------------------- |
+| `/home`                           | `/`                                               |
+| `/about-us`                       | `/about/`                                         |
+| `/dr-dharshan-n-a`                | `/dr-dharshan-n-a/` (same)                        |
+| `/dr-selina-kh`                   | `/dr-selina-kh/` (same path, new page)            |
+| `/blogs`, `/blogs/*`              | `/guides/` or the matching new post               |
+| `/home/book-an-appointment-now`   | `/contact/#book`                                  |
+| `/home/pricing`, `/home/monthly`  | `/plan-your-visit/` [CONFIRM: what "Monthly" was] |
+| `/ai-tools` and each AI tool page | 410 Gone [DECISION D1]                            |
 
 Full list comes from a crawl of the old site in `current-website-audit.md`.
 

@@ -1,26 +1,33 @@
-import { readFileSync } from "node:fs";
-import path from "node:path";
-import { getGuides } from "@/lib/guide-content.mjs";
-import { GUIDE_BASE, guideRouteEntries } from "@/lib/guides";
+import {
+  entityStatement,
+  guideMarkdown,
+  pageList,
+  pageMarkdown,
+} from "@/lib/llms";
+import { allRoutes } from "@/lib/content";
 
 export const dynamic = "force-static";
+
 export function GET() {
-  const base = readFileSync(path.resolve("resources/docs/llms.txt"), "utf8");
-  const manifest = JSON.parse(
-    readFileSync(path.resolve("content/manifest.json"), "utf8"),
-  ) as { url: string; title: string; description: string; noindex?: boolean }[];
-  const list = [
-    ...manifest.filter(
-      (page) => !page.noindex && !page.url.startsWith("/guides/"),
-    ),
-    ...guideRouteEntries(getGuides()),
-  ]
-    .map(
-      (page) =>
-        `- [${page.title.replace(/\s*\|.*$/, "")}](${GUIDE_BASE}${page.url}): ${page.description}`,
-    )
-    .join("\n");
-  return new Response(`${base}\n## All pages\n${list}\n`, {
+  const articleUrls = new Set(
+    pageList()
+      .map((page) => page.url)
+      .filter((url) => /^\/guides\/[^/]+\/$/.test(url)),
+  );
+  const urls = allRoutes().filter(
+    (url) => !["/thank-you/", "/404/"].includes(url) && url !== "/styleguide/",
+  );
+  const pages = urls.filter((url) => !articleUrls.has(url)).map(pageMarkdown);
+  const guides = [...articleUrls].map(guideMarkdown);
+  const body = `# Rehabify
+
+> ${entityStatement()}
+
+Information on this site is for general education and does not replace a consultation. Medical emergency in India: call 108 or 112.
+
+${[...pages, ...guides].filter(Boolean).join("\n\n---\n\n")}
+`;
+  return new Response(body, {
     headers: { "Content-Type": "text/plain; charset=utf-8" },
   });
 }

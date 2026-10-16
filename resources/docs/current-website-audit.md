@@ -42,17 +42,17 @@ The fetch tool would not return the bios verbatim. The summaries below are the c
 
 ## 3. NAP, hours, FAQs and forms
 
-| Item | Found | Where |
-|---|---|---|
-| Name | Rehabify | All pages |
-| Address | 🔴 None | |
-| Phone | +91 7904842576 (phone and WhatsApp) | Home |
-| Phone (agency) | 🔴 +91 9428216487 | Footer of the inner pages (Neurolearn Media) |
-| Email | 🔴 xyz@abc.com (placeholder) | Home |
-| Email (agency) | 🔴 contactnlm124@gmail.com | Footer of the inner pages |
-| Hours | 🔴 None | |
-| FAQs | None | |
-| Forms | 🔴 None visible. The booking page holds only a Google Sites embed frame | /home/book-an-appointment-now |
+| Item           | Found                                                                   | Where                                        |
+| -------------- | ----------------------------------------------------------------------- | -------------------------------------------- |
+| Name           | Rehabify                                                                | All pages                                    |
+| Address        | 🔴 None                                                                 |                                              |
+| Phone          | +91 7904842576 (phone and WhatsApp)                                     | Home                                         |
+| Phone (agency) | 🔴 +91 9428216487                                                       | Footer of the inner pages (Neurolearn Media) |
+| Email          | 🔴 xyz@abc.com (placeholder)                                            | Home                                         |
+| Email (agency) | 🔴 contactnlm124@gmail.com                                              | Footer of the inner pages                    |
+| Hours          | 🔴 None                                                                 |                                              |
+| FAQs           | None                                                                    |                                              |
+| Forms          | 🔴 None visible. The booking page holds only a Google Sites embed frame | /home/book-an-appointment-now                |
 
 ## 4. Google profiles
 
@@ -62,18 +62,18 @@ The Google Business Profile was not checked in this crawl. client-answers.md A6 
 
 Word counts are estimates of body text and exclude navigation.
 
-| Old URL | Title | Type | Words | Action | 301 target (site-plan.md §9) |
-|---|---|---|---|---|---|
-| `/` | Rehabify | Home | ~300 (est.) | Rewrite | `/` (same URL, no redirect) 🔴 not in plan map |
-| `/home` | Rehabify | Home (duplicate of /) | same | 301 | `/` |
-| `/home/monthly` | Rehabify - Monthly | Empty page | ~0 | 301 | `/plan-your-visit/` |
-| `/home/pricing` | Rehabify - Pricing | Empty page (no prices) | ~0 | 301 | `/plan-your-visit/` |
-| `/home/book-an-appointment-now` | Rehabify - Book an Appointment Now | Booking page with no form | ~30 | 301 | `/contact/#book` (the fragment is ignored by servers; redirect to `/contact/`) |
-| `/dr-dharshan-n-a` | Rehabify - Dr. Dharshan N A | Doctor | ~400 | Rewrite, keep URL | `/dr-dharshan-n-a/` (trailing-slash 301 only) |
-| `/dr-selina-kh` | Rehabify - Dr. Selina Kh | Doctor | ~380 | Rewrite | `/doctors/`, then `/dr-selina-kh/` |
-| `/blogs` | Rehabify - Blogs | Blog index with no posts | ~0 | 301 | `/health-library/` |
-| `/ai-tools` | Rehabify - AI Tools | AI tools | ~450 | 410 | 410 Gone (D1) |
-| `/about-us` | Rehabify - About Us | About | ~350 | Rewrite | `/about/` |
+| Old URL                         | Title                              | Type                      | Words       | Action            | 301 target (site-plan.md §9)                                                   |
+| ------------------------------- | ---------------------------------- | ------------------------- | ----------- | ----------------- | ------------------------------------------------------------------------------ |
+| `/`                             | Rehabify                           | Home                      | ~300 (est.) | Rewrite           | `/` (same URL, no redirect) 🔴 not in plan map                                 |
+| `/home`                         | Rehabify                           | Home (duplicate of /)     | same        | 301               | `/`                                                                            |
+| `/home/monthly`                 | Rehabify - Monthly                 | Empty page                | ~0          | 301               | `/plan-your-visit/`                                                            |
+| `/home/pricing`                 | Rehabify - Pricing                 | Empty page (no prices)    | ~0          | 301               | `/plan-your-visit/`                                                            |
+| `/home/book-an-appointment-now` | Rehabify - Book an Appointment Now | Booking page with no form | ~30         | 301               | `/contact/#book` (the fragment is ignored by servers; redirect to `/contact/`) |
+| `/dr-dharshan-n-a`              | Rehabify - Dr. Dharshan N A        | Doctor                    | ~400        | Rewrite, keep URL | `/dr-dharshan-n-a/` (trailing-slash 301 only)                                  |
+| `/dr-selina-kh`                 | Rehabify - Dr. Selina Kh           | Doctor                    | ~380        | Rewrite           | `/doctors/`, then `/dr-selina-kh/`                                             |
+| `/blogs`                        | Rehabify - Blogs                   | Blog index with no posts  | ~0          | 301               | `/health-library/`                                                             |
+| `/ai-tools`                     | Rehabify - AI Tools                | AI tools                  | ~450        | 410               | 410 Gone (D1)                                                                  |
+| `/about-us`                     | Rehabify - About Us                | About                     | ~350        | Rewrite           | `/about/`                                                                      |
 
 **Old URLs missing from the plan's map.** None of real substance. The root `/` is not listed, but it needs no redirect. The plan's `/blogs/*` and "each AI tool page" rules match no live URLs, because no blog posts or AI tool pages exist. If sitemap.xml lists more URLs once it can be fetched, add them to the map.
 
@@ -91,17 +91,18 @@ Word counts are estimates of body text and exclude navigation.
 
 ## 8. UX per page
 
-| Page | Notes |
-|---|---|
-| Home | Most of the page is about AI tools, with little about rehab. The email is a placeholder. There is no address or hours. |
-| Doctor pages | Long, generic prose with no credentials. The two pages are near duplicates. The "Book a consultation" button leads to an empty page. |
-| About | Generic text with no facts (no address, founding year or hours). |
-| AI Tools | Dead calls to action. A spelling error ("Mensrual"). The tool names do not match ("Period Pal" vs "Menstrual Cycle Tracker"). |
-| Blogs, Pricing, Monthly, Booking | Empty. These are dead ends for visitors. |
+| Page                             | Notes                                                                                                                                |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Home                             | Most of the page is about AI tools, with little about rehab. The email is a placeholder. There is no address or hours.               |
+| Doctor pages                     | Long, generic prose with no credentials. The two pages are near duplicates. The "Book a consultation" button leads to an empty page. |
+| About                            | Generic text with no facts (no address, founding year or hours).                                                                     |
+| AI Tools                         | Dead calls to action. A spelling error ("Mensrual"). The tool names do not match ("Period Pal" vs "Menstrual Cycle Tracker").        |
+| Blogs, Pricing, Monthly, Booking | Empty. These are dead ends for visitors.                                                                                             |
 
 ## 9. Issues
 
 **🔴 Live problems**
+
 - 🔴 The placeholder email xyz@abc.com is on the home page.
 - 🔴 The agency's phone and email appear on the inner pages, where patients will read them as the clinic's contact details.
 - 🔴 The AI tools give symptom, medication and report advice under a doctor's brand without review (medical advertising and DPDP risk).
@@ -114,6 +115,7 @@ Word counts are estimates of body text and exclude navigation.
 **Conversion.** There is no form, no address and no hours. The only working contact route is the phone and WhatsApp number on the home page.
 
 **Technical SEO.**
+
 - All titles follow the "Rehabify - X" pattern with no keywords.
 - There are no meta descriptions apart from the generic og:description.
 - No image has alt text.
@@ -121,6 +123,7 @@ Word counts are estimates of body text and exclude navigation.
 - The sitemap was not reachable through the fetch tool.
 
 **Local SEO.**
+
 - No NAP block, no map and no city name were seen.
 - The two phone numbers conflict.
 
@@ -130,31 +133,31 @@ Word counts are estimates of body text and exclude navigation.
 
 All images are hosted on Google (lh7-us.googleusercontent.com) under opaque IDs. Every alt attribute is empty. File sizes were not measurable.
 
-| Page | Images | Notes |
-|---|---|---|
-| Home | Several | Tool and banner images. No alt text |
-| Dr. Dharshan N A | 2 (header, which is also the og:image, served at 1280px width; one lower-page image) | No alt text |
-| Dr. Selina Kh | 2 (header, which is also the og:image; one near the footer) | No alt text |
-| AI Tools | Several | Tool images. No alt text. Not needed after launch (410) |
-| Monthly | og:image only | |
+| Page             | Images                                                                               | Notes                                                   |
+| ---------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------- |
+| Home             | Several                                                                              | Tool and banner images. No alt text                     |
+| Dr. Dharshan N A | 2 (header, which is also the og:image, served at 1280px width; one lower-page image) | No alt text                                             |
+| Dr. Selina Kh    | 2 (header, which is also the og:image; one near the footer)                          | No alt text                                             |
+| AI Tools         | Several                                                                              | Tool images. No alt text. Not needed after launch (410) |
+| Monthly          | og:image only                                                                        |                                                         |
 
 Original files should come from the client or the Google Site owner (client-answers.md E and F).
 
 ## 11. Data checklist
 
-| Data | Status |
-|---|---|
-| Phone | Have it, unconfirmed (+91 79048 42576) |
-| Address | Missing ★ |
-| Hours | Missing ★ |
-| Email | Missing ★ |
-| Registration numbers | Missing ★ |
-| Founding year | Missing ★ |
-| Dr. Dharshan's credentials | Have them (from client-answers.md, not from the site) |
-| Dr. Selina's credentials | Missing |
-| Verbatim bios | Missing (the fetch tool would not return them) |
-| Google Site owner and domain access | Missing ★ |
-| sitemap.xml and robots.txt | Not fetched. Recheck from an unblocked network |
+| Data                                | Status                                                |
+| ----------------------------------- | ----------------------------------------------------- |
+| Phone                               | Have it, unconfirmed (+91 79048 42576)                |
+| Address                             | Missing ★                                             |
+| Hours                               | Missing ★                                             |
+| Email                               | Missing ★                                             |
+| Registration numbers                | Missing ★                                             |
+| Founding year                       | Missing ★                                             |
+| Dr. Dharshan's credentials          | Have them (from client-answers.md, not from the site) |
+| Dr. Selina's credentials            | Missing                                               |
+| Verbatim bios                       | Missing (the fetch tool would not return them)        |
+| Google Site owner and domain access | Missing ★                                             |
+| sitemap.xml and robots.txt          | Not fetched. Recheck from an unblocked network        |
 
 ## 12. Image selection
 

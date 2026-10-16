@@ -10,7 +10,7 @@ import { BookingForm } from "@/components/booking-form";
 import { MapFacade } from "@/components/map-facade";
 import { Icon } from "@/lib/icons";
 import { getSignedRenderTime } from "./actions";
-import { graph, breadcrumb } from "@/lib/schema";
+import { graph, breadcrumb, webPage } from "@/lib/schema";
 
 const page = getPage("/contact/")!;
 
@@ -122,12 +122,16 @@ export default async function ContactPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            graph(page.meta, [
-              breadcrumb([
-                { label: "Home", href: "/" },
-                { label: "Contact", href: "/contact/" },
-              ]),
-            ]),
+            graph(
+              page.meta,
+              [
+                breadcrumb([
+                  { label: "Home", href: "/" },
+                  { label: "Contact", href: "/contact/" },
+                ]),
+              ],
+              webPage(page.meta, "ContactPage"),
+            ),
           ),
         }}
       />
