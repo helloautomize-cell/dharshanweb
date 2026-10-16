@@ -88,7 +88,7 @@ test("at 390: dock present except thank-you, Book reachable on care pages", asyn
     else await expect(dock).toBeVisible();
   }
   await page.goto("/pain-and-spine/back-pain/");
-  const book = page.locator('a[href*="/contact/"]').first();
+  const book = page.locator('main a[href*="/contact/"]:visible').first();
   const box = await book.boundingBox();
   expect(box!.y).toBeLessThan(844 * 2);
 });

@@ -10,6 +10,8 @@ import {
   ContentPage,
   DoctorPage,
 } from "@/components/pages/templates";
+import { CareAreaPage, CareConditionPage } from "@/components/pages/care-pages";
+import { isCareAreaUrl, isCareConditionUrl } from "@/lib/care-pages";
 
 const KICKERS: Record<string, string> = {
   "/about/": "About",
@@ -27,11 +29,6 @@ const KICKERS: Record<string, string> = {
   "/patient-rights/": "Legal",
   "/appointments-cancellation-refund/": "Legal",
   "/accessibility/": "Accessibility",
-  "/pain-and-spine/": "Pain and spine",
-  "/neuro-rehabilitation/": "Neuro rehabilitation",
-  "/joints-and-sports/": "Joints and sports",
-  "/childrens-rehabilitation/": "Children's rehabilitation",
-  "/older-adults/": "Older adults",
 };
 function hubKicker(url: string) {
   const first = "/" + url.split("/").filter(Boolean)[0] + "/";
@@ -74,5 +71,7 @@ export default async function RoutePage({
   if (url === "/plan-your-visit/") return <VisitPage page={page} />;
   if (url === "/video-consultation/") return <VideoPage page={page} />;
   if (url.startsWith("/dr-")) return <DoctorPage page={page} />;
+  if (isCareAreaUrl(url)) return <CareAreaPage page={page} />;
+  if (isCareConditionUrl(url)) return <CareConditionPage page={page} />;
   return <ContentPage page={page} kicker={hubKicker(url)} />;
 }
