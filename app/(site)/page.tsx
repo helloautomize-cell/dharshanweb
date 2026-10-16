@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { Fragment, type CSSProperties } from "react";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
@@ -10,20 +10,23 @@ import { CareIndex } from "@/components/care-index";
 import { HomeEffects } from "@/components/home-effects";
 import { GoalsTile, ConditionsAZ } from "@/components/home-widgets";
 import { QuickAnswers } from "@/components/quick-answers";
-import {
-  faqPage,
-  medicalWebPage,
-  breadcrumb,
-  website,
-  organisation,
-} from "@/lib/schema";
+import { faqPage, medicalWebPage, breadcrumb, graph } from "@/lib/schema";
 import { getPage } from "@/lib/content";
+import { altFor } from "@/lib/alt-text";
 
 const page = getPage("/")!;
+
+const heroImageProps = getImageProps({
+  src: "/images/doctors/dr-dharshan-hero.jpg",
+  alt: altFor("doctors/dr-dharshan-hero.jpg"),
+  fill: true,
+  sizes: "(max-width: 1023px) 90vw, 430px",
+}).props;
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
+  alternates: { canonical: "/" },
 };
 
 const arrow = (
@@ -140,21 +143,21 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              website(),
-              organisation(),
+          __html: JSON.stringify(
+            graph(
+              page.meta,
+              [
+                faqPage(
+                  quickAnswers.map(([question, answer]) => ({
+                    question,
+                    answer,
+                  })),
+                ),
+                breadcrumb([{ label: "Home", href: "/" }]),
+              ],
               medicalWebPage(page.meta),
-              faqPage(
-                quickAnswers.map(([question, answer]) => ({
-                  question,
-                  answer,
-                })),
-              ),
-              breadcrumb([{ label: "Home", href: "/" }]),
-            ].filter(Boolean),
-          }),
+            ),
+          ),
         }}
       />
       <HomeEffects />
@@ -194,12 +197,12 @@ export default function Home() {
           </div>
           <div className="visual">
             <div className="arch">
-              <Image
-                src="/images/doctors/dr-dharshan-hero.jpg"
-                alt="Dr. Dharshan N A in a white coat, arms crossed"
-                fill
-                priority
-                sizes="(max-width: 1023px) 90vw, 430px"
+              {/* eslint-disable-next-line @next/next/no-img-element -- getImageProps supplies the optimizer srcset */}
+              <img
+                {...heroImageProps}
+                alt={heroImageProps.alt}
+                loading="eager"
+                fetchPriority="high"
               />
               <div className="who">
                 <b>Dr. Dharshan N A</b>
@@ -209,7 +212,7 @@ export default function Home() {
             <div className="arch arch2">
               <Image
                 src="/images/doctors/dr-selina-hero.jpg"
-                alt=""
+                alt={altFor("doctors/dr-selina-hero.jpg")}
                 fill
                 sizes="250px"
                 className="ph"
@@ -284,6 +287,7 @@ export default function Home() {
                 width={46}
                 height={46}
                 alt=""
+                loading="lazy"
               />
               <div>
                 <b>Dr. Dharshan N A</b>
@@ -475,7 +479,7 @@ export default function Home() {
             <div className="ui photo">
               <Image
                 src="/images/doctors/dr-dharshan-banner.jpg"
-                alt="Dr. Dharshan N A in a hospital lobby"
+                alt={altFor("doctors/dr-dharshan-banner.jpg")}
                 fill
                 sizes="(max-width: 1023px) 100vw, 50vw"
               />
@@ -502,7 +506,7 @@ export default function Home() {
             <div className="ui photo">
               <Image
                 src="/images/doctors/dr-dharshan-video.jpg"
-                alt="Dr. Dharshan N A on a video consult"
+                alt={altFor("doctors/dr-dharshan-video.jpg")}
                 fill
                 sizes="(max-width: 1023px) 100vw, 50vw"
               />
@@ -517,7 +521,7 @@ export default function Home() {
           <div className="doc-ph" id="docph">
             <Image
               src="/images/doctors/dr-dharshan-desk.jpg"
-              alt="Dr. Dharshan N A at his desk with a stethoscope"
+              alt={altFor("doctors/dr-dharshan-desk.jpg")}
               fill
               sizes="(max-width: 1023px) 100vw, 45vw"
             />

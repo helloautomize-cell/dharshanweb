@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { VideoFitChecker } from "@/components/video-fit-checker";
+import { altFor } from "@/lib/alt-text";
 import {
   DirectoryBookingClose,
   DirectoryBreadcrumb,
@@ -89,10 +90,6 @@ export function VideoPage({ page }: { page: PageContent }) {
   const data = graph(
     { ...page.meta, lastReviewed: facts.lastReviewed || undefined },
     [
-      medicalWebPage({
-        ...page.meta,
-        lastReviewed: facts.lastReviewed || undefined,
-      }),
       breadcrumb([
         { label: "Home", href: "/" },
         { label: "Video consultation", href: page.meta.url },
@@ -116,6 +113,10 @@ export function VideoPage({ page }: { page: PageContent }) {
         },
       },
     ],
+    medicalWebPage({
+      ...page.meta,
+      lastReviewed: facts.lastReviewed || undefined,
+    }),
   );
   const glanceFacts = [
     {
@@ -197,7 +198,7 @@ export function VideoPage({ page }: { page: PageContent }) {
                 <div className="video-call-crop">
                   <Image
                     src="/images/doctors/dr-dharshan-video.jpg"
-                    alt={`${firstDoctor.name} talking to a patient during a video consult`}
+                    alt={altFor("doctors/dr-dharshan-video.jpg")}
                     fill
                     preload
                     sizes="(max-width: 999px) 100vw, 560px"

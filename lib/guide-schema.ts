@@ -1,6 +1,6 @@
 import {
   breadcrumb,
-  organisation,
+  clinic,
   physician,
   physicianRef,
   website,
@@ -22,7 +22,7 @@ export function guidesIndexSchema(
     "@context": "https://schema.org",
     "@graph": [
       website(),
-      organisation(),
+      clinic(),
       {
         "@type": "CollectionPage",
         "@id": `${GUIDE_BASE}${meta.url}#page`,
@@ -31,7 +31,7 @@ export function guidesIndexSchema(
         description: meta.description,
         inLanguage: "en-IN",
         isPartOf: { "@id": `${GUIDE_BASE}/#website` },
-        publisher: { "@id": `${GUIDE_BASE}/#practice` },
+        publisher: { "@id": `${GUIDE_BASE}/#clinic` },
         mainEntity: {
           "@type": "ItemList",
           numberOfItems: guides.length,
@@ -78,7 +78,7 @@ export function guideArticleSchema(guide: Guide) {
     "@context": "https://schema.org",
     "@graph": [
       website(),
-      organisation(),
+      clinic(),
       ...physicians,
       {
         "@type": "MedicalWebPage",
@@ -103,7 +103,7 @@ export function guideArticleSchema(guide: Guide) {
         ...(guide.datePublished ? { datePublished: guide.datePublished } : {}),
         ...(guide.dateModified ? { dateModified: guide.dateModified } : {}),
         author: physicianRef(guide.author),
-        publisher: { "@id": `${GUIDE_BASE}/#practice` },
+        publisher: { "@id": `${GUIDE_BASE}/#clinic` },
         mainEntityOfPage: { "@id": `${url}#page` },
         articleSection: topic.label,
         wordCount: words,

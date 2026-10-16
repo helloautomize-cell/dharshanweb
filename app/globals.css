@@ -3546,8 +3546,8 @@ h4 {
 .hot {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
+  width: 24px;
+  height: 24px;
   border: 0;
   padding: 0;
   background: transparent;

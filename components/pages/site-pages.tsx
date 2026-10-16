@@ -23,7 +23,8 @@ import { extractFaqs } from "@/lib/faqs";
 import { getPage, type PageContent } from "@/lib/content";
 import { guideDoctor } from "@/lib/guide-content.mjs";
 import { BlockRenderer, renderInline } from "@/lib/markdown";
-import { breadcrumb, faqPage, graph, physician } from "@/lib/schema";
+import { breadcrumb, faqPage, graph, webPage } from "@/lib/schema";
+import { altFor } from "@/lib/alt-text";
 import { CareEffects } from "@/components/care-effects";
 import { siteConfig } from "@/lib/site-config";
 import { ChipGroup } from "@/components/chip-group";
@@ -434,7 +435,15 @@ export function DoctorProfilePage({ page }: { page: PageContent }) {
   return (
     <div className="care-page doctors-page cp-area">
       <JsonLd
-        data={graph(meta, [physician(physicianId), breadcrumb(crumbs)])}
+        data={graph(
+          meta,
+          [breadcrumb(crumbs)],
+          webPage(meta, "ProfilePage", {
+            mainEntity: {
+              "@id": `https://www.rehabify.in/#${physicianId}`,
+            },
+          }),
+        )}
       />
       <header className="cp-hero care-container sp-doc-hero">
         <DirectoryBreadcrumb label={name} items={crumbs.slice(1)} />
@@ -461,7 +470,7 @@ export function DoctorProfilePage({ page }: { page: PageContent }) {
           </div>
           <DoctorPortrait
             id={doc.portrait}
-            alt={`${name}, consultant in physical medicine and rehabilitation`}
+            alt={altFor(`doctors/${doc.portrait}.jpg`)}
             priority
             className="sp-doc-portrait"
             sizes="(max-width: 999px) 80vw, 380px"

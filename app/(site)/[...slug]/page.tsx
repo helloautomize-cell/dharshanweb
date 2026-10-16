@@ -57,13 +57,15 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string[] }>;
 }): Promise<Metadata> {
-  const url = "/" + (await params).slug.join("/") + "/";
+  const slug = (await params).slug;
+  const url = "/" + slug.join("/") + "/";
   const page = getPage(url);
   if (!page) return {};
   return {
     title: page.meta.title,
     description: page.meta.description,
     alternates: { canonical: url },
+    openGraph: { images: [`/og-image/${slug.join("/")}.png`] },
     robots: page.meta.noindex
       ? { index: false, follow: false }
       : SITE_INDEXABLE

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CareFinder } from "@/components/care-finder";
+import { altFor } from "@/lib/alt-text";
 import { CareEffects } from "@/components/care-effects";
 import { CompactBodyMap } from "@/components/body-map";
 import {
@@ -96,7 +97,7 @@ export function CareIndexPage({ page }: { page: PageContent }) {
         <figure className="care-exam" data-care-reveal>
           <Image
             src="/images/doctors/dr-dharshan-exam.jpg"
-            alt="Illustration: Dr. Dharshan N A measuring knee movement with a goniometer"
+            alt={altFor("doctors/dr-dharshan-exam.jpg")}
             fill
             sizes="(max-width: 1279px) 92vw, 1240px"
           />
