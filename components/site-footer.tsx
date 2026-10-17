@@ -78,11 +78,11 @@ export function SiteFooter() {
           <p className="f-credit">
             Built &amp; Marketed by{" "}
             <a
-              href={siteConfig.project.agencyUrl}
+              href="https://www.automizemedialabs.com/"
               target="_blank"
               rel="noopener nofollow"
             >
-              {siteConfig.project.agency}
+              Automize Media Labs
             </a>
           </p>
         </div>
