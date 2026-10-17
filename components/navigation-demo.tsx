@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { careGroups } from "@/lib/service-badges";
 import { Brand } from "./primitives";
+import { altFor } from "@/lib/alt-text";
 
 export function NavigationDemo() {
   const [value, setValue] = useState("care");
@@ -80,7 +81,7 @@ export function NavigationDemo() {
               >
                 <Image
                   src="/images/doctors/dr-dharshan-video.jpg"
-                  alt="Illustration: Dr. Dharshan N A explaining during a video consultation"
+                  alt={altFor("doctors/dr-dharshan-video.jpg")}
                   width={300}
                   height={200}
                   sizes="300px"

@@ -174,23 +174,25 @@ export function BookingForm({
         <input type="hidden" name="renderSig" value={renderSig} />
         <input type="hidden" name="sourcePage" value={sourcePage} />
 
-        <fieldset className="radio-cards" id={fieldIds.doctor}>
+        <fieldset className="segmented-field" id={fieldIds.doctor}>
           <legend>Doctor</legend>
-          {DOCTORS.map((d) => (
-            <label className="radio-card" key={d}>
-              <input
-                type="radio"
-                name="doctor"
-                value={d}
-                defaultChecked={
-                  pick("doctor", initialDoctor ?? "No preference") === d ||
-                  (!pick("doctor", initialDoctor ?? "") &&
-                    d === "No preference")
-                }
-              />
-              <span>{d}</span>
-            </label>
-          ))}
+          <div className="segmented">
+            {DOCTORS.map((d) => (
+              <label key={d} className="seg-option">
+                <input
+                  type="radio"
+                  name="doctor"
+                  value={d}
+                  defaultChecked={
+                    pick("doctor", initialDoctor ?? "No preference") === d ||
+                    (!pick("doctor", initialDoctor ?? "") &&
+                      d === "No preference")
+                  }
+                />
+                <span>{d}</span>
+              </label>
+            ))}
+          </div>
         </fieldset>
 
         <fieldset className="segmented-field" id={fieldIds.format}>

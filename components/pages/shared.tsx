@@ -443,14 +443,15 @@ export function ReviewerBox({ meta }: { meta: PageMeta }) {
             : ""}
           .
         </p>
-        <p className="muted">
-          Last reviewed:{" "}
-          {meta.lastReviewed?.includes("[CONFIRM") ? (
-            <Confirm>{meta.lastReviewed}</Confirm>
-          ) : (
-            meta.lastReviewed
+        {meta.lastReviewed && !meta.lastReviewed.includes("[CONFIRM") && (
+          <p className="muted">Last reviewed: {meta.lastReviewed}</p>
+        )}
+        {process.env.NODE_ENV !== "production" &&
+          meta.lastReviewed?.includes("[CONFIRM") && (
+            <p className="muted">
+              Last reviewed: <Confirm>{meta.lastReviewed}</Confirm>
+            </p>
           )}
-        </p>
       </div>
     </aside>
   );

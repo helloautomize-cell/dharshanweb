@@ -20,12 +20,12 @@ type Spot = {
 };
 
 const spotsFront: Spot[] = [
-  { region: 0, x: 800, y: 240, label: "Head", glow: [210, 190] },
-  { region: 1, x: 800, y: 385, label: "Neck", glow: [160, 110] },
+  { region: 0, x: 800, y: 220, label: "Head", glow: [210, 190] },
+  { region: 1, x: 800, y: 405, label: "Neck", glow: [160, 110] },
   { region: 1, x: 575, y: 460, label: "Left shoulder", glow: [230, 180] },
   { region: 1, x: 1025, y: 460, label: "Right shoulder", glow: [230, 180] },
-  { region: 2, x: 800, y: 720, label: "Mid back" },
-  { region: 2, x: 800, y: 845, label: "Lower back" },
+  { region: 2, x: 800, y: 700, label: "Mid back" },
+  { region: 2, x: 800, y: 875, label: "Lower back" },
   { region: 3, x: 525, y: 805, label: "Left elbow" },
   { region: 3, x: 1075, y: 805, label: "Right elbow" },
   { region: 3, x: 360, y: 1092, label: "Left wrist", glow: [170, 140] },
@@ -38,14 +38,14 @@ const spotsFront: Spot[] = [
   { region: 5, x: 915, y: 2065, label: "Right ankle" },
 ];
 const spotsBack: Spot[] = [
-  { region: 0, x: 800, y: 240, label: "Head", glow: [210, 190] },
-  { region: 1, x: 800, y: 385, label: "Neck", glow: [160, 110] },
+  { region: 0, x: 800, y: 220, label: "Head", glow: [210, 190] },
+  { region: 1, x: 800, y: 405, label: "Neck", glow: [160, 110] },
   { region: 1, x: 580, y: 460, label: "Left shoulder", glow: [230, 180] },
   { region: 1, x: 1020, y: 460, label: "Right shoulder", glow: [230, 180] },
-  { region: 2, x: 800, y: 550, label: "Upper back" },
-  { region: 2, x: 800, y: 720, label: "Mid back" },
-  { region: 2, x: 800, y: 865, label: "Lower back" },
-  { region: 2, x: 800, y: 995, label: "Sacrum" },
+  { region: 2, x: 800, y: 560, label: "Upper back" },
+  { region: 2, x: 800, y: 735, label: "Mid back" },
+  { region: 2, x: 800, y: 910, label: "Lower back" },
+  { region: 2, x: 800, y: 1185, label: "Sacrum" },
   { region: 3, x: 530, y: 805, label: "Left elbow" },
   { region: 3, x: 1070, y: 805, label: "Right elbow" },
   { region: 3, x: 370, y: 1095, label: "Left wrist", glow: [170, 140] },

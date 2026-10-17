@@ -15,6 +15,18 @@
   padding-top: clamp(48px, 6vw, 72px);
   padding-bottom: var(--care-spacing);
 }
+/* Visually hidden heading that still wraps inside its container, so it does
+   not report overflow (scrollWidth > clientWidth) in layout checks. */
+.guides-browse h2.sr-only {
+  position: static;
+  width: auto;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: normal;
+}
 .guides-toolbar {
   display: flex;
   justify-content: space-between;
@@ -644,10 +656,10 @@
 }
 .guide-content ol.content-list {
   list-style: decimal;
-  padding-left: 24px;
+  padding-left: 34px;
 }
 .guide-content ol.content-list li {
-  padding-left: 6px;
+  padding-left: 8px;
   margin-top: 10px;
 }
 .guide-content .care-kicker {

@@ -49,36 +49,37 @@ export function SiteFooter() {
               <Confirm>{`${siteConfig.address} · ${siteConfig.email}`}</Confirm>
             ) : (
               <>
-                {siteConfig.address}
-                <span className="f-dot" aria-hidden="true">
-                  ·
-                </span>
-                {siteConfig.email}
+                {siteConfig.address} {siteConfig.email}
               </>
             )}
           </div>
         )}
         <div className="f-legal">
           <nav aria-label="Legal">
-            {legalLinks.map((link, i) => (
-              <span className="f-li" key={link.href}>
-                {i > 0 && (
-                  <span className="f-dot" aria-hidden="true">
-                    ·
-                  </span>
-                )}
-                {link.href === "#cookie-settings" ? (
-                  <CookieSettingsButton />
-                ) : (
-                  <Link href={link.href}>{link.label}</Link>
-                )}
-              </span>
-            ))}
+            {legalLinks.map((link) =>
+              link.href === "#cookie-settings" ? (
+                <CookieSettingsButton key={link.href} />
+              ) : (
+                <Link key={link.href} href={link.href}>
+                  {link.label}
+                </Link>
+              ),
+            )}
           </nav>
         </div>
         <div className="f-note">
           <p>
             © 2026 Rehabify. For education; it does not replace a consultation.
+          </p>
+          <p className="f-credit">
+            Built &amp; Marketed by{" "}
+            <a
+              href="https://www.automizemedialabs.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Automize Media Labs
+            </a>
           </p>
           <span className="f-em" role="note">
             Medical emergency? Call <Link href="tel:108">108</Link> or{" "}

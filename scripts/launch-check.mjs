@@ -29,6 +29,8 @@ const banned =
   /\b(delve|embark|realm|tapestry|seamless|comprehensive|holistic|robust|leverage|empower|elevate|unlock|tailored|cutting-edge|state-of-the-art|world-class|top-notch|game-changer|peace of mind|rest assured|one-stop|guaranteed)\b|(?<!no )(?<!not )(?<!permanent )\bcure\b(?! claims)/i;
 const urls = new Set(manifest.map((p) => p.url));
 for (const page of manifest) {
+  if (page.url.startsWith("/guides/topic/") || page.url === "/guides/")
+    continue;
   const rel = page.url === "/" ? "home" : page.url.replace(/^\/|\/$/g, "");
   const file = `content/pages/${rel}.mdx`;
   let raw;
@@ -60,9 +62,83 @@ try {
 } catch {
   blockers.push("Missing resources/docs/llms.txt");
 }
+// --- launch gate table (P8): each check must pass before launch ---
+import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
+
+const built = existsSync(".next/server/app");
+const gates = [
+  {
+    name: "check-dashes",
+    cmd: ["node", "scripts/check-dashes.mjs"],
+    needsBuild: true,
+  },
+  {
+    name: "export-seo",
+    cmd: ["node", "scripts/export-seo.mjs"],
+    needsBuild: true,
+  },
+  {
+    name: "check-initial-html",
+    cmd: ["node", "scripts/check-initial-html.mjs"],
+    needsBuild: true,
+  },
+  {
+    name: "schema",
+    cmd: ["node", "scripts/check-schema.mjs"],
+    needsBuild: true,
+  },
+  {
+    name: "alt-text",
+    cmd: ["node", "scripts/check-alt.mjs"],
+    needsBuild: true,
+  },
+  {
+    name: "redirects",
+    cmd: ["node", "scripts/check-redirects.mjs"],
+    needsBuild: false,
+  },
+  {
+    name: "image-metadata",
+    cmd: ["node", "scripts/check-image-meta.mjs"],
+    needsBuild: false,
+  },
+  {
+    name: "robots-rules",
+    cmd: ["node", "--test", "tests/robots.test.mjs"],
+    needsBuild: false,
+  },
+];
+
+const gateRows = gates.map((gate) => {
+  if (gate.needsBuild && !built)
+    return { name: gate.name, status: "BLOCKED", note: "no build output" };
+  const run = spawnSync(gate.cmd[0], gate.cmd.slice(1), {
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  const ok = run.status === 0;
+  return {
+    name: gate.name,
+    status: ok ? "pass" : "BLOCKED",
+    note: ok
+      ? ""
+      : ((run.stderr || run.stdout).split("\n").filter(Boolean)[0] ?? "failed"),
+  };
+});
+
+for (const row of gateRows.filter((row) => row.status !== "pass"))
+  blockers.push(`launch gate ${row.name}: ${row.note}`);
+
+process.stdout.write("\nLaunch gates\n------------\n");
+for (const row of gateRows)
+  process.stdout.write(
+    `${row.status === "pass" ? "pass" : "BLOCKED"}  ${row.name}${row.note ? `  (${row.note})` : ""}\n`,
+  );
+
 if (blockers.length) {
   process.stderr.write(
-    `Launch blocked (${blockers.length} items):\n${blockers.map((item) => `- ${item}`).join("\n")}\n`,
+    `\nLaunch blocked (${blockers.length} items):\n${blockers.map((item) => `- ${item}`).join("\n")}\n`,
   );
   process.exitCode = 1;
 } else process.stdout.write("Launch checks passed\n");

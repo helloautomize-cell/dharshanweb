@@ -18,7 +18,7 @@ import {
   faqPage,
   graph,
   medicalWebPage,
-  physician,
+  webPage,
 } from "@/lib/schema";
 export { CareIndexPage } from "@/components/pages/care-index-page";
 
@@ -59,7 +59,6 @@ export function ContentPage({
   const graphData = graph(
     meta,
     [
-      isMedical ? medicalWebPage(meta) : null,
       faqs ? faqPage(extractFaqs(faqs.body)) : null,
       breadcrumb([
         { label: "Home", href: "/" },
@@ -69,6 +68,7 @@ export function ContentPage({
         })),
       ]),
     ].filter(Boolean),
+    isMedical ? medicalWebPage(meta) : undefined,
   );
   return (
     <div className="page-main">
@@ -91,7 +91,9 @@ export function DoctorPage({ page }: { page: PageContent }) {
   const meta = page.meta;
   const id = meta.url.includes("selina") ? "dr-selina-kh" : "dr-dharshan-n-a";
   const assetId = meta.url.includes("selina") ? "dr-selina" : "dr-dharshan";
-  const doc = physician(id);
+  const graphWebPage = webPage(meta, "ProfilePage", {
+    mainEntity: { "@id": `https://www.rehabify.in/#${id}` },
+  });
   const hero =
     section(page, "Hero (split)") ??
     section(page, "Hero (split, same layout as Dr. Dharshan)");
@@ -101,16 +103,19 @@ export function DoctorPage({ page }: { page: PageContent }) {
   return (
     <div className="page-main">
       <JsonLd
-        data={graph(meta, [
-          doc,
-          breadcrumb([
-            { label: "Home", href: "/" },
-            { label: "Doctors", href: "/doctors/" },
-            ...crumbs(meta)
-              .slice(-1)
-              .map((c) => ({ label: c.label, href: meta.url })),
-          ]),
-        ])}
+        data={graph(
+          meta,
+          [
+            breadcrumb([
+              { label: "Home", href: "/" },
+              { label: "Doctors", href: "/doctors/" },
+              ...crumbs(meta)
+                .slice(-1)
+                .map((c) => ({ label: c.label, href: meta.url })),
+            ]),
+          ],
+          graphWebPage,
+        )}
       />
       <header className="page-head doctor-head">
         <div>

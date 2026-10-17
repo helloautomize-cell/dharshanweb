@@ -213,11 +213,11 @@ export function CareAreaPage({ page }: { page: PageContent }) {
   return (
     <div className="care-page doctors-page guides-page cp-area">
       <JsonLd
-        data={graph(meta, [
+        data={graph(
+          meta,
+          [faqs.length ? faqPage(faqs) : null, breadcrumb(crumbs)],
           medicalWebPage(meta),
-          faqs.length ? faqPage(faqs) : null,
-          breadcrumb(crumbs),
-        ])}
+        )}
       />
       <CareHero
         page={page}
@@ -450,11 +450,11 @@ export function CareConditionPage({ page }: { page: PageContent }) {
   return (
     <div className="care-page doctors-page guides-page guide-article cp-condition">
       <JsonLd
-        data={graph(meta, [
+        data={graph(
+          meta,
+          [faqs.length ? faqPage(faqs) : null, breadcrumb(crumbs)],
           medicalWebPage(meta),
-          faqs.length ? faqPage(faqs) : null,
-          breadcrumb(crumbs),
-        ])}
+        )}
       />
       <CareHero
         page={page}
