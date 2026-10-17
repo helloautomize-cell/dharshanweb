@@ -227,6 +227,11 @@ export function website() {
     url: `${BASE}/`,
     name: siteConfig.name,
     publisher: { "@id": `${BASE}/#clinic` },
+    creator: {
+      "@type": "Organization",
+      name: siteConfig.project.agency,
+      url: siteConfig.project.agencyUrl,
+    },
     inLanguage: "en-IN",
   };
 }

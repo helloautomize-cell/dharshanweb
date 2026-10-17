@@ -2,6 +2,7 @@
   "name": "rehabify-website",
   "version": "0.1.0",
   "private": true,
+  "author": "Automize Media Labs (https://www.automizemedialabs.com/)",
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build && node scripts/verify-visit-output.mjs && node scripts/verify-guides-output.mjs && node scripts/verify-care-pages.mjs && node scripts/verify-no-leaks.mjs",
