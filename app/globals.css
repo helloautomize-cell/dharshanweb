@@ -1661,6 +1661,17 @@ main:has(> :last-child[data-dark]) + .site-footer::before {
 .f-note p {
   margin: 0;
 }
+.f-credit a {
+  color: var(--aqua);
+  text-decoration: none;
+}
+.f-credit a:hover {
+  text-decoration: underline;
+}
+.f-credit a:focus-visible {
+  outline: 2px solid var(--aqua);
+  outline-offset: 2px;
+}
 .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
