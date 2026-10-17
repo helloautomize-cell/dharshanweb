@@ -1,4 +1,4 @@
-import { entityStatement, pageList } from "@/lib/llms";
+import { agencyCredit, entityStatement, pageList } from "@/lib/llms";
 
 export const dynamic = "force-static";
 
@@ -18,6 +18,8 @@ Information on this site is for general education and does not replace a consult
 ## Pages
 
 ${list}
+
+${agencyCredit()}
 `;
   return new Response(body, {
     headers: { "Content-Type": "text/plain; charset=utf-8" },
