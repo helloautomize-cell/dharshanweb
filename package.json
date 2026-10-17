@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
-    "build": "next build && node scripts/verify-visit-output.mjs && node scripts/verify-guides-output.mjs",
+    "build": "next build && node scripts/verify-visit-output.mjs && node scripts/verify-guides-output.mjs && node scripts/verify-care-pages.mjs",
     "content:guides": "node scripts/import-guides.mjs",
     "start": "next start --hostname 127.0.0.1",
     "lint": "eslint .",
