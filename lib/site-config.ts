@@ -80,7 +80,6 @@ export const siteConfig = {
       "Design v2 approved as base; implement design v3 with both doctors",
     badgePhase: "P1b",
     agency: "Automize Media Labs",
-    agencyUrl: "https://www.automizemedialabs.com/",
     codingAgent: "Devin",
     repository: confirm("GitHub repository"),
     integrationOwners: confirm(

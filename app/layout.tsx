@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_INDEXABLE, siteConfig } from "@/lib/site-config";
+import { SITE_INDEXABLE } from "@/lib/site-config";
 import {
   Bricolage_Grotesque,
   Geist,
@@ -43,10 +43,6 @@ export const metadata: Metadata = {
   robots: SITE_INDEXABLE
     ? { index: true, follow: true }
     : { index: false, follow: false },
-  authors: [
-    { name: siteConfig.project.agency, url: siteConfig.project.agencyUrl },
-  ],
-  creator: siteConfig.project.agency,
   openGraph: {
     type: "website",
     locale: "en_IN",

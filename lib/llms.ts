@@ -1,7 +1,6 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { allRoutes, getPage } from "@/lib/content";
-import { siteConfig } from "@/lib/site-config";
 import { getGuides } from "@/lib/guide-content.mjs";
 import { GUIDE_BASE, guideRouteEntries, plainGuide } from "@/lib/guides";
 import { cleanBody } from "@/lib/care-pages";
@@ -26,7 +25,7 @@ export function entityStatement(): string {
 const EXCLUDED = ["/thank-you/", "/404/"];
 
 export function agencyCredit(): string {
-  return `Website built and marketed by ${siteConfig.project.agency} (${siteConfig.project.agencyUrl})`;
+  return "Website built and marketed by Automize Media Labs (https://www.automizemedialabs.com/)";
 }
 
 export function pageList() {
