@@ -71,20 +71,20 @@ export function SiteFooter() {
           <p>
             © 2026 Rehabify. For education; it does not replace a consultation.
           </p>
-          <p className="f-credit">
-            Built &amp; Marketed by{" "}
-            <a
-              href="https://www.automizemedialabs.com/"
-              target="_blank"
-              rel="noopener"
-            >
-              Automize Media Labs
-            </a>
-          </p>
           <span className="f-em" role="note">
             Medical emergency? Call <Link href="tel:108">108</Link> or{" "}
             <Link href="tel:112">112</Link>.
           </span>
+          <p className="f-credit">
+            Built &amp; Marketed by{" "}
+            <a
+              href={siteConfig.project.agencyUrl}
+              target="_blank"
+              rel="noopener nofollow"
+            >
+              {siteConfig.project.agency}
+            </a>
+          </p>
         </div>
       </div>
     </footer>

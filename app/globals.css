@@ -1661,6 +1661,10 @@ main:has(> :last-child[data-dark]) + .site-footer::before {
 .f-note p {
   margin: 0;
 }
+.f-credit {
+  flex-basis: 100%;
+  text-align: left;
+}
 .f-credit a {
   color: var(--aqua);
   text-decoration: none;

@@ -14,3 +14,5 @@ in Bengaluru with video consultations across India.
 | `npm run lint` / `typecheck` / `format:check` | code quality gates                            |
 | `npm run images` / `test:images`              | image pipeline and verification               |
 | `npm run launch-check`                        | pre-launch blocker report                     |
+
+Built and marketed by Automize Media Labs - https://www.automizemedialabs.com/
