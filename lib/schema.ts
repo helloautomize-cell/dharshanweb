@@ -24,56 +24,113 @@ function clean<T>(value: T): T | null {
   return value;
 }
 
-export function organisation() {
-  return {
+export function clinic() {
+  return clean({
     "@type": "MedicalClinic",
-    "@id": `${BASE}/#practice`,
+    "@id": `${BASE}/#clinic`,
     name: siteConfig.name,
     url: `${BASE}/`,
     description:
       "Physical medicine and rehabilitation practice in Bengaluru, with video consultations across India.",
     telephone: siteConfig.phone,
+    email: siteConfig.email,
     logo: `${BASE}/images/brand/mark-blue.png`,
     image: `${BASE}/images/brand/og-base.png`,
-  };
+    medicalSpecialty: "PhysicalMedicineAndRehabilitation",
+    knowsAbout: [
+      "Physical medicine and rehabilitation",
+      "Pain and spine care",
+      "Neuro rehabilitation",
+      "Joint and sports rehabilitation",
+      "Children's rehabilitation",
+      "Rehabilitation for older adults",
+    ],
+    availableService: [
+      "Pain and spine",
+      "Neuro rehabilitation",
+      "Joints and sports",
+      "Children's rehabilitation",
+      "Older adults",
+    ].map((name) => ({ "@type": "MedicalTherapy", name })),
+    areaServed: [
+      { "@type": "City", name: "Bengaluru" },
+      { "@type": "Country", name: "India" },
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: siteConfig.phone,
+      contactType: "patient enquiries",
+      availableLanguage: siteConfig.doctors[0].languages,
+    },
+    founder: { "@id": `${BASE}/#dr-dharshan-n-a` },
+    foundingDate: siteConfig.foundingYear,
+    sameAs: [],
+    openingHoursSpecification: siteConfig.hours,
+    address: siteConfig.address,
+    geo: siteConfig.geo,
+  });
 }
+
 export function physician(id: string) {
   const doctors: Record<string, Record<string, unknown>> = {
     "dr-dharshan-n-a": {
       "@type": "Physician",
-      "@id": `${BASE}/dr-dharshan-n-a/#physician`,
+      "@id": `${BASE}/#dr-dharshan-n-a`,
       name: "Dr. Dharshan N A",
       url: `${BASE}/dr-dharshan-n-a/`,
       image: `${BASE}/images/doctors/dr-dharshan-hero.jpg`,
       jobTitle: "Consultant in Physical Medicine and Rehabilitation",
+      honorificSuffix: "MBBS, MD",
+      medicalSpecialty: "PhysicalMedicineAndRehabilitation",
       knowsAbout: [
         "Physical Medicine and Rehabilitation",
         "Interventional pain management",
         "Neurorehabilitation",
       ],
-      worksFor: { "@id": `${BASE}/#practice` },
+      knowsLanguage: siteConfig.doctors[0].languages,
+      hasCredential: [
+        "MBBS",
+        "MD Physical Medicine and Rehabilitation",
+        "Fellowship in Interventional Pain Management",
+      ].map((name) => ({
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name,
+      })),
+      worksFor: { "@id": `${BASE}/#clinic` },
       alumniOf: [
         "Annapoorana Medical College and Hospitals, Salem",
         "Regional Institute of Medical Sciences, Imphal",
+        "Delhi Pain Management Centre",
       ],
     },
     "dr-selina-kh": {
       "@type": "Physician",
-      "@id": `${BASE}/dr-selina-kh/#physician`,
+      "@id": `${BASE}/#dr-selina-kh`,
       name: "Dr. Selina Kh",
       url: `${BASE}/dr-selina-kh/`,
       image: `${BASE}/images/doctors/dr-selina-hero.jpg`,
       jobTitle: "Consultant in Physical Medicine and Rehabilitation",
+      medicalSpecialty: "PhysicalMedicineAndRehabilitation",
       knowsAbout: ["Physical Medicine and Rehabilitation"],
-      worksFor: { "@id": `${BASE}/#practice` },
+      worksFor: { "@id": `${BASE}/#clinic` },
     },
   };
   return doctors[id] ?? null;
 }
 export function physicianRef(id: string | undefined) {
   const p = id ? physician(id) : null;
-  return p ? { "@id": p["@id"] } : { "@id": `${BASE}/#practice` };
+  return p ? { "@id": p["@id"] } : { "@id": `${BASE}/#clinic` };
 }
+
+function normalizeAbout(about: Record<string, unknown> | undefined) {
+  if (!about) return { "@id": `${BASE}/#clinic` };
+  const { type, ...rest } = about as Record<string, unknown> & {
+    type?: string;
+  };
+  return clean({ "@type": type ?? "MedicalCondition", ...rest });
+}
+
 export function medicalWebPage(meta: PageMeta) {
   return clean({
     "@type": "MedicalWebPage",
@@ -83,13 +140,17 @@ export function medicalWebPage(meta: PageMeta) {
     description: meta.description,
     inLanguage: "en-IN",
     isPartOf: { "@id": `${BASE}/#website` },
-    about: meta.about ?? { "@id": `${BASE}/#practice` },
+    about: normalizeAbout(meta.about),
     reviewedBy: physicianRef(meta.reviewer),
     lastReviewed: meta.lastReviewed,
     mainContentOfPage: { "@id": `${BASE}${meta.url}#content` },
   });
 }
-export function webPage(meta: PageMeta, type = "WebPage") {
+export function webPage(
+  meta: PageMeta,
+  type = "WebPage",
+  extra: Record<string, unknown> = {},
+) {
   return clean({
     "@type": type,
     "@id": `${BASE}${meta.url}#webpage`,
@@ -98,9 +159,10 @@ export function webPage(meta: PageMeta, type = "WebPage") {
     description: meta.description,
     inLanguage: "en-IN",
     isPartOf: { "@id": `${BASE}/#website` },
-    about: meta.about ?? { "@id": `${BASE}/#practice` },
+    about: normalizeAbout(meta.about),
     reviewedBy: physicianRef(meta.reviewer),
     lastReviewed: meta.lastReviewed,
+    ...extra,
   });
 }
 export function faqPage(faqs: { question: string; answer: string }[]) {
@@ -143,7 +205,7 @@ export function blogPosting(meta: PageMeta) {
     reviewedBy: physicianRef(meta.reviewedBy ?? meta.reviewer),
     datePublished: meta.datePublished,
     dateModified: meta.dateModified ?? meta.lastReviewed,
-    publisher: { "@id": `${BASE}/#practice` },
+    publisher: { "@id": `${BASE}/#clinic` },
     isPartOf: { "@id": `${BASE}/guides/#webpage` },
   });
 }
@@ -164,7 +226,7 @@ export function website() {
     "@id": `${BASE}/#website`,
     url: `${BASE}/`,
     name: siteConfig.name,
-    publisher: { "@id": `${BASE}/#practice` },
+    publisher: { "@id": `${BASE}/#clinic` },
     inLanguage: "en-IN",
   };
 }
@@ -223,9 +285,22 @@ export function doctorsItemList(doctors: PageMeta[]) {
   };
 }
 
-export function graph(meta: PageMeta, extras: unknown[] = []) {
+export function graph(
+  meta: PageMeta,
+  extras: unknown[] = [],
+  pageNode: unknown = webPage(meta),
+) {
   return {
     "@context": "https://schema.org",
-    "@graph": clean([website(), organisation(), webPage(meta), ...extras]),
+    "@graph": clean(
+      [
+        website(),
+        clinic(),
+        physician("dr-dharshan-n-a"),
+        physician("dr-selina-kh"),
+        pageNode,
+        ...extras,
+      ].filter(Boolean),
+    ),
   };
 }

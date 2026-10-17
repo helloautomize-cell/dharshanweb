@@ -76,9 +76,8 @@ export function CookieBanner() {
     >
       <h2>Cookies and analytics</h2>
       <p>
-        Rehabify uses essential cookies to remember your choices. With your
-        consent, privacy-respecting analytics help us understand which pages are
-        useful. Nothing loads without your choice.
+        We use essential cookies. With your OK, privacy-friendly analytics help
+        us improve the site.
       </p>
       {settings && (
         <label className="consent-toggle">

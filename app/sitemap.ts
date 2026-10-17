@@ -21,7 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       (page) =>
         !page.noindex &&
         page.url !== "/404/" &&
-        !page.url.startsWith("/guides/"),
+        page.url !== "/thank-you/" &&
+        !page.url.startsWith("/guides/") &&
+        !page.url.startsWith("/styleguide"),
     )
     .map((page) => {
       const last =

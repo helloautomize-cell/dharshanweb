@@ -58,6 +58,15 @@ export function SiteHeader() {
     };
   }, [menuOpen, megaOpen]);
 
+  // Close menus when the route changes. Adjusted during render per React's
+  // "you might not need an effect" pattern (prev-value comparison).
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setMenuOpen(false);
+    setMegaOpen(false);
+  }
+
   const closeMega = (event: React.FocusEvent<HTMLLIElement>) => {
     if (!event.currentTarget.contains(event.relatedTarget as Node))
       setMegaOpen(false);
@@ -224,7 +233,12 @@ export function SiteHeader() {
         </button>
       </header>
       <div className="mobile-menu" data-open={menuOpen || undefined} data-dark>
-        <nav aria-label="Mobile">
+        <nav
+          aria-label="Mobile"
+          onClick={(event) => {
+            if ((event.target as HTMLElement).closest("a")) setMenuOpen(false);
+          }}
+        >
           <Link
             href="/care/"
             aria-current={pathname === "/care/" ? "page" : undefined}

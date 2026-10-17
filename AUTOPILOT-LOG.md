@@ -95,11 +95,12 @@ lighthouse-run.mjs` (N-run median harness); all-route sweep (48 public routes:
 200, h1, noindex, zero horizontal overflow at 390).
 
 **Lighthouse mobile medians (3 runs, local prod build):**
-| Page | Perf | A11y | BP | SEO | LCP ms | CLS | TBT ms |
-|---|---|---|---|---|---|---|---|
-| Home | 92 | 97 | 100 | 66 | 3262 | 0 | 47 |
-| Back pain | 95 | 100 | 100 | 69 | 2931 | 0 | 42 |
-| Dr. Dharshan | 92 | 100 | 100 | 69 | 3176 | 0 | 101 |
+
+| Page         | Perf | A11y | BP  | SEO | LCP ms | CLS | TBT ms |
+| ------------ | ---- | ---- | --- | --- | ------ | --- | ------ |
+| Home         | 92   | 97   | 100 | 66  | 3262   | 0   | 47     |
+| Back pain    | 95   | 100  | 100 | 69  | 2931   | 0   | 42     |
+| Dr. Dharshan | 92   | 100  | 100 | 69  | 3176   | 0   | 101    |
 
 SEO is low by design (deliberate noindex). LCP ~3.0-3.3s local; the 2.0s
 budget is measured on the deployed preview (still blocked - no Vercel deploy).
@@ -109,6 +110,7 @@ budget is measured on the deployed preview (still blocked - no Vercel deploy).
 ## Phase 6 — Forms, analytics, integrations, headers (branch: phase-6)
 
 **Built:**
+
 - `lib/booking-shared.ts` + `lib/booking-schema.ts`: shared constants/phone
   normalisation (client-safe) + Zod schema (server). Reason list from
   site-plan order, 10-digit Indian mobile normalisation (+91/91/0 prefixes),
@@ -127,8 +129,8 @@ budget is measured on the deployed preview (still blocked - no Vercel deploy).
   is keyed by the echoed value so it remounts with the right default).
 - Consent: `lib/consent.ts` versioned (v1, 12-month expiry); `lib/analytics.ts`
   typed track() allowlist; `components/analytics.tsx` Consent Mode v2 defaults
-  + gtag injection only after Accept; manual page_view on route change keeps
-  utm_* only; Reject updates consent to denied and deletes _ga cookies.
+  - gtag injection only after Accept; manual page_view on route change keeps
+    utm_* only; Reject updates consent to denied and deletes _ga cookies.
 - `components/map-facade.tsx` click-to-load Google Maps embed + directions
   link (hidden in production while address is CONFIRM); renders on
   /plan-your-visit/ and /contact/.
@@ -174,6 +176,7 @@ No agency findings were supplied; the standing checklist drove the work.
 changes.md.
 
 **Fixes (one line each, all recorded in qa/phase-7/changes.md):**
+
 - visit-band gained a real night background (aqua kicker was on paper).
 - Marquee gained a visible 48px pause/play control + hover/focus pause.
 - Mega panel: Esc returns focus to the Care link (suppress flag prevents the
@@ -192,7 +195,8 @@ pages, mega panel bounds + Esc.
 
 **Results:** 38/38 Playwright green. Lint, typecheck, format, build all pass.
 Local Lighthouse medians of 3 (mobile):
-- /         : perf 91, a11y 100, BP 96, LCP 3.50s, CLS 0, TBT 58ms
+
+- / : perf 91, a11y 100, BP 96, LCP 3.50s, CLS 0, TBT 58ms
 - /pain-and-spine/back-pain/ : perf 92, a11y 100, BP 100, LCP 3.27s
 - /dr-dharshan-n-a/ : perf 92, a11y 100, BP 100, LCP 3.31s
 - /contact/ : perf 93, a11y 100, BP 100, LCP 3.17s

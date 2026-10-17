@@ -33,8 +33,8 @@ drove all fixes. `tests/polish.spec.ts` (10 checks) keeps them running.
 ## Tests
 
 - `tests/polish.spec.ts`: dashes in text/JSON-LD, NAP digits, dock visibility
-  + thank-you exception + care-page Book reachability, clipped text incl.
-  glow-button labels, aqua/apricot only on night, marquee pause, home height
-  range + section caps + doctor visibility, no adjacent duplicate track
-  badges, axe colour-contrast on key pages, mega panel bounds + Esc.
+  - thank-you exception + care-page Book reachability, clipped text incl.
+    glow-button labels, aqua/apricot only on night, marquee pause, home height
+    range + section caps + doctor visibility, no adjacent duplicate track
+    badges, axe colour-contrast on key pages, mega panel bounds + Esc.
 - Full suite: 38/38 green.

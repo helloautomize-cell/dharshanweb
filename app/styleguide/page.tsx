@@ -8,6 +8,7 @@ import { Icon } from "@/lib/icons";
 import { MedicalIcon, medicalIconNames } from "@/components/medical-icons";
 import { CareIcon, careIconNames } from "@/components/icons/care";
 import { contrast, tokens } from "@/lib/design-tokens";
+import { altFor } from "@/lib/alt-text";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -365,7 +366,7 @@ export default function Styleguide() {
                   {surface === "photo" && (
                     <Image
                       src="/images/doctors/dr-dharshan-banner.jpg"
-                      alt=""
+                      alt={altFor("doctors/dr-dharshan-banner.jpg")}
                       fill
                       sizes="400px"
                     />

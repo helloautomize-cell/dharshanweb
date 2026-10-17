@@ -7,6 +7,7 @@ Read this whole file before writing code. **Section 0 overrides everything else*
 > Phase 7g update (supersedes the spine-based direction below): the decorative spine motif is retired site-wide — no spine navigator, hero/CTA spine graphics, logo watermarks, goniometer, marquee, aurora blobs or glow buttons. The sole exception is the Journey section, which keeps its original spine-drawn scrollytelling by explicit client decision. "Spine" remains in copy only where it means the body part.
 
 Files this plan relies on (in `resources/`):
+
 - `docs/site-plan.md` (pages, URLs, nav, schema, redirects)
 - `docs/new-website-content.md` (all copy and frontmatter)
 - `docs/IMAGE-RESOURCES-NEEDED.md` (photos, badges, icons)
@@ -54,34 +55,51 @@ Files this plan relies on (in `resources/`):
 ## 1. Tokens (CSS variables in `app/globals.css`, mapped into the Tailwind v4 `@theme`)
 
 ```css
-@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
-:root{
-  --night:#0A1626; --night-2:#10233A; --night-3:#173251;
-  --ice:#D9EDF3;  --ice-2:#A9BFCB;      /* ice on night 15.6:1, ice-2 8.9:1 */
-  --aqua:#6FD0E6; --apricot:#F2B48A;   /* text only on night */
-  --paper:#F5F8FA; --card:#FFFFFF;
-  --ink:#0E2233; --ink-2:#4A6274;      /* 15.9:1 and 6.38:1 on white */
-  --blue:#0A6E94; --blue-ink:#086487;  /* white on blue 5.72:1; links 6.60:1 */
-  --line:#DFE8EE; --line-d:rgba(217,237,243,.12);
-  --alert:#C8302A; --ok:#2F7D5B; --wa:#1F8F55;
-  --ease:cubic-bezier(.22,1,.36,1);
-  --r-xl:32px; --r-l:24px; --r-m:16px;
-  --sh:0 1px 2px rgba(14,34,51,.05),0 18px 40px -18px rgba(10,22,38,.22);
-  --sh-h:0 30px 60px -24px rgba(10,22,38,.35);
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+:root {
+  --night: #0a1626;
+  --night-2: #10233a;
+  --night-3: #173251;
+  --ice: #d9edf3;
+  --ice-2: #a9bfcb; /* ice on night 15.6:1, ice-2 8.9:1 */
+  --aqua: #6fd0e6;
+  --apricot: #f2b48a; /* text only on night */
+  --paper: #f5f8fa;
+  --card: #ffffff;
+  --ink: #0e2233;
+  --ink-2: #4a6274; /* 15.9:1 and 6.38:1 on white */
+  --blue: #0a6e94;
+  --blue-ink: #086487; /* white on blue 5.72:1; links 6.60:1 */
+  --line: #dfe8ee;
+  --line-d: rgba(217, 237, 243, 0.12);
+  --alert: #c8302a;
+  --ok: #2f7d5b;
+  --wa: #1f8f55;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --r-xl: 32px;
+  --r-l: 24px;
+  --r-m: 16px;
+  --sh:
+    0 1px 2px rgba(14, 34, 51, 0.05), 0 18px 40px -18px rgba(10, 22, 38, 0.22);
+  --sh-h: 0 30px 60px -24px rgba(10, 22, 38, 0.35);
 }
 ```
 
 **Type scale** (all fluid, `clamp`):
 
-| Role | Font | Size | Line height | Tracking |
-|---|---|---|---|---|
-| Display (hero H1) | Bricolage 700 | clamp(48px, 8vw, 116px) | 0.95 | -0.045em |
-| H2 | Bricolage 700 | clamp(36px, 5.4vw, 72px) | 1.02 | -0.035em |
-| H3 | Bricolage 600 | clamp(22px, 2.2vw, 28px) | 1.15 | -0.02em |
-| Lede | Geist 400 | clamp(17px, 1.5vw, 20px) | 1.6 | 0 |
-| Body | Geist 400 | 17px | 1.65 | 0 |
-| Kicker / label | Geist Mono 600 | 12px uppercase | 1 | 0.12em |
-| Accent | Instrument Serif italic | inherits | inherits | -0.01em |
+| Role              | Font                    | Size                     | Line height | Tracking |
+| ----------------- | ----------------------- | ------------------------ | ----------- | -------- |
+| Display (hero H1) | Bricolage 700           | clamp(48px, 8vw, 116px)  | 0.95        | -0.045em |
+| H2                | Bricolage 700           | clamp(36px, 5.4vw, 72px) | 1.02        | -0.035em |
+| H3                | Bricolage 600           | clamp(22px, 2.2vw, 28px) | 1.15        | -0.02em  |
+| Lede              | Geist 400               | clamp(17px, 1.5vw, 20px) | 1.6         | 0        |
+| Body              | Geist 400               | 17px                     | 1.65        | 0        |
+| Kicker / label    | Geist Mono 600          | 12px uppercase           | 1           | 0.12em   |
+| Accent            | Instrument Serif italic | inherits                 | inherits    | -0.01em  |
 
 On night, the accent phrase in H2 uses an aqua-to-apricot text gradient. On paper, it uses `--blue-ink`.
 
@@ -91,36 +109,36 @@ On night, the accent phrase in H2 uses an aqua-to-apricot text gradient. On pape
 
 ## 2. Global shell (built in Phase 2)
 
-| Component | Spec (see design v3 for the look) |
-|---|---|
+| Component             | Spec (see design v3 for the look)                                                                                                                                                                                                                                                                                                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Floating pill nav** | Fixed, centred, 66px, glass white (blur 20, saturate 160%). Shrinks to 56px after 80px of scroll. A sliding hover indicator moves between links. "Care" opens a mega panel: 3 columns of care groups plus a night preview card. Radix NavigationMenu with explicit grid widths. Over dark stages, the nav switches to its dark glass variant (`data-dark` sections and an IntersectionObserver). |
-| **Glow Book button** | Night pill with a blue icon disc. The `::before`/`::after` conic border rotates `--a`. **Do not** set `isolation:isolate` or a transform on `.glow`: this made the blur layer paint over the label. Hover speeds the spin and deepens the shadow. |
-| **Spine navigator** | Desktop only (≥1100px). A fixed left rail of vertebra pills (C1 to S1) for Home sections. Done = blue, current = aqua with halo. The label shows on hover or focus only, never permanently (it overlapped the hero). |
-| **Mobile dock** | Below 768px: a fixed bottom glass dock with Call · WhatsApp · Book (centre, glow). Safe-area padding. Hidden while the on-screen keyboard is open. |
-| **Mobile menu** | Radix Dialog sheet from the top, night background, large Bricolage links, care groups as an accordion. |
-| **Footer** | A night stage: the CTA band, 4 columns (site-plan section 4), the emergency line and the giant faded "Rehabify" wordmark (clipped, decorative, `aria-hidden`). |
-| **Cookie banner** | Bottom-left glass card with Accept / Reject / Settings at equal weight. `useSyncExternalStore` with a cached snapshot. |
-| **Breadcrumbs** | Mono, small, on every page below Home, plus BreadcrumbList schema. |
+| **Glow Book button**  | Night pill with a blue icon disc. The `::before`/`::after` conic border rotates `--a`. **Do not** set `isolation:isolate` or a transform on `.glow`: this made the blur layer paint over the label. Hover speeds the spin and deepens the shadow.                                                                                                                                                |
+| **Spine navigator**   | Desktop only (≥1100px). A fixed left rail of vertebra pills (C1 to S1) for Home sections. Done = blue, current = aqua with halo. The label shows on hover or focus only, never permanently (it overlapped the hero).                                                                                                                                                                             |
+| **Mobile dock**       | Below 768px: a fixed bottom glass dock with Call · WhatsApp · Book (centre, glow). Safe-area padding. Hidden while the on-screen keyboard is open.                                                                                                                                                                                                                                               |
+| **Mobile menu**       | Radix Dialog sheet from the top, night background, large Bricolage links, care groups as an accordion.                                                                                                                                                                                                                                                                                           |
+| **Footer**            | A night stage: the CTA band, 4 columns (site-plan section 4), the emergency line and the giant faded "Rehabify" wordmark (clipped, decorative, `aria-hidden`).                                                                                                                                                                                                                                   |
+| **Cookie banner**     | Bottom-left glass card with Accept / Reject / Settings at equal weight. `useSyncExternalStore` with a cached snapshot.                                                                                                                                                                                                                                                                           |
+| **Breadcrumbs**       | Mono, small, on every page below Home, plus BreadcrumbList schema.                                                                                                                                                                                                                                                                                                                               |
 
 ---
 
 ## 3. Home page sections (in order; built in Phase 4)
 
-| # | Section | Component and behaviour |
-|---|---|---|
-| 1 | Hero (night stage) | Aurora blobs (CSS, 18s drift). Ice R logo watermark. H1 plus pill, sub, glow Book and ghost "Where does it hurt?". Arch portrait of Dr. Dharshan (D1) with a second, smaller arch behind it to the right for Dr. Selina Kh (S1; "Photo to be added" placeholder with the ice mark until her photo is approved). On hover the back arch rotates a little further. Mobile: the back arch peeks from the right edge. The hero fact row reads "Two rehabilitation doctors". **Goniometer widget:** an SVG arc, needle and degree counter animating 0 to 120 to 95 (example; labelled EXAMPLE). The portrait is the LCP: `priority`, no reveal. |
-| 2 | Finder bar | A glass bar overlapping the hero edge: reason select · clinic/video segmented control · when · Request a time. Deep-links to `/contact/?reason=&format=&when=#book`. |
-| 3 | Why Rehabify (bento) | 5 tiles with a cursor-follow spotlight (CSS var from pointermove): Doctor-led · Goals ring (an SVG ring that fills on view) · One team · Clinic or video switch (a live toggle mock) · Plain explanations. |
-| 4 | Where does it hurt? (night) | **The client's favourite section. Keep it and make it richer.** Front/back body figure SVG with hotspots (neck, shoulder, back, hip, knee, ankle, head, hand). Hover or tap shows a card with the matching conditions and links. Keyboard: hotspots are buttons in a logical order. Mobile: region chips above the figure. |
-| 5 | Care track | Pinned horizontal scroll on desktop (a sticky container, translateX from scroll progress). 5 care groups as large night cards with badge, title, conditions and arrow. Mobile: a native swipe carousel with scroll-snap and a progress bar. |
-| 6 | Your journey (spine scrollytelling) | An SVG spine path draws itself with scroll (`stroke-dashoffset`). 6 vertebrae light up as the 6 steps pass (Book → First consultation → Your goals → Your plan → Practice at home → Review and adjust). Step photos from the image map. Mobile: vertical steps with the rail on the left. |
-| 7 | Ways to see us (stacking cards) | 3 sticky cards that stack as you scroll: In clinic · Video consult (video-call UI mock) · Home programme (phone UI mock with exercise ticks). |
-| 8 | Meet the doctor | A large portrait with zoom on scroll (scale 1.08 to 1), a credentials list, a languages chip [CONFIRM], profile link. Two doctors from day one (design v3): the large Dr. Dharshan block, then a two-card row below it (Dr. Dharshan, Dr. Selina Kh). Dr. Selina's card shows a "Photo to be added" arch with the ice mark until `doctors/dr-selina-hero.jpg` exists. |
-| 9 | Plan your visit | A night strip: address [CONFIRM], hours [CONFIRM], directions, a click-to-load map. |
-| 10 | Conditions A to Z | A live filter input plus letter chips. Results animate in a grid. Uses data from `content/care-conditions.ts`. |
-| 11 | FAQs | Grid-rows accordion (`grid-template-rows: 0fr → 1fr`). Native `<details>` underneath, so it works without JS. FAQPage schema. |
-| 12 | Callouts | Emergency (alert) and "this site is for information" (info). |
-| 13 | CTA + footer | The night stage with the glow button and the wordmark. |
+| #   | Section                             | Component and behaviour                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | Hero (night stage)                  | Aurora blobs (CSS, 18s drift). Ice R logo watermark. H1 plus pill, sub, glow Book and ghost "Where does it hurt?". Arch portrait of Dr. Dharshan (D1) with a second, smaller arch behind it to the right for Dr. Selina Kh (S1; "Photo to be added" placeholder with the ice mark until her photo is approved). On hover the back arch rotates a little further. Mobile: the back arch peeks from the right edge. The hero fact row reads "Two rehabilitation doctors". **Goniometer widget:** an SVG arc, needle and degree counter animating 0 to 120 to 95 (example; labelled EXAMPLE). The portrait is the LCP: `priority`, no reveal. |
+| 2   | Finder bar                          | A glass bar overlapping the hero edge: reason select · clinic/video segmented control · when · Request a time. Deep-links to `/contact/?reason=&format=&when=#book`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 3   | Why Rehabify (bento)                | 5 tiles with a cursor-follow spotlight (CSS var from pointermove): Doctor-led · Goals ring (an SVG ring that fills on view) · One team · Clinic or video switch (a live toggle mock) · Plain explanations.                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 4   | Where does it hurt? (night)         | **The client's favourite section. Keep it and make it richer.** Front/back body figure SVG with hotspots (neck, shoulder, back, hip, knee, ankle, head, hand). Hover or tap shows a card with the matching conditions and links. Keyboard: hotspots are buttons in a logical order. Mobile: region chips above the figure.                                                                                                                                                                                                                                                                                                                 |
+| 5   | Care track                          | Pinned horizontal scroll on desktop (a sticky container, translateX from scroll progress). 5 care groups as large night cards with badge, title, conditions and arrow. Mobile: a native swipe carousel with scroll-snap and a progress bar.                                                                                                                                                                                                                                                                                                                                                                                                |
+| 6   | Your journey (spine scrollytelling) | An SVG spine path draws itself with scroll (`stroke-dashoffset`). 6 vertebrae light up as the 6 steps pass (Book → First consultation → Your goals → Your plan → Practice at home → Review and adjust). Step photos from the image map. Mobile: vertical steps with the rail on the left.                                                                                                                                                                                                                                                                                                                                                  |
+| 7   | Ways to see us (stacking cards)     | 3 sticky cards that stack as you scroll: In clinic · Video consult (video-call UI mock) · Home programme (phone UI mock with exercise ticks).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 8   | Meet the doctor                     | A large portrait with zoom on scroll (scale 1.08 to 1), a credentials list, a languages chip [CONFIRM], profile link. Two doctors from day one (design v3): the large Dr. Dharshan block, then a two-card row below it (Dr. Dharshan, Dr. Selina Kh). Dr. Selina's card shows a "Photo to be added" arch with the ice mark until `doctors/dr-selina-hero.jpg` exists.                                                                                                                                                                                                                                                                      |
+| 9   | Plan your visit                     | A night strip: address [CONFIRM], hours [CONFIRM], directions, a click-to-load map.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| 10  | Conditions A to Z                   | A live filter input plus letter chips. Results animate in a grid. Uses data from `content/care-conditions.ts`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 11  | FAQs                                | Grid-rows accordion (`grid-template-rows: 0fr → 1fr`). Native `<details>` underneath, so it works without JS. FAQPage schema.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 12  | Callouts                            | Emergency (alert) and "this site is for information" (info).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 13  | CTA + footer                        | The night stage with the glow button and the wordmark.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 Below 768px: doctor visible in the first screen after the hero; no section taller than 1.3 × viewport except the hero; target Home height about 9,000 to 10,500px at 390px.
 
@@ -160,17 +178,17 @@ Below 768px: doctor visible in the first screen after the hero; no section talle
 
 **The final image mapping is `IMAGE-MAP.md`. It overrides the table below if they differ.** Image map (target names in `public/images/`):
 
-| Slot | Source | Target |
-|---|---|---|
-| Logo ice / blue / white | `brand/rehabify-mark-*.png` | `brand/mark-{ice,blue,white}.png` + `@2x`, favicon, app icons, OG base |
-| D1 hero portrait | `dr-dharshan-1.png` (needs written approval) | `doctors/dr-dharshan-hero.jpg` (4:5) |
-| D2 desk | `-2` / `-3` | `doctors/dr-dharshan-portrait.jpg` |
-| D3 headshot | `-4` | `doctors/dr-dharshan-avatar.jpg` (1:1) |
-| D5 video | `-3` (temporary) | `doctors/dr-dharshan-video.jpg` |
-| S1 to S5 Dr. Selina Kh | client photos (pending, written approval needed) | `doctors/dr-selina-{hero,portrait,avatar,exam,video}.jpg` |
-| Banner | `-5` (1376 × 768) | `doctors/dr-dharshan-banner.jpg` |
-| C1 to C14 | client photos (pending) | `clinic/*.jpg` per `IMAGE-RESOURCES-NEEDED.md` |
-| B1 to B26 | badge PNGs (pending) | `icons/services/{slug}.{png,webp}` at 512 and 256 |
+| Slot                    | Source                                           | Target                                                                 |
+| ----------------------- | ------------------------------------------------ | ---------------------------------------------------------------------- |
+| Logo ice / blue / white | `brand/rehabify-mark-*.png`                      | `brand/mark-{ice,blue,white}.png` + `@2x`, favicon, app icons, OG base |
+| D1 hero portrait        | `dr-dharshan-1.png` (needs written approval)     | `doctors/dr-dharshan-hero.jpg` (4:5)                                   |
+| D2 desk                 | `-2` / `-3`                                      | `doctors/dr-dharshan-portrait.jpg`                                     |
+| D3 headshot             | `-4`                                             | `doctors/dr-dharshan-avatar.jpg` (1:1)                                 |
+| D5 video                | `-3` (temporary)                                 | `doctors/dr-dharshan-video.jpg`                                        |
+| S1 to S5 Dr. Selina Kh  | client photos (pending, written approval needed) | `doctors/dr-selina-{hero,portrait,avatar,exam,video}.jpg`              |
+| Banner                  | `-5` (1376 × 768)                                | `doctors/dr-dharshan-banner.jpg`                                       |
+| C1 to C14               | client photos (pending)                          | `clinic/*.jpg` per `IMAGE-RESOURCES-NEEDED.md`                         |
+| B1 to B26               | badge PNGs (pending)                             | `icons/services/{slug}.{png,webp}` at 512 and 256                      |
 
 - Every image gets factual alt text in `public/images/alt-text.json`. AI-generated portraits are disclosed on the Editorial policy page.
 - Missing images are listed in `public/images/_todo.md`.
@@ -198,11 +216,11 @@ Below 768px: doctor visible in the first screen after the hero; no section talle
 
 ## 10. Phase plan
 
-| Phase | Scope | Prompt |
-|---|---|---|
-| 1 | Foundation, tokens, fonts, image script, `/styleguide` | `phase-1-prompt.md` |
-| 2 | Shell: nav, mega, spine nav, dock, mobile menu, footer, cookie banner, breadcrumbs, 404 | after P1 approval |
-| 3 | Content pipeline, all 45 routes rendering, `[CONFIRM]` system, launch-check, schema, redirects | |
-| 4 | Home sections + templates | |
-| 5 | Posts, preview deploy, Lighthouse, QA | |
-| 6 | Forms (Server Action + Resend), consent analytics, Maps, lock preview | |
+| Phase | Scope                                                                                          | Prompt              |
+| ----- | ---------------------------------------------------------------------------------------------- | ------------------- |
+| 1     | Foundation, tokens, fonts, image script, `/styleguide`                                         | `phase-1-prompt.md` |
+| 2     | Shell: nav, mega, spine nav, dock, mobile menu, footer, cookie banner, breadcrumbs, 404        | after P1 approval   |
+| 3     | Content pipeline, all 45 routes rendering, `[CONFIRM]` system, launch-check, schema, redirects |                     |
+| 4     | Home sections + templates                                                                      |                     |
+| 5     | Posts, preview deploy, Lighthouse, QA                                                          |                     |
+| 6     | Forms (Server Action + Resend), consent analytics, Maps, lock preview                          |                     |
