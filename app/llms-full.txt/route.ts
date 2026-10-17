@@ -1,4 +1,5 @@
 import {
+  agencyCredit,
   entityStatement,
   guideMarkdown,
   pageList,
@@ -26,6 +27,8 @@ export function GET() {
 Information on this site is for general education and does not replace a consultation. Medical emergency in India: call 108 or 112.
 
 ${[...pages, ...guides].filter(Boolean).join("\n\n---\n\n")}
+
+${agencyCredit()}
 `;
   return new Response(body, {
     headers: { "Content-Type": "text/plain; charset=utf-8" },
