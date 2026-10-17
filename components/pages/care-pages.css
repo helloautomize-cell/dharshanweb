@@ -1,0 +1,509 @@
+/* Phase 7o — shared care area + condition templates */
+.cp-area,
+.cp-condition {
+  --sec: var(--care-spacing);
+}
+
+/* ---------- shared hero ---------- */
+.cp-hero {
+  padding-top: max(clamp(48px, 7vw, 88px), 88px);
+  padding-bottom: clamp(56px, 7vw, 88px);
+}
+.cp-hero .care-breadcrumb ol {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+.cp-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+.cp-hero-main {
+  min-width: 0;
+}
+.cp-chip {
+  pointer-events: none;
+}
+.cp-title {
+  font-size: clamp(44px, 6.4vw, 92px);
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin-top: 22px;
+}
+.cp-lede {
+  max-width: 56ch;
+  margin-top: 24px;
+  color: var(--care-body);
+  font-size: clamp(17px, 1.5vw, 19px);
+  line-height: 1.65;
+}
+.cp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+.cp-actions .btn {
+  height: 52px;
+  padding-inline: 22px;
+  font-size: 15px;
+  white-space: nowrap;
+  transform: none;
+}
+.cp-glance {
+  min-width: 0;
+  margin-top: 8px;
+  padding: clamp(22px, 2.6vw, 30px);
+  border: 1px solid var(--care-line);
+  border-radius: 20px;
+  background: var(--card);
+}
+.cp-glance .care-kicker {
+  margin-bottom: 10px;
+}
+.cp-glance dl > div {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--care-line);
+}
+.cp-glance dl > div:last-child {
+  border-bottom: 0;
+}
+.cp-glance dt {
+  color: var(--care-label);
+  font:
+    400 11px/1.6 var(--font-code),
+    monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.cp-glance dd {
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ---------- shared section rhythm ---------- */
+.cp-sec {
+  padding-bottom: var(--sec);
+}
+.cp-condition .guide-layout {
+  padding-top: 0;
+}
+
+/* ---------- area: care-in-this-area rows ---------- */
+.cp-rows {
+  border-top: 1px solid var(--ink);
+}
+.cp-rows > li {
+  border-bottom: 1px solid var(--care-line);
+}
+.cp-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr) 44px;
+  gap: clamp(16px, 3vw, 48px);
+  align-items: center;
+  padding: 28px 0;
+  transition: padding-left 200ms ease;
+}
+.cp-row:hover {
+  padding-left: 10px;
+}
+.cp-row-main {
+  min-width: 0;
+}
+.cp-row-main h3 {
+  font:
+    600 clamp(26px, 2.6vw, 34px) / 1.1 var(--font-heading),
+    sans-serif;
+  letter-spacing: -0.03em;
+}
+.cp-row-kind {
+  display: block;
+  margin-top: 10px;
+  color: var(--care-label);
+  font:
+    400 11px/1.5 var(--font-code),
+    monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.cp-row-desc {
+  max-width: 58ch;
+  color: var(--care-body);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.cp-row-arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--care-line);
+  border-radius: 50%;
+  color: var(--blue-ink);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+.cp-row:hover .cp-row-arrow {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--card);
+}
+
+/* ---------- area: steps ---------- */
+.cp-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+}
+.cp-steps > li {
+  padding: 28px 28px 8px;
+  border-left: 1px solid var(--care-line);
+}
+.cp-steps > li:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+.cp-step-num {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--blue-ink);
+  font:
+    400 12px/1.5 var(--font-code),
+    monospace;
+}
+.cp-steps h3 {
+  font-size: 26px;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+.cp-steps p {
+  margin-top: 12px;
+  color: var(--care-body);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+/* ---------- area: doctor card ---------- */
+.cp-doctor {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  gap: clamp(20px, 3vw, 36px);
+  align-items: center;
+  padding: clamp(18px, 2.4vw, 26px);
+  border: 1px solid var(--care-line);
+  border-radius: 20px;
+  background: var(--card);
+}
+.cp-doctor-photo {
+  border-radius: 16px;
+}
+.cp-doctor-text {
+  min-width: 0;
+}
+.cp-doctor-text .care-kicker {
+  margin-bottom: 10px;
+}
+.cp-doctor-text h3 {
+  font:
+    600 26px/1.15 var(--font-heading),
+    sans-serif;
+  letter-spacing: -0.025em;
+}
+.cp-doctor-text p {
+  margin-top: 10px;
+  color: var(--care-body);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.cp-doctor-quals {
+  color: var(--care-body);
+}
+.cp-doctor-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cp-doctor-actions .btn {
+  min-height: 48px;
+  padding: 10px 18px;
+  font-size: 15px;
+  white-space: nowrap;
+  transform: none;
+}
+
+/* ---------- area: reviewer line under FAQ ---------- */
+.cp-review-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  color: var(--care-label);
+  font:
+    400 12px/1.6 var(--font-code),
+    monospace;
+}
+.cp-review-line img {
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.cp-review-line a {
+  color: var(--blue-ink);
+  text-decoration: underline;
+  text-decoration-color: rgba(8, 100, 135, 0.35);
+  text-underline-offset: 3px;
+}
+.cp-review-line a:hover {
+  text-decoration-color: var(--blue-ink);
+}
+
+/* ---------- area: other areas ---------- */
+.cp-other {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--care-line);
+}
+.cp-other .care-kicker {
+  margin: 0;
+  flex-shrink: 0;
+}
+.cp-other ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.cp-area-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid var(--care-line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 16px;
+  transition:
+    border-color 150ms ease,
+    color 150ms ease;
+}
+.cp-area-pill:hover {
+  border-color: var(--blue);
+  color: var(--blue-ink);
+}
+.cp-area-pill svg {
+  color: var(--blue-ink);
+}
+
+/* ---------- condition: ordered steps ---------- */
+.cp-ordered {
+  border-top: 1px solid var(--ink);
+}
+.cp-ordered > li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--care-line);
+}
+.cp-ordered-num {
+  padding-top: 4px;
+  color: var(--blue-ink);
+  font:
+    400 12px/1.6 var(--font-code),
+    monospace;
+}
+.cp-ordered h3 {
+  font-size: 19px;
+  line-height: 1.25;
+}
+.cp-ordered p {
+  margin-top: 6px;
+  color: rgba(14, 34, 51, 0.82);
+  font-size: 16.5px;
+}
+.cp-ordered li > div > p:first-child {
+  margin-top: 0;
+}
+.cp-note {
+  margin-top: 16px;
+  color: var(--care-label);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ---------- condition: before/after visit ---------- */
+.cp-visit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.cp-visit-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--care-line);
+  border-radius: 20px;
+  background: var(--card);
+}
+.cp-visit-card h3 {
+  font-size: 19px;
+}
+.cp-visit-card .content-list {
+  margin-top: 14px;
+  font-size: 16px;
+}
+.cp-visit-card .content-list li {
+  font-size: 16px;
+}
+.cp-visit-card > p {
+  margin-top: 14px;
+  color: var(--care-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ---------- condition: related care ---------- */
+.cp-related {
+  padding-bottom: var(--sec);
+}
+.cp-related .guide-related-care.on-night {
+  min-height: 260px;
+}
+.cp-related .guide-related-care h3 {
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+.cp-related .guide-related-care.on-night h3 {
+  color: var(--card);
+  font-size: clamp(26px, 2.6vw, 34px);
+}
+.cp-related .guide-card {
+  min-height: 260px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 999px) {
+  .cp-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .cp-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cp-steps > li {
+    padding: 24px 20px 8px;
+  }
+  .cp-steps > li:nth-child(odd) {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .cp-steps > li:nth-child(n + 3) {
+    border-top: 1px solid var(--care-line);
+  }
+  .cp-doctor {
+    grid-template-columns: 120px minmax(0, 1fr);
+  }
+  .cp-doctor-actions {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 759px) {
+  .cp-row {
+    grid-template-columns: minmax(0, 1fr) 44px;
+    padding: 22px 0;
+  }
+  .cp-row-main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .cp-row-desc {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .cp-row-arrow {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: center;
+  }
+  .cp-steps {
+    grid-template-columns: 1fr;
+  }
+  .cp-steps > li {
+    border-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .cp-steps > li:nth-child(n + 2) {
+    border-top: 1px solid var(--care-line);
+  }
+}
+@media (max-width: 639px) {
+  .cp-area,
+  .cp-condition {
+    --sec: 72px;
+    padding-top: 44px;
+  }
+  .cp-hero {
+    padding-top: 36px;
+    padding-bottom: 48px;
+  }
+  .cp-glance dl > div {
+    display: block;
+  }
+  .cp-glance dd {
+    margin-top: 4px;
+  }
+  .cp-actions {
+    flex-direction: column;
+  }
+  .cp-actions .btn {
+    width: 100%;
+  }
+  .cp-doctor {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+  .cp-doctor-photo {
+    width: 72px;
+    height: 72px;
+  }
+  .cp-doctor-actions {
+    flex-direction: column;
+  }
+  .cp-doctor-actions .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+  .cp-other {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cp-other ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  .cp-area-pill {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .cp-ordered > li {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+  .cp-visit-grid {
+    grid-template-columns: 1fr;
+  }
+  .cp-related .guide-card {
+    display: none;
+  }
+}

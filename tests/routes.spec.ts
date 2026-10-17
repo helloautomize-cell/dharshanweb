@@ -41,10 +41,11 @@ test("care leaf page has reviewer, FAQ, urgent callout and schema", async ({
   page,
 }) => {
   await page.goto("/pain-and-spine/back-pain/");
-  await expect(page.locator(".reviewer-box")).toBeVisible();
-  await expect(page.locator(".faq-item").first()).toBeVisible();
-  await expect(page.locator(".is-urgent")).toBeVisible();
-  await expect(page.locator(".emergency-strip")).toBeVisible();
+  await expect(page.locator(".guide-medical-review")).toBeVisible();
+  await expect(page.locator(".guide-faq details").first()).toBeVisible();
+  await expect(page.locator(".guide-emergency")).toBeVisible();
+  await expect(page.locator(".emergency-strip")).toHaveCount(0);
+  await expect(page.locator(".page-badge")).toHaveCount(0);
   const jsonld = await page
     .locator('script[type="application/ld+json"]')
     .allTextContents();

@@ -22,6 +22,7 @@ export type PageMeta = {
   links?: string[];
   noindex?: boolean;
   careTitle?: string;
+  kind?: "Condition" | "Treatment" | "Rehab programme";
   summary?: string;
   keywords?: string[];
   areaId?: string;

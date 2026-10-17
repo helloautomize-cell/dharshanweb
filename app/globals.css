@@ -1780,13 +1780,8 @@ main:has(> :last-child[data-dark]) + .site-footer::before {
   .mobile-dock {
     display: flex;
   }
-  .site-nav .button-label {
+  .site-nav .nav-book {
     display: none;
-  }
-  .site-nav .btn {
-    padding-inline: 8px;
-    min-width: 48px;
-    justify-content: center;
   }
   .cookie-banner {
     bottom: 84px;
