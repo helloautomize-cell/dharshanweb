@@ -66,9 +66,15 @@ const srcSet = (side: "front" | "back", format: "avif" | "webp") =>
         `/images/illustrations/body-${side}-${width}.${format} ${width}w`,
     )
     .join(", ");
-const sizes = "(max-width: 640px) 280px, 360px";
+const defaultSizes = "(max-width: 640px) 280px, 360px";
 
-function BodyFigurePicture({ side }: { side: "front" | "back" }) {
+function BodyFigurePicture({
+  side,
+  sizes = defaultSizes,
+}: {
+  side: "front" | "back";
+  sizes?: string;
+}) {
   return (
     <picture>
       <source type="image/avif" srcSet={srcSet(side, "avif")} sizes={sizes} />
@@ -183,32 +189,41 @@ export function CompactBodyMap({ careRegions }: { careRegions: CareRegion[] }) {
   );
 }
 
+const bodySizes = "(max-width: 640px) 80vw, (max-width: 1023px) 60vw, 440px";
+
 export function BodyMap() {
   const [selected, setSelected] = useState(2);
   const [view, setView] = useState<"front" | "back">("front");
+  const [tapped, setTapped] = useState(false);
   const blur = `bm-glow-${useId().replace(/:/g, "")}`;
   const region = regions[selected];
   const pick = (i: number) => setSelected(i);
+  const pickSpot = (i: number) => {
+    pick(i);
+    setTapped(true);
+  };
   return (
     <div className="bm">
       <div className="bm-l" data-dark>
-        <span className="lbl mono">
-          Selected<b>{region.name}</b>
-        </span>
-        <div className="seg body-view" role="group" aria-label="Body view">
-          {(["front", "back"] as const).map((side) => (
-            <button
-              key={side}
-              type="button"
-              aria-pressed={view === side}
-              onClick={() => setView(side)}
-            >
-              {side === "front" ? "Front" : "Back"}
-            </button>
-          ))}
+        <div className="bm-top">
+          <span className="lbl mono">
+            Selected<b>{region.name}</b>
+          </span>
+          <div className="seg body-view" role="group" aria-label="Body view">
+            {(["front", "back"] as const).map((side) => (
+              <button
+                key={side}
+                type="button"
+                aria-pressed={view === side}
+                onClick={() => setView(side)}
+              >
+                {side === "front" ? "Front" : "Back"}
+              </button>
+            ))}
+          </div>
         </div>
         <div
-          className="fig body-figure"
+          className="fig"
           aria-label={`${view === "front" ? "Front" : "Back"} body areas`}
           role="group"
         >
@@ -219,7 +234,7 @@ export function BodyMap() {
                 className={`fig-pic${view === side ? " on" : ""}`}
                 aria-hidden={view !== side}
               >
-                <BodyFigurePicture side={side} />
+                <BodyFigurePicture side={side} sizes={bodySizes} />
               </div>
             ))}
             <svg
@@ -257,12 +272,6 @@ export function BodyMap() {
                         cy={spot.y}
                         r="44"
                       />
-                      <circle
-                        className="spot-dot"
-                        cx={spot.x}
-                        cy={spot.y}
-                        r="30"
-                      />
                     </g>
                   ))}
                 </g>
@@ -280,7 +289,7 @@ export function BodyMap() {
                 aria-label={spot.label}
                 aria-pressed={spot.region === selected}
                 aria-controls="body-panel"
-                onClick={() => pick(spot.region)}
+                onClick={() => pickSpot(spot.region)}
               >
                 <span className="hot-label" aria-hidden="true">
                   {spot.label}
@@ -289,6 +298,7 @@ export function BodyMap() {
             ))}
           </div>
         </div>
+        {!tapped && <p className="bm-hint mono">Tap a point on the body</p>}
       </div>
       <div className="bm-r">
         <div className="regs" role="group" aria-label="Choose a body area">

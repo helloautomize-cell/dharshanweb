@@ -7,10 +7,6 @@
   padding-bottom: 0.06em;
   line-height: 1.1;
 }
-.doctors-page .care-book-steps h3 {
-  line-height: 1.4;
-  letter-spacing: 0;
-}
 .doctors-hero-columns {
   gap: clamp(32px, 6vw, 96px);
 }

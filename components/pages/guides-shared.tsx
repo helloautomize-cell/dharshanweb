@@ -12,7 +12,6 @@ export function GuidesBookingClose() {
         </>
       }
       description="Talk it through with the doctor. Choose a clinic visit or a video consult, and the team confirms your time by phone or WhatsApp."
-      lastStep="Bring your questions, scans and reports."
     />
   );
 }

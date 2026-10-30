@@ -154,11 +154,24 @@ export function SiteHeader() {
                   }
                   setMegaOpen(true);
                 }}
+                onClick={(event) => {
+                  setMegaOpen(false);
+                  event.currentTarget.blur();
+                }}
               >
                 Care
                 <Icon name="chevronDown" size={14} />
               </Link>
-              <div className="mega" data-open={megaOpen || undefined}>
+              <div
+                className="mega"
+                data-open={megaOpen || undefined}
+                onClick={(event) => {
+                  const link = (event.target as HTMLElement).closest("a");
+                  if (!link) return;
+                  setMegaOpen(false);
+                  (link as HTMLElement).blur();
+                }}
+              >
                 <div className="mega-groups">
                   {megaGroups.map((group) => (
                     <div key={group.title}>
