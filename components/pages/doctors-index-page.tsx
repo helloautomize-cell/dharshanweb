@@ -251,7 +251,6 @@ export function DoctorsIndexPage({ page }: { page: PageContent }) {
           </>
         }
         description={text("Booking")}
-        firstStep="Online, on WhatsApp or by phone, with your doctor choice."
       />
     </div>
   );

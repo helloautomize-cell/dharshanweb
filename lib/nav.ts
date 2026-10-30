@@ -83,24 +83,56 @@ export const megaGroups = [
   },
 ] as const;
 
-export const footerLinks = [
-  { href: "/care/", label: "Care" },
-  { href: "/doctors/", label: "Doctors" },
-  { href: "/plan-your-visit/", label: "Plan your visit" },
-  { href: "/faqs/", label: "FAQs" },
-  { href: "/guides/", label: "Guides" },
+export const footerNav = [
+  {
+    title: "Care",
+    links: [
+      { href: "/pain-and-spine/", label: "Pain and spine" },
+      { href: "/neuro-rehabilitation/", label: "Neuro rehabilitation" },
+      { href: "/joints-and-sports/", label: "Joints and sports" },
+      {
+        href: "/childrens-rehabilitation/",
+        label: "Children's rehabilitation",
+      },
+      { href: "/older-adults/", label: "Older adults" },
+      { href: "/care/#a-z", label: "Conditions A to Z" },
+    ],
+  },
+  {
+    title: "Your visit",
+    links: [
+      { href: "/contact/#book", label: "Book a consultation" },
+      { href: "/plan-your-visit/", label: "Plan your visit" },
+      { href: "/video-consultation/", label: "Video consults" },
+      { href: "/faqs/", label: "FAQs" },
+      {
+        href: "/appointments-cancellation-refund/",
+        label: "Cancellation and refund",
+      },
+    ],
+  },
+  {
+    title: "Doctors",
+    links: [
+      { href: "/doctors/", label: "Meet your doctors" },
+      { href: "/dr-dharshan-n-a/", label: "Dr. Dharshan N A" },
+      { href: "/dr-selina-kh/", label: "Dr. Selina Kh" },
+    ],
+  },
+  {
+    title: "Learn",
+    links: [
+      { href: "/guides/", label: "Guides" },
+      { href: "/editorial-policy/", label: "Editorial policy" },
+      { href: "/medical-disclaimer/", label: "Medical disclaimer" },
+      { href: "/patient-rights/", label: "Patient rights" },
+    ],
+  },
 ] as const;
 
 export const legalLinks = [
   { href: "/privacy-policy/", label: "Privacy policy" },
   { href: "/terms-of-use/", label: "Terms of use" },
-  { href: "/medical-disclaimer/", label: "Medical disclaimer" },
-  { href: "/editorial-policy/", label: "Editorial policy" },
-  { href: "/patient-rights/", label: "Patient rights" },
-  {
-    href: "/appointments-cancellation-refund/",
-    label: "Cancellation and refund",
-  },
   { href: "/accessibility/", label: "Accessibility" },
   { href: "#cookie-settings", label: "Cookie settings" },
 ] as const;

@@ -6,6 +6,8 @@ out/
 playwright-report/
 test-results/
 artifacts/
+design-diff/
+qa/phase-7/
 .vercel/
 .env*
 !.env.example

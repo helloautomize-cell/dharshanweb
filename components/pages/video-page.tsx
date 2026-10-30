@@ -374,10 +374,6 @@ export function VideoPage({ page }: { page: PageContent }) {
         description={
           'Choose "Video consult" when you book. The team confirms your time by phone or WhatsApp and tells you how to join.'
         }
-        firstStep={'Online, on WhatsApp or by phone. Choose "Video consult".'}
-        secondStep="By phone or WhatsApp, with how to join the call."
-        lastStepTitle="You join from home"
-        lastStep="With your reports beside you and room to move."
       />
     </div>
   );

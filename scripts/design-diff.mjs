@@ -23,7 +23,6 @@ const sections = [
   ["05-ways", "#ways"],
   ["06-doctor", "#doctor"],
   ["07-visit", "#visit"],
-  ["08-az", "#az"],
   ["09-book", "#book"],
 ];
 const widths = [

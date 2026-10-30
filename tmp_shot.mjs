@@ -1,0 +1,11 @@
+import { chromium } from "@playwright/test";
+import { mkdir } from "node:fs/promises";
+await mkdir("artifacts/phase7q", { recursive: true });
+const browser = await chromium.launch();
+const page = await browser.newPage();
+await page.setViewportSize({ width: 1024, height: 768 });
+await page.goto("http://127.0.0.1:3000/", { waitUntil: "networkidle" });
+await page.locator("#journey").scrollIntoViewIfNeeded();
+await page.waitForTimeout(600);
+await page.locator(".jr-pin").screenshot({ path: "artifacts/phase7q/jr-pin-1024x768.png" });
+await browser.close();

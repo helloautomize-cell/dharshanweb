@@ -72,13 +72,6 @@ body:has(.care-page) {
 body:has(.care-page) .site-nav a[aria-current="page"] {
   font-weight: 600;
 }
-body:has(.care-page) .site-footer {
-  border-radius: 0;
-  margin-inline: -12px;
-}
-body:has(.care-page) .site-footer::before {
-  display: none;
-}
 .care-hero {
   padding-top: 134px;
 }
@@ -608,8 +601,7 @@ body:has(.care-page) .site-footer::before {
   line-height: 1.65;
   color: rgba(217, 237, 243, 0.75);
 }
-.care-body-map .care-kicker,
-.care-book .care-kicker {
+.care-body-map .care-kicker {
   color: rgba(217, 237, 243, 0.7);
 }
 .care-body-hotspot {
@@ -897,82 +889,6 @@ body:has(.care-page) .site-footer::before {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.care-book {
-  background: var(--night);
-  color: var(--ice);
-  padding-top: clamp(80px, 10vw, 144px);
-  padding-bottom: 56px;
-  margin-inline: -12px;
-}
-.care-book-columns {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(40px, 6vw, 96px);
-  align-items: end;
-}
-.care-book h2 {
-  font-size: clamp(36px, 5.6vw, 76px);
-}
-.care-book h2 .serif {
-  color: var(--ice);
-}
-.care-book-columns > div > p:not(.care-kicker) {
-  color: rgba(217, 237, 243, 0.75);
-  margin-top: 28px;
-  max-width: 56ch;
-}
-.care-book-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 32px;
-}
-.care-page .care-book-actions .btn {
-  min-height: 52px;
-  height: auto;
-  padding-inline: 22px;
-  font-size: 15px;
-  white-space: nowrap;
-}
-.care-call {
-  font-size: 14px;
-}
-.care-call a {
-  color: var(--card);
-  margin-left: 8px;
-}
-.care-call a:hover {
-  text-decoration: underline;
-}
-.care-book-steps li {
-  display: grid;
-  grid-template-columns: 20px minmax(0, 1fr);
-  gap: 20px;
-  border-top: 1px solid var(--line-d);
-  padding-block: 24px;
-}
-.care-book-steps li:last-child {
-  border-bottom: 1px solid var(--line-d);
-}
-.care-book-steps li > span {
-  color: var(--aqua);
-  font:
-    400 12px/1.5 var(--font-code),
-    monospace;
-}
-.care-book-steps h3 {
-  color: var(--card);
-  font:
-    500 16px/1.4 var(--font-body),
-    sans-serif;
-  letter-spacing: 0;
-}
-.care-book-steps p {
-  color: rgba(217, 237, 243, 0.65);
-  font-size: 15px;
-  line-height: 1.65;
-  margin-top: 8px;
-}
 @media (max-width: 999px) {
   .care-hero-columns {
     grid-template-columns: 1fr;
@@ -1077,9 +993,6 @@ body:has(.care-page) .site-footer::before {
   }
   .care-doctors > div:first-child {
     max-width: 600px;
-  }
-  .care-book-columns {
-    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 639px) {
@@ -1240,21 +1153,6 @@ body:has(.care-page) .site-footer::before {
   }
   .care-doctor-list small {
     font-size: 11px;
-  }
-  .care-book-columns {
-    gap: 48px;
-  }
-  .care-book-actions {
-    flex-direction: column;
-  }
-  .care-book-actions .btn {
-    width: 100%;
-  }
-}
-@media (max-width: 640px) {
-  .care-book,
-  body:has(.care-page) .site-footer {
-    margin-inline: -8px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

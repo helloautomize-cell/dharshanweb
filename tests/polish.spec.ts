@@ -199,9 +199,9 @@ test("home at 390: height in range, sections within approved bounds, doctor earl
   const bounds: Record<string, number> = {
     where: 2000,
     care: 3600,
+    journey: 2200,
     ways: 2200,
     doctor: 2600,
-    az: 1500,
     faq: 2100,
   };
   const tall = await page.evaluate((b) => {
@@ -219,6 +219,10 @@ test("home at 390: height in range, sections within approved bounds, doctor earl
   }, bounds);
   expect(tall.missing).toEqual([]);
   expect(tall.over).toEqual([]);
+  // #az was removed from Home in phase 7p; it must stay absent, with no
+  // in-page links to it (the A to Z lives on /care/#a-z instead).
+  await expect(page.locator("#az")).toHaveCount(0);
+  await expect(page.locator('a[href="#az"]')).toHaveCount(0);
   const doctorVisible = await page.evaluate(() => {
     const img = [...document.querySelectorAll("img")].find((i) =>
       i.src.includes("dr-"),
