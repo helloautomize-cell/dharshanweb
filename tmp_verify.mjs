@@ -1,147 +1,109 @@
-import { chromium, devices } from "@playwright/test";
-import { mkdir } from "node:fs/promises";
-
+import { chromium } from "@playwright/test";
 const BASE = "http://127.0.0.1:3000";
-await mkdir("artifacts/phase7q", { recursive: true });
 const browser = await chromium.launch();
-const page = await browser.newPage();
-const errors = [];
-page.on("pageerror", (e) => errors.push("pageerror: " + e.message));
-page.on("console", (m) => { if (m.type() === "error") errors.push("console: " + m.text()); });
+const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+await page.goto(`${BASE}/`, { waitUntil: "networkidle" });
+await page.waitForTimeout(1200);
+const btn = page.locator(".cookie-banner button", { hasText: /accept/i });
+if (await btn.count()) await btn.first().click().catch(() => {});
 
-async function dismiss() {
-  const b = page.getByRole("button", { name: "Essential only" });
-  if (await b.isVisible().catch(() => false)) await b.click();
-}
+const out = {};
 
-const report = {};
+// accordion state in DOM
+out.accordions = await page.evaluate(() =>
+  [...document.querySelectorAll(".ci-acc")].map((b) => ({
+    name: b.querySelector(".ci-acc-name")?.textContent?.trim(),
+    expanded: b.getAttribute("aria-expanded"),
+    controls: b.getAttribute("aria-controls"),
+    h: Math.round(b.getBoundingClientRect().height),
+    panelHidden: document.getElementById(b.getAttribute("aria-controls"))?.getAttribute("hidden"),
+  })),
+);
 
-// ---- Item 1 & 2: card on paper, footer on paper, steps gone, avatars sharp
-for (const [w, h] of [[1440, 900], [1024, 768], [390, 844]]) {
-  await page.setViewportSize({ width: w, height: h });
-  const key = `${w}x${h}`;
-  report[key] = {};
-  for (const route of ["/", "/doctors/", "/care/", "/medical-disclaimer/"]) {
-    await page.goto(BASE + route, { waitUntil: "networkidle" });
-    await dismiss();
-    const m = await page.evaluate(() => {
-      const card = document.querySelector(".care-book-card");
-      const sec = document.querySelector(".care-book");
-      const footer = document.querySelector(".site-footer");
-      const px = (el, prop) => getComputedStyle(el)[prop];
-      const lum = (rgb) => {
-        const v = rgb.match(/\d+/g).map(Number);
-        return 0.299 * v[0] + 0.587 * v[1] + 0.114 * v[2];
-      };
-      const out = {};
-      if (!card || !footer) { out.missing = !card ? "card" : "footer"; return out; }
-      out.cardBg = px(card, "backgroundColor");
-      out.cardRadius = px(card, "borderRadius");
-      out.footerBg = px(footer, "backgroundColor");
-      out.secBg = px(sec, "backgroundColor");
-      const cr = card.getBoundingClientRect();
-      const fr = footer.getBoundingClientRect();
-      out.gapCardToFooter = Math.round(fr.top - cr.bottom);
-      out.cardOffLeft = Math.round(cr.left);
-      out.viewportW = innerWidth;
-      out.steps = document.querySelectorAll(".care-book-steps, .cta-steps, .cta-facts, ol.care-book-steps").length;
-      const cardText = card.innerText;
-      out.confirmMentions = (cardText.match(/confirms? (your time|by phone)/gi) || []).length;
-      out.avatars = [...card.querySelectorAll("img")].map((i) => ({
-        nat: i.naturalWidth, rend: Math.round(i.getBoundingClientRect().width), dpr: devicePixelRatio,
-      }));
-      out.arrowHrefs = [...card.querySelectorAll(".care-book-doctor-link")].map((a) => a.getAttribute("href"));
-      out.footerNight = lum(out.footerBg) < 110;
-      out.cardNight = lum(out.cardBg) < 110;
-      // any element with dark bg between card bottom and footer top?
-      out.hOverflow = document.documentElement.scrollWidth > innerWidth;
-      return out;
-    });
-    report[key][route] = m;
-  }
-}
-
-// ---- Item 3: footer links resolve + identical footer across routes
-await page.setViewportSize({ width: 1440, height: 900 });
-const routes = ["/", "/doctors/", "/care/", "/medical-disclaimer/", "/guides/", "/contact/", "/privacy-policy/", "/plan-your-visit/"];
-const footers = {};
-const hrefs = new Set();
-for (const r of routes) {
-  await page.goto(BASE + r, { waitUntil: "domcontentloaded" });
-  const f = await page.evaluate(() => {
-    const el = document.querySelector(".site-footer");
-    return el ? el.innerHTML : null;
-  });
-  footers[r] = f;
-  const hs = await page.evaluate(() =>
-    [...document.querySelectorAll(".site-footer a[href]")].map((a) => a.getAttribute("href"))
-  );
-  hs.forEach((h) => hrefs.add(h));
-}
-const uniq = new Set(Object.values(footers).map((f) => f && f.length));
-report.footerIdentical = uniq.size === 1 && !footers[Object.keys(footers)[0]]?.includes("undefined");
-report.footerLinkCount = hrefs.size;
-const linkResults = {};
-for (const h of [...hrefs].filter((h) => h && !h.startsWith("tel:") && !h.startsWith("http") && !h.startsWith("#"))) {
-  const res = await page.request.get(BASE + h.split("#")[0]);
-  linkResults[h] = res.status();
-}
-report.linkStatuses = linkResults;
-
-// ---- Item 4 & 5: tap targets at 390, dock coverage, heading order
-await page.setViewportSize({ width: 390, height: 844 });
-await page.goto(BASE + "/", { waitUntil: "networkidle" });
-await dismiss();
-await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-await page.waitForTimeout(600);
-report.mobile = await page.evaluate(() => {
-  const out = {};
-  const zones = [...document.querySelectorAll(".care-book-card a, .care-book-card button, .site-footer a, .site-footer button")];
-  out.smallTargets = zones.filter((el) => {
-    const r = el.getBoundingClientRect();
-    return r.width > 0 && (r.width < 44 || r.height < 44);
-  }).map((el) => `${el.tagName}.${el.className} "${(el.textContent || "").trim().slice(0, 30)}" ${Math.round(el.getBoundingClientRect().width)}x${Math.round(el.getBoundingClientRect().height)}`);
-  const dock = document.querySelector(".mobile-dock");
-  const fb = document.querySelector(".f-bottom");
-  const fbRect = fb.getBoundingClientRect();
-  out.dockHidden = dock ? dock.hasAttribute("data-hidden") : "no-dock";
-  out.lastLineVisible = fbRect.bottom <= innerHeight;
-  out.hOverflow = document.documentElement.scrollWidth > innerWidth;
-  return out;
+// keyboard toggle: focus first accordion button, press Enter to close, Space to open
+const first = page.locator(".ci-acc").first();
+await first.focus();
+await page.keyboard.press("Enter");
+await page.waitForTimeout(300);
+out.afterEnter = await page.evaluate(() => {
+  const b = document.querySelector(".ci-acc");
+  return {
+    expanded: b.getAttribute("aria-expanded"),
+    panelHidden: document.getElementById(b.getAttribute("aria-controls"))?.hasAttribute("hidden"),
+  };
+});
+await page.keyboard.press(" ");
+await page.waitForTimeout(300);
+out.afterSpace = await page.evaluate(() => {
+  const b = document.querySelector(".ci-acc");
+  return {
+    expanded: b.getAttribute("aria-expanded"),
+    panelHidden: document.getElementById(b.getAttribute("aria-controls"))?.hasAttribute("hidden"),
+  };
 });
 
-// heading order on a few routes
-report.headings = {};
-for (const r of ["/", "/doctors/", "/care/", "/medical-disclaimer/", "/guides/", "/contact/"]) {
-  await page.goto(BASE + r, { waitUntil: "domcontentloaded" });
-  report.headings[r] = await page.evaluate(() => {
-    const levels = [...document.querySelectorAll("h1,h2,h3,h4,h5,h6")].map((h) => +h.tagName[1]);
-    const skips = [];
-    levels.reduce((prev, cur) => { if (cur > prev + 1) skips.push(`${prev}->${cur}`); return cur; }, 0);
-    return { skips, count: levels.length };
+// tap targets < 44px among interactive elements
+out.smallTargets = await page.evaluate(() => {
+  const bad = [];
+  document.querySelectorAll("a, button, select, input, [role=button]").forEach((el) => {
+    const r = el.getBoundingClientRect();
+    if (r.width === 0 && r.height === 0) return;
+    if (r.height < 44 || r.width < 44) {
+      // only flag standalone controls, not inline text links
+      const cs = getComputedStyle(el);
+      if (cs.display === "inline") return;
+      bad.push({ tag: el.tagName, cls: (el.className.baseVal || el.className).toString().slice(0, 50), w: Math.round(r.width), h: Math.round(r.height) });
+    }
   });
-}
+  return bad.slice(0, 20);
+});
 
-// ---- Screenshots
-await page.setViewportSize({ width: 1440, height: 900 });
-await page.goto(BASE + "/", { waitUntil: "networkidle" });
-await dismiss();
-await page.screenshot({ path: "artifacts/phase7q/home-1440.png", fullPage: true });
-await page.locator(".care-book").screenshot({ path: "artifacts/phase7q/card-1440.png" });
-await page.locator(".site-footer").screenshot({ path: "artifacts/phase7q/footer-1440.png" });
-await page.goto(BASE + "/doctors/", { waitUntil: "networkidle" });
-await page.screenshot({ path: "artifacts/phase7q/doctors-1440.png", fullPage: true });
+// served image widths: which URL the ways/doctor images actually loaded
+out.imgSrcs = await page.evaluate(() =>
+  [...document.querySelectorAll(".sc .ui.photo img, .doc-ph img, .dcard .dph img")].map((i) => i.currentSrc.slice(0, 140)),
+);
 
-await page.setViewportSize({ width: 390, height: 844 });
-await page.goto(BASE + "/", { waitUntil: "networkidle" });
-await dismiss();
-await page.evaluate(() => document.fonts.ready);
-await page.screenshot({ path: "artifacts/phase7q/home-390.png", fullPage: true });
-await page.locator(".care-book").screenshot({ path: "artifacts/phase7q/card-390.png" });
-await page.locator(".site-footer").screenshot({ path: "artifacts/phase7q/footer-390.png" });
-await page.goto(BASE + "/doctors/", { waitUntil: "networkidle" });
-await page.screenshot({ path: "artifacts/phase7q/doctors-390.png", fullPage: true });
+// where/journey/doctor internal breakdown
+out.whereBreakdown = await page.evaluate(() => {
+  const g = (s) => { const e = document.querySelector(s); return e ? Math.round(e.getBoundingClientRect().height) : null; };
+  return { head: g("#where .head"), bmL: g(".bm-l"), bmTop: g(".bm-top"), fig: g(".fig"), hint: g(".bm-hint"), bmR: g(".bm-r"), regs: g(".regs"), bmPanel: g(".bm-panel") };
+});
+out.journeyBreakdown = await page.evaluate(() => {
+  const g = (s) => { const e = document.querySelector(s); return e ? Math.round(e.getBoundingClientRect().height) : null; };
+  const steps = [...document.querySelectorAll("#journey .step")].map((s) => Math.round(s.getBoundingClientRect().height));
+  return { head: g("#journey .head"), steps };
+});
+out.doctorBreakdown = await page.evaluate(() => {
+  const g = (s) => { const e = document.querySelector(s); return e ? Math.round(e.getBoundingClientRect().height) : null; };
+  return { docPh: g(".doc-ph"), textCol: g(".doc > div:last-of-type"), doc2: g(".doc2"), ways: g(".doc .ways"), tl: g(".doc .tl"), btns: g(".doc .btns"), bio: g(".doc .bio"), head: g(".doc h2"), secHead: g("#doctor > .head") };
+});
 
-report.consoleErrors = errors;
-console.log(JSON.stringify(report, null, 1));
+// dock vs last element / finder button
+out.dockCheck = await page.evaluate(async () => {
+  const dock = document.querySelector(".mobile-dock");
+  const dockHidden = () => dock?.hasAttribute("data-hidden");
+  const res = {};
+  // scroll finder to bottom of screen
+  document.querySelector(".finder").scrollIntoView({ block: "end", behavior: "instant" });
+  await new Promise((r) => setTimeout(r, 700));
+  const f = document.querySelector(".finder").getBoundingClientRect();
+  const d = dock?.getBoundingClientRect();
+  res.finderAtBottom = { finderBottom: Math.round(f.bottom), dockTop: d ? Math.round(d.top) : null, dockHidden: dockHidden() };
+  // scroll to absolute bottom
+  window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" });
+  await new Promise((r) => setTimeout(r, 1200));
+  const fl = document.querySelector(".site-footer").getBoundingClientRect();
+  const d2 = document.querySelector(".mobile-dock")?.getBoundingClientRect();
+  res.atPageEnd = { footerBottom: Math.round(fl.bottom), innerH: innerHeight, dockTop: d2 ? Math.round(d2.top) : null, dockHidden: dockHidden(), scrollY: Math.round(scrollY) };
+  return res;
+});
+
+// served image widths after scrolling them into view
+await page.locator("#ways .sc .ui.photo img").first().scrollIntoViewIfNeeded();
+await page.waitForTimeout(800);
+out.imgSrcsAfterScroll = await page.evaluate(() =>
+  [...document.querySelectorAll(".sc .ui.photo img, .doc-ph img")].map((i) => i.currentSrc.slice(0, 150)),
+);
+
+console.log(JSON.stringify(out, null, 2));
 await browser.close();

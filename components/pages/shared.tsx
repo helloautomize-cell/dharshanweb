@@ -285,11 +285,17 @@ export function DirectoryBookingClose({
             <ul>
               {doctors.map((doctor) => (
                 <li className="care-book-doctor" key={doctor.slug}>
-                  <Image src={doctor.avatar} alt="" width={56} height={56} />
+                  <Image
+                    src={doctor.avatar}
+                    alt=""
+                    width={56}
+                    height={56}
+                    unoptimized
+                  />
                   <div>
-                    <Link className="care-book-doctor-name" href={doctor.slug}>
-                      {doctor.name}
-                    </Link>
+                    <span className="care-book-doctor-name">
+                      {doctor.name.replace("N A", "N\u00A0A")}
+                    </span>
                     <p className="care-book-doctor-role">{doctor.role}</p>
                   </div>
                   <Link

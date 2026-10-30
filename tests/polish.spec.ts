@@ -197,6 +197,7 @@ test("home at 390: height in range, sections within approved bounds, doctor earl
   expect(height).toBeGreaterThanOrEqual(9000);
   expect(height).toBeLessThanOrEqual(20000);
   const bounds: Record<string, number> = {
+    why: 1900,
     where: 2000,
     care: 3600,
     journey: 2200,

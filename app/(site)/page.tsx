@@ -270,7 +270,7 @@ export default function Home() {
                 loading="lazy"
               />
               <div>
-                <b>Dr. Dharshan N A</b>
+                <b>Dr. Dharshan N&nbsp;A</b>
                 <span>MBBS, MD (Physical Medicine and Rehabilitation)</span>
               </div>
             </div>
@@ -475,7 +475,7 @@ export default function Home() {
                 src="/images/doctors/dr-dharshan-banner.jpg"
                 alt={altFor("doctors/dr-dharshan-banner.jpg")}
                 fill
-                sizes="(max-width: 1023px) 100vw, 50vw"
+                sizes="(max-width: 899px) 92vw, 50vw"
               />
             </div>
           </article>
@@ -502,7 +502,7 @@ export default function Home() {
                 src="/images/doctors/dr-dharshan-video.jpg"
                 alt={altFor("doctors/dr-dharshan-video.jpg")}
                 fill
-                sizes="(max-width: 1023px) 100vw, 50vw"
+                sizes="(max-width: 899px) 92vw, 50vw"
               />
             </div>
           </article>
@@ -534,7 +534,7 @@ export default function Home() {
             <h2>
               Dr. Dharshan{" "}
               <span className="serif" style={{ color: "var(--blue-ink)" }}>
-                N A
+                N&nbsp;A
               </span>
             </h2>
             <p className="role">
@@ -595,12 +595,18 @@ export default function Home() {
         <div className="doc2">
           <article className="dcard">
             <div className="dph">
-              <Image
-                src="/images/doctors/dr-dharshan-avatar.jpg"
-                alt="Dr. Dharshan N A"
-                fill
-                sizes="120px"
-              />
+              <picture>
+                <source
+                  media="(max-width: 899px)"
+                  srcSet="/images/doctors/dr-dharshan-avatar-160.jpg"
+                />
+                <Image
+                  src="/images/doctors/dr-dharshan-avatar.jpg"
+                  alt="Dr. Dharshan N A"
+                  fill
+                  sizes="120px"
+                />
+              </picture>
             </div>
             <div>
               <span className="mono">Lead physiatrist</span>
@@ -610,18 +616,28 @@ export default function Home() {
                 Interventional Pain Management
               </p>
             </div>
-            <Link className="btn btn-ghost" href={doctor.slug}>
+            <Link
+              className="btn btn-ghost"
+              href={doctor.slug}
+              aria-label="Dr. Dharshan N A profile"
+            >
               Profile {arrow}
             </Link>
           </article>
           <article className="dcard">
             <div className="dph">
-              <Image
-                src="/images/doctors/dr-selina-avatar.jpg"
-                alt="Dr. Selina Kh"
-                fill
-                sizes="120px"
-              />
+              <picture>
+                <source
+                  media="(max-width: 899px)"
+                  srcSet="/images/doctors/dr-selina-avatar-160.jpg"
+                />
+                <Image
+                  src="/images/doctors/dr-selina-avatar.jpg"
+                  alt="Dr. Selina Kh"
+                  fill
+                  sizes="120px"
+                />
+              </picture>
             </div>
             <div>
               <span className="mono">Consultant physiatrist</span>
@@ -631,7 +647,11 @@ export default function Home() {
                 injury, rheumatology and pain management.
               </p>
             </div>
-            <Link className="btn btn-ghost" href={second.slug}>
+            <Link
+              className="btn btn-ghost"
+              href={second.slug}
+              aria-label="Dr. Selina Kh profile"
+            >
               Profile {arrow}
             </Link>
           </article>
@@ -685,7 +705,7 @@ export default function Home() {
               />
               <span>
                 Medically reviewed by{" "}
-                <Link href="/dr-dharshan-n-a/">Dr. Dharshan N A</Link>,
+                <Link href="/dr-dharshan-n-a/">Dr. Dharshan N&nbsp;A</Link>,
                 consultant in physical medicine and rehabilitation
                 {page.meta.lastReviewed?.includes("[CONFIRM") ? (
                   <Confirm>
