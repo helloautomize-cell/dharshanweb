@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { CareIcon, type CareIconName } from "./icons/care";
 
 /* v3 care index: the 20 care pages grouped under the five hubs, plus
@@ -183,9 +183,47 @@ const groups: CareGroup[] = [
 
 const sideGroups = groups.slice(0, 5);
 
+const hubs: Record<string, string> = {
+  pain: "/pain-and-spine/",
+  neuro: "/neuro-rehabilitation/",
+  joints: "/joints-and-sports/",
+  children: "/childrens-rehabilitation/",
+  older: "/older-adults/",
+  online: "/video-consultation/",
+};
+
 export function CareIndex() {
   const root = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(groups[0].id);
+  const [open, setOpen] = useState<ReadonlySet<string>>(
+    () => new Set([groups[0].id]),
+  );
+  const [mobile, setMobile] = useState(false);
+
+  // Below 900px the groups collapse into an accordion (first open). Above
+  // 900px every group reads and behaves as open, so SSR and no-JS markup
+  // always show the full list.
+  useEffect(() => {
+    const mq = matchMedia("(max-width: 899px)");
+    const on = () => setMobile(mq.matches);
+    on();
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, []);
+
+  // Find-in-page can reveal hidden="until-found" panels; keep state in sync.
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    const onBeforeMatch = (e: Event) => {
+      const id = (e.target as HTMLElement)
+        .closest?.("[data-ci-panel]")
+        ?.getAttribute("data-ci-panel");
+      if (id) setOpen((prev) => new Set(prev).add(id));
+    };
+    el.addEventListener("beforematch", onBeforeMatch);
+    return () => el.removeEventListener("beforematch", onBeforeMatch);
+  }, []);
 
   useEffect(() => {
     const el = root.current;
@@ -222,6 +260,15 @@ export function CareIndex() {
     };
   }, []);
 
+  const isOpen = (id: string) => (mobile ? open.has(id) : true);
+  const toggle = (id: string) =>
+    setOpen((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+
   const jump = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     const target = document.getElementById(`care-${id}`);
     if (!target) return;
@@ -254,26 +301,59 @@ export function CareIndex() {
       <div className="ci-groups">
         {groups.map((g) => (
           <div className="ci-group" id={`care-${g.id}`} key={g.id}>
-            <h3 className="ci-k mono">{g.name}</h3>
-            <div className="ci-rows">
-              {g.items.map((item, i) => (
-                <Link
-                  key={item.href}
-                  className="ci-row"
-                  href={item.href}
-                  style={{ "--d": `${i * 30}ms` } as React.CSSProperties}
-                >
-                  <CareIcon name={item.icon} size={28} className="ci-ic" />
-                  <span className="ci-t">{item.title}</span>
-                  <span className="ci-d">{item.desc}</span>
-                  <ArrowUpRight
-                    className="ci-a"
-                    size={20}
-                    strokeWidth={1.5}
-                    aria-hidden="true"
-                  />
-                </Link>
-              ))}
+            <h3 className="ci-k mono">
+              <button
+                type="button"
+                className="ci-acc"
+                aria-expanded={isOpen(g.id)}
+                aria-controls={`care-${g.id}-panel`}
+                onClick={() => toggle(g.id)}
+              >
+                <span className="ci-acc-name">{g.name}</span>
+                <span className="ci-acc-cnt" aria-hidden="true">
+                  {String(g.items.length).padStart(2, "0")}
+                </span>
+                <ChevronDown
+                  className="ci-acc-ic"
+                  size={20}
+                  aria-hidden="true"
+                />
+              </button>
+            </h3>
+            <div
+              className="ci-panel"
+              id={`care-${g.id}-panel`}
+              data-ci-panel={g.id}
+              ref={(el) => {
+                if (!el) return;
+                if (isOpen(g.id)) el.removeAttribute("hidden");
+                else el.setAttribute("hidden", "until-found");
+              }}
+            >
+              <div className="ci-rows">
+                {g.items.map((item, i) => (
+                  <Link
+                    key={item.href}
+                    className="ci-row"
+                    href={item.href}
+                    style={{ "--d": `${i * 30}ms` } as React.CSSProperties}
+                  >
+                    <CareIcon name={item.icon} size={28} className="ci-ic" />
+                    <span className="ci-t">{item.title}</span>
+                    <span className="ci-d">{item.desc}</span>
+                    <ArrowUpRight
+                      className="ci-a"
+                      size={20}
+                      strokeWidth={1.5}
+                      aria-hidden="true"
+                    />
+                  </Link>
+                ))}
+              </div>
+              <Link className="ci-hub" href={hubs[g.id]}>
+                See all of {g.name}
+                <ArrowRight size={18} strokeWidth={1.75} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         ))}
