@@ -10,13 +10,13 @@ import { altFor } from "@/lib/alt-text";
    equally sharp in front. Auto-swap pauses on hover, focus, a hidden tab and
    while the hero is out of view; any manual choice stops it until play. */
 
-const SIZES = "(max-width: 1023px) 90vw, 430px";
+const SIZES = "(max-width: 899px) 70vw, 430px";
 const SWAP_MS = 6000;
 
 const doctors = [
   {
     src: "/images/doctors/dr-dharshan-hero.jpg",
-    name: "Dr. Dharshan N A",
+    name: "Dr. Dharshan N\u00A0A",
     role: "Consultant physiatrist",
   },
   {
