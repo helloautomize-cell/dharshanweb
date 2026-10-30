@@ -231,73 +231,83 @@ export function DirectoryReviewer({
 export function DirectoryBookingClose({
   heading,
   description,
-  firstStep = "Online, on WhatsApp or by phone.",
-  secondStep = "By phone or WhatsApp, for the clinic or a video consult.",
-  lastStep = "Bring your reports and wear loose clothes.",
-  lastStepTitle = "You meet your doctor",
   bookingLabel = "Book a consultation",
   bookingHref = "/contact/#book",
   reveal = false,
 }: {
   heading: ReactNode;
   description: string;
-  firstStep?: string;
-  secondStep?: string;
-  lastStep?: string;
-  lastStepTitle?: string;
   bookingLabel?: string;
   bookingHref?: string;
   reveal?: boolean;
 }) {
-  const steps = [
-    { title: "You send a request", text: firstStep },
-    {
-      title: "We confirm a time",
-      text: secondStep,
-    },
-    {
-      title: lastStepTitle,
-      text: lastStep,
-    },
-  ];
+  const doctors = siteConfig.doctors.map((doctor) => ({
+    name: doctor.name,
+    role: doctor.role,
+    slug: doctor.slug,
+    avatar: `/images/doctors/${doctor.id}-avatar-160.jpg`,
+  }));
   return (
     <section
-      className="care-book on-night"
+      className="care-book"
       id="book"
-      data-dark
       aria-labelledby="care-book-heading"
     >
-      <div className="care-container care-book-columns">
-        <div data-care-reveal={reveal || undefined}>
-          <p className="care-kicker">{bookingLabel}</p>
-          <h2 id="care-book-heading">{heading}</h2>
-          <p>{description}</p>
-          <div className="care-book-actions">
-            <Link className="btn btn-invert" href={bookingHref}>
-              <Icon name="calendar" size={20} />
-              {bookingLabel}
-            </Link>
-            <Link className="btn btn-ghost" href={siteConfig.whatsapp}>
-              <Icon name="whatsapp" size={20} />
-              Message on WhatsApp
-            </Link>
+      <div className="care-book-inner">
+        <div className="care-book-card on-night" data-dark>
+          <div
+            className="care-book-main"
+            data-care-reveal={reveal || undefined}
+          >
+            <p className="kicker">{bookingLabel}</p>
+            <h2 id="care-book-heading">{heading}</h2>
+            <p className="care-book-lede">{description}</p>
+            <div className="care-book-actions">
+              <Link className="btn btn-invert" href={bookingHref}>
+                <Icon name="calendar" size={20} />
+                {bookingLabel}
+              </Link>
+              <Link className="btn btn-ghost" href={siteConfig.whatsapp}>
+                <Icon name="whatsapp" size={20} />
+                Message on WhatsApp
+              </Link>
+            </div>
+            <p className="care-call">
+              Prefer to call?{" "}
+              <Link href={siteConfig.phoneHref}>{siteConfig.phone}</Link>
+            </p>
           </div>
-          <p className="care-call">
-            Prefer to call?{" "}
-            <Link href={siteConfig.phoneHref}>{siteConfig.phone}</Link>
-          </p>
+          <div
+            className="care-book-doctors"
+            data-care-reveal={reveal || undefined}
+          >
+            <p className="kicker">Your doctors</p>
+            <ul>
+              {doctors.map((doctor) => (
+                <li className="care-book-doctor" key={doctor.slug}>
+                  <Image src={doctor.avatar} alt="" width={56} height={56} />
+                  <div>
+                    <Link className="care-book-doctor-name" href={doctor.slug}>
+                      {doctor.name}
+                    </Link>
+                    <p className="care-book-doctor-role">{doctor.role}</p>
+                  </div>
+                  <Link
+                    className="care-book-doctor-link"
+                    href={doctor.slug}
+                    aria-label={`${doctor.name} profile`}
+                  >
+                    <Icon name="arrow" size={20} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="care-book-place">
+              <Icon name="pin" size={18} />
+              Clinic in Bengaluru, or by video across India
+            </p>
+          </div>
         </div>
-        <ol className="care-book-steps" data-care-reveal={reveal || undefined}>
-          {steps.map((step, index) => (
-            <li key={step.title}>
-              <span>{index + 1}</span>
-              <div>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
       </div>
     </section>
   );

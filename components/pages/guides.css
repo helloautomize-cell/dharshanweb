@@ -905,6 +905,10 @@
 }
 .guide-medical-review img {
   flex-shrink: 0;
+  align-self: flex-start;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
   border-radius: 50%;
 }
 .guide-medical-review .care-kicker {
