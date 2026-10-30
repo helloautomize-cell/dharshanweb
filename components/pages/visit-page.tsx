@@ -259,7 +259,6 @@ export function VisitPage({ page }: { page: PageContent }) {
             ? `${text("Booking").replace(/\.$/, "")} within ${facts.confirmTime}.`
             : text("Booking")
         }
-        lastStep="With your checklist packed and loose clothes on."
       />
     </div>
   );

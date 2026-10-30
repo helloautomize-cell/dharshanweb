@@ -12,12 +12,63 @@ export function HomeEffects() {
 
     const jp = document.querySelector<SVGPathElement>("#jpath");
     const steps = $$<HTMLElement>(".step");
-    const verts = $$<SVGRectElement>("#jverts .v");
+    const verts = $$<SVGGElement>("#jverts .v");
+    const stepsWrap = $(".steps");
     const jn = $("#jn");
     const jt = $("#jt");
     const js = $("#js");
     const cards = $$<HTMLElement>(".sc");
     const stepData = steps.map((s) => s.dataset.title || "");
+
+    // Vertebrae sit on the drawn curve at (i + 0.5) / 6 of its length; the
+    // server-rendered positions already match, this re-derives them so the
+    // markup stays correct if the path ever changes.
+    if (jp) {
+      const L = jp.getTotalLength();
+      verts.forEach((v, i) => {
+        const p = jp.getPointAtLength((L * (i + 0.5)) / verts.length);
+        v.setAttribute(
+          "transform",
+          `translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})`,
+        );
+      });
+    }
+
+    const ac = new AbortController();
+    const sig = { signal: ac.signal };
+    verts.forEach((v) => {
+      const go = () => {
+        const step = steps[Number(v.dataset.i)];
+        step?.scrollIntoView({
+          behavior: reduce ? "auto" : "smooth",
+          block: "center",
+        });
+      };
+      v.addEventListener("click", go, sig);
+      v.addEventListener(
+        "keydown",
+        (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            go();
+          }
+        },
+        sig,
+      );
+    });
+
+    // Mobile rail: track spans the first to the last step pill, fill scales
+    // with the same progress value that drives the drawn path.
+    const railMetrics = () => {
+      if (!stepsWrap || !steps.length) return;
+      const top = steps[0].offsetTop + 36;
+      const bottom =
+        stepsWrap.offsetHeight - steps[steps.length - 1].offsetTop - 36;
+      stepsWrap.style.setProperty("--rt", `${top}px`);
+      stepsWrap.style.setProperty("--rb", `${Math.max(0, bottom)}px`);
+    };
+    railMetrics();
+
     let jcur = -1;
     const jset = (n: number) => {
       if (n === jcur) return;
@@ -25,24 +76,34 @@ export function HomeEffects() {
       if (jn) jn.textContent = String(n + 1).padStart(2, "0");
       if (jt) jt.textContent = stepData[n];
       if (js) js.textContent = `Step ${n + 1} of ${steps.length}`;
-      steps.forEach((s, i) => s.classList.toggle("on", i === n));
+      steps.forEach((s, i) => {
+        s.classList.toggle("on", i === n);
+        s.classList.toggle("done", i < n);
+      });
       verts.forEach((v, i) =>
         v.setAttribute("class", "v" + (i < n ? " done" : i === n ? " on" : "")),
       );
+      if (reduce) {
+        const count = steps.length;
+        jp?.setAttribute(
+          "stroke-dashoffset",
+          String(1000 * (1 - (n + 0.5) / count)),
+        );
+        stepsWrap?.style.setProperty("--jp", String(n / (count - 1)));
+      }
     };
 
     const onScroll = () => {
-      const stepsWrap = $(".steps");
       if (jp && stepsWrap) {
         const sr = stepsWrap.getBoundingClientRect();
         const jpg = Math.min(
           1,
           Math.max(0, (innerHeight * 0.5 - sr.top) / sr.height),
         );
-        jp.setAttribute(
-          "stroke-dashoffset",
-          reduce ? "0" : String(1000 * (1 - jpg)),
-        );
+        if (!reduce) {
+          jp.setAttribute("stroke-dashoffset", String(1000 * (1 - jpg)));
+          stepsWrap.style.setProperty("--jp", jpg.toFixed(4));
+        }
       }
       steps.forEach((s, i) => {
         const r = s.getBoundingClientRect();
@@ -96,16 +157,25 @@ export function HomeEffects() {
         });
       }
     };
+    const onResize = () => {
+      railMetrics();
+      onScroll();
+    };
     addEventListener("scroll", onScrollThrottled, { passive: true });
-    addEventListener("resize", onScroll);
+    addEventListener("resize", onResize);
     onScroll();
-    if (document.fonts?.ready) document.fonts.ready.then(onScroll);
+    if (document.fonts?.ready)
+      document.fonts.ready.then(() => {
+        railMetrics();
+        onScroll();
+      });
     jset(0);
 
     return () => {
+      ac.abort();
       riseIo?.disconnect();
       removeEventListener("scroll", onScrollThrottled);
-      removeEventListener("resize", onScroll);
+      removeEventListener("resize", onResize);
     };
   }, []);
 

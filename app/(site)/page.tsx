@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image, { getImageProps } from "next/image";
+import Image from "next/image";
 import { Fragment, type CSSProperties } from "react";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
@@ -8,20 +8,15 @@ import { FinderBar } from "@/components/finder-bar";
 import { BodyMap } from "@/components/body-map";
 import { CareIndex } from "@/components/care-index";
 import { HomeEffects } from "@/components/home-effects";
-import { GoalsTile, ConditionsAZ } from "@/components/home-widgets";
+import { GoalsTile } from "@/components/home-widgets";
+import { HeroFan } from "@/components/hero-fan";
 import { QuickAnswers } from "@/components/quick-answers";
+import { DirectoryBookingClose } from "@/components/pages/shared";
 import { faqPage, medicalWebPage, breadcrumb, graph } from "@/lib/schema";
 import { getPage } from "@/lib/content";
 import { altFor } from "@/lib/alt-text";
 
 const page = getPage("/")!;
-
-const heroImageProps = getImageProps({
-  src: "/images/doctors/dr-dharshan-hero.jpg",
-  alt: altFor("doctors/dr-dharshan-hero.jpg"),
-  fill: true,
-  sizes: "(max-width: 1023px) 90vw, 430px",
-}).props;
 
 export const metadata: Metadata = {
   title: page.meta.title,
@@ -77,6 +72,18 @@ for (const badge of missingBadges) {
   const file = `public/images/icons/services/${badge}@256.webp`;
   if (!existsSync(file)) throw new Error(`Missing service badge: ${file}`);
 }
+
+// Vertebra positions on the journey path, precomputed from
+// "M60 20 C 30 120, 90 200, 60 300 S 30 480, 60 580" at (i + 0.5) / 6 of its
+// length, so the spine renders correctly without JavaScript.
+const vertPositions = [
+  [51.8, 66.5],
+  [60.1, 160.4],
+  [68.2, 254.4],
+  [47.9, 346.6],
+  [37.5, 440.5],
+  [48.1, 534.2],
+] as const;
 
 const recoverySteps = [
   [
@@ -195,34 +202,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="visual">
-            <div className="arch">
-              {/* eslint-disable-next-line @next/next/no-img-element -- getImageProps supplies the optimizer srcset */}
-              <img
-                {...heroImageProps}
-                alt={heroImageProps.alt}
-                loading="eager"
-                fetchPriority="high"
-              />
-              <div className="who">
-                <b>Dr. Dharshan N A</b>
-                <span>Consultant physiatrist</span>
-              </div>
-            </div>
-            <div className="arch arch2">
-              <Image
-                src="/images/doctors/dr-selina-hero.jpg"
-                alt={altFor("doctors/dr-selina-hero.jpg")}
-                fill
-                sizes="250px"
-                className="ph"
-              />
-              <div className="who">
-                <b>Dr. Selina Kh</b>
-                <span>Consultant physiatrist</span>
-              </div>
-            </div>
-          </div>
+          <HeroFan />
           <div className="facts">
             <span className="fact">
               <b>MD</b>
@@ -296,7 +276,7 @@ export default function Home() {
             </div>
           </article>
           <article className="tile t-b">
-            <span className="mono">Goals you choose · try it</span>
+            <span className="mono">Goals you choose · example</span>
             <h3>Progress is measured in the things you can do again.</h3>
             <GoalsTile />
           </article>
@@ -379,38 +359,52 @@ export default function Home() {
               <i />
               <i />
             </div>
-            <svg
-              viewBox="0 0 120 600"
-              preserveAspectRatio="xMidYMid meet"
-              aria-hidden="true"
-            >
-              <defs>
-                <linearGradient id="jg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#6FD0E6" />
-                  <stop offset="1" stopColor="#D9EDF3" />
-                </linearGradient>
-              </defs>
-              <path className="track" d="M60 30 V 570" />
+            <svg viewBox="0 0 120 600" preserveAspectRatio="xMidYMid meet">
+              <path
+                className="track"
+                aria-hidden="true"
+                d="M60 20 C 30 120, 90 200, 60 300 S 30 480, 60 580"
+              />
               <path
                 className="drawn"
                 id="jpath"
-                d="M60 30 V 570"
+                aria-hidden="true"
+                d="M60 20 C 30 120, 90 200, 60 300 S 30 480, 60 580"
                 pathLength="1000"
                 strokeDasharray="1000"
                 strokeDashoffset="1000"
               />
               <g id="jverts">
-                {recoverySteps.map((_, i) => {
-                  const y = 62 + i * 95;
-                  return (
-                    <g key={i} className="v" transform={`translate(0 ${y})`}>
-                      <circle cx="60" cy="0" r="4" />
-                      <text x="80" y="4">
-                        {String(i + 1).padStart(2, "0")}
-                      </text>
-                    </g>
-                  );
-                })}
+                {recoverySteps.map(([title], i) => (
+                  <g
+                    key={title}
+                    className="v"
+                    data-i={i}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Go to step ${i + 1}: ${title}`}
+                    transform={`translate(${vertPositions[i][0]} ${vertPositions[i][1]})`}
+                  >
+                    <rect
+                      className="v-hit"
+                      x={-22}
+                      y={-22}
+                      width={44}
+                      height={44}
+                    />
+                    <rect
+                      className="v-pill"
+                      x={-16}
+                      y={-8}
+                      width={32}
+                      height={16}
+                      rx={8}
+                    />
+                    <text className="v-num" x={26} y={4}>
+                      {String(i + 1).padStart(2, "0")}
+                    </text>
+                  </g>
+                ))}
               </g>
             </svg>
             <div>
@@ -666,24 +660,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 11 · A TO Z */}
-      <section className="sec wrap" id="az">
-        <div className="head split">
-          <div style={{ display: "grid", gap: 18 }}>
-            <span className="kicker">Conditions A to Z</span>
-            <h2 className="h2">
-              Look up a <span className="serif">condition.</span>
-            </h2>
-          </div>
-          <p className="lede">
-            Type a word. The list filters as you type, and each name opens its
-            own page.
-          </p>
-        </div>
-        <ConditionsAZ />
-      </section>
-
-      {/* 12 · QUICK ANSWERS */}
+      {/* 11 · QUICK ANSWERS */}
       <section className="sec wrap" id="faq">
         <div className="faq-grid">
           <div className="faq-side">
@@ -723,65 +700,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 13 · BOOK */}
-      <section className="stage on-night cta-book" id="book" data-dark>
-        <div className="cta-grid">
-          <div className="cta-tx">
-            <span className="kicker">Book a consultation</span>
-            <h2>
-              Your next step can be a <span className="serif">small one.</span>
-            </h2>
-            <p className="lede">
-              Clinic visit or video consult. The team confirms your time by
-              phone or WhatsApp.
-            </p>
-            <div className="btns">
-              <Link className="btn btn-invert" href="/contact/#book">
-                <span className="ic">{calIcon}</span>
-                Book a consultation
-              </Link>
-              <Link className="btn btn-ghost" href={siteConfig.whatsapp}>
-                Message on WhatsApp
-              </Link>
-            </div>
-            <p className="cta-call">
-              Prefer to call?{" "}
-              <Link href={siteConfig.phoneHref}>{siteConfig.phone}</Link>
-            </p>
-            <div className="cta-facts">
-              <span>Clinic and video</span>
-              <span>Two rehabilitation doctors</span>
-              <span>Confirmed by phone</span>
-            </div>
-          </div>
-          <div className="cta-steps">
-            <div className="cta-step">
-              <span className="mono">01</span>
-              <div>
-                <b>Book</b>
-                <p>
-                  Book online, call or WhatsApp. Choose a clinic visit or a
-                  video consult.
-                </p>
-              </div>
-            </div>
-            <div className="cta-step">
-              <span className="mono">02</span>
-              <div>
-                <b>Confirmed</b>
-                <p>The team confirms your time by phone or WhatsApp.</p>
-              </div>
-            </div>
-            <div className="cta-step">
-              <span className="mono">03</span>
-              <div>
-                <b>See the doctor</b>
-                <p>In Bengaluru, or by video across India.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 12 · BOOK */}
+      <DirectoryBookingClose
+        heading={
+          <>
+            Your next step can be a <span className="serif">small one.</span>
+          </>
+        }
+        description="Clinic visit or video consult. The team confirms your time by phone or WhatsApp."
+      />
     </>
   );
 }

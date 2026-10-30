@@ -6,6 +6,8 @@ import { ServiceCard } from "@/components/service-card";
 import { Brand, Button } from "@/components/primitives";
 import { Icon } from "@/lib/icons";
 import { MedicalIcon, medicalIconNames } from "@/components/medical-icons";
+import { DirectoryBookingClose } from "@/components/pages/shared";
+import { SiteFooter } from "@/components/site-footer";
 import { CareIcon, careIconNames } from "@/components/icons/care";
 import { contrast, tokens } from "@/lib/design-tokens";
 import { altFor } from "@/lib/alt-text";
@@ -390,15 +392,25 @@ export default function Styleguide() {
             </div>
           </div>
         </section>
+        {/* ======= booking close and footer ======= */}
+        <DirectoryBookingClose
+          heading={
+            <>
+              Your next step can be a <span className="serif">small one.</span>
+            </>
+          }
+          description="Clinic visit or video consult. The team confirms your time by phone or WhatsApp."
+        />
       </main>
-      <footer className="specimen-footer">
+      <SiteFooter />
+      <div className="specimen-footer">
         <Brand variant="ice" />
         <p>Medical emergency? Call 108 or 112.</p>
         <p>
           Information here is for general education and does not replace a
           consultation.
         </p>
-      </footer>
+      </div>
     </MotionReview>
   );
 }
