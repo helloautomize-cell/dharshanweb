@@ -1487,6 +1487,102 @@ section[id] {
   padding: 0;
   justify-content: center;
 }
+/* desktop quick actions */
+.quick-actions {
+  position: fixed;
+  z-index: 40;
+  right: calc(24px + env(safe-area-inset-right, 0px));
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.quick-actions a {
+  text-decoration: none;
+}
+.quick-actions a:focus-visible {
+  outline: 2px solid var(--aqua);
+  outline-offset: 3px;
+}
+.quick-actions .qa-book {
+  height: 52px;
+  padding-inline: 20px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--night);
+  color: var(--ice);
+  font: 600 15px var(--font-body);
+  border: 1px solid rgba(217, 237, 243, 0.14);
+  box-shadow: 0 10px 30px rgba(10, 22, 38, 0.18);
+}
+.quick-actions .qa-book svg {
+  color: var(--aqua);
+}
+.quick-actions .qa-book:hover {
+  background: var(--night-2);
+}
+.quick-actions .qa-wa {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wa);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(10, 22, 38, 0.18);
+  transition: transform 0.15s var(--ease);
+}
+.quick-actions .qa-wa:hover {
+  transform: scale(1.04);
+}
+.quick-actions .qa-tip {
+  position: absolute;
+  right: calc(100% + 8px);
+  top: 50%;
+  translate: 0 -50%;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--night);
+  color: var(--ice);
+  font: 500 13px var(--font-body);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+.quick-actions .qa-wa:hover .qa-tip,
+.quick-actions .qa-wa:focus-visible .qa-tip {
+  opacity: 1;
+}
+@media (min-width: 900px) {
+  .quick-actions {
+    display: flex;
+    transition:
+      opacity 0.25s var(--ease),
+      transform 0.25s var(--ease),
+      visibility 0.25s;
+  }
+  .quick-actions[data-hidden],
+  body:has(.cookie-banner) .quick-actions,
+  body:has(.booking-form :focus-visible) .quick-actions,
+  body:has(.mega[data-open]) .quick-actions,
+  body:has(.links li:focus-within) .quick-actions {
+    opacity: 0;
+    transform: translateY(12px);
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+@media print {
+  .quick-actions {
+    display: none;
+  }
+}
 /* footer */
 .site-footer {
   margin-inline: -12px;
@@ -1652,6 +1748,11 @@ section[id] {
   font-weight: 600;
 }
 .f-emergency a {
+  display: inline-block;
+  min-width: 44px;
+  padding: 13px 11px;
+  margin: -13px -11px;
+  text-align: center;
   color: inherit;
   font-weight: 600;
 }
@@ -1694,6 +1795,9 @@ section[id] {
   color: var(--blue-ink);
 }
 .f-credit a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
   color: var(--blue-ink);
   text-decoration: none;
 }
@@ -1822,7 +1926,7 @@ section[id] {
     pointer-events: none;
   }
   main {
-    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px) + 16px);
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px) + 24px);
   }
   .site-nav .nav-book {
     display: none;
@@ -1854,6 +1958,11 @@ section[id] {
   }
   .site-footer {
     padding-bottom: calc(28px + 84px);
+  }
+  /* The dock hides when the booking card or the footer is on screen, so the
+     trailing clearance is only needed on pages without a closing card. */
+  main:has(> .care-book:last-child, > :last-child > .care-book:last-child) {
+    padding-bottom: 0;
   }
 }
 @media (max-width: 999px) {
@@ -1890,7 +1999,8 @@ section[id] {
     align-items: flex-start;
   }
   .f-bottom nav a,
-  .footer-link-button {
+  .footer-link-button,
+  .f-credit a {
     min-height: 44px;
   }
 }
@@ -4724,6 +4834,9 @@ h4 {
   color: var(--ice-2);
 }
 .care-book .care-call a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--ice);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
@@ -4776,11 +4889,6 @@ h4 {
   font-weight: 600;
   line-height: 1.3;
   color: var(--ice);
-  text-decoration: none;
-}
-.care-book-doctor-name:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 .care-book-doctor-role {
   margin: 2px 0 0;
@@ -4826,7 +4934,7 @@ h4 {
 }
 @media (max-width: 639px) {
   .care-book {
-    padding-bottom: 56px;
+    padding-bottom: 0;
   }
   .care-book-inner {
     width: calc(100% - 32px);
@@ -5061,7 +5169,7 @@ h4 {
   }
   .head,
   .section-head {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   .ci-groups {
     gap: 32px;
@@ -5825,5 +5933,367 @@ h4 {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* =====================================================================
+   P7r · Home page mobile structure (below 900px, where the dock appears)
+   ===================================================================== */
+@media (max-width: 899px) {
+  /* 1 · hero: photo first, then pill, H1, lede, buttons, facts */
+  .hero {
+    padding: 84px 32px clamp(72px, 10vw, 110px);
+  }
+  .visual {
+    order: -1;
+    width: 100%;
+    margin-top: 0;
+  }
+  .hero-text > .pill {
+    margin-top: 24px;
+  }
+  .fan {
+    width: 100%;
+    gap: 12px;
+  }
+  .fan-box {
+    width: min(70vw, 320px);
+    --back: translate(30%, -4%) scale(0.78) rotate(-4deg);
+    --back-mid: translate(36%, -6%) scale(0.89) rotate(-2deg);
+  }
+  .hero .btns {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .hero .btns .btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+  }
+  .hero .btns .btn-invert {
+    min-height: 52px;
+  }
+  /* facts: compact 2 x 2 */
+  .hero .facts {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 16px;
+  }
+  .fact {
+    border-left: 0;
+    padding: 0;
+  }
+  .fact b {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .fact > span {
+    font-size: 12px;
+  }
+
+  /* 2 · finder card overlaps the hero by 24px */
+  .finder {
+    margin-top: -24px;
+  }
+
+  /* 3 · bento: one column, no swipe strip */
+  .bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+  .tile {
+    flex: none;
+    scroll-snap-align: unset;
+  }
+  .t-a blockquote {
+    font-size: 26px;
+  }
+  .t-c,
+  .t-d,
+  .t-e {
+    padding: 20px;
+  }
+
+  /* 4 · body map: area chips as a 2-column grid */
+  .regs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .reg {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.25;
+    padding: 6px 10px;
+  }
+
+  /* 5 · care index: accordion replaces the sticky chip strip */
+  .ci-side {
+    display: none;
+  }
+  .ci-groups {
+    gap: 0;
+  }
+  .ci-group {
+    border-top: 0;
+    padding-top: 0;
+    scroll-margin-top: 90px;
+  }
+  .ci-k {
+    margin-bottom: 0;
+  }
+  .ci-acc {
+    width: 100%;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 8px 0;
+    border: 0;
+    border-bottom: 1px solid rgba(14, 34, 51, 0.12);
+    background: none;
+    border-radius: 0;
+    text-align: left;
+    font:
+      600 18px/1.25 var(--font-heading),
+      sans-serif;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: var(--ink);
+  }
+  .ci-acc-cnt {
+    margin-left: auto;
+    font:
+      500 12px/1 var(--font-code),
+      monospace;
+    letter-spacing: 0.08em;
+    color: rgba(14, 34, 51, 0.65);
+  }
+  .ci-acc-ic {
+    flex: none;
+    color: var(--ink-2);
+    transition: transform 0.2s var(--ease);
+  }
+  .ci-acc[aria-expanded="true"] .ci-acc-ic {
+    transform: rotate(180deg);
+  }
+  .ci-panel {
+    padding-top: 4px;
+  }
+  .ci-hub {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    margin-top: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--blue-ink);
+    text-decoration: none;
+  }
+
+  /* 6 · journey: tighter steps */
+  .step {
+    padding-block: 20px;
+  }
+  .step h3 {
+    font-size: 24px;
+  }
+
+  /* 7 · ways: photo first, then text */
+  .sc .ui.photo {
+    order: -1;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    max-height: 220px;
+  }
+  .sc .ui.photo img {
+    object-position: 50% 24%;
+  }
+  .sc .tx {
+    padding: 20px;
+  }
+  .sc li {
+    font-size: 16px;
+  }
+  .sc .tx .btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  /* 8 · doctor */
+  .doc-ph {
+    max-height: 420px;
+  }
+  .doc-ph .float {
+    display: flex;
+  }
+  .doc .ways {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .doc .btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .doc .btns .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .doc .btns .btn-primary {
+    min-height: 52px;
+  }
+  .doc .btns .btn-ghost {
+    min-height: 48px;
+  }
+  /* two compact rows inside one card with a hairline between them */
+  .doc2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+    background: var(--card);
+    border: 1px solid rgb(14 34 51 / 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .dcard {
+    grid-template-columns: 72px 1fr 44px;
+    gap: 14px;
+    align-items: center;
+    padding: 16px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+  .dcard + .dcard {
+    border-top: 1px solid var(--line);
+  }
+  .dcard:hover {
+    box-shadow: none;
+  }
+  .dcard .dph {
+    width: 72px;
+    height: 72px;
+    aspect-ratio: auto;
+    border-radius: 50%;
+  }
+  .dcard .mono {
+    font-size: 12px;
+  }
+  .dcard h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-block: 3px;
+  }
+  .dcard p {
+    font-size: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .dcard .btn {
+    grid-column: auto;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    gap: 0;
+    border-radius: 50%;
+    font-size: 0;
+  }
+  .dcard .btn svg {
+    margin: 0;
+  }
+
+  /* 9 · booking close: compact doctor rows, name on one line */
+  .care-book-doctors {
+    padding: 16px;
+  }
+  .care-book-doctor img {
+    width: 48px;
+    height: 48px;
+  }
+  .care-book-doctor-name {
+    white-space: nowrap;
+  }
+}
+
+/* ≥900px: the accordion headers and hub links revert to the plain group
+   headings and rows — the desktop care index stays exactly as before. */
+@media (min-width: 900px) {
+  .ci-acc {
+    display: block;
+    width: auto;
+    padding: 0;
+    border: 0;
+    background: none;
+    text-align: left;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: inherit;
+    cursor: default;
+  }
+  .ci-acc-cnt,
+  .ci-acc-ic {
+    display: none;
+  }
+  .ci-hub {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ci-acc-ic {
+    transition: none;
+  }
+}
+
+/* P7r additions */
+@media (max-width: 899px) {
+  /* finder select tap target */
+  .finder .fld select {
+    min-height: 44px;
+  }
+  /* body map: condition links stay a one-column list */
+  .bm-panel ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* below 640px: 56px between Home sections (28px block padding on each side)
+   and 24px between a section head and its content. Sections that are flush
+   on desktop (inline padding-top:0) get the same 28px top padding here. */
+@media (max-width: 639px) {
+  #why,
+  #where,
+  #care,
+  #journey,
+  #ways,
+  #doctor,
+  #faq {
+    padding-block: 28px;
+  }
+  #where,
+  #ways,
+  #doctor {
+    padding-top: 28px !important;
+  }
+  #visit {
+    padding-block: 28px;
   }
 }

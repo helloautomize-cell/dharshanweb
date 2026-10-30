@@ -13,7 +13,9 @@ export function MobileDock() {
   useEffect(() => {
     const el = dock.current;
     if (!el) return;
-    const targets = document.querySelectorAll(".site-footer, .care-book");
+    const targets = document.querySelectorAll(
+      ".site-footer, .care-book, .finder",
+    );
     const visible = new Set<Element>();
     const io = new IntersectionObserver(
       (entries) => {
