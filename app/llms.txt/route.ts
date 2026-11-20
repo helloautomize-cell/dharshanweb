@@ -34,7 +34,7 @@ Information on this site is for general education and does not replace a consult
 ## Words patients use (English, Kannada, Tamil, Hindi)
 
 - Back pain: bennu novu (Kannada), mudhugu vali (Tamil), kamar dard (Hindi)
-- Paralysis after stroke: lakva (Hindi), paksavatha (Tamil)
+- Paralysis after stroke: pakshaghata (Kannada), pakkavatham (Tamil), lakwa (Hindi)
 - Physiotherapy: physio, exercise treatment
 
 ## Pages
