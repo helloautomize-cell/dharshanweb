@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build && node scripts/verify-visit-output.mjs && node scripts/verify-guides-output.mjs && node scripts/verify-care-pages.mjs && node scripts/verify-no-leaks.mjs",
-    "content:guides": "node scripts/import-guides.mjs",
     "start": "next start --hostname 127.0.0.1",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -15,8 +14,6 @@
     "images": "node scripts/process-images.mjs",
     "test": "playwright test",
     "test:images": "node scripts/verify-images.mjs",
-    "launch-check": "node scripts/launch-check.mjs",
-    "qa:reference": "node scripts/capture-reference.mjs",
     "qa:lighthouse": "node scripts/lighthouse.mjs",
     "design-diff": "node scripts/design-diff.mjs"
   },

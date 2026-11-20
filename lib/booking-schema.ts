@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { bookingReasons } from "@/lib/styleguide-copy";
+import { bookingReasons } from "@/lib/site-copy";
 import { DOCTORS, FORMATS, TIMES, normaliseMobile } from "@/lib/booking-shared";
 
 export {

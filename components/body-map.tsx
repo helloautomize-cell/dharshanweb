@@ -4,7 +4,7 @@ import { useId, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { regions } from "@/lib/styleguide-copy";
+import { regions } from "@/lib/site-copy";
 import type { CareRegion } from "@/lib/care";
 
 /* v3 body map: AI body illustrations on the night panel, front and back views

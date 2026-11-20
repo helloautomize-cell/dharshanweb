@@ -666,7 +666,7 @@ export default function Home() {
             <h3>See the doctor in Bengaluru.</h3>
             <p>
               {siteConfig.address.includes("[CONFIRM")
-                ? "To be confirmed, shared when you book."
+                ? "Clinic address shared when you book."
                 : siteConfig.address}
             </p>
             <div className="row">

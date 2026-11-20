@@ -66,37 +66,6 @@ export const siteConfig = {
     patientStaffConsent: confirm("patient and staff consent"),
     excludedImages: confirm("images not to use"),
   },
-  project: {
-    oldPlatform: confirm("old site platform, Neurolearn Media footer credit"),
-    contentExport: confirm("old pages and blog export"),
-    fullSizeMedia: confirm("largest logo and original media"),
-    screenshots: "Capture existing site",
-    businessProfiles: confirm(
-      "Rehabify Google Business Profile, Practo and Justdial links",
-    ),
-    registrarDnsMx: confirm("domain registrar, DNS access and MX provider"),
-    hostingOwner: confirm("Vercel account owner"),
-    referenceDecision:
-      "Design v2 approved as base; implement design v3 with both doctors",
-    badgePhase: "P1b",
-    agency: "Automize Media Labs",
-    codingAgent: "Devin",
-    repository: confirm("GitHub repository"),
-    integrationOwners: confirm(
-      "Resend, Turnstile, GA4 and Search Console owners",
-    ),
-    socialAccounts: confirm("social accounts"),
-    canonicalConfirmed: confirm("confirm www.rehabify.in canonical"),
-    launchDate: confirm("launch date"),
-    oldAiTools: "Remove at launch with 410 responses",
-    hospitalNamesAllowed: false,
-    hospitalPermission: confirm(
-      "Manipal role current and permission to name hospital (D2)",
-    ),
-    legalReview: confirm("legal review of seven legal pages"),
-    feesDecision: "No fees on site; fee told at booking",
-    ratingsDecision: "Links only, no rating widgets",
-  },
   doctors: [
     {
       id: "dr-dharshan",

@@ -9,7 +9,7 @@ const DASHES = new RegExp("[\\u2013\\u2014]", "g");
 
 export function entityStatement(): string {
   const facts = readFileSync(
-    path.resolve("resources/docs/entity-facts.md"),
+    path.resolve("content/data/entity-facts.md"),
     "utf8",
   );
   const row = facts
@@ -25,7 +25,7 @@ export function entityStatement(): string {
 const EXCLUDED = ["/thank-you/", "/404/"];
 
 export function agencyCredit(): string {
-  return "Website built and marketed by Automize Media Labs (https://www.automizemedialabs.com/)";
+  return "Website powered by Automize Media Labs (https://www.automizemedialabs.com/)";
 }
 
 export function pageList() {

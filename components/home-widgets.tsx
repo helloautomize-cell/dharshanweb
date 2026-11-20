@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import type { CSSProperties } from "react";
 import { Check } from "lucide-react";
-import { goals } from "@/lib/styleguide-copy";
+import { goals } from "@/lib/site-copy";
 
 /* Read-only goal meter: an example plan with calm progress bars that grow
    once when the tile scrolls into view. Decorative bars are aria-hidden;

@@ -12,3 +12,6 @@ qa/phase-7/
 .env*
 !.env.example
 *.tsbuildinfo
+
+
+tmp*

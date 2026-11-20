@@ -81,7 +81,7 @@ export function SiteFooter() {
             )}
           </nav>
           <p className="f-credit">
-            Built &amp; Marketed by{" "}
+            Powered by{" "}
             <a
               href="https://www.automizemedialabs.com/"
               target="_blank"

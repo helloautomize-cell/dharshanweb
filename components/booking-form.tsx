@@ -10,7 +10,7 @@ import {
   TIMES,
   normaliseMobile,
 } from "@/lib/booking-shared";
-import { bookingReasons } from "@/lib/styleguide-copy";
+import { bookingReasons } from "@/lib/site-copy";
 import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
 
