@@ -12,8 +12,6 @@ export default defineConfig([
     "_handoff/**",
     "artifacts/**",
     "public/**",
-    "test-results/**",
-    "playwright-report/**",
     "next-env.d.ts",
   ]),
 ]);
