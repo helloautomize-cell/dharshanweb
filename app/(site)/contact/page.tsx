@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
+import { Phone, Clock, MapPin, Mail } from "lucide-react";
 import { getPage } from "@/lib/content";
 import { siteConfig, SITE_INDEXABLE } from "@/lib/site-config";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -9,8 +9,8 @@ import { Confirm } from "@/components/primitives";
 import { BookingForm } from "@/components/booking-form";
 import { MapFacade } from "@/components/map-facade";
 import { Icon } from "@/lib/icons";
-import { getSignedRenderTime } from "./actions";
 import { graph, breadcrumb, webPage } from "@/lib/schema";
+import "@/components/pages/site-pages.css";
 
 const page = getPage("/contact/")!;
 
@@ -30,8 +30,7 @@ export default async function ContactPage({
   searchParams: Promise<Record<string, string | undefined>>;
 }) {
   const params = await searchParams;
-  const { ts, sig } = await getSignedRenderTime();
-  const cards = [
+  const direct = [
     {
       icon: Phone,
       title: "Call or WhatsApp",
@@ -51,14 +50,14 @@ export default async function ContactPage({
       show: hasValue(siteConfig.address),
     },
     {
-      icon: MessageCircle,
+      icon: Clock,
       title: "Hours",
       value: <Confirm>{siteConfig.hours}</Confirm>,
       show: hasValue(siteConfig.hours),
     },
-  ].filter((card) => card.show);
+  ].filter((row) => row.show);
   return (
-    <div className="page-main">
+    <div className="page-main sp-contact">
       <Breadcrumbs items={crumbs(page.meta)} />
       <header className="page-head">
         <p className="kicker">Contact and book</p>
@@ -69,54 +68,83 @@ export default async function ContactPage({
         </p>
       </header>
       <section className="content-section" id="book">
-        <div className="sp-form-card">
-          <BookingForm
-            renderTime={ts}
-            renderSig={sig}
-            sourcePage={params.from ?? "/contact/"}
-            initialDoctor={
-              ["dr-selina", "dr-selina-kh"].includes(params.doctor ?? "")
-                ? "Dr. Selina Kh"
-                : ["dr-dharshan", "dr-dharshan-n-a"].includes(
-                      params.doctor ?? "",
-                    )
-                  ? "Dr. Dharshan N A"
-                  : undefined
-            }
-            initialFormat={
-              params.format === "video"
-                ? "video"
-                : params.format === "clinic"
-                  ? "clinic"
-                  : undefined
-            }
-            initialReason={params.reason}
-          />
+        <div className="booking-layout">
+          <div className="sp-form-card">
+            <div className="sp-form-card-head">
+              <p className="kicker">Appointment request</p>
+              <p className="sp-form-card-sub">
+                Takes about a minute. We reply on WhatsApp or by phone.
+              </p>
+            </div>
+            <BookingForm
+              initialDoctor={
+                ["dr-selina", "dr-selina-kh"].includes(params.doctor ?? "")
+                  ? "Dr. Selina Kh"
+                  : ["dr-dharshan", "dr-dharshan-n-a"].includes(
+                        params.doctor ?? "",
+                      )
+                    ? "Dr. Dharshan N A"
+                    : undefined
+              }
+              initialFormat={
+                params.format === "video"
+                  ? "video"
+                  : params.format === "clinic"
+                    ? "clinic"
+                    : undefined
+              }
+              initialReason={params.reason}
+            />
+          </div>
+          <aside className="booking-side">
+            <div className="side-block">
+              <h2 className="side-title">What happens next</h2>
+              <ol className="sp-next">
+                <li>
+                  <span className="sp-next-num">01</span>
+                  <p>
+                    <strong>You send the request.</strong> WhatsApp opens with
+                    your details written for you &mdash; press Send.
+                  </p>
+                </li>
+                <li>
+                  <span className="sp-next-num">02</span>
+                  <p>
+                    <strong>We confirm a time.</strong> The team replies on
+                    WhatsApp or calls you back to fix your slot.
+                  </p>
+                </li>
+                <li>
+                  <span className="sp-next-num">03</span>
+                  <p>
+                    <strong>You meet the doctor.</strong> At the clinic in
+                    Bengaluru, or on a video consult.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <div className="side-block">
+              <h2 className="side-title">Reach us directly</h2>
+              <ul className="sp-direct">
+                {direct.map((row) => (
+                  <li key={row.title}>
+                    <row.icon size={20} strokeWidth={1.75} aria-hidden="true" />
+                    <div>
+                      <span className="sp-direct-label">{row.title}</span>
+                      {row.value}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
         </div>
       </section>
-      {cards.length > 0 && (
-        <section className="content-section" id="contact-cards">
-          <h2 className="h3">Other ways to reach us</h2>
-          <div className="contact-cards">
-            {cards.map((card) => (
-              <div className="contact-card" key={card.title}>
-                <card.icon size={22} strokeWidth={1.75} aria-hidden="true" />
-                <h3 className="h4">{card.title}</h3>
-                <p>{card.value}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
       <MapFacade />
       <p className="emergency-strip" role="note">
         <Icon name="alert" size={18} />
         Medical emergency? Call <Link href="tel:108">108</Link> or{" "}
         <Link href="tel:112">112</Link>
-      </p>
-      <p className="sp-contact-line">
-        Prefer to talk? Call or WhatsApp{" "}
-        <Link href={siteConfig.phoneHref}>{siteConfig.phone}</Link>
       </p>
       <script
         type="application/ld+json"

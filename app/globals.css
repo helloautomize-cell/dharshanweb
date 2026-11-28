@@ -2559,8 +2559,7 @@ body:has(.booking-form :focus-visible) .mobile-dock {
 /* --- Booking form + facades (P6) --- */
 .booking-form {
   display: grid;
-  gap: 22px;
-  max-width: 640px;
+  gap: 26px;
 }
 .booking-form fieldset {
   border: 0;
@@ -2572,8 +2571,17 @@ body:has(.booking-form :focus-visible) .mobile-dock {
   min-width: 0;
 }
 .booking-form .seg-option span {
-  white-space: normal;
+  white-space: nowrap;
   text-align: center;
+}
+@media (max-width: 560px) {
+  .booking-form .segmented {
+    flex-direction: column;
+    border-radius: var(--r-m);
+  }
+  .booking-form .seg-option span {
+    border-radius: 12px;
+  }
 }
 .booking-form legend {
   font-weight: 600;
@@ -2620,12 +2628,15 @@ body:has(.booking-form :focus-visible) .mobile-dock {
 .booking-form .segmented {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
 }
 .booking-form .seg-option {
   flex: 1;
+  display: flex;
 }
 .booking-form .seg-option span {
   width: 100%;
+  height: 100%;
   justify-content: center;
 }
 .seg-option {
@@ -2676,6 +2687,13 @@ body:has(.booking-form :focus-visible) .mobile-dock {
   border-radius: var(--r-s);
   background: var(--card);
   color: var(--ink);
+}
+.booking-form input[type="text"]:hover,
+.booking-form input[type="tel"]:hover,
+.booking-form input[type="number"]:hover,
+.booking-form input[type="date"]:hover,
+.booking-form select:hover {
+  border-color: var(--ice-2);
 }
 .booking-form input[aria-invalid="true"],
 .booking-form select[aria-invalid="true"] {
@@ -2767,7 +2785,13 @@ body:has(.booking-form :focus-visible) .mobile-dock {
 }
 .submit-btn {
   justify-self: start;
-  min-width: 220px;
+  min-width: 240px;
+}
+@media (max-width: 640px) {
+  .submit-btn {
+    justify-self: stretch;
+    width: 100%;
+  }
 }
 .spinner {
   width: 18px;
@@ -2787,11 +2811,12 @@ body:has(.booking-form :focus-visible) .mobile-dock {
   color: var(--ink-2);
   max-width: 460px;
 }
-.form-failed {
+.form-sent {
   border: 1px solid var(--line);
+  border-left: 4px solid var(--ok);
   border-radius: var(--r-m);
   padding: 26px;
-  background: var(--card);
+  background: var(--paper);
   display: grid;
   gap: 14px;
 }

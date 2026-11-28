@@ -1,6 +1,9 @@
 export const SITE_INDEXABLE = process.env.VERCEL_ENV === "production";
 const confirm = (item: string) => `[CONFIRM: ${item}]` as const;
 
+// Practice WhatsApp number, international digits only. The only place it lives.
+export const WHATSAPP_NUMBER = "917904842576";
+
 export const siteConfig = {
   name: "Rehabify",
   url: "https://www.rehabify.in/",
@@ -12,7 +15,8 @@ export const siteConfig = {
   tagline: confirm("keep Restoring Lives, Renewing Hope tagline"),
   phone: "+91 79048 42576",
   phoneHref: "tel:+917904842576",
-  whatsapp: "https://wa.me/917904842576",
+  whatsapp: `https://wa.me/${WHATSAPP_NUMBER}`,
+  whatsappNumber: WHATSAPP_NUMBER,
   phoneConfirmed: confirm("confirm phone and WhatsApp number"),
   email: confirm("single contact email"),
   address: confirm("clinic address and landmark"),

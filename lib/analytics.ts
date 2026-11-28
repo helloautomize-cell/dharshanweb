@@ -14,7 +14,7 @@ type EventName =
 const allowed: Record<string, string[]> = {
   book_click: ["cta_location"],
   call_click: ["cta_location"],
-  whatsapp_click: ["cta_location"],
+  whatsapp_click: ["cta_location", "placement"],
   generate_lead: ["form_type"],
   map_load: [],
   video_play: [],

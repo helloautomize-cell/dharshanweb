@@ -126,21 +126,109 @@ a.chip:hover {
 }
 
 /* Contact */
+.page-main.sp-contact {
+  max-width: 1120px;
+}
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 36px;
+  align-items: start;
+}
 .sp-form-card {
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: clamp(20px, 3vw, 36px);
-  max-width: 720px;
+  border-radius: var(--r-l);
+  box-shadow: var(--sh);
+  padding: clamp(22px, 3.4vw, 44px);
 }
-.sp-contact-line {
-  font-size: 16px;
+.sp-form-card-head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 26px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.sp-form-card-head .kicker {
+  margin: 0;
+}
+.sp-form-card-sub {
+  margin: 0;
+  font-size: 15px;
   color: var(--ink-2);
-  max-width: 68ch;
 }
-.sp-contact-line a {
+.booking-side {
+  display: grid;
+  gap: 36px;
+  padding-top: 6px;
+}
+.side-title {
+  font:
+    600 20px / 1.25 var(--font-heading),
+    sans-serif;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+.sp-next {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+.sp-next li {
+  display: grid;
+  gap: 6px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.sp-next-num {
+  font:
+    400 12px / 1.5 var(--font-code),
+    monospace;
+  color: var(--blue-ink);
+}
+.sp-next p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.sp-next strong {
   color: var(--ink);
   font-weight: 600;
+}
+.sp-direct {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+.sp-direct li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.sp-direct svg {
+  color: var(--blue);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.sp-direct-label {
+  display: block;
+  font-weight: 600;
+}
+.sp-direct a {
+  color: var(--ink);
+  font-weight: 600;
+}
+@media (max-width: 899px) {
+  .booking-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 @media (max-width: 999px) {
