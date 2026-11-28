@@ -66,7 +66,7 @@ export function clinic() {
     email: siteConfig.email,
     logo: `${BASE}/images/brand/mark-blue.png`,
     image: `${BASE}/images/brand/og-base.png`,
-    medicalSpecialty: "PhysicalMedicineAndRehabilitation",
+    medicalSpecialty: ["Musculoskeletal", "Neurologic"],
     isAcceptingNewPatients: true,
     parentOrganization: { "@id": `${BASE}/#organization` },
     employee: [
@@ -82,7 +82,7 @@ export function clinic() {
       "Rehabilitation for older adults",
     ],
     availableService: services.map(([name, href]) => ({
-      "@type": "MedicalTherapy",
+      "@type": ["MedicalTherapy", "Service"],
       name,
       url: `${BASE}${href}`,
       provider: { "@id": `${BASE}/#clinic` },
@@ -123,7 +123,7 @@ export function physician(id: string) {
       description:
         "Physiatrist in Bengaluru practising physical medicine and rehabilitation, neuro rehabilitation and interventional pain management for adults, children and older adults.",
       honorificSuffix: "MBBS, MD",
-      medicalSpecialty: "PhysicalMedicineAndRehabilitation",
+      medicalSpecialty: ["Musculoskeletal", "Neurologic"],
       knowsAbout: [
         "Physical Medicine and Rehabilitation",
         "Interventional pain management",
@@ -202,7 +202,7 @@ export function physician(id: string) {
       jobTitle: "Consultant in Physical Medicine and Rehabilitation",
       description:
         "Physiatrist in Bengaluru looking after stroke rehabilitation, spinal cord injury rehabilitation, spasticity care, joint and rheumatic pain, and long-term pain.",
-      medicalSpecialty: "PhysicalMedicineAndRehabilitation",
+      medicalSpecialty: ["Musculoskeletal", "Neurologic"],
       knowsAbout: [
         "Physical Medicine and Rehabilitation",
         "Stroke rehabilitation",
