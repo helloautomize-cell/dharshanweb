@@ -11,7 +11,7 @@ import { altFor } from "@/lib/alt-text";
    while the hero is out of view; any manual choice stops it until play. */
 
 const SIZES = "(max-width: 899px) 70vw, 430px";
-const SWAP_MS = 6000;
+const SWAP_MS = 3000;
 
 const doctors = [
   {
@@ -26,14 +26,14 @@ const doctors = [
   },
 ];
 
-const imgs = doctors.map(
-  (d) =>
-    getImageProps({
-      src: d.src,
-      alt: altFor(d.src.replace("/images/", "")),
-      fill: true,
-      sizes: SIZES,
-    }).props,
+const imgs = doctors.map((d, i) =>
+  getImageProps({
+    src: d.src,
+    alt: altFor(d.src.replace("/images/", "")),
+    fill: true,
+    sizes: SIZES,
+    loading: i === 0 ? "eager" : "lazy",
+  }).props,
 );
 
 export function HeroFan() {

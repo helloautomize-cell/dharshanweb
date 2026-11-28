@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { ArrowRight, CalendarDays, MessageCircle } from "lucide-react";
+import { ArrowRight, CalendarDays } from "lucide-react";
 import type { ReactNode } from "react";
 import { imageApprovals } from "@/lib/site-config";
+import { Icon } from "@/lib/icons";
 
 export function Confirm({ children }: { children: ReactNode }) {
   if (process.env.NODE_ENV === "production") return null;
@@ -50,9 +51,7 @@ export function Button({
           <CalendarDays size={22} strokeWidth={1.75} aria-hidden="true" />
         </span>
       )}
-      {kind === "wa" && (
-        <MessageCircle size={20} strokeWidth={1.75} aria-hidden="true" />
-      )}
+      {kind === "wa" && <Icon name="whatsapp" size={20} />}
       <span className="button-label">{children}</span>
       {kind !== "invert" && kind !== "wa" && (
         <ArrowRight

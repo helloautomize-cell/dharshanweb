@@ -55,7 +55,7 @@ export function DesktopQuickActions() {
         <span className="qa-tip" aria-hidden="true">
           Chat on WhatsApp
         </span>
-        <Icon name="whatsapp" size={24} />
+        <Icon name="whatsapp" size={28} />
       </Link>
     </nav>
   );

@@ -47,7 +47,7 @@ export function MobileDock() {
         href={siteConfig.whatsapp}
         aria-label="WhatsApp Rehabify"
       >
-        <Icon name="whatsapp" size={20} />
+        <Icon name="whatsapp" size={24} />
       </Link>
     </nav>
   );
