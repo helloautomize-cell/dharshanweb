@@ -4,7 +4,14 @@
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
-const root = join(process.cwd(), ".next", "server", "app");
+const appRoot = join(process.cwd(), ".next", "server", "app");
+const routeCacheRoot = join(
+  process.cwd(),
+  ".next",
+  "server",
+  "route-cache",
+  "APP_PAGE",
+);
 const fail = [];
 
 const patterns = [
@@ -38,8 +45,24 @@ function visibleMarkup(html) {
     .replace(/<template\b[^>]*>[\s\S]*?<\/template>/gi, "");
 }
 
+function routeKey(file) {
+  const normalized = file.replaceAll("\\", "/");
+  const routeCacheMarker = "/$/";
+  if (normalized.includes(routeCacheMarker))
+    return normalized.split(routeCacheMarker).pop();
+  return normalized;
+}
+
+const htmlFiles = new Map();
+for (const root of [appRoot, routeCacheRoot]) {
+  for (const file of walk(root)) {
+    const key = routeKey(file);
+    if (!htmlFiles.has(key)) htmlFiles.set(key, file);
+  }
+}
+
 let scanned = 0;
-for (const file of walk(root)) {
+for (const file of htmlFiles.values()) {
   const html = visibleMarkup(readFileSync(file, "utf8"));
   scanned++;
   for (const [re, label] of patterns) {

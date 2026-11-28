@@ -3,7 +3,14 @@
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join, relative } from "node:path";
 
-const root = join(process.cwd(), ".next", "server", "app");
+const appRoot = join(process.cwd(), ".next", "server", "app");
+const routeCacheRoot = join(
+  process.cwd(),
+  ".next",
+  "server",
+  "route-cache",
+  "APP_PAGE",
+);
 const BASE = "https://www.rehabify.in";
 const EXCLUDED = new Set([
   "/404/",
@@ -25,9 +32,24 @@ function walk(dir, out = []) {
 }
 
 function urlFor(file) {
-  const rel = relative(root, file).replaceAll("\\", "/");
-  const pathname = rel.replace(/\.html$/, "");
-  return pathname === "index" ? "/" : `/${pathname}/`;
+  const normalized = file.replaceAll("\\", "/");
+  const routeCacheMarker = "/$/";
+  const rel = normalized.includes(routeCacheMarker)
+    ? normalized.split(routeCacheMarker).pop()
+    : relative(appRoot, file).replaceAll("\\", "/");
+  const pathname = rel.replace(/\.html$/, "").replace(/\/index$/, "");
+  return pathname === "index" || pathname === "" ? "/" : `/${pathname}/`;
+}
+
+function htmlFiles() {
+  const files = new Map();
+  for (const root of [appRoot, routeCacheRoot]) {
+    for (const file of walk(root)) {
+      const url = urlFor(file);
+      if (!files.has(url)) files.set(url, file);
+    }
+  }
+  return [...files.entries()].map(([url, file]) => ({ url, file }));
 }
 
 function flatten(nodes, out = []) {
@@ -72,8 +94,7 @@ let pageCount = 0;
 let scriptCount = 0;
 let homeNodes = [];
 
-for (const file of walk(root).sort()) {
-  const url = urlFor(file);
+for (const { url, file } of htmlFiles().sort((a, b) => a.url.localeCompare(b.url))) {
   if (EXCLUDED.has(url)) continue;
   const html = readFileSync(file, "utf8");
   const scripts = [
