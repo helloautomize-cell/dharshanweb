@@ -7,10 +7,6 @@ import { ArrowRight } from "lucide-react";
 import { regions } from "@/lib/site-copy";
 import type { CareRegion } from "@/lib/care";
 
-/* v3 body map: AI body illustrations on the night panel, front and back views
-   crossfaded, with an SVG hotspot overlay (viewBox 1600 x 2400) laid exactly
-   over the 2:3 figure so the dots scale with the image. Buttons carry the
-   tap targets and labels; the SVG carries the dots, rings and region glow. */
 type Spot = {
   region: number;
   x: number;

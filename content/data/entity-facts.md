@@ -39,7 +39,7 @@ Status: ✅ confirmed · [CONFIRM] still needed before launch
 | Registration          | Karnataka Medical Council Reg. No. [CONFIRM]                                                                                                                                                      | ★                    |
 | Languages             | Tamil, Telugu, Kannada, English, Manipuri, Hindi                                                                                                                                                  | ✅                   |
 | Memberships           | Life Member, IAPMR · Life Member, KARM · Life Member, Global Regenerative Orthopedic Sciences Foundation                                                                                          | ✅                   |
-| Current hospital role | Specialist, PM&R, Manipal Hospital, Sarjapur Road (shown on the site only if decision D2 allows)                                                                                                  | [CONFIRM]            |
+| Current hospital role | Specialist, PM&R, Manipal Hospital, Sarjapur Road (shown on the site only if approved)                                                                                                  | [CONFIRM]            |
 
 ### Dr. Selina Kh
 

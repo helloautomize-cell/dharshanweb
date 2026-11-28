@@ -8,9 +8,6 @@ export default defineConfig([
   globalIgnores([
     ".next/**",
     "node_modules/**",
-    "resources/**",
-    "_handoff/**",
-    "artifacts/**",
     "public/**",
     "next-env.d.ts",
   ]),

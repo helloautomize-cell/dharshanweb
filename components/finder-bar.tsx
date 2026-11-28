@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { bookingReasons } from "@/lib/site-copy";
 
-/* v3 finder bar: overlaps the hero bottom edge, prefills /contact/ via GET. */
 export function FinderBar() {
   const [format, setFormat] = useState("clinic");
   const [when, setWhen] = useState("week");

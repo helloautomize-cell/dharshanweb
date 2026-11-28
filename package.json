@@ -9,12 +9,8 @@
     "start": "next start --hostname 127.0.0.1",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write app components lib scripts tests *.json *.mjs *.ts",
-    "format:check": "prettier --check app components lib scripts tests *.json *.mjs *.ts",
-    "images": "node scripts/process-images.mjs",
-    "test:images": "node scripts/verify-images.mjs",
-    "qa:lighthouse": "node scripts/lighthouse.mjs",
-    "design-diff": "node scripts/design-diff.mjs"
+    "format": "prettier --write app components lib scripts *.json *.mjs *.ts",
+    "format:check": "prettier --check app components lib scripts *.json *.mjs *.ts"
   },
   "engines": {
     "node": ">=22.0.0 <27"
@@ -36,9 +32,6 @@
     "@types/react-dom": "19.3.0",
     "eslint": "9.39.5",
     "eslint-config-next": "16.3.8",
-    "lighthouse": "13.5.0",
-    "pixelmatch": "8.0.0",
-    "pngjs": "7.0.0",
     "prettier": "3.9.9",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3"

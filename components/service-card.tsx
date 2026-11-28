@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-/* Care card specimen: white hairline card with the illustrated service badge.
-   Shown in the styleguide; hub pages and care headers carry the badges. */
 export function ServiceCard({
   href,
   badge,

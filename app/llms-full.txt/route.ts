@@ -24,7 +24,7 @@ export function GET() {
       .filter((url) => /^\/guides\/[^/]+\/$/.test(url)),
   );
   const urls = allRoutes().filter(
-    (url) => !["/thank-you/", "/404/"].includes(url) && url !== "/styleguide/",
+    (url) => !["/thank-you/", "/404/"].includes(url),
   );
   const pages = urls
     .filter((url) => !articleUrls.has(url))

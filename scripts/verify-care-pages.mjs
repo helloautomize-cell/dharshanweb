@@ -1,6 +1,6 @@
 import { readdir, readFile } from "node:fs/promises";
 
-// Phase 7o: the five area pages and every condition page under them.
+// Covers the five area pages and every condition page under them.
 const AREAS = [
   "pain-and-spine",
   "neuro-rehabilitation",

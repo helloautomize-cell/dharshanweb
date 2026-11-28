@@ -9,7 +9,6 @@ const EXCLUDED = new Set([
   "/404/",
   "/_404/",
   "/thank-you/",
-  "/styleguide/",
   "/_global-error/",
   "/_not-found/",
   "/not-found/",

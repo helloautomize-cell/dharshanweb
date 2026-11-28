@@ -17,9 +17,8 @@ export function generateStaticParams() {
       (url) =>
         url !== "/" &&
         url !== "/contact/" &&
-        !url.startsWith("/guides/") &&
-        !url.startsWith("/styleguide"),
-    )
+        !url.startsWith("/guides/")
+      )
     .map(paramsFor);
 }
 

@@ -1,15 +1,9 @@
-_handoff/
 node_modules/
 .next/
 .cache/
 out/
-artifacts/
-design-diff/
-qa/phase-7/
 .vercel/
 .env*
 !.env.example
 *.tsbuildinfo
-
-
 tmp*

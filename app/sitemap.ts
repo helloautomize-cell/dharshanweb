@@ -116,7 +116,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (
       page.noindex ||
       EXCLUDED.has(page.url) ||
-      page.url.startsWith("/styleguide") ||
       guideUrls.has(page.url)
     )
       continue;

@@ -35,8 +35,7 @@ export function pageList() {
       (page): page is NonNullable<typeof page> =>
         !!page &&
         !page.meta.noindex &&
-        !EXCLUDED.includes(page.meta.url) &&
-        !page.meta.url.startsWith("/styleguide"),
+        !EXCLUDED.includes(page.meta.url)
     )
     .map((page) => ({
       url: page.meta.url,

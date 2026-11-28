@@ -2988,11 +2988,6 @@ body:has(.booking-form :focus-visible) .mobile-dock {
     flex: none;
   }
 }
-/* =====================================================================
-   v3 PORT · "Night and ice" homepage fidelity pass (phase-7b-design)
-   Values ported verbatim from resources/design/v3-reference/v3.css.
-   ===================================================================== */
-
 /* ---------- global ---------- */
 body {
   padding-inline: 12px;
@@ -3059,7 +3054,7 @@ h4 {
   color: var(--ice-2);
 }
 
-/* ---------- buttons (v3) ---------- */
+
 .btn .ic,
 .btn .button-icon {
   width: 20px;
@@ -4988,7 +4983,7 @@ h4 {
   }
 }
 
-/* ---------- v3 responsive ---------- */
+
 @media (max-width: 1023px) {
   .hero {
     grid-template-columns: 1fr;
@@ -5304,7 +5299,6 @@ h4 {
   }
 }
 
-/* v3 port · mobile >3-item sections become swipe strips (project rule) */
 .links li > a {
   white-space: nowrap;
 }
@@ -5353,166 +5347,6 @@ h4 {
 .bm-l .body-view button[aria-pressed="true"] {
   background: var(--ice);
   color: var(--night);
-}
-
-/* ---------- styleguide: v3 #system layout ---------- */
-.sys {
-  background: #fff;
-  border-radius: var(--r-xl);
-  padding: clamp(28px, 4vw, 56px);
-  margin-block: 12px;
-  border: 1px solid var(--line);
-}
-.sys-h {
-  font-size: clamp(32px, 4vw, 52px);
-  margin-top: 14px;
-}
-.sys > .lede {
-  margin-top: 12px;
-}
-.sys > h3 {
-  font-size: 22px;
-  margin: 40px 0 16px;
-}
-.sys > h3:first-of-type {
-  margin-top: 40px;
-}
-.sw {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 12px;
-}
-.sw > div {
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  font-size: 13px;
-}
-.sw i {
-  display: block;
-  height: 74px;
-}
-.sw p {
-  padding: 10px 12px;
-  line-height: 1.4;
-  margin: 0;
-}
-.sw b {
-  display: block;
-  font-size: 14px;
-}
-.sw span {
-  color: var(--ink-2);
-  font-variant-numeric: tabular-nums;
-}
-.ts {
-  display: grid;
-  gap: 16px;
-}
-.ts div {
-  display: grid;
-  grid-template-columns: 190px 1fr;
-  gap: 16px;
-  align-items: baseline;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
-}
-.ts small {
-  font:
-    500 12px var(--font-code),
-    monospace;
-  color: var(--ink-2);
-}
-.inv {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0 40px;
-}
-.inv div {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4px 14px;
-}
-.inv b {
-  font:
-    700 16px var(--font-heading),
-    sans-serif;
-  letter-spacing: -0.01em;
-}
-.inv span {
-  grid-column: 2;
-  font-size: 14.5px;
-  color: var(--ink-2);
-}
-.inv i {
-  grid-row: span 2;
-  font:
-    600 11px/1.9 var(--font-code),
-    monospace;
-  color: var(--blue-ink);
-  font-style: normal;
-}
-.tw {
-  overflow-x: auto;
-}
-.tw table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 15px;
-}
-.tw th,
-.tw td {
-  text-align: left;
-  padding: 12px 16px 12px 0;
-  border-bottom: 1px solid var(--line);
-  vertical-align: top;
-}
-.tw th {
-  font:
-    600 11px var(--font-code),
-    monospace;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-}
-.tw code {
-  font-family: var(--font-code), monospace;
-  font-size: 0.9em;
-  background: var(--paper);
-  padding: 2px 6px;
-  border-radius: 6px;
-}
-.chip-specimens {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-}
-.card-specimens {
-  display: grid;
-  grid-template-columns: 340px 340px;
-  gap: 16px;
-  align-items: stretch;
-}
-.card-specimens .svc {
-  height: 440px;
-}
-.card-specimens .tile {
-  min-height: 440px;
-}
-@media (max-width: 899px) {
-  .ts div {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-  .inv {
-    grid-template-columns: 1fr;
-  }
-  .card-specimens {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* One glow per screen: nav CTA is a plain night pill while the hero CTA

@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { SITE_INDEXABLE } from "@/lib/site-config";
 
-// Removed old-site paths return 410 Gone (decision D1). Once indexable, only
+// Removed old-site paths return 410 Gone. Once indexable, only
 // www.rehabify.in may be indexed; previews and other hosts keep noindex.
 export function proxy(request: NextRequest) {
   if (request.nextUrl.pathname.replace(/\/$/, "").startsWith("/ai-tools")) {

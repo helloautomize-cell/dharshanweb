@@ -5,9 +5,6 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { CareIcon, type CareIconName } from "./icons/care";
 
-/* v3 care index: the 20 care pages grouped under the five hubs, plus
-   Video consultation under "Online". One-line descriptions come from
-   resources/docs/new-website-content.md; links mirror lib/nav.ts. */
 type CareItem = {
   icon: CareIconName;
   title: string;
