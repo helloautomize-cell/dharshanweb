@@ -24,11 +24,41 @@ function clean<T>(value: T): T | null {
   return value;
 }
 
-export function clinic() {
+export function organization() {
   return clean({
-    "@type": "MedicalClinic",
+    "@type": "MedicalOrganization",
+    "@id": `${BASE}/#organization`,
+    name: siteConfig.name,
+    url: `${BASE}/`,
+    logo: `${BASE}/images/brand/mark-blue.png`,
+    description:
+      "Physical medicine and rehabilitation practice in Bengaluru, with video consultations across India.",
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    founder: { "@id": `${BASE}/#dr-dharshan-n-a` },
+    foundingDate: siteConfig.foundingYear,
+    sameAs: [],
+  });
+}
+
+export function clinic() {
+  const languages = [
+    ...new Set(
+      siteConfig.doctors.flatMap((doctor) => doctor.languages ?? []),
+    ),
+  ].filter((language) => language && !language.includes("[CONFIRM"));
+  const services = [
+    ["Pain and spine", "/pain-and-spine/"],
+    ["Neuro rehabilitation", "/neuro-rehabilitation/"],
+    ["Joints and sports", "/joints-and-sports/"],
+    ["Children's rehabilitation", "/childrens-rehabilitation/"],
+    ["Older adults", "/older-adults/"],
+  ] as const;
+  return clean({
+    "@type": ["MedicalClinic", "LocalBusiness"],
     "@id": `${BASE}/#clinic`,
     name: siteConfig.name,
+    alternateName: "Rehabify Bengaluru",
     url: `${BASE}/`,
     description:
       "Physical medicine and rehabilitation practice in Bengaluru, with video consultations across India.",
@@ -37,6 +67,12 @@ export function clinic() {
     logo: `${BASE}/images/brand/mark-blue.png`,
     image: `${BASE}/images/brand/og-base.png`,
     medicalSpecialty: "PhysicalMedicineAndRehabilitation",
+    isAcceptingNewPatients: true,
+    parentOrganization: { "@id": `${BASE}/#organization` },
+    employee: [
+      { "@id": `${BASE}/#dr-dharshan-n-a` },
+      { "@id": `${BASE}/#dr-selina-kh` },
+    ],
     knowsAbout: [
       "Physical medicine and rehabilitation",
       "Pain and spine care",
@@ -45,13 +81,16 @@ export function clinic() {
       "Children's rehabilitation",
       "Rehabilitation for older adults",
     ],
-    availableService: [
-      "Pain and spine",
-      "Neuro rehabilitation",
-      "Joints and sports",
-      "Children's rehabilitation",
-      "Older adults",
-    ].map((name) => ({ "@type": "MedicalTherapy", name })),
+    availableService: services.map(([name, href]) => ({
+      "@type": "MedicalTherapy",
+      name,
+      url: `${BASE}${href}`,
+      provider: { "@id": `${BASE}/#clinic` },
+      areaServed: [
+        { "@type": "City", name: "Bengaluru" },
+        { "@type": "Country", name: "India" },
+      ],
+    })),
     areaServed: [
       { "@type": "City", name: "Bengaluru" },
       { "@type": "Country", name: "India" },
@@ -59,8 +98,9 @@ export function clinic() {
     contactPoint: {
       "@type": "ContactPoint",
       telephone: siteConfig.phone,
+      url: siteConfig.whatsapp,
       contactType: "patient enquiries",
-      availableLanguage: siteConfig.doctors[0].languages,
+      availableLanguage: languages,
     },
     founder: { "@id": `${BASE}/#dr-dharshan-n-a` },
     foundingDate: siteConfig.foundingYear,
@@ -74,45 +114,102 @@ export function clinic() {
 export function physician(id: string) {
   const doctors: Record<string, Record<string, unknown>> = {
     "dr-dharshan-n-a": {
-      "@type": "Physician",
+      "@type": ["Physician", "Person"],
       "@id": `${BASE}/#dr-dharshan-n-a`,
       name: "Dr. Dharshan N A",
       url: `${BASE}/dr-dharshan-n-a/`,
       image: `${BASE}/images/doctors/dr-dharshan-hero.jpg`,
       jobTitle: "Consultant in Physical Medicine and Rehabilitation",
+      description:
+        "Physiatrist in Bengaluru practising physical medicine and rehabilitation, neuro rehabilitation and interventional pain management for adults, children and older adults.",
       honorificSuffix: "MBBS, MD",
       medicalSpecialty: "PhysicalMedicineAndRehabilitation",
       knowsAbout: [
         "Physical Medicine and Rehabilitation",
         "Interventional pain management",
         "Neurorehabilitation",
+        "Spasticity rehabilitation",
+        "Stroke rehabilitation",
+        "Musculoskeletal pain",
+        "Paediatric rehabilitation",
+        "Geriatric rehabilitation",
       ],
       knowsLanguage: siteConfig.doctors[0].languages,
       hasCredential: [
-        "MBBS",
-        "MD Physical Medicine and Rehabilitation",
-        "Fellowship in Interventional Pain Management",
-      ].map((name) => ({
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "degree",
-        name,
-      })),
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "degree",
+          name: "MBBS",
+          recognizedBy: {
+            "@type": "CollegeOrUniversity",
+            name: "Annapoorana Medical College and Hospitals, Salem, Tamil Nadu",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "degree",
+          name: "MD, Physical Medicine and Rehabilitation",
+          recognizedBy: {
+            "@type": "CollegeOrUniversity",
+            name: "Regional Institute of Medical Sciences, Imphal, Manipur",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "certificate",
+          name: "Fellowship in Interventional Pain Management",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Delhi Pain Management Centre",
+          },
+        },
+      ],
+      memberOf: [
+        {
+          "@type": "Organization",
+          name: "Indian Association of Physical Medicine and Rehabilitation",
+          alternateName: "IAPMR",
+        },
+        {
+          "@type": "Organization",
+          name: "Karnataka Association of Rehabilitation Medicine",
+          alternateName: "KARM",
+        },
+        {
+          "@type": "Organization",
+          name: "Global Regenerative Orthopedic Sciences Foundation",
+        },
+      ],
       worksFor: { "@id": `${BASE}/#clinic` },
       alumniOf: [
-        "Annapoorana Medical College and Hospitals, Salem",
-        "Regional Institute of Medical Sciences, Imphal",
-        "Delhi Pain Management Centre",
+        {
+          "@type": "CollegeOrUniversity",
+          name: "Annapoorana Medical College and Hospitals, Salem",
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          name: "Regional Institute of Medical Sciences, Imphal",
+        },
+        { "@type": "Organization", name: "Delhi Pain Management Centre" },
       ],
     },
     "dr-selina-kh": {
-      "@type": "Physician",
+      "@type": ["Physician", "Person"],
       "@id": `${BASE}/#dr-selina-kh`,
       name: "Dr. Selina Kh",
       url: `${BASE}/dr-selina-kh/`,
       image: `${BASE}/images/doctors/dr-selina-hero.jpg`,
       jobTitle: "Consultant in Physical Medicine and Rehabilitation",
+      description:
+        "Physiatrist in Bengaluru looking after stroke rehabilitation, spinal cord injury rehabilitation, spasticity care, joint and rheumatic pain, and long-term pain.",
       medicalSpecialty: "PhysicalMedicineAndRehabilitation",
-      knowsAbout: ["Physical Medicine and Rehabilitation"],
+      knowsAbout: [
+        "Physical Medicine and Rehabilitation",
+        "Stroke rehabilitation",
+        "Spinal cord injury rehabilitation",
+        "Spasticity rehabilitation",
+        "Rheumatology-related pain",
+      ],
       worksFor: { "@id": `${BASE}/#clinic` },
     },
   };
@@ -143,7 +240,6 @@ export function medicalWebPage(meta: PageMeta) {
     about: normalizeAbout(meta.about),
     reviewedBy: physicianRef(meta.reviewer),
     lastReviewed: meta.lastReviewed,
-    mainContentOfPage: { "@id": `${BASE}${meta.url}#content` },
   });
 }
 export function webPage(
@@ -205,7 +301,7 @@ export function blogPosting(meta: PageMeta) {
     reviewedBy: physicianRef(meta.reviewedBy ?? meta.reviewer),
     datePublished: meta.datePublished,
     dateModified: meta.dateModified ?? meta.lastReviewed,
-    publisher: { "@id": `${BASE}/#clinic` },
+    publisher: { "@id": `${BASE}/#organization` },
     isPartOf: { "@id": `${BASE}/guides/#webpage` },
   });
 }
@@ -226,7 +322,7 @@ export function website() {
     "@id": `${BASE}/#website`,
     url: `${BASE}/`,
     name: siteConfig.name,
-    publisher: { "@id": `${BASE}/#clinic` },
+    publisher: { "@id": `${BASE}/#organization` },
     inLanguage: "en-IN",
   };
 }
@@ -295,6 +391,7 @@ export function graph(
     "@graph": clean(
       [
         website(),
+        organization(),
         clinic(),
         physician("dr-dharshan-n-a"),
         physician("dr-selina-kh"),

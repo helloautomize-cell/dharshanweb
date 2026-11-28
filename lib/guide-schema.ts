@@ -1,6 +1,7 @@
 import {
   breadcrumb,
   clinic,
+  organization,
   physician,
   physicianRef,
   website,
@@ -22,7 +23,10 @@ export function guidesIndexSchema(
     "@context": "https://schema.org",
     "@graph": [
       website(),
+      organization(),
       clinic(),
+      physician("dr-dharshan-n-a"),
+      physician("dr-selina-kh"),
       {
         "@type": "CollectionPage",
         "@id": `${GUIDE_BASE}${meta.url}#page`,
@@ -31,7 +35,7 @@ export function guidesIndexSchema(
         description: meta.description,
         inLanguage: "en-IN",
         isPartOf: { "@id": `${GUIDE_BASE}/#website` },
-        publisher: { "@id": `${GUIDE_BASE}/#clinic` },
+        publisher: { "@id": `${GUIDE_BASE}/#organization` },
         mainEntity: {
           "@type": "ItemList",
           numberOfItems: guides.length,
@@ -67,17 +71,16 @@ export function guideArticleSchema(guide: Guide) {
   )
     .trim()
     .split(/\s+/).length;
-  const physicians = [...new Set([guide.author, guide.reviewedBy])].map(
-    (id) => ({
-      ...physician(id),
-      "@type": ["Physician", "Person"],
-      name: guideDoctor(id).name,
-    }),
-  );
+  const physicians = ["dr-dharshan-n-a", "dr-selina-kh"].map((id) => ({
+    ...physician(id),
+    "@type": ["Physician", "Person"],
+    name: guideDoctor(id).name,
+  }));
   return {
     "@context": "https://schema.org",
     "@graph": [
       website(),
+      organization(),
       clinic(),
       ...physicians,
       {
@@ -103,15 +106,22 @@ export function guideArticleSchema(guide: Guide) {
         ...(guide.datePublished ? { datePublished: guide.datePublished } : {}),
         ...(guide.dateModified ? { dateModified: guide.dateModified } : {}),
         author: physicianRef(guide.author),
-        publisher: { "@id": `${GUIDE_BASE}/#clinic` },
+        publisher: { "@id": `${GUIDE_BASE}/#organization` },
         mainEntityOfPage: { "@id": `${url}#page` },
         articleSection: topic.label,
         wordCount: words,
         timeRequired: `PT${parseInt(guide.readingTime)}M`,
         inLanguage: "en-IN",
-        citation: guide.sources.map(
-          (source) => `${source.publisher}. ${source.title}`,
-        ),
+        citation: guide.sources.map((source) => ({
+          "@type": "CreativeWork",
+          name: source.title,
+          publisher: {
+            "@type": "Organization",
+            name: source.publisher,
+          },
+        })),
+        keywords: guide.keywords.join(", "),
+        isAccessibleForFree: true,
       },
       {
         "@type": "FAQPage",
